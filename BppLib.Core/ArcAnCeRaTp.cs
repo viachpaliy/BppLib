@@ -3,14 +3,15 @@ using System.Text;
 
 namespace BppLib.Core
 {
-    /// <summary>Class <c>ArcEpRa</c> models the curve given angle and centre.
-    /// Creates an arc using the co-ordinates of the centre of the arc
-    /// and the angle of the arc with respect to the positive direction of the X-axis as reference values.
+    /// <summary>Class <c>ArcAnCeRaTp</c> models the curve given angle centre radius and tangency to previous item.
+    /// Creates an arc using the radius and the co-ordinates of the centre of the arc,
+    /// the tangency of the arc to the preceding element, and the angle of the arc
+    /// with respect to the positive direction of the X-axis as reference values.
     /// </summary>
-	public class ArcAnCe: IBppCode
+	public class ArcAnCeRaTp: IBppCode
 	{
         /// <value>Property <c>BppName</c> represents the name of BiesseWorks type.</value>
-		public string BppName { get; } = "ARC_ANCE" ;
+		public string BppName { get; } = "ARC_ANCERATP" ;
 
         /// <value>Property <c>Id</c> represents the unique identifier an object of BiesseWorks.</value>
 		public int Id { get; set; } 
@@ -24,7 +25,10 @@ namespace BppLib.Core
         /// <value>Property <c>Yc</c> represents Y-axis co-ordinate of the centre of the arc.</value>
 		public double Yc { get; set; } = 0 ;
 
-		/// <value>Property <c>Dir</c> represents direction of the geometry;
+        /// <value>Property <c>R</c> represents arc radius value.</value>
+		public double R { get; set; } = 0 ;
+		
+        /// <value>Property <c>Dir</c> represents direction of the geometry;
         /// set dirCCW to indicate an anticlockwise direction, or set
         /// dirCW to indicate a clockwise direction.</value>
 		public int Dir { get; set; } = BppLib.DirCW ;
@@ -49,9 +53,9 @@ namespace BppLib.Core
         /// on the basis of the data set previously.Values allowed: 0,1</value> 
 		public int Sol { get; set; } = 0 ;
 
-        /// <summary>This constructor initializes the new ArcAnCe
+        /// <summary>This constructor initializes the new ArcAnCeRaTp
    	    ///  with Id which equal hash code of C# object.</summary>
-		public ArcAnCe()
+		public ArcAnCeRaTp()
 		{
 			Id = GetHashCode();
 		}
@@ -71,6 +75,8 @@ namespace BppLib.Core
 			sb.Append(" " + Xc.ToString());
 			sb.Append(",");
 			sb.Append(" " + Yc.ToString());
+			sb.Append(",");
+			sb.Append(" " + R.ToString());
 			sb.Append(",");
 			sb.Append(" " + Dir.ToString());
 			sb.Append(",");
@@ -96,11 +102,12 @@ namespace BppLib.Core
 		{
 			StringBuilder sb = new StringBuilder();
 			sb.AppendLine("BEGIN MACRO");
-			sb.AppendLine("	NAME=ARC_ANCE");
+			sb.AppendLine("	NAME=ARC_ANCERATP");
 			sb.AppendLine("	PARAM,NAME=ID,VALUE=" + Id.ToString());
 			sb.AppendLine("	PARAM,NAME=A,VALUE=" + A.ToString());
 			sb.AppendLine("	PARAM,NAME=XC,VALUE=" + Xc.ToString());
 			sb.AppendLine("	PARAM,NAME=YC,VALUE=" + Yc.ToString());
+			sb.AppendLine("	PARAM,NAME=R,VALUE=" + R.ToString());
 			sb.Append("	PARAM,NAME=DIR,VALUE=");
             if (Dir == 1)
                 {sb.AppendLine("dirCW");}

@@ -3,20 +3,17 @@ using System.Text;
 
 namespace BppLib.Core
 {
-    /// <summary>Class <c>ArcEpRa</c> models the curve given angle and centre.
-    /// Creates an arc using the co-ordinates of the centre of the arc
-    /// and the angle of the arc with respect to the positive direction of the X-axis as reference values.
+    /// <summary>Class <c>ArcCeTs</c> models the curve given centre and tangency to next element.
+    /// Creates an arc with a known start point, using the co-ordinates of the centre of the arc and the tangency to
+    /// the following element as reference values.
     /// </summary>
-	public class ArcAnCe: IBppCode
+	public class ArcCeTs: IBppCode
 	{
         /// <value>Property <c>BppName</c> represents the name of BiesseWorks type.</value>
-		public string BppName { get; } = "ARC_ANCE" ;
+		public string BppName { get; } = "ARC_CETS" ;
 
         /// <value>Property <c>Id</c> represents the unique identifier an object of BiesseWorks.</value>
 		public int Id { get; set; } 
-
-        /// <value>Property <c>A</c> represents angular length of the arc.</value>
-		public double A { get; set; } = 0 ;
 
         /// <value>Property <c>Xc</c> represents X-axis co-ordinate of the centre of the arc.</value>
 		public double Xc { get; set; } = 0 ;
@@ -49,9 +46,9 @@ namespace BppLib.Core
         /// on the basis of the data set previously.Values allowed: 0,1</value> 
 		public int Sol { get; set; } = 0 ;
 
-        /// <summary>This constructor initializes the new ArcAnCe
+        /// <summary>This constructor initializes the new ArcCeTs
    	    ///  with Id which equal hash code of C# object.</summary>
-		public ArcAnCe()
+		public ArcCeTs()
 		{
 			Id = GetHashCode();
 		}
@@ -66,8 +63,6 @@ namespace BppLib.Core
 			sb.Append("@ " + BppName + ", \"\", \"\", ");
 			sb.Append(Id.ToString());
 			sb.Append(", \"\", 0 :");
-			sb.Append(" " + A.ToString());
-			sb.Append(",");
 			sb.Append(" " + Xc.ToString());
 			sb.Append(",");
 			sb.Append(" " + Yc.ToString());
@@ -96,9 +91,8 @@ namespace BppLib.Core
 		{
 			StringBuilder sb = new StringBuilder();
 			sb.AppendLine("BEGIN MACRO");
-			sb.AppendLine("	NAME=ARC_ANCE");
+			sb.AppendLine("	NAME=ARC_CETS");
 			sb.AppendLine("	PARAM,NAME=ID,VALUE=" + Id.ToString());
-			sb.AppendLine("	PARAM,NAME=A,VALUE=" + A.ToString());
 			sb.AppendLine("	PARAM,NAME=XC,VALUE=" + Xc.ToString());
 			sb.AppendLine("	PARAM,NAME=YC,VALUE=" + Yc.ToString());
 			sb.Append("	PARAM,NAME=DIR,VALUE=");
