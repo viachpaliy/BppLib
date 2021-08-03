@@ -50,7 +50,7 @@ namespace BppLib.Core
 		public int Sol { get; set; } = 0 ;
 
         /// <summary>This constructor initializes the new ArcAnCe
-   	    ///  with Id which equal hash code of C# object.</summary>
+   	    ///  with Id which equal a hash code of the C# object.</summary>
 		public ArcAnCe()
 		{
 			Id = GetHashCode();

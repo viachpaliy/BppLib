@@ -3,7 +3,8 @@ using System.Text;
 
 namespace BppLib.Core
 {
-    /// <summary>Class <c>ArcCeTs</c> models the curve given centre and tangency to next element.
+    /// <summary>Class <c>ArcCeTs</c> models the curve given centre and tangency to next element
+	/// (with previous point determined).
     /// Creates an arc with a known start point, using the co-ordinates of the centre of the arc and the tangency to
     /// the following element as reference values.
     /// </summary>
@@ -47,7 +48,7 @@ namespace BppLib.Core
 		public int Sol { get; set; } = 0 ;
 
         /// <summary>This constructor initializes the new ArcCeTs
-   	    ///  with Id which equal hash code of C# object.</summary>
+   	    ///  with Id which equal a hash code of the C# object.</summary>
 		public ArcCeTs()
 		{
 			Id = GetHashCode();
