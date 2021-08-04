@@ -3,11 +3,11 @@ using System.Text;
 
 namespace BppLib.Core
 {
-	/// <summary>Class <c>Bg</c> models the generic boring operation.</summary> 
-	public class Bg: IBppCode
+	/// <summary>Class <c>Bcl</c> models the bore with C axis on straigh side operation.</summary> 
+	public class Bcl: IBppCode
 	{
 		/// <value>Property <c>BppName</c> represents the name of BiesseWorks type.</value>
-		public string BppName { get; } = "BG" ;
+		public string BppName { get; } = "BCL" ;
 
 		/// <value>Property <c>IntId</c> represents the unique identifier an object of BiesseWorks.</value>
 		public int IntId { get; set; }
@@ -166,7 +166,7 @@ namespace BppLib.Core
 		public string Agg { get; set; } = "" ;
 
 		/// <value>Property <c>Lay</c> represents the Dxf layer.</value>
-		public string Lay { get; set; } = "BG" ;
+		public string Lay { get; set; } = "BCL" ;
 
 		/// <value>Property <c>Prs</c> enables or disables the use of the presser.</value> 
 		public int Prs { get; set; } = BppLib.NO ;
@@ -188,9 +188,9 @@ namespace BppLib.Core
 
 		public int Dfw { get; set; } = 0 ;
 
-		/// <summary>This constructor initializes the new Bg
+		/// <summary>This constructor initializes the new Bcl
    	    ///  with Id which equal a hash code of the C# object.</summary>
-		public Bg()
+		public Bcl()
 		{
 			IntId = GetHashCode();
 		}
@@ -327,7 +327,7 @@ namespace BppLib.Core
 		{
 			StringBuilder sb = new StringBuilder();
 			sb.AppendLine("BEGIN MACRO");
-			sb.AppendLine("	NAME=BG");
+			sb.AppendLine("	NAME=BCL");
 			sb.AppendLine("	PARAM,NAME=SIDE,VALUE=" + Side.ToString());
 			sb.AppendLine("	PARAM,NAME=CRN,VALUE=\"" + Crn + "\"");
 			sb.AppendLine("	PARAM,NAME=X,VALUE=" + X.ToString());

@@ -3,29 +3,17 @@ using System.Text;
 
 namespace BppLib.Core
 {
-	/// <summary>Class <c>Bg</c> models the generic boring operation.</summary> 
-	public class Bg: IBppCode
+	/// <summary>Class <c>BGeo</c> models the bore from geometry operation .</summary> 
+	public class BGeo: IBppCode
 	{
-		/// <value>Property <c>BppName</c> represents the name of BiesseWorks type.</value>
-		public string BppName { get; } = "BG" ;
+        /// <value>Property <c>BppName</c> represents the name of BiesseWorks type.</value>
+		public string BppName { get; } = "B_GEO" ;
 
-		/// <value>Property <c>IntId</c> represents the unique identifier an object of BiesseWorks.</value>
+        /// <value>Property <c>IntId</c> represents the unique identifier an object of BiesseWorks.</value>
 		public int IntId { get; set; }
 
-		/// <value>Property <c>Side</c> represents the piece side.</value>
-		public int Side { get; set; } = 0 ;
-
-		/// <value>Property <c>Crn</c> represents the piece reference corner.</value>
-		public string Crn { get; set; } = "1" ;
-
-		/// <value>Property <c>X</c> represents the X-axis co-ordinate for the centre of the bore.</value>
-		public double X { get; set; } = 0 ;
-
-		/// <value>Property <c>Y</c> represents the Y-axis co-ordinate for the centre of the bore.</value>
-		public double Y { get; set; } = 0 ;
-
-		/// <value>Property <c>Z</c> represents the translation position of the plane to be worked compared with the main plane of the piece.</value>
-		public double Z { get; set; } = 0 ;
+        /// <value>Property <c>Gid</c> represents the identification code of the drawing to which the machining is to be associated.</value>
+		public string Gid { get; set; } = "" ;
 
 		/// <value>Property <c>Dp</c> represents the depth of the bore or the perforation offset value for through bores.</value>
 		public double Dp { get; set; } = 10 ;
@@ -36,34 +24,13 @@ namespace BppLib.Core
 		/// <value>Property <c>Thr</c> represents if needing to execute a through bore.</value>
 		public int Thr { get; set; } = BppLib.NO ;
 
-		/// <value>Property <c>Dia</c> represents the type of repeats.</value>
-		public int Rty { get; set; } = BppLib.RpNO ;
-
-		/// <value>Property <c>Dx</c> represents the distance between centres along the X-axis that defines the distance between bores.</value>
-		public double Dx { get; set; } = 32 ;
-
-		/// <value>Property <c>Dy</c> represents the distance between centres along the Y-axis that defines the distance between bores.</value>
-		public double Dy { get; set; } = 32 ;
-
-		/// <value>Property <c>R</c> represents the radius of the circumference around which the repeats are carried out.</value>
-		public double R { get; set; } = 50 ;
-
-		/// <value>Property <c>A</c> represents the angle from which to leave to carry out the repetitions.</value>
-		public double A { get; set; } = 0 ;
-
-		/// <value>Property <c>Da</c> represents the angular step that must be left between one repeat and the next one.</value>
-		public double Da { get; set; } = 45 ;
-
-		/// <value>Property <c>Nrp</c> represents the number of repeats required.</value>
-		public int Nrp { get; set; } = 0 ;
-
 		/// <value>Property <c>Nrp</c> represents the entered ISO instruction.</value> 
 		public string Iso { get; set; } = "" ;
 
 		/// <value>Property <c>Opt</c> represents the optimisation of the machining operation.</value>
 		public int Opt { get; set; } = BppLib.YES ;
 
-		/// <value>Property <c>Az</c> represents the angle of inclination of the spindle axis of rotation with respect to the plane X, Y.</value> 
+        /// <value>Property <c>Az</c> represents the angle of inclination of the spindle axis of rotation with respect to the plane X, Y.</value> 
 		public double Az { get; set; } = 0 ;
 
 		/// <value>Property <c>Ar</c> represents the angle of rotation of the spindle axis on plane X, Y.</value>
@@ -74,29 +41,16 @@ namespace BppLib.Core
 		/// <value>Property <c>Cka</c> represents the inclination/rotation type.</value>
 		public int Cka { get; set; } = BppLib.AzrNO ;
 
-		/// <value>Property <c>Xrc</c> represents the X position of the centre of rotation of the circumference
-		/// around which the repeats arecarried out.</value>
-		public double Xrc { get; set; } = 0 ;
-
-		/// <value>Property <c>Yrc</c> represents the Y position of the centre of rotation of the circumference
-		/// around which the repeats arecarried out.</value>
-		public double Yrc { get; set; } = 0 ;
-
-		/// <value>Property <c>Arp</c> represents the angle of the straight line along which the repeats are carried out.</value>
-		public double Arp { get; set; } = 0 ;
-
-		/// <value>Property <c>Lrp</c> represents the distance between bores.</value> 
-		public double Lrp { get; set; } = 0 ;
-
-		public int Er { get; set; } = BppLib.YES ;
-
-		public int Md { get; set; } = BppLib.NO ;
-
 		/// <value>Property <c>Cow</c> used to enable the machining operation also on the face opposite
 		/// the programmed one, using both operating sections.</value>
 		public int Cow { get; set; } = BppLib.NO ;
 
+		public string Sil { get; set; } = "" ;
+
 		public int A21 { get; set; } = 0 ;
+
+        /// <value>Property <c>Z</c> represents the translation position of the plane to be worked compared with the main plane of the piece.</value>
+		public double Z { get; set; } = 0 ;
 
 		/// <value>Property <c>Tos</c> enables or disables the translation position of the plane to be worked compared with the main plane of the piece.
 		/// When the <c>Tos = BppLib.YES</c> , during the calculation to establish the safety position, the
@@ -166,7 +120,7 @@ namespace BppLib.Core
 		public string Agg { get; set; } = "" ;
 
 		/// <value>Property <c>Lay</c> represents the Dxf layer.</value>
-		public string Lay { get; set; } = "BG" ;
+		public string Lay { get; set; } = "B_GEO" ;
 
 		/// <value>Property <c>Prs</c> enables or disables the use of the presser.</value> 
 		public int Prs { get; set; } = BppLib.NO ;
@@ -184,18 +138,14 @@ namespace BppLib.Core
 
 		public int Dqt { get; set; } = 0 ;
 
-		public int Erdw { get; set; } = BppLib.NO ;
-
-		public int Dfw { get; set; } = 0 ;
-
-		/// <summary>This constructor initializes the new Bg
+		/// <summary>This constructor initializes the new BGeo
    	    ///  with Id which equal a hash code of the C# object.</summary>
-		public Bg()
+		public BGeo()
 		{
 			IntId = GetHashCode();
 		}
 
-		/// <summary>This method serializes an object as Bpp code.</summary>
+        /// <summary>This method serializes an object as Bpp code.</summary>
 		/// <returns>A string  is coded as Bpp code.</returns>
 		public string AsBppCode()
 		{
@@ -203,15 +153,7 @@ namespace BppLib.Core
 			sb.Append("@ " + BppName + ", \"\", \"\", ");
 			sb.Append(IntId.ToString());
 			sb.Append(", \"\", 0 :");
-			sb.Append(" " + Side.ToString());
-			sb.Append(",");
-			sb.Append(" \"" + Crn +"\"");
-			sb.Append(",");
-			sb.Append(" " + X.ToString());
-			sb.Append(",");
-			sb.Append(" " + Y.ToString());
-			sb.Append(",");
-			sb.Append(" " + Z.ToString());
+			sb.Append(" \"" + Gid + "\"");
 			sb.Append(",");
 			sb.Append(" " + Dp.ToString());
 			sb.Append(",");
@@ -219,21 +161,7 @@ namespace BppLib.Core
 			sb.Append(",");
 			sb.Append(" " + Thr.ToString());
 			sb.Append(",");
-			sb.Append(" " + Rty.ToString());
-			sb.Append(",");
-			sb.Append(" " + Dx.ToString());
-			sb.Append(",");
-			sb.Append(" " + Dy.ToString());
-			sb.Append(",");
-			sb.Append(" " + R.ToString());
-			sb.Append(",");
-			sb.Append(" " + A.ToString());
-			sb.Append(",");
-			sb.Append(" " + Da.ToString());
-			sb.Append(",");
-			sb.Append(" " + Nrp.ToString());
-			sb.Append(",");
-			sb.Append(" \"" + Iso +"\"");
+			sb.Append(" \"" + Iso + "\"");
 			sb.Append(",");
 			sb.Append(" " + Opt.ToString());
 			sb.Append(",");
@@ -241,25 +169,15 @@ namespace BppLib.Core
 			sb.Append(",");
 			sb.Append(" " + Ar.ToString());
 			sb.Append(",");
-			sb.Append(" " + Ap.ToString());
-			sb.Append(",");
 			sb.Append(" " + Cka.ToString());
-			sb.Append(",");
-			sb.Append(" " + Xrc.ToString());
-			sb.Append(",");
-			sb.Append(" " + Yrc.ToString());
-			sb.Append(",");
-			sb.Append(" " + Arp.ToString());
-			sb.Append(",");
-			sb.Append(" " + Lrp.ToString());
-			sb.Append(",");
-			sb.Append(" " + Er.ToString());
-			sb.Append(",");
-			sb.Append(" " + Md.ToString());
 			sb.Append(",");
 			sb.Append(" " + Cow.ToString());
 			sb.Append(",");
+			sb.Append(" \"" + Sil + "\"");
+			sb.Append(",");
 			sb.Append(" " + A21.ToString());
+			sb.Append(",");
+			sb.Append(" " + Z.ToString());
 			sb.Append(",");
 			sb.Append(" " + Tos.ToString());
 			sb.Append(",");
@@ -267,13 +185,13 @@ namespace BppLib.Core
 			sb.Append(",");
 			sb.Append(" " + S21.ToString());
 			sb.Append(",");
-			sb.Append(" \"" + Id +"\"");
+			sb.Append(" \"" + Id + "\"");
 			sb.Append(",");
 			sb.Append(" " + Azs.ToString());
 			sb.Append(",");
-			sb.Append(" \"" + Mac +"\"");
+			sb.Append(" \"" + Mac + "\"");
 			sb.Append(",");
-			sb.Append(" \"" + Tnm +"\"");
+			sb.Append(" \"" + Tnm + "\"");
 			sb.Append(",");
 			sb.Append(" " + Ttp.ToString());
 			sb.Append(",");
@@ -285,7 +203,7 @@ namespace BppLib.Core
 			sb.Append(",");
 			sb.Append(" " + Wsp.ToString());
 			sb.Append(",");
-			sb.Append(" \"" + Spi +"\"");
+			sb.Append(" \"" + Spi + "\"");
 			sb.Append(",");
 			sb.Append(" " + Dds.ToString());
 			sb.Append(",");
@@ -297,11 +215,11 @@ namespace BppLib.Core
 			sb.Append(",");
 			sb.Append(" " + Ea21.ToString());
 			sb.Append(",");
-			sb.Append(" \"" + Cen +"\"");
+			sb.Append(" \"" + Cen + "\"");
 			sb.Append(",");
-			sb.Append(" \"" + Agg +"\"");
+			sb.Append(" \"" + Agg + "\"");
 			sb.Append(",");
-			sb.Append(" \"" + Lay +"\"");
+			sb.Append(" \"" + Lay + "\"");
 			sb.Append(",");
 			sb.Append(" " + Prs.ToString());
 			sb.Append(",");
@@ -314,49 +232,29 @@ namespace BppLib.Core
 			sb.Append(" " + Rmd.ToString());
 			sb.Append(",");
 			sb.Append(" " + Dqt.ToString());
-			sb.Append(",");
-			sb.Append(" " + Erdw.ToString());
-			sb.Append(",");
-			sb.Append(" " + Dfw.ToString());
 			return sb.ToString();
 		}
 
-		/// <summary>This method serializes an object as Cix code.</summary>
+        /// <summary>This method serializes an object as Cix code.</summary>
 		/// <returns>A string  is coded as Cix code.</returns>
 		public string AsCixCode()
 		{
 			StringBuilder sb = new StringBuilder();
 			sb.AppendLine("BEGIN MACRO");
-			sb.AppendLine("	NAME=BG");
-			sb.AppendLine("	PARAM,NAME=SIDE,VALUE=" + Side.ToString());
-			sb.AppendLine("	PARAM,NAME=CRN,VALUE=\"" + Crn + "\"");
-			sb.AppendLine("	PARAM,NAME=X,VALUE=" + X.ToString());
-			sb.AppendLine("	PARAM,NAME=Y,VALUE=" + Y.ToString());
-			sb.AppendLine("	PARAM,NAME=Z,VALUE=" + Z.ToString());
+			sb.AppendLine("	NAME=B_GEO");
+			sb.AppendLine("	PARAM,NAME=GID,VALUE=\"" + Gid + "\"");
 			sb.AppendLine("	PARAM,NAME=DP,VALUE=" + Dp.ToString());
 			sb.AppendLine("	PARAM,NAME=DIA,VALUE=" + Dia.ToString());
 			sb.AppendLine("	PARAM,NAME=THR,VALUE=" + ConvertOnOff(Thr));
-			sb.AppendLine("	PARAM,NAME=RTY,VALUE=" + ConvertRty(Rty));
-			sb.AppendLine("	PARAM,NAME=DX,VALUE=" + Dx.ToString());
-			sb.AppendLine("	PARAM,NAME=DY,VALUE=" + Dy.ToString());
-			sb.AppendLine("	PARAM,NAME=R,VALUE=" + R.ToString());
-			sb.AppendLine("	PARAM,NAME=A,VALUE=" + A.ToString());
-			sb.AppendLine("	PARAM,NAME=DA,VALUE=" + Da.ToString());
-			sb.AppendLine("	PARAM,NAME=NRP,VALUE=" + Nrp.ToString());
 			sb.AppendLine("	PARAM,NAME=ISO,VALUE=\"" + Iso + "\"");
 			sb.AppendLine("	PARAM,NAME=OPT,VALUE=" + ConvertOnOff(Opt));
 			sb.AppendLine("	PARAM,NAME=AZ,VALUE=" + Az.ToString());
 			sb.AppendLine("	PARAM,NAME=AR,VALUE=" + Ar.ToString());
-			sb.AppendLine("	PARAM,NAME=AP,VALUE=" + ConvertOnOff(Ap));
 			sb.AppendLine("	PARAM,NAME=CKA,VALUE=" + ConvertCka(Cka));
-			sb.AppendLine("	PARAM,NAME=XRC,VALUE=" + Xrc.ToString());
-			sb.AppendLine("	PARAM,NAME=YRC,VALUE=" + Yrc.ToString());
-			sb.AppendLine("	PARAM,NAME=ARP,VALUE=" + Arp.ToString());
-			sb.AppendLine("	PARAM,NAME=LRP,VALUE=" + Lrp.ToString());
-			sb.AppendLine("	PARAM,NAME=ER,VALUE=" + ConvertOnOff(Er));
-			sb.AppendLine("	PARAM,NAME=MD,VALUE=" + ConvertOnOff(Md));
 			sb.AppendLine("	PARAM,NAME=COW,VALUE=" + ConvertOnOff(Cow));
+			sb.AppendLine("	PARAM,NAME=SIL,VALUE=\"" + Sil +"\"");
 			sb.AppendLine("	PARAM,NAME=A21,VALUE=" + A21.ToString());
+			sb.AppendLine("	PARAM,NAME=Z,VALUE=" + Z.ToString());
 			sb.AppendLine("	PARAM,NAME=TOS,VALUE=" + ConvertOnOff(Tos));
 			sb.AppendLine("	PARAM,NAME=VTR,VALUE=" + Vtr.ToString());
 			sb.AppendLine("	PARAM,NAME=S21,VALUE=" + S21.ToString());
@@ -384,13 +282,11 @@ namespace BppLib.Core
 			sb.AppendLine("	PARAM,NAME=DTAS,VALUE=" + ConvertOnOff(Dtas));
 			sb.AppendLine("	PARAM,NAME=RMD,VALUE=" + ConvertRmd(Rmd));
 			sb.AppendLine("	PARAM,NAME=DQT,VALUE=" + Dqt.ToString());
-			sb.AppendLine("	PARAM,NAME=ERDW,VALUE=" + ConvertOnOff(Erdw));
-			sb.AppendLine("	PARAM,NAME=DFW,VALUE=" + Dfw.ToString());
 			sb.Append("END MACRO");
 			return sb.ToString();
 		}
 
-		string ConvertOnOff(int value)
+        string ConvertOnOff(int value)
 		{
 			if (value == 1)
 				{return "YES";}

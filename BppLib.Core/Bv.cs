@@ -3,7 +3,7 @@ using System.Text;
 
 namespace BppLib.Core
 {
-    /// <summary>Class <c>Bh</c> models the boring operation using the vertical spindle.</summary> 
+    /// <summary>Class <c>Bv</c> models the boring operation using the vertical spindle.</summary> 
 	public class Bv: IBppCode
 	{
         /// <value>Property <c>BppName</c> represents the name of BiesseWorks type.</value>
@@ -24,7 +24,7 @@ namespace BppLib.Core
 		/// <value>Property <c>Y</c> represents the Y-axis co-ordinate for the centre of the bore.</value>
 		public double Y { get; set; } = 0 ;
 
-		/// <value>Property <c>Z</c> represents the Z-axis co-ordinate for the centre of the bore.</value>
+		/// <value>Property <c>Z</c> represents the translation position of the plane to be worked compared with the main plane of the piece.</value>
 		public double Z { get; set; } = 0 ;
 
 		/// <value>Property <c>Dp</c> represents the depth of the bore or the perforation offset value for through bores.</value>
@@ -98,7 +98,7 @@ namespace BppLib.Core
 
 		public int A21 { get; set; } = 0 ;
 
-		/// <value>Property <c>Tos</c> represents the translation position of the plane to be worked compared with the main plane of the piece.
+		/// <value>Property <c>Tos</c> enables or disables the translation position of the plane to be worked compared with the main plane of the piece.
 		/// When the <c>Tos = BppLib.YES</c> , during the calculation to establish the safety position, the
 		/// value set in field Z is ignored, i.e., it is created starting from the surface of the piece. When the <c>Tos</c>
 		/// is left disabled, the position defined in field Z is considered as a start point to position the tool at the safety position.</value>
@@ -384,7 +384,7 @@ namespace BppLib.Core
 			sb.AppendLine("	PARAM,NAME=DTAS,VALUE=" + ConvertOnOff(Dtas));
 			sb.AppendLine("	PARAM,NAME=RMD,VALUE=" + ConvertRmd(Rmd));
 			sb.AppendLine("	PARAM,NAME=DQT,VALUE=" + Dqt.ToString());
-			sb.AppendLine("	PARAM,NAME=ERDW,VALUE=" + ConvertOnOff(Erdw));;
+			sb.AppendLine("	PARAM,NAME=ERDW,VALUE=" + ConvertOnOff(Erdw));
 			sb.AppendLine("	PARAM,NAME=DFW,VALUE=" + Dfw.ToString());
 			sb.Append("END MACRO");
 			return sb.ToString();
