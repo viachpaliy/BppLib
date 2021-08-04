@@ -4,14 +4,14 @@ using BppLib.Core;
 namespace BppLib.Core.Tests
 {
     [TestFixture]
-    public class BgTests
+    public class BhTests
     {
        
 
         [Test]
         public void ChangeIdTest()
         {
-            var obj = new Bg();
+            var obj = new Bh();
             int i = 123456789 ;
             obj.IntId = i ; 
             Assert.AreEqual(i, obj.IntId);
@@ -21,29 +21,29 @@ namespace BppLib.Core.Tests
         public void CreateInstanceTest()
         {
             double r = 100;
-            var obj = new Bg{R = r};
+            var obj = new Bh{R = r};
             Assert.AreEqual(r, obj.R);
         }
 
         [Test]
         public void AsBppCodeMethodTest()
         {
-           var obj = new Bg();
-            int i = 158590948 ;
+           var obj = new Bh();
+            int i = 158592612 ;
             obj.IntId = i ;
-            string expected = "@ BG, \"\", \"\", 158590948, \"\", 0 : 0, \"1\", 0, 0, 0, 10, 5, 0, -1, 32, 32, 50, 0, 45, 0, \"\", 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, -1, \"P1001\", 0, \"\", \"\", 0, 0, 0, 0, 0, \"\", 3, 1500, 0, 0, 0, \"\", \"\", \"BG\", 0, 0, 0, 0, -1, 0, 0, 0" ;
+            string expected = "@ BH, \"\", \"\", 158592612, \"\", 0 : 1, \"1\", 0, 0, 0, 10, 5, 0, -1, 32, 32, 50, 0, 45, 0, \"\", 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, -1, \"P1001\", 0, \"\", \"\", 0, 0, 0, 0, 0, \"\", 3, 1500, 0, 0, 0, \"\", \"\", \"BH\", 0, 0, 0, 0, -1, 0, 0, 0" ;
             Assert.AreEqual(expected, obj.AsBppCode());
         }
 
         [Test]
         public void AsCixCodeMethodTest()
         {
-           var obj = new Bg();
-            int i = 156768084 ;
+           var obj = new Bh();
+            int i = 158592612 ;
             obj.IntId = i ;
             string expected =@"BEGIN MACRO
-	NAME=BG
-	PARAM,NAME=SIDE,VALUE=0
+	NAME=BH
+	PARAM,NAME=SIDE,VALUE=1
 	PARAM,NAME=CRN,VALUE=""1""
 	PARAM,NAME=X,VALUE=0
 	PARAM,NAME=Y,VALUE=0
@@ -92,7 +92,7 @@ namespace BppLib.Core.Tests
 	PARAM,NAME=EA21,VALUE=NO
 	PARAM,NAME=CEN,VALUE=""""
 	PARAM,NAME=AGG,VALUE=""""
-	PARAM,NAME=LAY,VALUE=""BG""
+	PARAM,NAME=LAY,VALUE=""BH""
 	PARAM,NAME=PRS,VALUE=NO
 	PARAM,NAME=ETB,VALUE=NO
 	PARAM,NAME=KDT,VALUE=NO

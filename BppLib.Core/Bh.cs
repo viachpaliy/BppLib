@@ -3,17 +3,17 @@ using System.Text;
 
 namespace BppLib.Core
 {
-	/// <summary>Class <c>Bg</c> models the generic boring operation.</summary> 
-	public class Bg: IBppCode
+    /// <summary>Class <c>Bh</c> models the boring operation using the horizontal spindle.</summary> 
+	public class Bh: IBppCode
 	{
-		/// <value>Property <c>BppName</c> represents the name of BiesseWorks type.</value>
-		public string BppName { get; } = "BG" ;
-
-		/// <value>Property <c>IntId</c> represents the unique identifier an object of BiesseWorks.</value>
+        /// <value>Property <c>BppName</c> represents the name of BiesseWorks type.</value>
+		public string BppName { get; } = "BH" ;
+        
+        /// <value>Property <c>IntId</c> represents the unique identifier an object of BiesseWorks.</value>
 		public int IntId { get; set; }
 
 		/// <value>Property <c>Side</c> represents the piece side.</value>
-		public int Side { get; set; } = 0 ;
+		public int Side { get; set; } = 1 ;
 
 		/// <value>Property <c>Crn</c> represents the piece reference corner.</value>
 		public string Crn { get; set; } = "1" ;
@@ -63,7 +63,7 @@ namespace BppLib.Core
 		/// <value>Property <c>Opt</c> represents the optimisation of the machining operation.</value>
 		public int Opt { get; set; } = BppLib.YES ;
 
-		/// <value>Property <c>Az</c> represents the angle of inclination of the spindle axis of rotation with respect to the plane X, Y.</value> 
+        /// <value>Property <c>Az</c> represents the angle of inclination of the spindle axis of rotation with respect to the plane X, Y.</value> 
 		public double Az { get; set; } = 0 ;
 
 		/// <value>Property <c>Ar</c> represents the angle of rotation of the spindle axis on plane X, Y.</value>
@@ -166,7 +166,7 @@ namespace BppLib.Core
 		public string Agg { get; set; } = "" ;
 
 		/// <value>Property <c>Lay</c> represents the Dxf layer.</value>
-		public string Lay { get; set; } = "BG" ;
+		public string Lay { get; set; } = "BH" ;
 
 		/// <value>Property <c>Prs</c> enables or disables the use of the presser.</value> 
 		public int Prs { get; set; } = BppLib.NO ;
@@ -188,14 +188,14 @@ namespace BppLib.Core
 
 		public int Dfw { get; set; } = 0 ;
 
-		/// <summary>This constructor initializes the new Bg
+		/// <summary>This constructor initializes the new Bh
    	    ///  with Id which equal a hash code of the C# object.</summary>
-		public Bg()
+		public Bh()
 		{
 			IntId = GetHashCode();
 		}
 
-		/// <summary>This method serializes an object as Bpp code.</summary>
+        /// <summary>This method serializes an object as Bpp code.</summary>
 		/// <returns>A string  is coded as Bpp code.</returns>
 		public string AsBppCode()
 		{
@@ -205,7 +205,7 @@ namespace BppLib.Core
 			sb.Append(", \"\", 0 :");
 			sb.Append(" " + Side.ToString());
 			sb.Append(",");
-			sb.Append(" \"" + Crn +"\"");
+			sb.Append(" \"" + Crn + "\"");
 			sb.Append(",");
 			sb.Append(" " + X.ToString());
 			sb.Append(",");
@@ -233,7 +233,7 @@ namespace BppLib.Core
 			sb.Append(",");
 			sb.Append(" " + Nrp.ToString());
 			sb.Append(",");
-			sb.Append(" \"" + Iso +"\"");
+			sb.Append(" \"" + Iso + "\"");
 			sb.Append(",");
 			sb.Append(" " + Opt.ToString());
 			sb.Append(",");
@@ -267,13 +267,13 @@ namespace BppLib.Core
 			sb.Append(",");
 			sb.Append(" " + S21.ToString());
 			sb.Append(",");
-			sb.Append(" \"" + Id +"\"");
+			sb.Append(" \"" + Id + "\"");
 			sb.Append(",");
 			sb.Append(" " + Azs.ToString());
 			sb.Append(",");
-			sb.Append(" \"" + Mac +"\"");
+			sb.Append(" \"" + Mac + "\"");
 			sb.Append(",");
-			sb.Append(" \"" + Tnm +"\"");
+			sb.Append(" \"" + Tnm + "\"");
 			sb.Append(",");
 			sb.Append(" " + Ttp.ToString());
 			sb.Append(",");
@@ -285,7 +285,7 @@ namespace BppLib.Core
 			sb.Append(",");
 			sb.Append(" " + Wsp.ToString());
 			sb.Append(",");
-			sb.Append(" \"" + Spi +"\"");
+			sb.Append(" \"" + Spi + "\"");
 			sb.Append(",");
 			sb.Append(" " + Dds.ToString());
 			sb.Append(",");
@@ -297,11 +297,11 @@ namespace BppLib.Core
 			sb.Append(",");
 			sb.Append(" " + Ea21.ToString());
 			sb.Append(",");
-			sb.Append(" \"" + Cen +"\"");
+			sb.Append(" \"" + Cen + "\"");
 			sb.Append(",");
-			sb.Append(" \"" + Agg +"\"");
+			sb.Append(" \"" + Agg + "\"");
 			sb.Append(",");
-			sb.Append(" \"" + Lay +"\"");
+			sb.Append(" \"" + Lay + "\"");
 			sb.Append(",");
 			sb.Append(" " + Prs.ToString());
 			sb.Append(",");
@@ -321,13 +321,13 @@ namespace BppLib.Core
 			return sb.ToString();
 		}
 
-		/// <summary>This method serializes an object as Cix code.</summary>
+        /// <summary>This method serializes an object as Cix code.</summary>
 		/// <returns>A string  is coded as Cix code.</returns>
 		public string AsCixCode()
 		{
 			StringBuilder sb = new StringBuilder();
 			sb.AppendLine("BEGIN MACRO");
-			sb.AppendLine("	NAME=BG");
+			sb.AppendLine("	NAME=BH");
 			sb.AppendLine("	PARAM,NAME=SIDE,VALUE=" + Side.ToString());
 			sb.AppendLine("	PARAM,NAME=CRN,VALUE=\"" + Crn + "\"");
 			sb.AppendLine("	PARAM,NAME=X,VALUE=" + X.ToString());
@@ -384,13 +384,13 @@ namespace BppLib.Core
 			sb.AppendLine("	PARAM,NAME=DTAS,VALUE=" + ConvertOnOff(Dtas));
 			sb.AppendLine("	PARAM,NAME=RMD,VALUE=" + ConvertRmd(Rmd));
 			sb.AppendLine("	PARAM,NAME=DQT,VALUE=" + Dqt.ToString());
-			sb.AppendLine("	PARAM,NAME=ERDW,VALUE=" + ConvertOnOff(Erdw));
+			sb.AppendLine("	PARAM,NAME=ERDW,VALUE=" + ConvertOnOff(Erdw));;
 			sb.AppendLine("	PARAM,NAME=DFW,VALUE=" + Dfw.ToString());
 			sb.Append("END MACRO");
 			return sb.ToString();
 		}
 
-		string ConvertOnOff(int value)
+        string ConvertOnOff(int value)
 		{
 			if (value == 1)
 				{return "YES";}
