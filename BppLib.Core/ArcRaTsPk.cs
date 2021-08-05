@@ -22,7 +22,7 @@ namespace BppLib.Core
         /// <value>Property <c>Dir</c> represents direction of the geometry;
         /// set dirCCW to indicate an anticlockwise direction, or set
         /// dirCW to indicate a clockwise direction.</value>
-		public int Dir { get; set; } = BppLib.DirCW ;
+		public CircleDirection Dir { get; set; } = CircleDirection.dirCW ;
 
 		/// <value>Property <c>Zs</c> represents value of the increase in machining depth in the initial part of the element.</value>
 		public double Zs { get; set; } = 0 ;
@@ -32,7 +32,7 @@ namespace BppLib.Core
 
         /// <value>Property <c>Sc</c> set sharp corner. Select one of the possible options to indicate that the point of
         /// intersection between the arc and the next element must be machined leaving a sharp corner.</value>
-		public int Sc { get; set; } = BppLib.ScOFF ;
+		 public SharpCorner Sc { get; set; } = SharpCorner.scOFF ;
 
         /// <value>Property <c>Fd</c> represents tool speed of advance value.</value>
 		public int Fd { get; set; } = 0 ;
@@ -61,13 +61,13 @@ namespace BppLib.Core
 			sb.Append(", \"\", 0 :");
 			sb.Append(" " + R.ToString());
 			sb.Append(",");
-			sb.Append(" " + Dir.ToString());
+			sb.Append(" " + ((int)Dir).ToString());
 			sb.Append(",");
 			sb.Append(" " + Zs.ToString());
 			sb.Append(",");
 			sb.Append(" " + Ze.ToString());
 			sb.Append(",");
-			sb.Append(" " + Sc.ToString());
+			sb.Append(" " + ((int)Sc).ToString());
 			sb.Append(",");
 			sb.Append(" " + Fd.ToString());
 			sb.Append(",");
@@ -86,27 +86,11 @@ namespace BppLib.Core
 			sb.AppendLine("	NAME=ARC_RATSPK");
 			sb.AppendLine("	PARAM,NAME=ID,VALUE=" + Id.ToString());
 			sb.AppendLine("	PARAM,NAME=R,VALUE=" + R.ToString());
-			sb.Append("	PARAM,NAME=DIR,VALUE=");
-            if (Dir == 1)
-                {sb.AppendLine("dirCW");}
-            else 
-                {sb.AppendLine("dirCCW");}
-			sb.AppendLine("	PARAM,NAME=ZS,VALUE=" + Zs.ToString());
+			sb.AppendLine("	PARAM,NAME=DIR,VALUE=" + Dir.ToString());
+            sb.AppendLine("	PARAM,NAME=ZS,VALUE=" + Zs.ToString());
 			sb.AppendLine("	PARAM,NAME=ZE,VALUE=" + Ze.ToString());
-			sb.Append("	PARAM,NAME=SC,VALUE=");
-            switch (Sc)
-            {
-                case 1 :
-                    sb.AppendLine("sc1");
-                    break;
-                case 2 :
-                    sb.AppendLine("sc2");
-                    break;
-                default :
-                    sb.AppendLine("scOFF");
-                    break;
-            }
-			sb.AppendLine("	PARAM,NAME=FD,VALUE=" + Fd.ToString());
+			sb.AppendLine("	PARAM,NAME=SC,VALUE=" + Sc.ToString());
+            sb.AppendLine("	PARAM,NAME=FD,VALUE=" + Fd.ToString());
 			sb.AppendLine("	PARAM,NAME=SP,VALUE=" + Sp.ToString());
 			sb.AppendLine("	PARAM,NAME=SOL,VALUE=" + Sol.ToString());
 			sb.Append("END MACRO");
