@@ -36,7 +36,7 @@ namespace BppLib.Core
 		/// <value>Property <c>Thr</c> represents if needing to execute a through bore.</value>
 		public bool Thr { get; set; } = false ;
 
-		/// <value>Property <c>Dia</c> represents the type of repeats.</value>
+		/// <value>Property <c>Rty</c> represents the type of repeats.</value>
 		public Repetition Rty { get; set; } = Repetition.rpNO ;
 
 		/// <value>Property <c>Dx</c> represents the distance between centres along the X-axis that defines the distance between bores.</value>
