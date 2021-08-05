@@ -34,10 +34,10 @@ namespace BppLib.Core
 		public double Dia { get; set; } = 5 ;
 
 		/// <value>Property <c>Thr</c> represents if needing to execute a through bore.</value>
-		public int Thr { get; set; } = BppLib.NO ;
+		public bool Thr { get; set; } = false ;
 
 		/// <value>Property <c>Dia</c> represents the type of repeats.</value>
-		public int Rty { get; set; } = BppLib.RpNO ;
+		public Repetition Rty { get; set; } = Repetition.rpNO ;
 
 		/// <value>Property <c>Dx</c> represents the distance between centres along the X-axis that defines the distance between bores.</value>
 		public double Dx { get; set; } = 32 ;
@@ -61,7 +61,7 @@ namespace BppLib.Core
 		public string Iso { get; set; } = "" ;
 
 		/// <value>Property <c>Opt</c> represents the optimisation of the machining operation.</value>
-		public int Opt { get; set; } = BppLib.YES ;
+		public bool Opt { get; set; } = true ;
 
         /// <value>Property <c>Az</c> represents the angle of inclination of the spindle axis of rotation with respect to the plane X, Y.</value> 
 		public double Az { get; set; } = 0 ;
@@ -69,10 +69,10 @@ namespace BppLib.Core
 		/// <value>Property <c>Ar</c> represents the angle of rotation of the spindle axis on plane X, Y.</value>
 		public double Ar { get; set; } = 0 ;
 
-		public int Ap { get; set; } = BppLib.NO ;
+		public bool Ap { get; set; } = false ;
 
 		/// <value>Property <c>Cka</c> represents the inclination/rotation type.</value>
-		public int Cka { get; set; } = BppLib.AzrNO ;
+		public InclinationRotationType Cka { get; set; } = InclinationRotationType.azrNO ;
 
 		/// <value>Property <c>Xrc</c> represents the X position of the centre of rotation of the circumference
 		/// around which the repeats arecarried out.</value>
@@ -88,13 +88,13 @@ namespace BppLib.Core
 		/// <value>Property <c>Lrp</c> represents the distance between bores.</value> 
 		public double Lrp { get; set; } = 0 ;
 
-		public int Er { get; set; } = BppLib.YES ;
+		public bool Er { get; set; } = true ;
 
-		public int Md { get; set; } = BppLib.NO ;
+		public bool Md { get; set; } = false ;
 
 		/// <value>Property <c>Cow</c> used to enable the machining operation also on the face opposite
 		/// the programmed one, using both operating sections.</value>
-		public int Cow { get; set; } = BppLib.NO ;
+		public bool Cow { get; set; } = false ;
 
 		public int A21 { get; set; } = 0 ;
 
@@ -102,7 +102,7 @@ namespace BppLib.Core
 		/// When the <c>Tos = BppLib.YES</c> , during the calculation to establish the safety position, the
 		/// value set in field Z is ignored, i.e., it is created starting from the surface of the piece. When the <c>Tos</c>
 		/// is left disabled, the position defined in field Z is considered as a start point to position the tool at the safety position.</value>
-		public int Tos { get; set; } = BppLib.NO ;
+		public bool Tos { get; set; } = false ;
 
 		/// <value>Property <c>Vtr</c> represents the number of passages that influence the depth of the programmed machining.</value>
 		public int Vtr { get; set; } = 0 ;
@@ -151,12 +151,12 @@ namespace BppLib.Core
 
 		/// <value>Property <c>Bfc</c> enables or disables the use of the blower to remove from the piece
 		/// the chips eliminated during machining operations.</value>
-		public int Bfc { get; set; } = BppLib.NO ;
+		public bool Bfc { get; set; } = false ;
 
 		/// <value>Property <c>Shp</c> represents the hood position during machining operation.</value>
 		public int Shp { get; set; } = 0 ;
 
-		public int Ea21 { get; set; } = BppLib.NO ;
+		public bool Ea21 { get; set; } = false ;
 
 		/// <value>Property <c>Cen</c> represents the identification code for the machine work centre
 		/// to be used for the machining operation.</value> 
@@ -169,22 +169,22 @@ namespace BppLib.Core
 		public string Lay { get; set; } = "BH" ;
 
 		/// <value>Property <c>Prs</c> enables or disables the use of the presser.</value> 
-		public int Prs { get; set; } = BppLib.NO ;
+		public bool Prs { get; set; } = false ;
 
 		/// <value>Property <c>Etb</c> enables or disables the tool inner blowing.</value>
-		public int Etb { get; set; } = BppLib.NO ;
+		public bool Etb { get; set; } = false ;
 
 		/// <value>Property <c>Kdt</c> enables or disables the deflector.</value>
-		public int Kdt { get; set; } = BppLib.NO ;
+		public bool Kdt { get; set; } = false ;
 
 		/// <value>Property <c>Kdt</c> enables or disables the execute probing.</value>
-		public int Dtas { get; set; } = BppLib.NO ;
+		public bool Dtas { get; set; } = false ;
 
-		public int Rmd { get; set; } = BppLib.RmdAuto ;
+		public RmdType Rmd { get; set; } = RmdType.rmdAuto ;
 
 		public int Dqt { get; set; } = 0 ;
 
-		public int Erdw { get; set; } = BppLib.NO ;
+		public bool Erdw { get; set; } = false ;
 
 		public int Dfw { get; set; } = 0 ;
 
@@ -217,9 +217,9 @@ namespace BppLib.Core
 			sb.Append(",");
 			sb.Append(" " + Dia.ToString());
 			sb.Append(",");
-			sb.Append(" " + Thr.ToString());
+			sb.Append(" " + ConvertBoolOnOff(Thr));
 			sb.Append(",");
-			sb.Append(" " + Rty.ToString());
+			sb.Append(" " + ((int)Rty).ToString());
 			sb.Append(",");
 			sb.Append(" " + Dx.ToString());
 			sb.Append(",");
@@ -235,15 +235,15 @@ namespace BppLib.Core
 			sb.Append(",");
 			sb.Append(" \"" + Iso + "\"");
 			sb.Append(",");
-			sb.Append(" " + Opt.ToString());
+			sb.Append(" " + ConvertBoolOnOff(Opt));
 			sb.Append(",");
 			sb.Append(" " + Az.ToString());
 			sb.Append(",");
 			sb.Append(" " + Ar.ToString());
 			sb.Append(",");
-			sb.Append(" " + Ap.ToString());
+			sb.Append(" " + ConvertBoolOnOff(Ap));
 			sb.Append(",");
-			sb.Append(" " + Cka.ToString());
+			sb.Append(" " + ((int)Cka).ToString());
 			sb.Append(",");
 			sb.Append(" " + Xrc.ToString());
 			sb.Append(",");
@@ -253,15 +253,15 @@ namespace BppLib.Core
 			sb.Append(",");
 			sb.Append(" " + Lrp.ToString());
 			sb.Append(",");
-			sb.Append(" " + Er.ToString());
+			sb.Append(" " + ConvertBoolOnOff(Er));
 			sb.Append(",");
-			sb.Append(" " + Md.ToString());
+			sb.Append(" " + ConvertBoolOnOff(Md));
 			sb.Append(",");
-			sb.Append(" " + Cow.ToString());
+			sb.Append(" " + ConvertBoolOnOff(Cow));
 			sb.Append(",");
 			sb.Append(" " + A21.ToString());
 			sb.Append(",");
-			sb.Append(" " + Tos.ToString());
+			sb.Append(" " + ConvertBoolOnOff(Tos));
 			sb.Append(",");
 			sb.Append(" " + Vtr.ToString());
 			sb.Append(",");
@@ -291,11 +291,11 @@ namespace BppLib.Core
 			sb.Append(",");
 			sb.Append(" " + Dsp.ToString());
 			sb.Append(",");
-			sb.Append(" " + Bfc.ToString());
+			sb.Append(" " + ConvertBoolOnOff(Bfc));
 			sb.Append(",");
 			sb.Append(" " + Shp.ToString());
 			sb.Append(",");
-			sb.Append(" " + Ea21.ToString());
+			sb.Append(" " + ConvertBoolOnOff(Ea21));
 			sb.Append(",");
 			sb.Append(" \"" + Cen + "\"");
 			sb.Append(",");
@@ -303,19 +303,19 @@ namespace BppLib.Core
 			sb.Append(",");
 			sb.Append(" \"" + Lay + "\"");
 			sb.Append(",");
-			sb.Append(" " + Prs.ToString());
+			sb.Append(" " + ConvertBoolOnOff(Prs));
 			sb.Append(",");
-			sb.Append(" " + Etb.ToString());
+			sb.Append(" " + ConvertBoolOnOff(Etb));
 			sb.Append(",");
-			sb.Append(" " + Kdt.ToString());
+			sb.Append(" " + ConvertBoolOnOff(Kdt));
 			sb.Append(",");
-			sb.Append(" " + Dtas.ToString());
+			sb.Append(" " + ConvertBoolOnOff(Dtas));
 			sb.Append(",");
-			sb.Append(" " + Rmd.ToString());
+			sb.Append(" " + ((int)Rmd).ToString());
 			sb.Append(",");
 			sb.Append(" " + Dqt.ToString());
 			sb.Append(",");
-			sb.Append(" " + Erdw.ToString());
+			sb.Append(" " + ConvertBoolOnOff(Erdw));
 			sb.Append(",");
 			sb.Append(" " + Dfw.ToString());
 			return sb.ToString();
@@ -336,7 +336,7 @@ namespace BppLib.Core
 			sb.AppendLine("	PARAM,NAME=DP,VALUE=" + Dp.ToString());
 			sb.AppendLine("	PARAM,NAME=DIA,VALUE=" + Dia.ToString());
 			sb.AppendLine("	PARAM,NAME=THR,VALUE=" + ConvertOnOff(Thr));
-			sb.AppendLine("	PARAM,NAME=RTY,VALUE=" + ConvertRty(Rty));
+			sb.AppendLine("	PARAM,NAME=RTY,VALUE=" + Rty.ToString());
 			sb.AppendLine("	PARAM,NAME=DX,VALUE=" + Dx.ToString());
 			sb.AppendLine("	PARAM,NAME=DY,VALUE=" + Dy.ToString());
 			sb.AppendLine("	PARAM,NAME=R,VALUE=" + R.ToString());
@@ -348,7 +348,7 @@ namespace BppLib.Core
 			sb.AppendLine("	PARAM,NAME=AZ,VALUE=" + Az.ToString());
 			sb.AppendLine("	PARAM,NAME=AR,VALUE=" + Ar.ToString());
 			sb.AppendLine("	PARAM,NAME=AP,VALUE=" + ConvertOnOff(Ap));
-			sb.AppendLine("	PARAM,NAME=CKA,VALUE=" + ConvertCka(Cka));
+			sb.AppendLine("	PARAM,NAME=CKA,VALUE=" + Cka.ToString());
 			sb.AppendLine("	PARAM,NAME=XRC,VALUE=" + Xrc.ToString());
 			sb.AppendLine("	PARAM,NAME=YRC,VALUE=" + Yrc.ToString());
 			sb.AppendLine("	PARAM,NAME=ARP,VALUE=" + Arp.ToString());
@@ -382,7 +382,7 @@ namespace BppLib.Core
 			sb.AppendLine("	PARAM,NAME=ETB,VALUE=" + ConvertOnOff(Etb));
 			sb.AppendLine("	PARAM,NAME=KDT,VALUE=" + ConvertOnOff(Kdt));
 			sb.AppendLine("	PARAM,NAME=DTAS,VALUE=" + ConvertOnOff(Dtas));
-			sb.AppendLine("	PARAM,NAME=RMD,VALUE=" + ConvertRmd(Rmd));
+			sb.AppendLine("	PARAM,NAME=RMD,VALUE=" + Rmd.ToString());
 			sb.AppendLine("	PARAM,NAME=DQT,VALUE=" + Dqt.ToString());
 			sb.AppendLine("	PARAM,NAME=ERDW,VALUE=" + ConvertOnOff(Erdw));;
 			sb.AppendLine("	PARAM,NAME=DFW,VALUE=" + Dfw.ToString());
@@ -390,81 +390,20 @@ namespace BppLib.Core
 			return sb.ToString();
 		}
 
-        string ConvertOnOff(int value)
+        string ConvertBoolOnOff(bool value)
 		{
-			if (value == 1)
+			if (value)
+				{return "1";}
+			return "0";
+		}
+
+		string ConvertOnOff(bool value)
+		{
+			if (value)
 				{return "YES";}
 			return "NO";
 		}
 
-		string ConvertRty(int value)
-		{
-			switch (value)	
-			{
-				case -1 :
-					return "rpNO";
-			
-				case 0 :
-					return "rpX";
-					
-				case 1 :
-					return "rpY";
-					
-				case 2 :
-					return "rpXY";
-					
-				case 3 :
-					return "rpCIR";
-					
-				case 5 :
-					return "rpAL";
-					
-				default :
-					return "rpNO";
-					
-			}
-		}
-
-		string ConvertCka(int value)
-		{
-			switch (value)	
-			{
-				case 0 :
-					return "azrNO";
-					
-				case 1 :
-					return "azrABS";
-					
-				case 2 :
-					return "azrINC";
-
-				default :
-					return "azrNO";
-					
-			}
-		}
-
-		string ConvertRmd(int value)
-		{
-			switch (value)	
-			{
-				case -1 :
-					return "rmdAuto";
-					
-				case 1 :
-					return "rmdComplete";
-					
-				case 2 :
-					return "rmdPartial";
-
-				case 3 :
-					return "rmdQuote";
-
-				default :
-					return "rmdAuto";
-					
-			}
-		}
-
+		
 	}
 }
