@@ -5,7 +5,7 @@ namespace BppLib.Core
 {
     /// <summary>Class <c>S32</c> models the repeated boring operation in which the parameters are set on side zero and side
     /// five of the piece, to be machined using the vertical spindle.</summary> 
-	public class S32: IBppCode
+	public class S32 : IBppCode
 	{
         /// <value>Property <c>BppName</c> represents the name of BiesseWorks type.</value>
 		public string BppName { get; } = "S32" ;
