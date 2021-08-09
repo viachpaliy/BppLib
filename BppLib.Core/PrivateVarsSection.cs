@@ -11,7 +11,7 @@ namespace BppLib.Core
         /// <value>Property <c>PrivateVariables</c> represents the list of private variables.</value>
         public List<BiesseVariable> PrivateVariables { get; set; } = new List<BiesseVariable>();
 
-         /// <summary>This method serializes an object as Bpp code.</summary>
+        /// <summary>This method serializes an object as Bpp code.</summary>
 		/// <returns>A string  is coded as Bpp code.</returns>
 		public string AsBppCode()
 		{
@@ -47,10 +47,10 @@ namespace BppLib.Core
                 {
                     if (item.Typ == BiesseVariablesType.String)
                     {
-                        sb.AppendLine("\tPARAM, NAME=" + item.Name + ", VALUE=\"" + item.Value + "\", DESCRIPTION=\"" + item.Description + "\", TYPE=" + ((int)item.Typ).ToString());
+                        sb.AppendLine("\tPARAM, NAME=" + item.Name + ", VALUE=\"" + item.Value + "\", DESCRIPTION=\"" + item.Description + "\", TYPE=" + ((int)item.Typ).ToString().Replace(",","."));
                     }
                     else
-                        {sb.AppendLine("\tPARAM, NAME=" + item.Name + ", VALUE=" + item.Value + ", DESCRIPTION=\"" + item.Description + "\", TYPE=" + ((int)item.Typ).ToString());}
+                        {sb.AppendLine("\tPARAM, NAME=" + item.Name + ", VALUE=" + item.Value + ", DESCRIPTION=\"" + item.Description + "\", TYPE=" + ((int)item.Typ).ToString().Replace(",","."));}
                 }
                 sb.Append("END PRIVATEVARS");
                 return sb.ToString();

@@ -47,10 +47,10 @@ namespace BppLib.Core
                 {
                     if (item.Typ == BiesseVariablesType.String)
                     {
-                        sb.AppendLine("\tPARAM, NAME=" + item.Name + ", VALUE=\"" + item.Value + "\", DESCRIPTION=\"" + item.Description + "\", TYPE=" + ((int)item.Typ).ToString());
+                        sb.AppendLine("\tPARAM, NAME=" + item.Name + ", VALUE=\"" + item.Value + "\", DESCRIPTION=\"" + item.Description + "\", TYPE=" + ((int)item.Typ).ToString().Replace(",","."));
                     }
                     else
-                        {sb.AppendLine("\tPARAM, NAME=" + item.Name + ", VALUE=" + item.Value + ", DESCRIPTION=\"" + item.Description + "\", TYPE=" + ((int)item.Typ).ToString());}
+                        {sb.AppendLine("\tPARAM, NAME=" + item.Name + ", VALUE=" + item.Value + ", DESCRIPTION=\"" + item.Description + "\", TYPE=" + ((int)item.Typ).ToString().Replace(",","."));}
                 }
                 sb.Append("END PUBLICVARS");
                 return sb.ToString();

@@ -57,23 +57,23 @@ namespace BppLib.Core
 		{
 			StringBuilder sb = new StringBuilder();
 			sb.Append("@ " + BppName + ", \"\", \"\", ");
-			sb.Append(Id.ToString());
+			sb.Append(Id.ToString().Replace(",","."));
 			sb.Append(", \"\", 0 :");
-			sb.Append(" " + R.ToString());
+			sb.Append(" " + R.ToString().Replace(",","."));
 			sb.Append(",");
-			sb.Append(" " + ((int)Dir).ToString());
+			sb.Append(" " + ((int)Dir).ToString().Replace(",","."));
 			sb.Append(",");
-			sb.Append(" " + Zs.ToString());
+			sb.Append(" " + Zs.ToString().Replace(",","."));
 			sb.Append(",");
-			sb.Append(" " + Ze.ToString());
+			sb.Append(" " + Ze.ToString().Replace(",","."));
 			sb.Append(",");
-			sb.Append(" " + ((int)Sc).ToString());
+			sb.Append(" " + ((int)Sc).ToString().Replace(",","."));
 			sb.Append(",");
-			sb.Append(" " + Fd.ToString());
+			sb.Append(" " + Fd.ToString().Replace(",","."));
 			sb.Append(",");
-			sb.Append(" " + Sp.ToString());
+			sb.Append(" " + Sp.ToString().Replace(",","."));
 			sb.Append(",");
-			sb.Append(" " + Sol.ToString());
+			sb.Append(" " + Sol.ToString().Replace(",","."));
 			return sb.ToString();
 		}
 
@@ -84,15 +84,15 @@ namespace BppLib.Core
 			StringBuilder sb = new StringBuilder();
 			sb.AppendLine("BEGIN MACRO");
 			sb.AppendLine("	NAME=ARC_RATS");
-			sb.AppendLine("	PARAM,NAME=ID,VALUE=" + Id.ToString());
-			sb.AppendLine("	PARAM,NAME=R,VALUE=" + R.ToString());
-			sb.AppendLine("	PARAM,NAME=DIR,VALUE=" + Dir.ToString());
-            sb.AppendLine("	PARAM,NAME=ZS,VALUE=" + Zs.ToString());
-			sb.AppendLine("	PARAM,NAME=ZE,VALUE=" + Ze.ToString());
-			sb.AppendLine("	PARAM,NAME=SC,VALUE=" + Sc.ToString());
-            sb.AppendLine("	PARAM,NAME=FD,VALUE=" + Fd.ToString());
-			sb.AppendLine("	PARAM,NAME=SP,VALUE=" + Sp.ToString());
-			sb.AppendLine("	PARAM,NAME=SOL,VALUE=" + Sol.ToString());
+			sb.AppendLine("	PARAM,NAME=ID,VALUE=" + Id.ToString().Replace(",","."));
+			sb.AppendLine("	PARAM,NAME=R,VALUE=" + R.ToString().Replace(",","."));
+			sb.AppendLine("	PARAM,NAME=DIR,VALUE=" + Dir.ToString().Replace(",","."));
+            sb.AppendLine("	PARAM,NAME=ZS,VALUE=" + Zs.ToString().Replace(",","."));
+			sb.AppendLine("	PARAM,NAME=ZE,VALUE=" + Ze.ToString().Replace(",","."));
+			sb.AppendLine("	PARAM,NAME=SC,VALUE=" + Sc.ToString().Replace(",","."));
+            sb.AppendLine("	PARAM,NAME=FD,VALUE=" + Fd.ToString().Replace(",","."));
+			sb.AppendLine("	PARAM,NAME=SP,VALUE=" + Sp.ToString().Replace(",","."));
+			sb.AppendLine("	PARAM,NAME=SOL,VALUE=" + Sol.ToString().Replace(",","."));
 			sb.Append("END MACRO");
 			return sb.ToString();
 		}

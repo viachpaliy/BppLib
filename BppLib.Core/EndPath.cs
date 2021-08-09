@@ -28,7 +28,7 @@ namespace BppLib.Core
 		{
 			StringBuilder sb = new StringBuilder();
 			sb.Append("@ " + BppName + ", \"\", \"\", ");
-			sb.Append(Id.ToString());
+			sb.Append(Id.ToString().Replace(",","."));
 			sb.Append(", \"\", 0 :");
 			return sb.ToString();
 		}
@@ -42,7 +42,7 @@ namespace BppLib.Core
 			StringBuilder sb = new StringBuilder();
 			sb.AppendLine("BEGIN MACRO");
 			sb.AppendLine("	NAME=ENDPATH");
-			sb.AppendLine("	PARAM,NAME=ID,VALUE=" + Id.ToString());
+			sb.AppendLine("	PARAM,NAME=ID,VALUE=" + Id.ToString().Replace(",","."));
 			sb.Append("END MACRO");
 			return sb.ToString();
 		}

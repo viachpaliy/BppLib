@@ -2,8 +2,8 @@ using System;
 
 namespace BppLib.Core
 {
-    interface ICixCode
+    public interface ICixCode
     {
-        string AsCixCode();
+       string AsCixCode();
     }
 }
