@@ -109,6 +109,7 @@ namespace BppLib.Core
 		public string AsBppCode()
 		{
             StringBuilder sb = new StringBuilder();
+            sb.AppendLine("[VARIABLES]");
             sb.AppendLine("PAN=LPX|" + Lpx.ToString() + "||4|");
             sb.AppendLine("PAN=LPY|" + Lpy.ToString() + "||4|");
             sb.AppendLine("PAN=LPZ|" + Lpz.ToString() + "||4|");

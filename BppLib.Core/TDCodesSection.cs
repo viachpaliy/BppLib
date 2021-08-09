@@ -3,7 +3,7 @@ using System.Text;
 
 namespace BppLib.Core
 {
-    /// <summary>Class <c>VBScriptSection</c> models the VBScript section of Biesse CNC programme.</summary>
+    /// <summary>Class <c>TDCodesSection</c> models the TDCode section of Biesse CNC programme.</summary>
     public class TDCodesSection : IBppCode
     {
         /// <summary>This method serializes an object as Bpp code.</summary>

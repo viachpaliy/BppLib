@@ -10,7 +10,8 @@ namespace BppLib.Core.Tests
         public void AsBppCodeMethodTest()
         {
             var obj = new MainDataSection();
-            string expected = @"PAN=LPX|800||4|
+            string expected = @"[VARIABLES]
+PAN=LPX|800||4|
 PAN=LPY|500||4|
 PAN=LPZ|30||4|
 PAN=ORLST|""1""||3|

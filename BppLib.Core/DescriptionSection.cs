@@ -16,10 +16,8 @@ namespace BppLib.Core
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("[DESCRIPTION]");
             string s = DescText;
-            if (!String.IsNullOrEmpty(s))
-            {
-                string [] subs = s.Split('\n');
-                for(int i = 0; i < subs.Length; i++)
+            string [] subs = s.Split('\n');
+            for(int i = 0; i < subs.Length; i++)
                 {
                     var item = subs[i];
                     if ( i < subs.Length - 1) 
@@ -27,7 +25,7 @@ namespace BppLib.Core
                     else
                         {sb.Append("|" + item.TrimEnd('\r'));}
                 }
-            }
+
             return sb.ToString();
         }
 
