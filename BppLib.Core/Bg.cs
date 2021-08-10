@@ -134,7 +134,7 @@ namespace BppLib.Core
 		/// <value>Property <c>Ios</c> represents the speed at which the tool moves from the safety position to the surface of the piece.</value>
 		public int Ios { get; set; } = 0 ;
 
-		/// <value>Property <c>Ios</c> represents the speed at which the tool makes the bore.</value>
+		/// <value>Property <c>Wsp</c> represents the speed at which the tool makes the bore.</value>
 		public int Wsp { get; set; } = 0 ;
 
 		/// <value>Property <c>Spi</c> represents the spindle of the boring unit or the electrospindle with which to
@@ -201,9 +201,9 @@ namespace BppLib.Core
 		{
 			StringBuilder sb = new StringBuilder();
 			sb.Append("@ " + BppName + ", \"\", \"\", ");
-			sb.Append(IntId.ToString().Replace(",","."));
+			sb.Append(IntId.ToString());
 			sb.Append(", \"\", 0 :");
-			sb.Append(" " + Side.ToString().Replace(",","."));
+			sb.Append(" " + Side.ToString());
 			sb.Append(",");
 			sb.Append(" \"" + Crn +"\"");
 			sb.Append(",");
@@ -219,7 +219,7 @@ namespace BppLib.Core
 			sb.Append(",");
 			sb.Append(" " + ConvertBoolOnOff(Thr));
 			sb.Append(",");
-			sb.Append(" " + ((int)Rty).ToString().Replace(",","."));
+			sb.Append(" " + ((int)Rty).ToString());
 			sb.Append(",");
 			sb.Append(" " + Dx.ToString().Replace(",","."));
 			sb.Append(",");
@@ -231,7 +231,7 @@ namespace BppLib.Core
 			sb.Append(",");
 			sb.Append(" " + Da.ToString().Replace(",","."));
 			sb.Append(",");
-			sb.Append(" " + Nrp.ToString().Replace(",","."));
+			sb.Append(" " + Nrp.ToString());
 			sb.Append(",");
 			sb.Append(" \"" + Iso +"\"");
 			sb.Append(",");
@@ -243,7 +243,7 @@ namespace BppLib.Core
 			sb.Append(",");
 			sb.Append(" " + ConvertBoolOnOff(Ap));
 			sb.Append(",");
-			sb.Append(" " + ((int)Cka).ToString().Replace(",","."));
+			sb.Append(" " + ((int)Cka).ToString());
 			sb.Append(",");
 			sb.Append(" " + Xrc.ToString().Replace(",","."));
 			sb.Append(",");
@@ -275,25 +275,25 @@ namespace BppLib.Core
 			sb.Append(",");
 			sb.Append(" \"" + Tnm +"\"");
 			sb.Append(",");
-			sb.Append(" " + Ttp.ToString().Replace(",","."));
+			sb.Append(" " + Ttp.ToString());
 			sb.Append(",");
-			sb.Append(" " + Tcl.ToString().Replace(",","."));
+			sb.Append(" " + Tcl.ToString());
 			sb.Append(",");
-			sb.Append(" " + Rsp.ToString().Replace(",","."));
+			sb.Append(" " + Rsp.ToString());
 			sb.Append(",");
-			sb.Append(" " + Ios.ToString().Replace(",","."));
+			sb.Append(" " + Ios.ToString());
 			sb.Append(",");
-			sb.Append(" " + Wsp.ToString().Replace(",","."));
+			sb.Append(" " + Wsp.ToString());
 			sb.Append(",");
 			sb.Append(" \"" + Spi +"\"");
 			sb.Append(",");
 			sb.Append(" " + Dds.ToString().Replace(",","."));
 			sb.Append(",");
-			sb.Append(" " + Dsp.ToString().Replace(",","."));
+			sb.Append(" " + Dsp.ToString());
 			sb.Append(",");
 			sb.Append(" " + ConvertBoolOnOff(Bfc));
 			sb.Append(",");
-			sb.Append(" " + Shp.ToString().Replace(",","."));
+			sb.Append(" " + Shp.ToString());
 			sb.Append(",");
 			sb.Append(" " + ConvertBoolOnOff(Ea21));
 			sb.Append(",");
@@ -328,7 +328,7 @@ namespace BppLib.Core
 			StringBuilder sb = new StringBuilder();
 			sb.AppendLine("BEGIN MACRO");
 			sb.AppendLine("	NAME=BG");
-			sb.AppendLine("	PARAM,NAME=SIDE,VALUE=" + Side.ToString().Replace(",","."));
+			sb.AppendLine("	PARAM,NAME=SIDE,VALUE=" + Side.ToString());
 			sb.AppendLine("	PARAM,NAME=CRN,VALUE=\"" + Crn + "\"");
 			sb.AppendLine("	PARAM,NAME=X,VALUE=" + X.ToString().Replace(",","."));
 			sb.AppendLine("	PARAM,NAME=Y,VALUE=" + Y.ToString().Replace(",","."));
@@ -336,7 +336,7 @@ namespace BppLib.Core
 			sb.AppendLine("	PARAM,NAME=DP,VALUE=" + Dp.ToString().Replace(",","."));
 			sb.AppendLine("	PARAM,NAME=DIA,VALUE=" + Dia.ToString().Replace(",","."));
 			sb.AppendLine("	PARAM,NAME=THR,VALUE=" + ConvertOnOff(Thr));
-			sb.AppendLine("	PARAM,NAME=RTY,VALUE=" + Rty.ToString().Replace(",","."));
+			sb.AppendLine("	PARAM,NAME=RTY,VALUE=" + Rty.ToString());
 			sb.AppendLine("	PARAM,NAME=DX,VALUE=" + Dx.ToString().Replace(",","."));
 			sb.AppendLine("	PARAM,NAME=DY,VALUE=" + Dy.ToString().Replace(",","."));
 			sb.AppendLine("	PARAM,NAME=R,VALUE=" + R.ToString().Replace(",","."));
@@ -364,14 +364,14 @@ namespace BppLib.Core
 			sb.AppendLine("	PARAM,NAME=AZS,VALUE=" + Azs.ToString().Replace(",","."));
 			sb.AppendLine("	PARAM,NAME=MAC,VALUE=\"" + Mac + "\"");
 			sb.AppendLine("	PARAM,NAME=TNM,VALUE=\"" + Tnm + "\"");
-			sb.AppendLine("	PARAM,NAME=TTP,VALUE=" + Ttp.ToString().Replace(",","."));
-			sb.AppendLine("	PARAM,NAME=TCL,VALUE=" + Tcl.ToString().Replace(",","."));
-			sb.AppendLine("	PARAM,NAME=RSP,VALUE=" + Rsp.ToString().Replace(",","."));
-			sb.AppendLine("	PARAM,NAME=IOS,VALUE=" + Ios.ToString().Replace(",","."));
-			sb.AppendLine("	PARAM,NAME=WSP,VALUE=" + Wsp.ToString().Replace(",","."));
+			sb.AppendLine("	PARAM,NAME=TTP,VALUE=" + Ttp.ToString());
+			sb.AppendLine("	PARAM,NAME=TCL,VALUE=" + Tcl.ToString());
+			sb.AppendLine("	PARAM,NAME=RSP,VALUE=" + Rsp.ToString());
+			sb.AppendLine("	PARAM,NAME=IOS,VALUE=" + Ios.ToString());
+			sb.AppendLine("	PARAM,NAME=WSP,VALUE=" + Wsp.ToString());
 			sb.AppendLine("	PARAM,NAME=SPI,VALUE=\"" + Spi + "\"");
 			sb.AppendLine("	PARAM,NAME=DDS,VALUE=" + Dds.ToString().Replace(",","."));
-			sb.AppendLine("	PARAM,NAME=DSP,VALUE=" + Dsp.ToString().Replace(",","."));
+			sb.AppendLine("	PARAM,NAME=DSP,VALUE=" + Dsp.ToString());
 			sb.AppendLine("	PARAM,NAME=BFC,VALUE=" + ConvertOnOff(Bfc));
 			sb.AppendLine("	PARAM,NAME=SHP,VALUE=" + Shp.ToString().Replace(",","."));
 			sb.AppendLine("	PARAM,NAME=EA21,VALUE=" + ConvertOnOff(Ea21));
