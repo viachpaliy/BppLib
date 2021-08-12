@@ -10,7 +10,7 @@ namespace BppLib.Core
 		public string BppName { get; } = "START_POINT" ;
 
         /// <value>Property <c>Id</c> represents the unique identifier an object of BiesseWorks.</value>
-		public int Id { get; set; } = 159159172 ;
+		public int Id { get; set; }
 
         /// <value>Property <c>X</c> represents X-axis co-ordinate of the  starting point.</value>
 		public double X { get; set; } = 0 ;
