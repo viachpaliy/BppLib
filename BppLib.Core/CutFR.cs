@@ -3,13 +3,13 @@ using System.Text;
 
 namespace BppLib.Core
 {
-    /// <summary>Class <c>GutY</c> models the cut along the Y-axis.</summary> 
-	public class CutY: IBppCode
+    /// <summary>Class <c>GutFR</c> models the squaring operation that is not centred on the top or bottom side of the piece.</summary>
+	public class CutFR: IBppCode
 	{
         /// <value>Property <c>BppName</c> represents the name of BiesseWorks type.</value>
-		public string BppName { get; } = "CUT_Y" ;
-		
-        /// <value>Property <c>IntId</c> represents the unique identifier an object of BiesseWorks.</value>
+		public string BppName { get; } = "CUT_FR" ;
+        
+		/// <value>Property <c>IntId</c> represents the unique identifier an object of BiesseWorks.</value>
 		public int IntId { get; set; }
 
         /// <value>Property <c>Side</c> represents the piece side.</value>
@@ -18,29 +18,19 @@ namespace BppLib.Core
         /// <value>Property <c>Crn</c> represents the piece reference corner.</value>
 		public string Crn { get; set; } = "1" ;
 
-        /// <value>Property <c>X</c> represents the X-axis co-ordinate of the cut start point.</value>
+		/// <value>Property <c>X</c> represents the distance in X from the edge of the piece.</value>
 		public double X { get; set; } = 0 ;
 
-        /// <value>Property <c>Y</c> represents the Y-axis co-ordinate of the cut start point.</value>
+        /// <value>Property <c>Y</c> represents the distance in Y from the edge of the piece.</value>
 		public double Y { get; set; } = 0 ;
+        
+		/// <value>Property <c>Lx</c> represents the  length of the cut in X starting from the position defined in property <c>X</c>.</value>
+		public double Lx { get; set; } = 500 ;
 
-        /// <value>Property <c>Z</c> represents the depth reached by the tool at the initial machining operation point.
-		/// The value indicated in this property is added to that indicated in the property <c>Dp</c>.</value>
-		public double Z { get; set; } = 0 ;
+		/// <value>Property <c>Ly</c> represents the  length of the cut in Y starting from the position defined in property <c>Y</c>.</value>
+		public double Ly { get; set; } = 300 ;
 
-        /// <value>Property <c>Dp</c> represents the depth of the cut or of the perforation offset for through cuts.</value>
-		public double Dp { get; set; } = 10 ;
-
-        /// <value>Property <c>L</c> represents the cut length value.</value>
-		public double L { get; set; } = 100 ;
-
-		/// <value>Property <c>Nrp</c> represents the number of repeats required.</value>
-		public int Nrp { get; set; } = 0 ;
-
-        /// <value>Property <c>D</c> represents the distance between centres along the X-axis that defines the distance between cuts.</value>
-		public double D { get; set; } = 100 ;
-
-        /// <value>Property <c>Nrp</c> represents the entered ISO instruction.</value> 
+		/// <value>Property <c>Nrp</c> represents the entered ISO instruction.</value> 
 		public string Iso { get; set; } = "" ;
 
 		/// <value>Property <c>Opt</c> represents the optimisation of the machining operation.</value>
@@ -49,27 +39,26 @@ namespace BppLib.Core
 		/// <value>Property <c>Th</c> represents the blade thickness.</value>
 		public int Th { get; set; } = 4 ;
 
-		/// <value>Property <c>Thr</c> represents if needing to execute a through cuts.</value>
+        /// <value>Property <c>Dp</c> represents the depth of the cut or of the perforation offset for through cuts.</value>
+		public double Dp { get; set; } = 10 ;
+
+        /// <value>Property <c>Az</c> represents the angle of inclination of the spindle axis of rotation with respect to the plane X, Y.</value> 
+		public double Az { get; set; } = 0 ;
+
+		/// <value>Property <c>Cka</c> represents the inclination/rotation type.</value>
+		public InclinationRotationType Cka { get; set; } = InclinationRotationType.azrNO ;
+        
+        /// <value>Property <c>Thr</c> represents if needing to execute a through cuts.</value>
 		public bool Thr { get; set; } = false ;
 
 		/// <value>Property <c>Rv</c> forces the blade to reverse its direction of movement.</value>
 		public bool Rv { get; set; } = false ;
-
-		/// <value>Property <c>Cow</c> used to enable the machining operation also on the face opposite
-		/// the programmed one, using both operating sections.</value>
-		public bool Cow { get; set; } = false ;
 
 		/// <value>Property <c>Ttk</c> represents the total cut thickness.</value>
 		public double Ttk { get; set; } = 0 ;
 
 		/// <value>Property <c>Ovm</c> represents the value of the excess material that you wish to leave during the cut.</value>
 		public double Ovm { get; set; } = 0 ;
-
-		/// <value>Property <c>Tos</c> enables or disables the translation position of the plane to be worked compared with the main plane of the piece.
-		/// When the <c>Tos = true</c> , during the calculation to establish the safety position, the
-		/// value set in field Z is ignored, i.e., it is created starting from the surface of the piece. When the <c>Tos</c>
-		/// is left disabled, the position defined in field Z is considered as a start point to position the tool at the safety position.</value>
-		public bool Tos { get; set; } = false ;
 
 		/// <value>Property <c>Vtr</c> represents the number of passages that influence the depth of the programmed machining.</value>
 		public int Vtr { get; set; } = 0 ;
@@ -145,10 +134,7 @@ namespace BppLib.Core
 		public string Agg { get; set; } = "" ;
 
 		/// <value>Property <c>Lay</c> represents the Dxf layer.</value>
-		public string Lay { get; set; } = "CUT_Y" ;
-
-		/// <value>Property <c>Dvr</c> represents the depth that the tool must reach during the last pass in the case of more than one pass.</value>
-		public double Dvr { get; set; } = 0 ;
+		public string Lay { get; set; } = "CUT_FR" ;
 
 		/// <value>Property <c>Etb</c> enables or disables the tool inner blowing.</value>
 		public bool Etb { get; set; } = false ;
@@ -156,9 +142,9 @@ namespace BppLib.Core
 		/// <value>Property <c>Kdt</c> enables or disables the deflector.</value>
 		public bool Kdt { get; set; } = false ;
 
-        /// <summary>This constructor initializes the new CutY
+        /// <summary>This constructor initializes the new CutFR
    	    ///  with Id which equal a hash code of the C# object.</summary>
-		public CutY()
+		public CutFR()
 		{
 			IntId = GetHashCode();
 		}
@@ -179,15 +165,9 @@ namespace BppLib.Core
 			sb.Append(",");
 			sb.Append(" " + Y.ToString().Replace(',','.'));
 			sb.Append(",");
-			sb.Append(" " + Z.ToString().Replace(',','.'));
+			sb.Append(" " + Lx.ToString().Replace(',','.'));
 			sb.Append(",");
-			sb.Append(" " + Dp.ToString().Replace(',','.'));
-			sb.Append(",");
-			sb.Append(" " + L.ToString().Replace(',','.'));
-			sb.Append(",");
-			sb.Append(" " + Nrp.ToString());
-			sb.Append(",");
-			sb.Append(" " + D.ToString().Replace(',','.'));
+			sb.Append(" " + Ly.ToString().Replace(',','.'));
 			sb.Append(",");
 			sb.Append(" \"" + Iso +"\"");
 			sb.Append(",");
@@ -195,17 +175,19 @@ namespace BppLib.Core
 			sb.Append(",");
 			sb.Append(" " + Th.ToString().Replace(',','.'));
 			sb.Append(",");
+			sb.Append(" " + Dp.ToString().Replace(',','.'));
+			sb.Append(",");
+			sb.Append(" " + Az.ToString().Replace(',','.'));
+			sb.Append(",");
+			sb.Append(" " + ((int)Cka).ToString());
+			sb.Append(",");
 			sb.Append(" " + ConvertBoolToInt(Thr));
 			sb.Append(",");
 			sb.Append(" " + ConvertBoolToInt(Rv));
 			sb.Append(",");
-			sb.Append(" " + ConvertBoolToInt(Cow));
-			sb.Append(",");
 			sb.Append(" " + Ttk.ToString().Replace(',','.'));
 			sb.Append(",");
 			sb.Append(" " + Ovm.ToString().Replace(',','.'));
-			sb.Append(",");
-			sb.Append(" " + ConvertBoolToInt(Tos));
 			sb.Append(",");
 			sb.Append(" " + Vtr.ToString());
 			sb.Append(",");
@@ -251,39 +233,35 @@ namespace BppLib.Core
 			sb.Append(",");
 			sb.Append(" \"" + Lay +"\"");
 			sb.Append(",");
-			sb.Append(" " + Dvr.ToString().Replace(',','.'));
-			sb.Append(",");
 			sb.Append(" " + ConvertBoolToInt(Etb));
 			sb.Append(",");
 			sb.Append(" " + ConvertBoolToInt(Kdt));
 			return sb.ToString();
 		}
 
-        /// <summary>This method serializes an object as Cix code.</summary>
+		/// <summary>This method serializes an object as Cix code.</summary>
 		/// <returns>A string  is coded as Cix code.</returns>
 		public string AsCixCode()
 		{
 			StringBuilder sb = new StringBuilder();
 			sb.AppendLine("BEGIN MACRO");
-			sb.AppendLine("	NAME=CUT_Y");
+			sb.AppendLine("	NAME=CUT_FR");
 			sb.AppendLine("	PARAM,NAME=SIDE,VALUE=" + Side.ToString());
 			sb.AppendLine("	PARAM,NAME=CRN,VALUE=\"" + Crn + "\"");
 			sb.AppendLine("	PARAM,NAME=X,VALUE=" + X.ToString().Replace(',','.'));
 			sb.AppendLine("	PARAM,NAME=Y,VALUE=" + Y.ToString().Replace(',','.'));
-			sb.AppendLine("	PARAM,NAME=Z,VALUE=" + Z.ToString().Replace(',','.'));
-			sb.AppendLine("	PARAM,NAME=DP,VALUE=" + Dp.ToString().Replace(',','.'));
-			sb.AppendLine("	PARAM,NAME=L,VALUE=" + L.ToString().Replace(',','.'));
-			sb.AppendLine("	PARAM,NAME=NRP,VALUE=" + Nrp.ToString());
-			sb.AppendLine("	PARAM,NAME=D,VALUE=" + D.ToString().Replace(',','.'));
+			sb.AppendLine("	PARAM,NAME=LX,VALUE=" + Lx.ToString().Replace(',','.'));
+			sb.AppendLine("	PARAM,NAME=LY,VALUE=" + Ly.ToString().Replace(',','.'));
 			sb.AppendLine("	PARAM,NAME=ISO,VALUE=\"" + Iso + "\"");
 			sb.AppendLine("	PARAM,NAME=OPT,VALUE=" + ConvertBoolToYesNo(Opt));
 			sb.AppendLine("	PARAM,NAME=TH,VALUE=" + Th.ToString().Replace(',','.'));
+			sb.AppendLine("	PARAM,NAME=DP,VALUE=" + Dp.ToString().Replace(',','.'));
+			sb.AppendLine("	PARAM,NAME=AZ,VALUE=" + Az.ToString().Replace(',','.'));
+			sb.AppendLine("	PARAM,NAME=CKA,VALUE=" + Cka.ToString());
 			sb.AppendLine("	PARAM,NAME=THR,VALUE=" +  ConvertBoolToYesNo(Thr));
 			sb.AppendLine("	PARAM,NAME=RV,VALUE=" + ConvertBoolToYesNo(Rv));
-			sb.AppendLine("	PARAM,NAME=COW,VALUE=" + ConvertBoolToYesNo(Cow));
 			sb.AppendLine("	PARAM,NAME=TTK,VALUE=" + Ttk.ToString().Replace(',','.'));
 			sb.AppendLine("	PARAM,NAME=OVM,VALUE=" + Ovm.ToString().Replace(',','.'));
-			sb.AppendLine("	PARAM,NAME=TOS,VALUE=" + ConvertBoolToYesNo(Tos));
 			sb.AppendLine("	PARAM,NAME=VTR,VALUE=" + Vtr.ToString());
 			sb.AppendLine("	PARAM,NAME=GIP,VALUE=" + ConvertBoolToYesNo(Gip));
 			sb.AppendLine("	PARAM,NAME=TNM,VALUE=\"" + Tnm + "\"");
@@ -306,14 +284,13 @@ namespace BppLib.Core
 			sb.AppendLine("	PARAM,NAME=CEN,VALUE=\"" + Cen + "\"");
 			sb.AppendLine("	PARAM,NAME=AGG,VALUE=\"" + Agg + "\"");
 			sb.AppendLine("	PARAM,NAME=LAY,VALUE=\"" + Lay + "\"");
-			sb.AppendLine("	PARAM,NAME=DVR,VALUE=" + Dvr.ToString().Replace(',','.'));
 			sb.AppendLine("	PARAM,NAME=ETB,VALUE=" + ConvertBoolToYesNo(Etb));
 			sb.AppendLine("	PARAM,NAME=KDT,VALUE=" + ConvertBoolToYesNo(Kdt));
 			sb.Append("END MACRO");
 			return sb.ToString();
 		}
 
-        string ConvertBoolToInt(bool value)
+		 string ConvertBoolToInt(bool value)
 		{
 			if (value)
 				{return "1";}
