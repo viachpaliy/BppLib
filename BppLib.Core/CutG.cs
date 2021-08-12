@@ -108,6 +108,8 @@ namespace BppLib.Core
 		/// <value>Property <c>Lrp</c> represents the distance between cuts.</value> 
 		public double Lrp { get; set; } = 0 ;
 
+		/// <value>Property <c>Er</c> enables the first element as the initial element in the repeat (focal repeats)
+        /// eliminating the property <c>A</c> and the property <c>R</c>.</value> 
 		public bool Er { get; set; } = true ;
 
 		/// <value>Property <c>Cow</c> used to enable the machining operation also on the face opposite
