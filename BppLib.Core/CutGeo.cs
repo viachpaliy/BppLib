@@ -28,7 +28,7 @@ namespace BppLib.Core
 		public bool Opt { get; set; } = true ;
 
         /// <value>Property <c>Th</c> represents the blade thickness.</value>
-		public int Th { get; set; } = 4 ;
+		public double Th { get; set; } = 4 ;
 
 		/// <value>Property <c>Cka</c> represents the inclination/rotation type.</value>
 		public InclinationRotationType Cka { get; set; } = InclinationRotationType.azrNO ;

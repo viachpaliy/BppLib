@@ -28,7 +28,7 @@ namespace BppLib.Core
 		public bool Opt { get; set; } = true ;
 		
 		/// <value>Property <c>Th</c> represents the blade thickness.</value>
-		public int Th { get; set; } = 4 ;
+		public double Th { get; set; } = 4 ;
 
         /// <value>Property <c>Dp</c> represents the depth of the cut or of the perforation offset for through cuts.</value>
 		public double Dp { get; set; } = 10 ;

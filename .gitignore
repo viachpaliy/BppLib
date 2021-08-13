@@ -2,5 +2,7 @@ BppLib.Core/bin
 BppLib.Core/obj
 BppLib.Core.Tests/bin
 BppLib.Core.Tests/obj
+BppLib.Core.Examples/bin
+BppLib.Core.Examples/obj
 Other
 Auxiliaries
