@@ -3,22 +3,22 @@ using System.Text;
 
 namespace BppLib.Core
 {
-    /// <summary>Class <c>LineLnAn</c> models the line given length and angle;
-    /// creates a line using a length and the angle with respect to the
-    /// positive direction of the X-axis as reference values.</summary>
-	public class LineLnAn: IBppCode
+    /// <summary>Class <c>LineLnYe</c> models the line given length and final Y;
+    /// creates a line using the Y co-ordinate of the known endpoint and
+    /// a length as reference values.</summary>
+	public class LineLnYe: IBppCode
 	{
         /// <value>Property <c>BppName</c> represents the name of BiesseWorks type.</value>
-		public string BppName { get; } = "LINE_LNAN" ;
+		public string BppName { get; } = "LINE_LNYE" ;
 
         /// <value>Property <c>Id</c> represents the unique identifier an object of BiesseWorks.</value>
 		public int Id { get; set; }
 
-        /// <value>Property <c>L</c> represents the length of the geometric element.</value>
+        /// <value>Property <c>L</c> represents the length of the geometric element.</value> 
 		public double L { get; set; } = 0 ;
 
-        /// <value>Property <c>A</c> represents the inclination of the line.</value>
-		public double A { get; set; } = 0 ;
+        /// <value>Property <c>Ye</c> represents the Y-axis co-ordinate of the endpoint of the element.</value>
+		public double Ye { get; set; } = 0 ;
 
 		/// <value>Property <c>Zs</c> represents value of the increase in machining depth in the initial part of the element.</value>
 		public double Zs { get; set; } = 0 ;
@@ -39,10 +39,10 @@ namespace BppLib.Core
         /// <value>Property <c>Sol</c> represents solutions that can be applied to the line,
         /// on the basis of the data set previously.Values allowed: 0,1</value> 
 		public int Sol { get; set; } = 0 ;
-
+        
         /// <summary>This constructor initializes the new instance of the class
    	    ///  with Id which equal a hash code of the C# object.</summary>
-		public LineLnAn()
+		public LineLnYe()
 		{
 			Id = GetHashCode();
 		}
@@ -57,7 +57,7 @@ namespace BppLib.Core
 			sb.Append(", \"\", 0 :");
 			sb.Append(" " + L.ToString().Replace(',','.'));
 			sb.Append(",");
-			sb.Append(" " + A.ToString().Replace(',','.'));
+			sb.Append(" " + Ye.ToString().Replace(',','.'));
 			sb.Append(",");
 			sb.Append(" " + Zs.ToString().Replace(',','.'));
 			sb.Append(",");
@@ -79,10 +79,10 @@ namespace BppLib.Core
 		{
 			StringBuilder sb = new StringBuilder();
 			sb.AppendLine("BEGIN MACRO");
-			sb.AppendLine("	NAME=LINE_LNAN");
+			sb.AppendLine("	NAME=LINE_LNYE");
 			sb.AppendLine("	PARAM,NAME=ID,VALUE=" + Id.ToString());
 			sb.AppendLine("	PARAM,NAME=L,VALUE=" + L.ToString().Replace(',','.'));
-			sb.AppendLine("	PARAM,NAME=A,VALUE=" + A.ToString().Replace(',','.'));
+			sb.AppendLine("	PARAM,NAME=YE,VALUE=" + Ye.ToString().Replace(',','.'));
 			sb.AppendLine("	PARAM,NAME=ZS,VALUE=" + Zs.ToString().Replace(',','.'));
 			sb.AppendLine("	PARAM,NAME=ZE,VALUE=" + Ze.ToString().Replace(',','.'));
 			sb.AppendLine("	PARAM,NAME=SC,VALUE=" + Sc.ToString());

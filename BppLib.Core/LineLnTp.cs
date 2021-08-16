@@ -3,22 +3,18 @@ using System.Text;
 
 namespace BppLib.Core
 {
-    /// <summary>Class <c>LineLnAn</c> models the line given length and angle;
-    /// creates a line using a length and the angle with respect to the
-    /// positive direction of the X-axis as reference values.</summary>
-	public class LineLnAn: IBppCode
+    /// <summary>Class <c>LineLnTp</c> models the line given length and tangency to previous item;
+    /// creates a line using the length and the tangency to the preceding element as reference values.</summary>
+	public class LineLnTp: IBppCode
 	{
         /// <value>Property <c>BppName</c> represents the name of BiesseWorks type.</value>
-		public string BppName { get; } = "LINE_LNAN" ;
+		public string BppName { get; } = "LINE_LNTP" ;
 
         /// <value>Property <c>Id</c> represents the unique identifier an object of BiesseWorks.</value>
-		public int Id { get; set; }
+		public int Id { get; set; } 
 
         /// <value>Property <c>L</c> represents the length of the geometric element.</value>
 		public double L { get; set; } = 0 ;
-
-        /// <value>Property <c>A</c> represents the inclination of the line.</value>
-		public double A { get; set; } = 0 ;
 
 		/// <value>Property <c>Zs</c> represents value of the increase in machining depth in the initial part of the element.</value>
 		public double Zs { get; set; } = 0 ;
@@ -39,10 +35,10 @@ namespace BppLib.Core
         /// <value>Property <c>Sol</c> represents solutions that can be applied to the line,
         /// on the basis of the data set previously.Values allowed: 0,1</value> 
 		public int Sol { get; set; } = 0 ;
-
+        
         /// <summary>This constructor initializes the new instance of the class
    	    ///  with Id which equal a hash code of the C# object.</summary>
-		public LineLnAn()
+        public LineLnTp()
 		{
 			Id = GetHashCode();
 		}
@@ -56,8 +52,6 @@ namespace BppLib.Core
 			sb.Append(Id.ToString());
 			sb.Append(", \"\", 0 :");
 			sb.Append(" " + L.ToString().Replace(',','.'));
-			sb.Append(",");
-			sb.Append(" " + A.ToString().Replace(',','.'));
 			sb.Append(",");
 			sb.Append(" " + Zs.ToString().Replace(',','.'));
 			sb.Append(",");
@@ -73,16 +67,16 @@ namespace BppLib.Core
 			return sb.ToString();
 		}
 
+
         /// <summary>This method serializes an object as Cix code.</summary>
 		/// <returns>A string  is coded as Cix code.</returns>
 		public string AsCixCode()
 		{
 			StringBuilder sb = new StringBuilder();
 			sb.AppendLine("BEGIN MACRO");
-			sb.AppendLine("	NAME=LINE_LNAN");
+			sb.AppendLine("	NAME=LINE_LNTP");
 			sb.AppendLine("	PARAM,NAME=ID,VALUE=" + Id.ToString());
 			sb.AppendLine("	PARAM,NAME=L,VALUE=" + L.ToString().Replace(',','.'));
-			sb.AppendLine("	PARAM,NAME=A,VALUE=" + A.ToString().Replace(',','.'));
 			sb.AppendLine("	PARAM,NAME=ZS,VALUE=" + Zs.ToString().Replace(',','.'));
 			sb.AppendLine("	PARAM,NAME=ZE,VALUE=" + Ze.ToString().Replace(',','.'));
 			sb.AppendLine("	PARAM,NAME=SC,VALUE=" + Sc.ToString());
