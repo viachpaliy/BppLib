@@ -44,6 +44,67 @@ namespace BppLib.Core
         /// <value>Property <c>SubProgsSec</c> represents the sub programmes section of Biesse CNC programme.</value>
         public SubProgsSection SubProgsSec { get; set; } = new SubProgsSection();
 
+        /// <value>Property <c>Lpx</c> represents the piece width (X dimension of the piece).</value>
+        public double Lpx 
+        {
+            get {
+                return MainData.Lpx;
+            }
+
+            set {
+                 MainData.Lpx = value;
+            }
+        }
+
+        /// <value>Property <c>Lpy</c> represents the piece height (Y dimension of the piece).</value>
+        public double Lpy 
+        {
+            get {
+                return MainData.Lpy;
+            }
+
+            set {
+                 MainData.Lpy = value;
+            }
+        }
+
+        /// <value>Property <c>Lpz</c> represents the thickness of the piece.</value>
+        public double Lpz 
+        {
+            get {
+                return MainData.Lpz;
+            }
+
+            set {
+                 MainData.Lpz = value;
+            }
+        }
+
+        /// <value>Property <c>OrLst</c> represents the origins list.</value>
+        public string Origins
+        {
+            get {
+                return MainData.OrLst;
+            }
+
+            set {
+                 MainData.OrLst = value;
+            }
+        }
+
+        public List<IBppCode> Operations
+        {
+            get 
+            {
+                return ProgramSec.BiesseEntities;
+            }
+
+            set
+            {
+                ProgramSec.BiesseEntities = value;
+            }
+        }
+
         /// <summary>This method serializes an object as Bpp code.</summary>
 		/// <returns>A string  is coded as Bpp code.</returns>
 		public string AsBppCode()
