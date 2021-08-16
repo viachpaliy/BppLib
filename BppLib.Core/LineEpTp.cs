@@ -3,19 +3,18 @@ using System.Text;
 
 namespace BppLib.Core
 {
-    /// <summary>Class <c>LineAnYe</c> models the line given angle and final Y.
-    /// Creates a line using the Y co-ordinate of the endpoint and the
-    /// angle with respect to the positive direction of the X-axis as reference values.</summary>
-	public class LineAnYe: IBppCode
+    /// <summary>Class <c>LineEpTp</c> models the line given end point and tangency to previous item.
+    ///  Creates a line using the length and the tangency to the preceding element as reference values.</summary>
+	public class LineEpTp: IBppCode
 	{
         /// <value>Property <c>BppName</c> represents the name of BiesseWorks type.</value>
-		public string BppName { get; } = "LINE_ANYE" ;
+		public string BppName { get; } = "LINE_EPTP" ;
 
         /// <value>Property <c>Id</c> represents the unique identifier an object of BiesseWorks.</value>
 		public int Id { get; set; }
 
-        /// <value>Property <c>A</c> represents the inclination of the line.</value>
-		public double A { get; set; } = 0 ;
+        /// <value>Property <c>Xe</c> represents the X-axis co-ordinate of the endpoint of the element.</value>
+		public double Xe { get; set; } = 0 ;
 
         /// <value>Property <c>Ye</c> represents the Y-axis co-ordinate of the endpoint of the element.</value>
 		public double Ye { get; set; } = 0 ;
@@ -42,7 +41,7 @@ namespace BppLib.Core
 
         /// <summary>This constructor initializes the new instance of the class
    	    ///  with Id which equal a hash code of the C# object.</summary>
-		public LineAnYe()
+		public LineEpTp()
 		{
 			Id = GetHashCode();
 		}
@@ -55,7 +54,7 @@ namespace BppLib.Core
 			sb.Append("@ " + BppName + ", \"\", \"\", ");
 			sb.Append(Id.ToString());
 			sb.Append(", \"\", 0 :");
-			sb.Append(" " + A.ToString().Replace(',','.'));
+			sb.Append(" " + Xe.ToString().Replace(',','.'));
 			sb.Append(",");
 			sb.Append(" " + Ye.ToString().Replace(',','.'));
 			sb.Append(",");
@@ -79,9 +78,9 @@ namespace BppLib.Core
 		{
 			StringBuilder sb = new StringBuilder();
 			sb.AppendLine("BEGIN MACRO");
-			sb.AppendLine("	NAME=LINE_ANYE");
+			sb.AppendLine("	NAME=LINE_EPTP");
 			sb.AppendLine("	PARAM,NAME=ID,VALUE=" + Id.ToString());
-			sb.AppendLine("	PARAM,NAME=A,VALUE=" + A.ToString().Replace(',','.'));
+			sb.AppendLine("	PARAM,NAME=XE,VALUE=" + Xe.ToString().Replace(',','.'));
 			sb.AppendLine("	PARAM,NAME=YE,VALUE=" + Ye.ToString().Replace(',','.'));
 			sb.AppendLine("	PARAM,NAME=ZS,VALUE=" + Zs.ToString().Replace(',','.'));
 			sb.AppendLine("	PARAM,NAME=ZE,VALUE=" + Ze.ToString().Replace(',','.'));
