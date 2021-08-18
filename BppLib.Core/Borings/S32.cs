@@ -25,7 +25,8 @@ namespace BppLib.Core
 		/// <value>Property <c>Y</c> represents the Y-axis co-ordinate for the centre of the bore.</value>
 		public double Y { get; set; } = 0 ;
 
-		/// <value>Property <c>Z</c> represents the translation position of the plane to be worked compared with the main plane of the piece.</value>
+		/// <value>Property <c>Z</c> represents the translation position of the plane to be worked compared with the main plane of the piece.
+		/// The value indicated in this property is added to that indicated in the property <c>Dp</c>.</value>
 		public double Z { get; set; } = 0 ;
 
 		/// <value>Property <c>Dp</c> represents the depth of the bore or the perforation offset value for through bores.</value>

@@ -47,13 +47,17 @@ namespace BppLib.Core
 
 		public string Sil { get; set; } = "" ;
 
+		/// <value>Property <c>A21</c> represents the Aggr21 angle.
+		/// (For programming boring operations using the AGGRE81 aggregate)
+		///The angle related to the corner on which the machining operation is programmed.</value>
 		public int A21 { get; set; } = 0 ;
 
-        /// <value>Property <c>Z</c> represents the translation position of the plane to be worked compared with the main plane of the piece.</value>
+        /// <value>Property <c>Z</c> represents the translation position of the plane to be worked compared with the main plane of the piece.
+		/// The value indicated in this property is added to that indicated in the property <c>Dp</c>.</value>
 		public double Z { get; set; } = 0 ;
 
 		/// <value>Property <c>Tos</c> enables or disables the translation position of the plane to be worked compared with the main plane of the piece.
-		/// When the <c>Tos = BppLib.YES</c> , during the calculation to establish the safety position, the
+		/// When the <c>Tos = true</c> , during the calculation to establish the safety position, the
 		/// value set in field Z is ignored, i.e., it is created starting from the surface of the piece. When the <c>Tos</c>
 		/// is left disabled, the position defined in field Z is considered as a start point to position the tool at the safety position.</value>
 		public bool Tos { get; set; } = false ;
@@ -61,6 +65,9 @@ namespace BppLib.Core
 		/// <value>Property <c>Vtr</c> represents the number of passages that influence the depth of the programmed machining.</value>
 		public int Vtr { get; set; } = 0 ;
 
+		/// <value>Property <c>S21</c> represents the Aggr21 face.
+		/// (For programming boring operations using the AGGRE81 aggregate)
+		/// The number of the face towards which the aggregate is directed to enter the piece.</value>
 		public int S21 { get; set; } = -1 ;
 
 		/// <value>Property <c>Id</c> represents the description of the type of machining operation for each individual bore.</value> 

@@ -79,7 +79,7 @@ namespace BppLib.Core
 		public string Lay { get; set; } = "GEO" ;
 
         /// <value>Property <c>Crc</c> represents the correction(position of the tool with respect to the working trajectory).</value>
-		public int Crc { get; set; } = 0 ;
+		public ToolCorrection Crc { get; set; } = ToolCorrection.Central ;
 
         /// <summary>This constructor initializes the new Geo
    	    ///  with Id which equal a hash code of the C# object.</summary>
@@ -136,7 +136,7 @@ namespace BppLib.Core
 			sb.Append(",");
 			sb.Append(" \"" + Lay + "\"");
 			sb.Append(",");
-			sb.Append(" " + Crc.ToString());
+			sb.Append(" " + ((int)Crc).ToString());
 			return sb.ToString();
 		}
 
@@ -165,7 +165,7 @@ namespace BppLib.Core
 			sb.AppendLine("	PARAM,NAME=RV,VALUE=" + ConvertBoolToYesNo(Rv));
 			sb.AppendLine("	PARAM,NAME=COW,VALUE=" + ConvertBoolToYesNo(Cow));
 			sb.AppendLine("	PARAM,NAME=LAY,VALUE=\"" + Lay + "\"");
-			sb.AppendLine("	PARAM,NAME=CRC,VALUE=" + Crc.ToString());
+			sb.AppendLine("	PARAM,NAME=CRC,VALUE=" + ((int)Crc).ToString());
 			sb.Append("END MACRO");
 			return sb.ToString();
 		}

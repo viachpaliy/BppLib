@@ -111,7 +111,7 @@ namespace BppLib.Core
 		public double Dou { get; set; } = 0 ;
 
 		/// <value>Property <c>Crc</c> represents the correction(position of the tool with respect to the working trajectory).</value>
-		public int Crc { get; set; } = 0 ;
+		public ToolCorrection Crc { get; set; } = ToolCorrection.Central ;
 
 		/// <value>Property <c>Dsp</c> represents the speed of the bit during the phases of the piece collapse,
 		/// usable only for through machining operations.</value>
@@ -208,7 +208,7 @@ namespace BppLib.Core
 			sb.Append(",");
 			sb.Append(" " + Dou.ToString().Replace(',','.'));
 			sb.Append(",");
-			sb.Append(" " + Crc.ToString());
+			sb.Append(" " + ((int)Crc).ToString());
 			sb.Append(",");
 			sb.Append(" " + Dsp.ToString());
 			sb.Append(",");
@@ -261,7 +261,7 @@ namespace BppLib.Core
 			sb.AppendLine("	PARAM,NAME=NRV,VALUE=" + ConvertBoolToYesNo(Nrv));
 			sb.AppendLine("	PARAM,NAME=DIN,VALUE=" + Din.ToString().Replace(',','.'));
 			sb.AppendLine("	PARAM,NAME=DOU,VALUE=" + Dou.ToString().Replace(',','.'));
-			sb.AppendLine("	PARAM,NAME=CRC,VALUE=" + Crc.ToString());
+			sb.AppendLine("	PARAM,NAME=CRC,VALUE=" + ((int)Crc).ToString());
 			sb.AppendLine("	PARAM,NAME=DSP,VALUE=" + Dsp.ToString());
 			sb.AppendLine("	PARAM,NAME=CEN,VALUE=\"" + Cen + "\"");
 			sb.AppendLine("	PARAM,NAME=AGG,VALUE=\"" + Agg + "\"");

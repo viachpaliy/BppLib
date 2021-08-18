@@ -80,6 +80,7 @@ namespace BppLib.Core
 		/// <value>Property <c>Da</c> represents the angular step that must be left between one repeat and the next one.</value>
 		public double Da { get; set; } = 45 ;
 
+		/// <value>Property <c>Rdl</c>  enables radial repeats.</value>
 		public bool Rdl { get; set; } = true ;
 
 		/// <value>Property <c>Nrp</c> represents the number of repeats required.</value>
@@ -123,7 +124,7 @@ namespace BppLib.Core
 		public double Ovm { get; set; } = 0 ;
 
 		/// <value>Property <c>Tos</c> enables or disables the translation position of the plane to be worked compared with the main plane of the piece.
-		/// When the <c>Tos = BppLib.YES</c> , during the calculation to establish the safety position, the
+		/// When the <c>Tos = true</c> , during the calculation to establish the safety position, the
 		/// value set in field Z is ignored, i.e., it is created starting from the surface of the piece. When the <c>Tos</c>
 		/// is left disabled, the position defined in field Z is considered as a start point to position the tool at the safety position.</value>
 		public bool Tos { get; set; } = false ;
@@ -191,7 +192,7 @@ namespace BppLib.Core
 		public double Dou { get; set; } = 0 ;
 
 		/// <value>Property <c>Crc</c> represents the correction(position of the tool with respect to the working trajectory).</value>
-		public int Crc { get; set; } = 0 ;
+		public ToolCorrection Crc { get; set; } = ToolCorrection.Central ;
 
 		/// <value>Property <c>Dsp</c> represents the speed of the bit during the phases of the piece collapse,
 		/// usable only for through machining operations.</value>
@@ -341,7 +342,7 @@ namespace BppLib.Core
 			sb.Append(",");
 			sb.Append(" " + Dou.ToString().Replace(',','.'));
 			sb.Append(",");
-			sb.Append(" " + Crc.ToString());
+			sb.Append(" " + ((int)Crc).ToString());
 			sb.Append(",");
 			sb.Append(" " + Dsp.ToString());
 			sb.Append(",");
@@ -422,7 +423,7 @@ namespace BppLib.Core
 			sb.AppendLine("	PARAM,NAME=NRV,VALUE=" + ConvertBoolToYesNo(Nrv));
 			sb.AppendLine("	PARAM,NAME=DIN,VALUE=" + Din.ToString().Replace(',','.'));
 			sb.AppendLine("	PARAM,NAME=DOU,VALUE=" + Dou.ToString().Replace(',','.'));
-			sb.AppendLine("	PARAM,NAME=CRC,VALUE=" + Crc.ToString());
+			sb.AppendLine("	PARAM,NAME=CRC,VALUE=" + ((int)Crc).ToString());
 			sb.AppendLine("	PARAM,NAME=DSP,VALUE=" + Dsp.ToString());
 			sb.AppendLine("	PARAM,NAME=CEN,VALUE=\"" + Cen + "\"");
 			sb.AppendLine("	PARAM,NAME=AGG,VALUE=\"" + Agg + "\"");
