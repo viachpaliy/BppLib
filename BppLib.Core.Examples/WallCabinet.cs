@@ -31,7 +31,7 @@ namespace BppLib.Core.Examples
             prg.Origins = "5";
             prg.Operations.Add(new Bv{Id="D7L19", Side=0, Crn="1,2,4,3", X=9, Y=50, Z=0, Dp=19, Dia=7, Ttp=1});
             prg.Operations.Add(new Bv{Id="Shelf", Side=0, Crn="1,2", X=(prg.Lpx/2 - 11), Y=50, Z=0, Dp=13, Dia=5});
-            prg.Operations.Add(new CutX{Side=0, Crn="1", X=0, Y=(prg.Lpy - 18), Dp=8, L=prg.Lpx, Crc=2, Th=3.5});
+            prg.Operations.Add(new CutX{Side=0, Crn="1", X=0, Y=(prg.Lpy - 18), Dp=8, L=prg.Lpx, Crc=ToolCorrection.Left, Th=3.5});
             return prg;
         }
 
@@ -44,7 +44,7 @@ namespace BppLib.Core.Examples
             prg.Origins = "5";
             prg.Operations.Add(new Bv{Id="D7L19", Side=0, Crn="1,2,4,3", X=9, Y=50, Z=0, Dp=19, Dia=7, Ttp=1});
             prg.Operations.Add(new Bv{Id="Shelf", Side=0, Crn="1,2", X=(prg.Lpx/2 + 11), Y=50, Z=0, Dp=13, Dia=5});
-            prg.Operations.Add(new CutX{Side=0, Crn="1", X=0, Y=(prg.Lpy - 18), Dp=8, L=prg.Lpx, Crc=2, Th=3.5});
+            prg.Operations.Add(new CutX{Side=0, Crn="1", X=0, Y=(prg.Lpy - 18), Dp=8, L=prg.Lpx, Crc=ToolCorrection.Left, Th=3.5});
             return prg;
         }
 
@@ -57,7 +57,7 @@ namespace BppLib.Core.Examples
             prg.Origins = "5"; 
             prg.Operations.Add(new Bh{Id="LeftSide", Side=1, Crn="1,4", X=50, Y=0, Z=0, Dp=35, Dia=4.5, Md = true});
             prg.Operations.Add(new Bh{Id="RightSide", Side=3, Crn="1,4", X=50, Y=0, Z=0, Dp=35, Dia=4.5, Md = true});
-            prg.Operations.Add(new CutX{Side=0, Crn="1", X=0, Y=(prg.Lpy - 18), Dp=8, L=prg.Lpx, Crc=2, Th=3.5});
+            prg.Operations.Add(new CutX{Side=0, Crn="1", X=0, Y=(prg.Lpy - 18), Dp=8, L=prg.Lpx, Crc=ToolCorrection.Left, Th=3.5});
             return prg;
         }
     

@@ -23,6 +23,17 @@ namespace BppLib.Core.Examples
             prg.MiniFixOperation(2, 37);
             string fileName = dir +"\\" + "Minifx800x320.bpp";
             File.WriteAllText(fileName, prg.AsBppCode());
+
+            var millPrg = new BiesseProgram();
+            prg.Lpx = 800;
+            prg.Lpy = 528;
+            prg.Lpz = 18;
+            prg.Origins = "5,8";
+            /// Uses extension method of <c>MillingExample</c> class for generation milling operation.
+            millPrg.Operation();
+            fileName = dir +"\\" + "MillingExample.bpp";
+            File.WriteAllText(fileName, millPrg.AsBppCode());
+
         }
     }
 }

@@ -12,7 +12,7 @@ namespace BppLib.Core
         /// <value>Property <c>IntId</c> represents the unique identifier an object of BiesseWorks.</value>
 		public int IntId { get; set; }
 
-        /// <value>Property <c>Gid</c> represents the ; identification code of the drawing to which the machining is to be associated.</value>
+        /// <value>Property <c>Gid</c> represents the identification code of the drawing to which the machining is to be associated.</value>
 		public string Gid { get; set; } = "" ;
 
         /// <value>Property <c>Dp</c> represents the depth of the cut or of the perforation offset for through cuts.</value>
