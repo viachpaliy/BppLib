@@ -117,6 +117,7 @@ namespace BppLib.Core
 		/// <value>Property <c>Shp</c> represents the hood position during machining operation.</value>
 		public int Shp { get; set; } = 0 ;
 
+		/// <value>Property <c>Udt</c> enables or disables the use of properties <c>A21</c> and <c>S21</c>.</value>
 		public bool Ea21 { get; set; } = false ;
 
 		/// <value>Property <c>Cen</c> represents the identification code for the machine work centre
