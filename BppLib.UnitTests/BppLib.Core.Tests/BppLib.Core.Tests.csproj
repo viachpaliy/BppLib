@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BppLib.Core\BppLib.Core.csproj" />
+    <ProjectReference Include="..\..\BppLib.Core\BppLib.Core.csproj" />
   </ItemGroup>
 
 </Project>

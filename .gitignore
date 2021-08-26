@@ -1,9 +1,9 @@
 BppLib.Core/bin
 BppLib.Core/obj
-BppLib.Core.Tests/bin
-BppLib.Core.Tests/obj
-BppLib.Core.Examples/bin
-BppLib.Core.Examples/obj
+BppLib.UnitTests/BppLib.Core.Tests/bin
+BppLib.UnitTests/BppLib.Core.Tests/obj
+BppLib.Examples/BppLib.Core.Examples/bin
+BppLib.Examples/BppLib.Core.Examples/obj
 BppLib.CIDFile/bin
 BppLib.CIDFile/obj
 BppLib.UnitTests/BppLib.CIDFile.UnitTests/bin
