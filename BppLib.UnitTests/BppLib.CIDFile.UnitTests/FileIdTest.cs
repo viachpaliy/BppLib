@@ -4,7 +4,7 @@ using BppLib.CIDFile;
 namespace BppLib.CIDFile.UnitTests
 {
     [TestFixture]
-    public class Tests
+    public class FileIdTests
     {
         
 
