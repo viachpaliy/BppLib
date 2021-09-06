@@ -43,6 +43,8 @@ namespace BppLib.Core
 		/// the programmed one, using both operating sections.</value>
 		public bool Cow { get; set; } = false ;
 
+		/// <value>Property <c>Sil</c> allows to define a list of IDs - separated by a comma - in
+		/// order to identify the single geometric parts you need to work on(e.g. <code>Sil = "59891, 59802, 59896"</code>)
 		public string Sil { get; set; } = "" ;
 
 		/// <value>Property <c>Ttk</c> represents the total cut thickness.</value>
