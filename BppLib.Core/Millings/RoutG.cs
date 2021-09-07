@@ -12,7 +12,7 @@ namespace BppLib.Core
         /// <value>Property <c>IntId</c> represents the unique identifier an object of BiesseWorks.</value>
 		public int IntId { get; set; }
 
-        /// <value>Property <c>Gid</c> represents the ; identification code of the drawing to be called up.</value>
+        /// <value>Property <c>Gid</c> represents the identification code of the drawing to be called up.</value>
 		public string Gid { get; set; } = "" ;
 
         /// <value>Property <c>Id</c> represents the description of machining operation.</value> 
