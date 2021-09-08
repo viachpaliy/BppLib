@@ -17,7 +17,8 @@ namespace BppLib.Core
 		{
             if (PublicVariables.Count > 0)
             {
-                StringBuilder sb = new StringBuilder();
+                 StringBuilder sb = new StringBuilder();
+                sb.AppendLine("");
                 for(int i = 0; i < PublicVariables.Count; i++)
                 {
                     var item = PublicVariables[i];
@@ -42,6 +43,7 @@ namespace BppLib.Core
              if (PublicVariables.Count > 0)
             {
                 StringBuilder sb = new StringBuilder();
+                sb.AppendLine("");
                 sb.AppendLine("BEGIN PUBLICVARS");
                 foreach(var item in PublicVariables)
                 {

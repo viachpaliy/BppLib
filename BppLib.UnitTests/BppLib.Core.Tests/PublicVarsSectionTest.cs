@@ -27,7 +27,8 @@ namespace BppLib.Core.Tests
             var G = new BiesseVariable{Name = "G", Value = "7.3", Description = "Real", Typ = BiesseVariablesType.Real};
             var J = new BiesseVariable{Name = "J", Value = "9", Description = "Integer", Typ = BiesseVariablesType.Integer};
             obj.PublicVariables = new List<BiesseVariable>(){H, A, B, D, F, G, J};
-            string expected = @"GLB=H|8|Angle|6|
+            string expected = @"
+GLB=H|8|Angle|6|
 GLB=A|10|Generic|0|
 GLB=B|""1,2""|String|3|
 GLB=D|4|Procent|8|
@@ -58,7 +59,8 @@ GLB=J|9|Integer|1|";
             var G = new BiesseVariable{Name = "G", Value = "7.3", Description = "Real", Typ = BiesseVariablesType.Real};
             var J = new BiesseVariable{Name = "J", Value = "9", Description = "Integer", Typ = BiesseVariablesType.Integer};
             obj.PublicVariables = new List<BiesseVariable>(){H, A, B, D, F, G, J};
-            string expected = @"BEGIN PUBLICVARS
+            string expected = @"
+BEGIN PUBLICVARS
 	PARAM, NAME=H, VALUE=8, DESCRIPTION=""Angle"", TYPE=6
 	PARAM, NAME=A, VALUE=10, DESCRIPTION=""Generic"", TYPE=0
 	PARAM, NAME=B, VALUE=""1,2"", DESCRIPTION=""String"", TYPE=3

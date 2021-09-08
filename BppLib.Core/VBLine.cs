@@ -9,6 +9,20 @@ namespace BppLib.Core
         ///<value> Property <c>Code</c> represents the line of VBScript code.</value>
         public string Code { get; set; } 
 
+        /// <summary>
+        /// Initializes a new instance of the VBLine class.
+        /// </summary>
+        public VBLine(){}
+
+        /// <summary>
+        /// Initializes a new instance of the VBLine class.
+        /// </summary>
+        /// <param name="code">The VBScript code.</param>
+        public VBLine(string code)
+        {
+            Code = code;
+        }
+
         /// <summary>This method serializes an object as Bpp code.</summary>
 		/// <returns>A string  is coded as Bpp code.</returns>
 		public string AsBppCode()

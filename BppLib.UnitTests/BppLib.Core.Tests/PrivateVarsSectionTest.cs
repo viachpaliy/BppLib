@@ -22,7 +22,8 @@ namespace BppLib.Core.Tests
             var C = new BiesseVariable{Name = "C", Value = "3", Description = "Time", Typ = BiesseVariablesType.Time};
             var E = new BiesseVariable{Name = "E", Value = "5", Description = "Distance", Typ = BiesseVariablesType.Distance};
             obj.PrivateVariables = new List<BiesseVariable>(){C, E};
-            string expected = @"LOC=C|3|Time|7|
+            string expected = @"
+LOC=C|3|Time|7|
 LOC=E|5|Distance|4|";
             Assert.AreEqual(expected, obj.AsBppCode());
         }
@@ -43,7 +44,8 @@ LOC=E|5|Distance|4|";
             var C = new BiesseVariable{Name = "C", Value = "3", Description = "Time", Typ = BiesseVariablesType.Time};
             var E = new BiesseVariable{Name = "E", Value = "5", Description = "Distance", Typ = BiesseVariablesType.Distance};
             obj.PrivateVariables = new List<BiesseVariable>(){C, E};
-            string expected = @"BEGIN PRIVATEVARS
+            string expected = @"
+BEGIN PRIVATEVARS
 	PARAM, NAME=C, VALUE=3, DESCRIPTION=""Time"", TYPE=7
 	PARAM, NAME=E, VALUE=5, DESCRIPTION=""Distance"", TYPE=4
 END PRIVATEVARS";

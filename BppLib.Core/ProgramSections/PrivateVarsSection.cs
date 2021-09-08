@@ -18,6 +18,7 @@ namespace BppLib.Core
             if (PrivateVariables.Count > 0)
             {
                 StringBuilder sb = new StringBuilder();
+                sb.AppendLine("");
                 for(int i = 0; i < PrivateVariables.Count; i++)
                 {
                     var item = PrivateVariables[i];
@@ -42,6 +43,7 @@ namespace BppLib.Core
              if (PrivateVariables.Count > 0)
             {
                 StringBuilder sb = new StringBuilder();
+                sb.AppendLine("");                
                 sb.AppendLine("BEGIN PRIVATEVARS");
                 foreach(var item in PrivateVariables)
                 {
