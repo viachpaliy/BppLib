@@ -4,6 +4,8 @@ BppLib.UnitTests/BppLib.Core.Tests/bin
 BppLib.UnitTests/BppLib.Core.Tests/obj
 BppLib.Examples/BppLib.Core.Examples/bin
 BppLib.Examples/BppLib.Core.Examples/obj
+BppLib.Examples/BppLib.CID.Examples/bin
+BppLib.Examples/BppLib.CID.Examples/obj
 BppLib.CIDFile/bin
 BppLib.CIDFile/obj
 BppLib.UnitTests/BppLib.CIDFile.UnitTests/bin
