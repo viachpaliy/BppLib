@@ -3,7 +3,7 @@ using System.Text;
 
 namespace BppLib.Core
 {
-    /// <summary>Uses with the <c>Crc</c> property.</summary>
+    /// <summary>Uses with the <c>Crc</c> property of geometry,cutting and milling classes.</summary>
     public enum ToolCorrection 
     {
         ///<summary>Positions the tool axis at the centre of the trajectory.</summary>

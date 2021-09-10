@@ -3,7 +3,7 @@ using System.Text;
 
 namespace BppLib.Core
 {
-    /// <summary>Uses with the <c>Crt</c> property.</summary>
+    /// <summary>Uses with the <c>Crt</c> property of the <see cref="OffGeo"/> class.</summary>
     public enum OffsetCompensationType
     {
         /// <summary>Positions the tool axis using the settings defined in the geometry.</summary>

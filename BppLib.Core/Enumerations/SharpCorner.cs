@@ -3,7 +3,7 @@ using System.Text;
 
 namespace BppLib.Core
 {
-    /// <summary>Uses with the <c>Sc</c> property.</summary>
+    /// <summary>Uses with the <c>Sc</c> property of arcs,lines and figures classes.</summary>
     public enum SharpCorner
     {
         /// <summary> Solution 1.</summary>

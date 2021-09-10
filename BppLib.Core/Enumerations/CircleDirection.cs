@@ -3,7 +3,7 @@ using System.Text;
 
 namespace BppLib.Core
 {
-    /// <summary>Uses with the <c>Dir</c> property.</summary>
+    /// <summary>Uses with the <c>Dir</c> property of Arcs,Lines and Figures classes.</summary>
     public enum CircleDirection
     {
         /// <summary> Anticlockwise direction.</summary>

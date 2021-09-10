@@ -3,6 +3,7 @@ using System.Text;
 
 namespace BppLib.Core
 {
+    /// <summary>Uses with the <c>Typ</c> property of the <see cref="BiesseVariable"/> class.</summary>
     public enum BiesseVariablesType
     {
         /// <summary> General.</summary>

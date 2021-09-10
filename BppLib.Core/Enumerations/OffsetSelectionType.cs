@@ -3,7 +3,7 @@ using System.Text;
 
 namespace BppLib.Core
 {
-    /// <summary>Uses with the <c>Osl</c> property.</summary>
+    /// <summary>Uses with the <c>Osl</c> property of the <see cref="OffGeo"/> class.</summary>
     public enum OffsetSelectionType
     {
         /// <summary>the tangential parts following on from the selected geometry are also copied.</summary>

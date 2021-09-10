@@ -3,7 +3,7 @@ using System.Text;
 
 namespace BppLib.Core
 {
-    /// <summary>Uses with the <c>Cka</c> property.</summary>
+    /// <summary>Uses with the <c>Cka</c> property of boring,cutting and milling classes.</summary>
     public enum InclinationRotationType
     {
          /// <summary> Inclination/rotation type -abs .</summary>

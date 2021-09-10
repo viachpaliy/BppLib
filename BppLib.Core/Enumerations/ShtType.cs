@@ -3,7 +3,7 @@ using System.Text;
 
 namespace BppLib.Core
 {
-    /// <summary>Uses with the <c>Dir</c> property and  the <c>S32</c> class.</summary>
+    /// <summary>Uses with the <c>Dir</c> property of  the <see cref="S32"/> class.</summary>
     public enum ShtType
     {
         spByPos = 0,

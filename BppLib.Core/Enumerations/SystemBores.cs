@@ -3,7 +3,7 @@ using System.Text;
 
 namespace BppLib.Core
 {
-    /// <summary>Uses with <c>Typ</c> property and <c>S32</c> class.</summary>
+    /// <summary>Uses with <c>Typ</c> property of the <see cref="S32"/> class.</summary>
     public enum SystemBores
     {
         /// <summary>Boring “centre correction type”.</summary>

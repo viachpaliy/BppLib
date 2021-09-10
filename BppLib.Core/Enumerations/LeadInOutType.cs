@@ -3,7 +3,7 @@ using System.Text;
 
 namespace BppLib.Core
 {
-    /// <summary>Uses with <c>Tin</c> and <c>Tou</c> properties.</summary>
+    /// <summary>Uses with <c>Tin</c> and <c>Tou</c> properties of milling classes.</summary>
     public enum LeadInOutType
     {
         None = 0,

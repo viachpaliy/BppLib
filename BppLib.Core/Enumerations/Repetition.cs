@@ -3,7 +3,7 @@ using System.Text;
 
 namespace BppLib.Core
 {
-    /// <summary>Uses with the <c>Rty</c> property.</summary>
+    /// <summary>Uses with the <c>Rty</c> property of geometry,boring,cutting and milling classes.</summary>
     public enum Repetition
     {
         /// <summary>Repeats along the angled straight line.</summary>
