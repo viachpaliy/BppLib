@@ -22,7 +22,7 @@ namespace BppLib.Core.Examples
             prg.Lpy = 320;
             prg.Lpz = 18;
             prg.Origins = "5,8";
-            /// Uses extension method of <c>CustomOperations</c> class for generation machining operation.
+            /// Uses extension method <c>MiniFixOperation</c> of <c>CustomOperations</c> class for generation machining operation.
             prg.MiniFixOperation(2, 37);
             /// write file as .bpp
             string fileName = dir +"\\" + "Minifx800x320.bpp";
@@ -39,8 +39,8 @@ namespace BppLib.Core.Examples
             prg.Lpy = 528;
             prg.Lpz = 18;
             prg.Origins = "5,8";
-            /// Uses extension method of <c>MillingExample</c> class for generation milling operation.
-            millPrg.Operation();
+            /// Uses extension method <c>MillingOperation</c> of <c>CustomOperations</c> class for generation milling operation.
+            millPrg.MillingOperation();
             /// write file as .bpp
             fileName = dir +"\\" + "MillingExample.bpp";
             File.WriteAllText(fileName, millPrg.AsBppCode());
@@ -57,7 +57,7 @@ namespace BppLib.Core.Examples
             prg.Lpy = 397;
             prg.Lpz = 19.3;
             prg.Origins = "5,8";
-            /// Uses extension method of <c>VariableIfBranchExample</c> class for generation milling operations.
+            /// Uses extension method <c>KitchenDoorOperation</c> of <c>CustomOperations</c> class for generation milling operations.
             prgExample.KitchenDoorOperation(60,30);
             /// write file as .bpp
             fileName = dir +"\\" + "KitchenDoor.bpp";

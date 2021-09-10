@@ -29,7 +29,8 @@ namespace BppLib.Core.Examples
     /// ROUTG ID="Angel45" GID="BaseContour" Z=0 DP=8 DIA=0.1 TNM="V-BIT90" CRC=0 TIN=0 AIN=0 TOU=0 AOU=0 SC=YES
     /// ROUTG ID="Angel45Inner" GID="InnerContour" Z=0 DP=8 DIA=0.1 TNM="V-BIT90" CRC=0 TIN=0 AIN=0 TOU=0 AOU=0
     
-    public static class VariableIfBranchExample
+    /// <summary>Class <c>CustomOperations</c> models the custom machining operations.</summary>
+    public static partial class CustomOperations
     {
         public static void KitchenDoorOperation(this BiesseProgram prg, double L, double dL)
         {

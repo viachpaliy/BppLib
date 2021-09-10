@@ -5,8 +5,8 @@ using System.IO;
 
 namespace BppLib.Core.Examples
 {
-    /// <summary>Class <c>MillingExample</c> models the milling operation.</summary>
-    public static class MillingExample 
+    /// <summary>Class <c>CustomOperations</c> models the custom machining operations.</summary>
+    public static partial class CustomOperations 
     {
         /// ROUT SIDE=0 CRN=”1” Z=0 DP=10 DIA=18 ER=NO
         ///   START_POINT X=120 Y=264.2061763 
@@ -21,7 +21,7 @@ namespace BppLib.Core.Examples
         ///   LINE_EP XE=120 YE=264.2061763 
         ///   ENDPATH
 
-        public static void Operation(this BiesseProgram prg)
+        public static void MillingOperation(this BiesseProgram prg)
         {
             prg.Operations.Add(new Rout{ Side=0, Crn="1", Z=0, Dp=10, Dia=18, Er=false});
             prg.Operations.Add(new StartPoint{X=120, Y=264.2061763});

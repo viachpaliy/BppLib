@@ -6,7 +6,7 @@ using System.IO;
 namespace BppLib.Core.Examples
 {
     /// <summary>Class <c>CustomOperations</c> models the custom machining operations.</summary>
-    public static class CustomOperations 
+    public static partial class CustomOperations 
     {
         public static void MiniFixOperation(this BiesseProgram prg, int side, double Xshift)
         {
