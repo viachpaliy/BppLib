@@ -46,7 +46,7 @@ namespace BppLib.Core
 		public bool Cow { get; set; } = false ;
 
 		/// <value>Property <c>Sil</c> allows to define a list of IDs - separated by a comma - in
-		/// order to identify the single geometric parts you need to work on(e.g. <code>Sil = "59891, 59802, 59896"</code>)
+		/// order to identify the single geometric parts you need to work on(e.g. <code>Sil = "59891, 59802, 59896"</code>).</value>
 		public string Sil { get; set; } = "" ;
 
 		/// <value>Property <c>A21</c> represents the Aggr21 angle.

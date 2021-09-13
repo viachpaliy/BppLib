@@ -36,9 +36,11 @@ namespace BppLib.Core
         /// <value>Property <c>Typ</c> represents the type of machining operation.</value>
 		public PocketType Typ { get; set; } = PocketType.ptZIG ;
 
-        /// <value>Property <c>Dlt</c> represents the overlap value for repeated milling operations. 
+        /// <value>Property <c>Dlt</c> represents the overlap value for repeated milling operations.</value> 
 		public double Dlt { get; set; } = 0 ;
 
+		/// <value>Property <c>N</c> models the "N" parameter of the "POCK" macro.
+		/// The exact meaning of the parameter is unknown. Default value is -1.</value> 
 		public int N { get; set; } = -1 ;
 
         /// <value>Property <c>A</c> represents the pocketing inclination.
@@ -150,7 +152,7 @@ namespace BppLib.Core
 		public double Dou { get; set; } = 0 ;
 
         /// <value>Property <c>Sds</c> represents the distance between the tool slowdown point and the point at which the geometry ends.
-        /// Slowdown takes place both when the tool approaches the end of the geometry, and when it moves away from that point.
+        /// Slowdown takes place both when the tool approaches the end of the geometry, and when it moves away from that point.</value>
 		public double Sds { get; set; } = 0 ;
 
         /// <value>Property <c>Prp</c> represents the percentage value to modify the lead-in and lead-out radius.</value>

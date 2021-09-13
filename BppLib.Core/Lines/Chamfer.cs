@@ -12,7 +12,7 @@ namespace BppLib.Core
         /// <value>Property <c>Id</c> represents the unique identifier an object of BiesseWorks.</value>
 		public int Id { get; set; } 
 
-        /// <value>Property <c>D</c> represents the length of the chamfer.
+        /// <value>Property <c>D</c> represents the length of the chamfer.</value>
 		public double D { get; set; } = 0 ;
 
 		/// <value>Property <c>Zs</c> represents value of the increase in machining depth in the initial part of the element.</value>

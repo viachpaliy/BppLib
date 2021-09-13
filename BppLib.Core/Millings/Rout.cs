@@ -249,7 +249,7 @@ namespace BppLib.Core
         /// used with lead-outs of the type: Corrected3DLine, Profile3D, Corrected3DCurve.</value>
 		public bool Tbo { get; set; } = false ;
 
-        /// <value>Property <c>Tlo</c> represents the linear length of the segment for translating the tool.
+        /// <value>Property <c>Tlo</c> represents the linear length of the segment for translating the tool.</value>
 		public double Tlo { get; set; } = 0 ;
 
         /// <value>Property <c>Tqo</c> represents the position (mm) to establish the initial translation point that can be calculated
@@ -265,7 +265,7 @@ namespace BppLib.Core
 		public double Dou { get; set; } = 0 ;
 
         /// <value>Property <c>Sds</c> represents the distance between the tool slowdown point and the point at which the geometry ends.
-        /// Slowdown takes place both when the tool approaches the end of the geometry, and when it moves away from that point.
+        /// Slowdown takes place both when the tool approaches the end of the geometry, and when it moves away from that point.</value>
 		public double Sds { get; set; } = 0 ;
 
         /// <value>Property <c>Prp</c> represents the percentage value to modify the lead-in and lead-out radius.</value>
@@ -381,7 +381,7 @@ namespace BppLib.Core
 		public bool Crr { get; set; } = false;
 
 		/// <value>Property <c>Nebs</c> used to avoids output between the vertical runs(<c>Vtr</c> > 1).
-		/// In this way, at the end of each step, the tool carries out the following one without being extracted from the panel.
+		/// In this way, at the end of each step, the tool carries out the following one without being extracted from the panel.</value>
 		public bool Nebs { get; set; } = false;
 
 		/// <value>Property <c>Etb</c> enables or disables the internal tool blow purge.</value>

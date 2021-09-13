@@ -3,7 +3,7 @@ using System.Text;
 
 namespace BppLib.Core
 {
-    /// <summary>Uses with the <c>Typ</c> property of the <see cref="CutG"/> class.</summary>.</summary>
+    /// <summary>Uses with the <c>Typ</c> property of the <see cref="CutG"/> class.</summary>
     public enum CuttingType
     {
         /// <summary>The angled cut using the endpoint co-ordinates a reference values.</summary>

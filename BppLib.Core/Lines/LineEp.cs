@@ -36,12 +36,12 @@ namespace BppLib.Core
 		public int Sp { get; set; } = 0 ;
 
         /// <value>Property <c>Sol</c> represents solutions that can be applied to the line,
-        /// on the basis of the data set previously.Values allowed: 0,1</value> 
+        /// on the basis of the data set previously.Values allowed: 0,1 .</value> 
 		public int Sol { get; set; } = 0 ;
         
         /// <value>Property <c>Mvt</c> used to indicate whether the segment of the profile generated must be considered
         /// as a tool positioning trajectory. If this is set at false, the segment is considered as being part of the
-        /// machining; if it is set at true, the segment is considered as the positioning trajectory.
+        /// machining; if it is set at true, the segment is considered as the positioning trajectory.</value>
 		public bool Mvt { get; set; } = false ;
 
         /// <summary>This constructor initializes the new instance of the class

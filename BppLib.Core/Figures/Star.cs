@@ -44,13 +44,13 @@ namespace BppLib.Core
         /// <value>Property <c>Ss</c> represents the side of the rectangle from which to start when carrying out the machining operation.</value>
 		public int Ss { get; set; } = 1 ;
 
-        /// <value> True is start point on the centre of the side.<value>
+        /// <value> True is start point on the centre of the side.</value>
         public bool StartFromHalfSide
          { get => _startFromHalfSide;
           set => _startFromHalfSide = value; }
 
         /// <value>Property <c>Sd</c> represents the value for the start point of the side of the rectangle
-        /// set above from which to start the machining operation.<value>
+        /// set above from which to start the machining operation.</value>
 		public double Sd
          { get
            {

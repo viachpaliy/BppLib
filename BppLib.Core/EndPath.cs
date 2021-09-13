@@ -3,8 +3,7 @@ using System.Text;
 
 namespace BppLib.Core
 {
-	/// <summary>Class <c>EndPath</c> models  the end of the machining operation.
-	/// </summary>
+	/// <summary>Class <c>EndPath</c> models the end of the machining operation.</summary>
 	public class EndPath: IBppCode
 	{
 		/// <value>Property <c>BppName</c> represents the name of BiesseWorks type.</value>

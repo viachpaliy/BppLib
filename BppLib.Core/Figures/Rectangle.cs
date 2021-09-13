@@ -21,10 +21,10 @@ namespace BppLib.Core
         /// <value>Property <c>Yc</c> represents the Y-axis co-ordinate of the centre (or the corner) of the rectangle.</value>
 		public double Yc { get; set; } = 0 ;
 
-        /// <value>Property <c>L</c> represents the dimensions of the rectangle along the X-axis.
+        /// <value>Property <c>L</c> represents the dimensions of the rectangle along the X-axis.</value>
 		public double L { get; set; } = 0 ;
 
-        /// <value>Property <c>H</c> represents the dimensions of the rectangle along the Y-axis.
+        /// <value>Property <c>H</c> represents the dimensions of the rectangle along the Y-axis..</value>
 		public double H { get; set; } = 0 ;
 
 		/// <value>Property <c>Dir</c> represents direction of the geometry;
@@ -41,13 +41,13 @@ namespace BppLib.Core
         /// <value>Property <c>Ss</c> represents the side of the rectangle from which to start when carrying out the machining operation.</value>
 		public int Ss { get; set; } = 1 ;
 
-        /// <value> True is start point on the centre of the side.<value>
+        /// <value> True is start point on the centre of the side.</value>
         public bool StartFromHalfSide
          { get => _startFromHalfSide;
           set => _startFromHalfSide = value; }
 
         /// <value>Property <c>Sd</c> represents the value for the start point of the side of the rectangle
-        /// set above from which to start the machining operation.<value>
+        /// set above from which to start the machining operation.</value>
 		public double Sd
          { get
            {
@@ -85,7 +85,7 @@ namespace BppLib.Core
 		public bool Usc { get; set; } = true ;
 
         /// <value>Property <c>Crn</c> represents corner used in the calculation of the co-ordinates of the start point of the
-        /// rectangle. Must only be used in the case where Usc = false;
+        /// rectangle. Must only be used in the case where <c>Usc = false</c>.</value>
 		public int Crn { get; set; } = 1 ;
 
         /// <summary>This constructor initializes the new Rectangle

@@ -92,6 +92,7 @@ namespace BppLib.Core
             }
         }
 
+        /// <value>Property <c>Operations</c> represents the entities from the program section of Biesse CNC programme.</value>
         public List<IBppCode> Operations
         {
             get 
