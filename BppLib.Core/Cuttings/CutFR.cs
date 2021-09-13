@@ -30,7 +30,7 @@ namespace BppLib.Core
 		/// <value>Property <c>Ly</c> represents the  length of the cut in Y starting from the position defined in property <c>Y</c>.</value>
 		public double Ly { get; set; } = 300 ;
 
-		/// <value>Property <c>Nrp</c> represents the entered ISO instruction.</value> 
+		/// <value>Property <c>Iso</c> represents the entered ISO instruction.</value> 
 		public string Iso { get; set; } = "" ;
 
 		/// <value>Property <c>Opt</c> represents the optimisation of the machining operation.</value>

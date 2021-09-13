@@ -29,7 +29,7 @@ namespace BppLib.Core
         /// of the perforation offset for through machining operations.</value>
 		public double Dp { get; set; } = 10 ;
 
-		/// <value>Property <c>Nrp</c> represents the entered ISO instruction.</value> 
+		/// <value>Property <c>Iso</c> represents the entered ISO instruction.</value> 
 		public string Iso { get; set; } = "" ;
 
         /// <value>Property <c>Opt</c> represents the optimisation of the machining operation.</value>
@@ -352,6 +352,7 @@ namespace BppLib.Core
 		/// In this way, at the end of each step, the tool carries out the following one without being extracted from the panel.
 		public bool Nebs { get; set; } = false;
 
+		/// <value>Property <c>Etb</c> enables or disables the internal tool blow purge.</value>
 		public bool Etb { get; set; } = false;
 		
 		public bool Fxd { get; set; } = false;
@@ -371,6 +372,7 @@ namespace BppLib.Core
 
 		public int Ims { get; set; } = 0 ;
 
+		/// <value>Property <c>Sdsf</c> represents the slowdown feed.</value>
 		public int Sdsf { get; set; } = 0 ;
 
 		public bool Incstp { get; set; } = false;

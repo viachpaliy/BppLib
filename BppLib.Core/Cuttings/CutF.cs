@@ -21,7 +21,7 @@ namespace BppLib.Core
         /// <value>Property <c>Y</c> represents the distance in Y from the edge of the piece.</value>
 		public double Y { get; set; } = 0 ;
 
-        /// <value>Property <c>Nrp</c> represents the entered ISO instruction.</value> 
+        /// <value>Property <c>Iso</c> represents the entered ISO instruction.</value> 
 		public string Iso { get; set; } = "" ;
 
 		/// <value>Property <c>Opt</c> represents the optimisation of the machining operation.</value>

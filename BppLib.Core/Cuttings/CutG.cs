@@ -53,7 +53,7 @@ namespace BppLib.Core
 		/// <value>Property <c>Az</c> represents the angle of inclination of the spindle axis of rotation with respect to the plane X, Y.</value> 
 		public double Az { get; set; } = 0 ;
 
-		/// <value>Property <c>Nrp</c> represents the entered ISO instruction.</value> 
+		/// <value>Property <c>Iso</c> represents the entered ISO instruction.</value> 
 		public string Iso { get; set; } = "" ;
 
 		/// <value>Property <c>Opt</c> represents the optimisation of the machining operation.</value>

@@ -24,7 +24,7 @@ namespace BppLib.Core
 		/// <value>Property <c>Thr</c> represents if needing to execute a through bore.</value>
 		public bool Thr { get; set; } = false ;
 
-		/// <value>Property <c>Nrp</c> represents the entered ISO instruction.</value> 
+		/// <value>Property <c>Iso</c> represents the entered ISO instruction.</value> 
 		public string Iso { get; set; } = "" ;
 
 		/// <value>Property <c>Opt</c> represents the optimisation of the machining operation.</value>
