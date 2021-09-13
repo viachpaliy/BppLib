@@ -70,6 +70,8 @@ namespace BppLib.Core
 		/// <value>Property <c>Ar</c> represents the angle of rotation of the spindle axis on plane X, Y.</value>
 		public double Ar { get; set; } = 0 ;
 
+		/// <value> If property <c>Ap</c> is <c>false</c> enable data settings taking the side created to be a two-dimensional plane X, Y.
+		/// If property <c>Ap</c> is <c>true</c> enable data settings taking the side created to be a three-dimensional plane X, Y, Z.</value>
 		public bool Ap { get; set; } = false ;
 
 		/// <value>Property <c>Cka</c> represents the inclination/rotation type.</value>
@@ -127,6 +129,8 @@ namespace BppLib.Core
 		/// are carried out using, for example, the tilting axis.</value>
 		public double Azs { get; set; } = 0 ;
 
+		/// <value>Property <c>Mac</c> represents the name of machine on which the machining operation is to be carried out.
+		/// This data item is only used if there are several machines arranged in a work line.</value>
 		public string Mac { get; set; } = "" ;
 
 		/// <value>Property <c>Tnm</c> represents the tool code from the predefined list of the tools present in the database.</value> 
@@ -191,12 +195,20 @@ namespace BppLib.Core
 		/// <value>Property <c>Kdt</c> enables or disables the execute probing.</value>
 		public bool Dtas { get; set; } = false ;
 
+		/// <value>Property <c>Rmd</c> models the "RMD" parameter of the "BCA" macro.
+		/// The exact meaning of the parameter is unknown. Default value is <c>RmdType.rmdAuto</c>.</value>
 		public RmdType Rmd { get; set; } = RmdType.rmdAuto ;
 
+		/// <value>Property <c>Dqt</c> models the "DQT" parameter of the "BCA" macro.
+		/// The exact meaning of the parameter is unknown. Default value is 0.</value>
 		public int Dqt { get; set; } = 0 ;
 
+		/// <value>Property <c>Erdw</c> models the "ERDW" parameter of the "BCA" macro.
+		/// The exact meaning of the parameter is unknown. Default value is false("NO").</value>
 		public bool Erdw { get; set; } = false ;
 
+		/// <value>Property <c>Dfw</c> models the "DFW" parameter of the "BCA" macro.
+		/// The exact meaning of the parameter is unknown. Default value is 0.</value>
 		public int Dfw { get; set; } = 0 ;
 
 		/// <summary>This constructor initializes the new Bca

@@ -23,6 +23,8 @@ namespace BppLib.Core
         /// <value>Property <c>Z</c> represents the Z-axis co-ordinate.</value>
 		public double Z { get; set; } = 0 ;
 
+		/// <value>Property <c>Shw</c> models the "SHW" parameter of the "OFFSET" macro.
+		/// The exact meaning of the parameter is unknown. Default value is false("NO").</value> 
 		public bool Shw { get; set; } = false ;
 
         /// <summary>This constructor initializes the new instance of the class

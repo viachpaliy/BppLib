@@ -22,6 +22,8 @@ namespace BppLib.Core
         /// <value>Property <c>Y</c> represents the scale factor.</value>
 		public double Fct { get; set; } = 0 ;
 
+		/// <value>Property <c>Nu</c> models the "NU" parameter of the "SCALE" macro.
+		/// The exact meaning of the parameter is unknown. Default value is 0.</value> 
 		public int Nu { get; set; } = 0 ;
 
         /// <summary>This constructor initializes the new instance of the class

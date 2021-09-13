@@ -56,7 +56,8 @@ namespace BppLib.Core
 		/// <value>Property <c>Opt</c> represents the optimisation of the machining operation.</value>
 		public bool Opt { get; set; } = true ;
 
-		public int Xmi { get; set; } = 0 ;
+		/// <value>Property <c>Xmi</c> represents the "minimum X" - distance from the last bore to the end of the piece.</value>
+		public double Xmi { get; set; } = 0 ;
 
 		/// <value>Property <c>Cow</c> used to enable the machining operation also on the face opposite
 		/// the programmed one, using both operating sections.</value>
@@ -65,6 +66,8 @@ namespace BppLib.Core
         /// <value>Property <c>Vtr</c> represents the number of passages that influence the depth of the programmed machining.</value>
 		public int Vtr { get; set; } = 0 ;
 
+		/// <value>Property <c>Mac</c> represents the name of machine on which the machining operation is to be carried out.
+		/// This data item is only used if there are several machines arranged in a work line.</value>
 		public string Mac { get; set; } = "" ;
 
 		/// <value>Property <c>Tnm</c> represents the tool code from the predefined list of the tools present in the database.</value> 
@@ -173,7 +176,7 @@ namespace BppLib.Core
 			sb.Append(",");
 			sb.Append(" " + ConvertBoolOnOff(Opt));
 			sb.Append(",");
-			sb.Append(" " + Xmi.ToString());
+			sb.Append(" " + Xmi.ToString().Replace(",","."));
 			sb.Append(",");
 			sb.Append(" " + ConvertBoolOnOff(Cow));
 			sb.Append(",");
@@ -242,7 +245,7 @@ namespace BppLib.Core
 			sb.AppendLine("	PARAM,NAME=TYP,VALUE=" + Typ.ToString());
 			sb.AppendLine("	PARAM,NAME=ISO,VALUE=\"" + Iso + "\"");
 			sb.AppendLine("	PARAM,NAME=OPT,VALUE=" + ConvertOnOff(Opt));
-			sb.AppendLine("	PARAM,NAME=XMI,VALUE=" + Xmi.ToString());
+			sb.AppendLine("	PARAM,NAME=XMI,VALUE=" + Xmi.ToString().Replace(",","."));
 			sb.AppendLine("	PARAM,NAME=COW,VALUE=" + ConvertOnOff(Cow));
 			sb.AppendLine("	PARAM,NAME=VTR,VALUE=" + Vtr.ToString());
 			sb.AppendLine("	PARAM,NAME=MAC,VALUE=\"" + Mac + "\"");

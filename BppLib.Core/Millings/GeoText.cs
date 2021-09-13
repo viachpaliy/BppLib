@@ -77,6 +77,8 @@ namespace BppLib.Core
 		/// <value>Property <c>Wgh</c> used to define the extension of the word in length.</value>
 		public double Wgh { get; set; } = 1 ;
 
+		/// <value>Property <c>Chs</c> models the "CHS" parameter of the "GEOTEXT" macro.
+		/// The exact meaning of the parameter is unknown. Default value is 0.</value> 
 		public int Chs { get; set; } = 0 ;
 
 		/// <value>Property <c>Rty</c> represents the type of repeats.</value>

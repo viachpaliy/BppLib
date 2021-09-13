@@ -217,6 +217,8 @@ namespace BppLib.Core
 		/// <value>Property <c>Kdt</c> enables or disables the deflector.</value>
 		public bool Kdt { get; set; } = false ;
 
+		/// <value>Property <c>Ims</c> models the "IMS" parameter of the "CUT_G" macro.
+		/// The exact meaning of the parameter is unknown. Default value is 0.</value> 
 		public int Ims { get; set; } = 0 ;
 
         /// <summary>This constructor initializes the new CutG

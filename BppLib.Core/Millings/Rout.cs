@@ -156,6 +156,8 @@ namespace BppLib.Core
 		/// where the data item referring to Z is the machining operation depth.</value> 
 		public bool Gip { get; set; } = true ;
 
+		/// <value>Property <c>Lsv</c> models the "LSV" parameter of the "ROUT" macro.
+		/// The exact meaning of the parameter is unknown. Default value is 0.</value> 
 		public int Lsv { get; set; } = 0 ;
 
         /// <value>Property <c>S21</c> represents the Aggr21 face.
@@ -300,6 +302,8 @@ namespace BppLib.Core
         /// <value>Property <c>Shp</c> represents the hood position during machining operation.</value>
 		public int Shp { get; set; } = 0 ;
 
+		/// <value>Property <c>Swp</c> models the "SWP" parameter of the "ROUT" macro.
+		/// The exact meaning of the parameter is unknown. Default value is false("NO").</value> 
 		public bool Swp { get; set; } = false ;
         
 		/// <value>Property <c>Csp</c> represents the  speed at which the sharp corner must be executed.</value>
@@ -387,36 +391,62 @@ namespace BppLib.Core
 		/// <value>Property <c>Etb</c> enables or disables the internal tool blow purge.</value>
 		public bool Etb { get; set; } = false;
 		
+		/// <value>Property <c>Fxd</c> models the "FXD" parameter of the "ROUT" macro.
+		/// The exact meaning of the parameter is unknown. Default value is false("NO").</value>
 		public bool Fxd { get; set; } = false;
 
+		/// <value>Property <c>Fxda</c> models the "FXDA" parameter of the "ROUT" macro.
+		/// The exact meaning of the parameter is unknown. Default value is 0.</value>
 		public int Fxda { get; set; } = 0 ;
 		
 		/// <value>Property <c>Kdt</c> enables or disables the deflector.</value>
 		public bool Kdt { get; set; } = false;
 
+		/// <value>Property <c>Eml</c> models the "EML" parameter of the "ROUT" macro.
+		/// The exact meaning of the parameter is unknown. Default value is false("NO").</value>
 		public bool Eml { get; set; } = false;
 
+		/// <value>Property <c>Etg</c> models the "ETG" parameter of the "ROUT" macro.
+		/// The exact meaning of the parameter is unknown. Default value is false("NO").</value>
 		public bool Etg { get; set; } = false;
 
+		/// <value>Property <c>Rtas</c> models the "RTAS" parameter of the "ROUT" macro.
+		/// The exact meaning of the parameter is unknown. Default value is false("NO").</value>
 		public bool Rtas { get; set; } = false;
 
+		/// <value>Property <c>Rdin</c> models the "RDIN" parameter of the "ROUT" macro.
+		/// The exact meaning of the parameter is unknown. Default value is false("NO").</value>
 		public bool Rdin { get; set; } = false;
 
 		/// <value>Property <c>Sdsf</c> represents the slowdown feed.</value>
 		public int Sdsf { get; set; } = 0 ;
 
+		/// <value>Property <c>Incstp</c> models the "INCSTP" parameter of the "ROUT" macro.
+		/// The exact meaning of the parameter is unknown. Default value is false("NO").</value>
 		public bool Incstp { get; set; } = false;
 
+		/// <value>Property <c>Etgt</c> models the "ETGT" parameter of the "ROUT" macro.
+		/// The exact meaning of the parameter is unknown. Default value is 0.1 </value>
 		public double Etgt { get; set; } = 0.1 ;
 
+		/// <value>Property <c>Ajt</c> models the "AJT" parameter of the "ROUT" macro.
+		/// The exact meaning of the parameter is unknown. Default value is false("NO").</value>
 		public bool Ajt { get; set; } = false;
 
+		/// <value>Property <c>Ion</c> models the "ION" parameter of the "ROUT" macro.
+		/// The exact meaning of the parameter is unknown. Default value is false("NO").</value>
 		public bool Ion { get; set; } = false;
 
+		/// <value>Property <c>Lubmnz</c> models the "LUBMNZ" parameter of the "ROUT" macro.
+		/// The exact meaning of the parameter is unknown. Default value is false("NO").</value>
 		public bool Lubmnz { get; set; } = false;
 
+		/// <value>Property <c>Sht</c> models the "SHT" parameter of the "ROUT" macro.
+		/// The exact meaning of the parameter is unknown. Default value is "spByPost".</value>
 		public ShtType Sht { get; set; } = ShtType.spByPost ;
 
+		/// <value>Property <c>Shd</c> models the "SHD" parameter of the "ROUT" macro.
+		/// The exact meaning of the parameter is unknown. Default value is 0.</value>
 		public int Shd { get; set; } = 0 ;
 
         /// <summary>This constructor initializes the new Rout

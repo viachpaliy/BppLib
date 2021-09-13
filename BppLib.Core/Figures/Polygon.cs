@@ -87,6 +87,8 @@ namespace BppLib.Core
 			Id = GetHashCode();
 		}
 
+		/// <summary>This method serializes an object as Bpp code.</summary>
+		/// <returns>A string  is coded as Bpp code.</returns>
 		public string AsBppCode()
 		{
 			StringBuilder sb = new StringBuilder();
@@ -128,6 +130,8 @@ namespace BppLib.Core
 			return sb.ToString();
 		}
 
+		/// <summary>This method serializes an object as Cix code.</summary>
+		/// <returns>A string  is coded as Cix code.</returns>
 		public string AsCixCode()
 		{
 			StringBuilder sb = new StringBuilder();

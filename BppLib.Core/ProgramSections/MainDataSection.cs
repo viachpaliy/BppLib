@@ -22,8 +22,12 @@ namespace BppLib.Core
         /// <value>Property <c>Simmetry</c> enables/disables program symmetry.</value>
         public bool Simmetry { get; set; } = true ; 
 
+        /// <value>Property <c>TlChk</c> models the "TLCHK" variable of the "MAINDATA" section of the ".cix" program.
+		/// The exact meaning of the variable is unknown. Default value is 0.</value>
         public int TlChk { get; set; } = 0 ;
 
+        /// <value>Property <c>Tooling</c> represents the number of the machine data configuration
+        /// saved in the appropriate numerical control environment, to be used to work the piece.</value>
         public string Tooling { get; set; } = "";
 
         /// <value>Property <c>CustStr</c> represents the data fields in window Customised panel parameters.</value>
@@ -53,8 +57,12 @@ namespace BppLib.Core
         /// machining operation and tooling of the work table with the WorkTableTooling application.</value>
         public string Material { get; set; } = "wood" ;
 
+        /// <value>Property <c>PutLst</c> models the "TLCHK" variable of the "MAINDATA" section of the ".cix" program.
+		/// The exact meaning of the variable is unknown. Default value is "".</value>
 	    public string PutLst { get; set; } = "";
         
+        /// <value>Property <c>Oppwkrs</c> represents the specific data field for the “Skipper” machine.
+        /// Used when working two overlapping pieces with both operating sections.</value>
     	public int Oppwkrs { get; set; } = 0 ;
 
         /// <value>Property <c>UniClamp</c> enables the use of Uniclamps(to use the shapeable suction cups, disable).</value>
@@ -71,6 +79,8 @@ namespace BppLib.Core
         /// <value>Property <c>CollTool</c> ; used to determine the type of check on the tool dimensions, to avoid collisions.</value> 
         public int CollTool { get; set; } = 0 ;
 	
+        /// <value>Property <c>CalcEdTh</c> models the "CALCEDTH" variable of the "MAINDATA" section of the ".cix" program.
+		/// The exact meaning of the variable is unknown. Default value is 0.</value>
         public int CalcEdTh { get; set; } = 0 ;
 
         /// <value>Property <c>EnableLabel</c> is only visible for machines equipped with a label printer and/or a
@@ -81,6 +91,8 @@ namespace BppLib.Core
         /// all those piece areas considered as waste.</value> 
         public bool LockWaste { get; set; } = false ;
 	
+        /// <value>Property <c>LoadEdgeOpt</c> models the "LOADEDGEOPT" variable of the "MAINDATA" section of the ".cix" program.
+		/// The exact meaning of the variable is unknown. Default value is 0.</value>
         public int LoadEdgeOpt { get; set; } = 0 ;
 	
         /// <value>Property <c>ItlType</c> represents the type of optimisation of the machinings of the sub-programs
@@ -91,10 +103,16 @@ namespace BppLib.Core
         /// program execution phase, the objects are positioned semi-automatically on the work table.</value>
         public bool RunPav { get; set; } = false ;
 	
+        /// <value>Property <c>FlipEnd</c> models the "FLIPEND" variable of the "MAINDATA" section of the ".cix" program.
+		/// The exact meaning of the variable is unknown. Default value is 0.</value>
         public int FlipEnd { get; set; } = 0 ;
 	
+        /// <value>Property <c>EnableMachLinks</c> models the "ENABLEMACHLINKS" variable of the "MAINDATA" section of the ".cix" program.
+		/// The exact meaning of the variable is unknown. Default value is false(0).</value>
         public bool EnableMachLinks { get; set; } = false ;
 	
+        /// <value>Property <c>EnablePursuits</c> models the "ENABLEPURSUITS" variable of the "MAINDATA" section of the ".cix" program.
+		/// The exact meaning of the variable is unknown. Default value is false(0).</value>
         public bool EnablePursuits { get; set; } = false ;
 
         /// <value>Property <c>EnableFastVertBorings</c> used to enable vertical borings anticipation.</value>
