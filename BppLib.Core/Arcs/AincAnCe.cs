@@ -3,9 +3,8 @@ using System.Text;
 
 namespace BppLib.Core
 {
-	/// <summary>Class <c>AincAnCe</c> models  the incremental curve given angle and centre point.
-    /// Creates an arc using the centre of the arc,
-    /// which is obtained by incrementing the co-ordinates of the endpoint of the preceding element,
+	/// <summary>Class <c>AincAnCe</c> models the incremental curve given angle and centre point.
+    /// Creates an arc using the centre of the arc, which is obtained by incrementing the co-ordinates of the endpoint of the preceding element,
     /// and the angle of the arc with respect to the positive direction of the X-axis as reference values.
 	/// </summary>
 	public class AincAnCe: IBppCode

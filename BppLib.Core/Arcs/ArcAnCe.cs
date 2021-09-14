@@ -3,7 +3,7 @@ using System.Text;
 
 namespace BppLib.Core
 {
-    /// <summary>Class <c>ArcEpRa</c> models the curve given angle and centre.
+    /// <summary>Class <c>ArcAnCe</c> models the curve given angle and centre.
     /// Creates an arc using the co-ordinates of the centre of the arc
     /// and the angle of the arc with respect to the positive direction of the X-axis as reference values.
     /// </summary>

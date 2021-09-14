@@ -3,7 +3,7 @@ using System.Text;
 
 namespace BppLib.Core
 {
-    /// <summary>Class <c>ArcEpRa</c> models the curve given end point and radius and tangency to previous item.
+    /// <summary>Class <c>ArcEpRaTp</c> models the curve given end point and radius and tangency to previous item.
     /// Creates an arc using the endpoint of the arc, the radius of the arc 
     /// and the tangency of the arc to the preceding element as reference values.
     /// </summary>

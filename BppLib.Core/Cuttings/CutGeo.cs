@@ -3,7 +3,7 @@ using System.Text;
 
 namespace BppLib.Core
 {
-    /// <summary>Class <c>GutFR</c> models the cut from geometry.</summary>
+    /// <summary>Class <c>GutGeo</c> models the cut from geometry.</summary>
 	public class CutGeo: IBppCode
 	{
         /// <value>Property <c>BppName</c> represents the name of BiesseWorks type.</value>

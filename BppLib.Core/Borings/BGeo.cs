@@ -3,7 +3,7 @@ using System.Text;
 
 namespace BppLib.Core
 {
-	/// <summary>Class <c>BGeo</c> models the bore from geometry operation .</summary> 
+	/// <summary>Class <c>BGeo</c> models the bore from geometry operation.</summary> 
 	public class BGeo: IBppCode
 	{
         /// <value>Property <c>BppName</c> represents the name of BiesseWorks type.</value>
