@@ -1,6 +1,10 @@
 # BppLib.Core
 ### The main purpose of this library is to create tools for generating "bpp" and "cix" files.
 
+### How do I get it?
+
+Install the [NuGet package](https://www.nuget.org/packages/BppLib.Core/).
+
 ### The `BiesseProgram` class models both ".bpp" and "cix" files :
  - the `AsBppCode` method returns the string as a "bpp" program.
  - the `AsCixCode` method returns the string as a "cix" program.
@@ -11,7 +15,7 @@
  - Lpx - the piece width (X dimension of the piece);
  - Lpy - the piece height (Y dimension of the piece);
  - Lpz - the thickness of the piece;
-  and many others.
+ - and many others.
 
 ### The section `ProgramSec` models the program section of "bpp" programme and includes objects that model BiesseWorks instructions:
 - class `Geo` models the geometry definition.
