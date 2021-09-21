@@ -4,7 +4,7 @@ using System.Globalization;
 
 namespace BppLib.CIDFile
 {
-    ///<summary>Class <c>Custom</c> represents boring operation in the Biesse CID program.</summary>
+    ///<summary>Class <c>Custom</c> represents boring operation in the CID program.</summary>
     public class Custom : IBlock
     {
         public Tech TechBlock {get; set;} = new Tech();
@@ -32,6 +32,7 @@ namespace BppLib.CIDFile
             return sb.ToString();
         } 
 
+        /// <summary>This method turns the <c>Custom</c> into "BLOCK".</summary>
         public string AsCidBlock()
         {
             StringBuilder sb = new StringBuilder();

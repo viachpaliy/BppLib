@@ -5,13 +5,14 @@ using System.Collections.Generic;
 
 namespace BppLib.CIDFile
 {
+    ///<summary>Class <c>CIDProgram</c> represents the CID program.</summary>
     public class CIDProgram
     {
         protected FileId _header = new FileId();
 
         protected MainData _mainData = new MainData();
 
-        ///<value> Property <c>FileName</c> represents the name of the Biesse CID program.</value>
+        ///<value> Property <c>FileName</c> represents the name of the CID program.</value>
         public string FileName
         {
              get{

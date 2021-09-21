@@ -4,7 +4,7 @@ using System.Globalization;
 
 namespace BppLib.CIDFile
 {
-    ///<summary>Class <c>MainData</c> models MAINDATA section in Biesse CID program.</summary>
+    ///<summary>Class <c>MainData</c> models MAINDATA section in CID program.</summary>
     public class MainData
     {
         /// <value>Property <c>Lx</c> represents the piece width (X dimension of the piece).</value>

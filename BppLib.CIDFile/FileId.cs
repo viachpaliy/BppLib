@@ -3,10 +3,10 @@ using System.Text;
 
 namespace BppLib.CIDFile
 {
-    ///<summary>Class <c>FileId</c> models ID section in Biesse CID program.</summary>
+    ///<summary>Class <c>FileId</c> models ID section in the CID program.</summary>
     public class FileId
     {
-        ///<value> Property <c>FileName</c> represents the name of the Biesse CID program.</value>
+        ///<value> Property <c>FileName</c> represents the name of the CID program.</value>
         public string FileName { get; set; } = "Panel";
 
         ///<value>Property <c>Rel</c> represents the release of CID programme.</value>

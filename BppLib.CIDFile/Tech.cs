@@ -4,7 +4,7 @@ using System.Globalization;
 
 namespace BppLib.CIDFile
 {
-    ///<summary>Class <c>Tech</c> models Tech section in Biesse CID program.</summary>
+    ///<summary>Class <c>Tech</c> models Tech section in the CID program.</summary>
     public class Tech
     {
         ///<value> Property <c>Cat</c> represents the category of operation.</value>
@@ -56,9 +56,9 @@ namespace BppLib.CIDFile
                   sb.AppendLine("		DIAM=" + Diam.ToString("F4", CultureInfo.InvariantCulture));
                   if ((Cat == 1) || (Cat == 3))
                     {sb.AppendLine("		DEPTH=" + DepthStart.ToString("F4", CultureInfo.InvariantCulture) + "," + DepthEnd.ToString("F4", CultureInfo.InvariantCulture));}
-                  if ((WorkSpeed != 0) || (Cat == 2) || (Cat == 3))  sb.AppendLine("		WORKSPEED=" + WorkSpeed.ToString("F4", CultureInfo.InvariantCulture));
-                  if ((RotSpeed != 0) || (Cat == 2) || (Cat == 3))  sb.AppendLine("		ROTSPEED=" + RotSpeed.ToString("F4", CultureInfo.InvariantCulture));
-                  if ((DesSpeed != 0) || (Cat == 2) || (Cat == 3))  sb.AppendLine("		DESSPEED=" + DesSpeed.ToString("F4", CultureInfo.InvariantCulture));
+                  if (WorkSpeed != 0) sb.AppendLine("		WORKSPEED=" + WorkSpeed.ToString("F4", CultureInfo.InvariantCulture));
+                  if (RotSpeed != 0)  sb.AppendLine("		ROTSPEED=" + RotSpeed.ToString("F4", CultureInfo.InvariantCulture));
+                  if (DesSpeed != 0)  sb.AppendLine("		DESSPEED=" + DesSpeed.ToString("F4", CultureInfo.InvariantCulture));
 		    	  if (ToolCorTyp != "") sb.AppendLine("		TOOLCORTYP=" + ToolCorTyp);
                   sb.AppendLine("		ANG=" + Ang0.ToString("F4", CultureInfo.InvariantCulture) + "," + Ang1.ToString("F4", CultureInfo.InvariantCulture));  
                 }
