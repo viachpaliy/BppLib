@@ -7,14 +7,29 @@ namespace BppLib.CIDFile
     ///<summary>Class <c>Arc</c> represents the arc geometry.</summary>
     public class Arc : Line 
     {
+        /// <value>Property <c>ArcCenter</c> represents the centre of the arc.</value>
+        public Point ArcCenter {get; set;} = new Point();
+
         /// <value>Property <c>Xc</c> represents X-axis co-ordinate of the centre of the arc.</value>
-		public double Xc { get; set; } = 0 ;
+		public double Xc 
+        {
+            get { return ArcCenter.X; }
+            set { ArcCenter.X = value;}
+        }
 
         /// <value>Property <c>Yc</c> represents Y-axis co-ordinate of the centre of the arc.</value>
-		public double Yc { get; set; } = 0 ;
+		public double Yc 
+        {
+            get { return ArcCenter.Y; }
+            set { ArcCenter.Y = value;}
+        }
 
         /// <value>Property <c>Zc</c> represents Z-axis co-ordinate of the centre of the arc.</value>
-		public double Zc { get; set; } = 0 ;
+		public double Zc 
+        {
+            get { return ArcCenter.Z; }
+            set { ArcCenter.Z = value;}
+        }
 
         /// <value>Property <c>R</c> represents arc radius value.</value>
 		public double R { get; set; } = 0 ;

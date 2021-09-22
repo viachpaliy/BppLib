@@ -45,7 +45,7 @@ namespace BppLib.Core
         /// The corner indicated is the point of reference in order to position the piece in the graphics area.</value>
 		public int SpCrn { get; set; } = 1 ;
 
-        /// <value>Property <c>SpCrn</c> represents the e type of reference for positioning the piece of the sub-program,
+        /// <value>Property <c>SpCrn</c> represents the type of reference for positioning the piece of the sub-program,
         /// starting from the corner defined in the <c>SpCrn</c> property:
         /// <c>Rft = 1</c> - Positioning on the origin
         /// <c>Rft = 2</c>- Positioning on piece corner.</value>
