@@ -10,5 +10,9 @@ BppLib.CIDFile/bin
 BppLib.CIDFile/obj
 BppLib.UnitTests/BppLib.CIDFile.UnitTests/bin
 BppLib.UnitTests/BppLib.CIDFile.UnitTests/obj
+BppLib.Fusion360PostProcessor/bin
+BppLib.Fusion360PostProcessor/obj
+BppLib.UnitTests/Fusion360PostProcessor.UnitTests/bin
+BppLib.UnitTests/Fusion360PostProcessor.UnitTests/obj
 Other
 Auxiliaries
