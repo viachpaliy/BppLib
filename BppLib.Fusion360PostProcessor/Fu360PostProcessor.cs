@@ -5,7 +5,7 @@ using System.Globalization;
 namespace Fusion360PostProcessor
 {
     /// <summary> Class <c>Fu360PostProcessor</c> models post processor for the Fusion 360.</summary>
-    public class Fu360PostProcessor
+    public partial class Fu360PostProcessor
     {
         /// <value>Property <c>Description</c> represents the short description of post processor.</value>
         public string Description {get; set;} = "";
@@ -74,9 +74,13 @@ namespace Fusion360PostProcessor
         /// property to true. Spiral moves are linearized if set to false.</value>
         public bool AllowSpiralMoves {get; set;}
 
-        /// <summary> JavaScript engine. </summary>
-        static Jurassic.ScriptEngine engine = new Jurassic.ScriptEngine();
+        /// <value>Property <c>Unit</c> contains the output units of the post processor.</value>
+        public double Unit {get; set;} = 1.0;
 
+        /// <summary> JavaScript engine. </summary>
+        public static Jurassic.ScriptEngine engine = new Jurassic.ScriptEngine();
+
+        /// <value>Property <c>UserDefinedProperties</c> specifies the user defined properties.</value>
         public Jurassic.Library.ObjectInstance UserDefinedProperties {get; set;} = engine.Object.Construct();
 
         
@@ -134,6 +138,7 @@ namespace Fusion360PostProcessor
 			engine.SetGlobalValue("CAPABILITY_INTERMEDIATE", (int)CapabilitiesEnum.CapabilityIntermediate);
             engine.SetGlobalValue("MM", 1.0);
             engine.SetGlobalValue("IN", 25.4);
+            engine.SetGlobalValue("DEG",(180/Math.PI));
             engine.SetGlobalValue("tolerance", Tolerance);
 			engine.SetGlobalValue("minimumChordLength", MinimumChordLength);
 			engine.SetGlobalValue("minimumCircularRadius", MinimumCircularRadius);
@@ -143,6 +148,7 @@ namespace Fusion360PostProcessor
             engine.SetGlobalValue("allowedCircularPlanes", (int)AllowedCircularPlanes);
             engine.SetGlobalValue("allowHelicalMoves", AllowHelicalMoves);
             engine.SetGlobalValue("allowSpiralMoves", AllowSpiralMoves);
+            engine.SetGlobalValue("unit",Unit);
         }
 
         public void SetJsFunction()
@@ -150,6 +156,12 @@ namespace Fusion360PostProcessor
             engine.SetGlobalFunction("setCodePage", new Action<string>((a) => this.CodePage = a));
             engine.SetGlobalFunction("spatial", new Func<double, double, double>((a, b) => a * b));
             engine.SetGlobalFunction("toRad", new Func<double, double>((a) => (Math.PI / 180) * a));
+            engine.Evaluate(@"function getProperty(name) {
+                return properties[name].value;
+            }");
+                        
+           SetCreateFormat();
+            
         }
 
         public void SetProperties()
@@ -179,7 +191,8 @@ namespace Fusion360PostProcessor
             AllowHelicalMoves = engine.GetGlobalValue<bool>("allowHelicalMoves");
             AllowSpiralMoves = engine.GetGlobalValue<bool>("allowSpiralMoves");
         }
-                
+
+        
         public void WritelnProperties()
         {
             Console.WriteLine("Vendor = " + Vendor);
