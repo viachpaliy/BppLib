@@ -362,5 +362,27 @@ xOutput.disable();";
             Assert.AreEqual(expected, Fu360PostProcessor.engine.Evaluate<string>("xOutput.format(1.2)"));
         }
 
+        /// <summary> example from "Post Processor Training Guide"(CAM Post Processor Guide 6/8/21) p.4-70</summary>
+        /// <code>
+        /// var gFormat = createFormat({prefix:"G", decimals:0, width:2, zeropad:true});
+        /// var gMotionModal = createModal({force:true}, gFormat);
+        /// gMotionModal.format(0); // returns G00
+        /// gMotionModal.format(0); // returns G00 (force is set to 'true')
+        /// gMotionModal.setPrefix("G1=");
+        /// gMotionModal.setSuffix("*");
+        /// gMotionModal.format(1); // returns "G1=01*"
+        /// </code>
+        [Test]
+        public void TestCreateFormat_createModal()
+        {
+            string testCode = @"var gFormat = createFormat({prefix:""G"", decimals:0, width:2, zeropad:true});
+ var gMotionModal = createModal({force:true}, gFormat);";
+            var obj = new Fu360PostProcessor(testCode, false);
+            Assert.AreEqual("G00", Fu360PostProcessor.engine.Evaluate<string>("gMotionModal.format(0)"));
+            Assert.AreEqual("G00", Fu360PostProcessor.engine.Evaluate<string>("gMotionModal.format(0)"));
+            Fu360PostProcessor.engine.Evaluate("gMotionModal.setPrefix(\"G1=\")");
+            Fu360PostProcessor.engine.Evaluate("gMotionModal.setSuffix(\"*\")");
+            Assert.AreEqual("G1=01*", Fu360PostProcessor.engine.Evaluate<string>("gMotionModal.format(1)"));
+        }
     }
 }

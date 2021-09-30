@@ -9,17 +9,18 @@ namespace Fusion360PostProcessor
     public partial class Fu360PostProcessor
     {
        
-        public void SetCreateVariable()
+        public void SetCreateModal()
         {
-            engine.Evaluate(@"function createVariable(specifiers, format) {
-                class createVariableClass{
+            engine.Evaluate(@"function createModal(specifiers, format) {
+                class createModalClass{
                     constructor(specifiers, format){
                         this.currentValue = undefined;
                         this.prevValue = undefined;
-                        this.enabled = true;
                         this.varFormat = format;
                         if (specifiers[""prefix""] != undefined) 
                             {this.varFormat.prefix = specifiers[""prefix""]; }
+                        if (specifiers[""suffix""] != undefined) 
+                            {this.varFormat.suffix = specifiers[""suffix""]; }
                         if (specifiers[""force""] != undefined)
                             {this.force = specifiers[""force""];}
                         else
@@ -34,8 +35,6 @@ namespace Fusion360PostProcessor
                             {this.onchange();}
                         this.prevValue = this.currentValue;
                         this.currentValue = value;
-                        if (!this.enabled)
-                            {return """";}
                         if (this.force)
                             {return this.varFormat.format(value);}
                         else if (this.prevValue != this.currentValue)
@@ -46,13 +45,11 @@ namespace Fusion360PostProcessor
                         this.currentValue = undefined;
                         this.prevValue = undefined;
                     }
-                    disable(){this.enabled = false;}
-                    enable(){this.enabled = true;}
-                    isEnabled(){return this.enabled;}
                     getCurrent(){return this.currentValue;} 
                     setPrefix(prefixText){this.varFormat.prefix = prefixText;}
+                    setSuffix(suffixText){this.varFormat.suffix = suffixText;}
                 }
-            return new createVariableClass(specifiers, format);
+            return new createModalClass(specifiers, format);
             }");
 
         }
