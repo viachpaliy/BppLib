@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using Jurassic;
 using Fusion360PostProcessor;
+using System;
 
 namespace Fusion360PostProcessor.UnitTests
 {
@@ -229,9 +230,75 @@ namespace Fusion360PostProcessor.UnitTests
         {
             string testCode = @"var xFormat = createFormat({decimals:3, trim:false, forceSign:true});";
             double expected = -0.0005;
+            int precision = 9;
+            double tolerance = 1.0 / Math.Pow(10, precision);
             var obj = new Fu360PostProcessor(testCode, false);
-            Assert.AreEqual(expected, Fu360PostProcessor.engine.Evaluate<double>("xFormat.getError(4.5005)"));
+            double actual = Fu360PostProcessor.engine.Evaluate<double>("xFormat.getError(4.5005)");
+            Assert.That(actual, Is.EqualTo(expected).Within(tolerance));
         }
+
+        /// <summary> example from "Post Processor Training Guide"(CAM Post Processor Guide 6/8/21) p.4-68</summary>
+        /// <code>
+        /// var yFormat = createFormat({decimals:3, forceSign:true});
+        /// yFormat.getResultingValue(3.1234); // returns 3.123
+        /// </code>
+        [Test]
+        public void TestCreateFormat_getResultingValue_Test()
+        {
+            string testCode = @"var yFormat = createFormat({decimals:3, forceSign:true});";
+            double expected = 3.123;
+            int precision = 6;
+            double tolerance = 1.0 / Math.Pow(10, precision);
+            var obj = new Fu360PostProcessor(testCode, false);
+            double actual = Fu360PostProcessor.engine.Evaluate<double>("yFormat.getResultingValue(3.1234)");
+            Assert.That(actual, Is.EqualTo(expected).Within(tolerance));
+        }
+
+        /// <summary> example from "Post Processor Training Guide"(CAM Post Processor Guide 6/8/21) p.4-67</summary>
+        /// <code>
+        /// var xFormat = createFormat({decimals:3, trim:false, forceSign:true});
+        /// xFormat.isSignificant(.0005); // returns true (rounded to .001)
+        /// </code>
+        [Test]
+        public void TestCreateFormat_isSignificant_return_true()
+        {
+            string testCode = @"var xFormat = createFormat({decimals:3, trim:false, forceSign:true});";
+            bool expected = true;
+            var obj = new Fu360PostProcessor(testCode, false);
+            Assert.AreEqual(expected, Fu360PostProcessor.engine.Evaluate<bool>("xFormat.isSignificant(.0005)"));
+        }
+
+        /// <summary> example from "Post Processor Training Guide"(CAM Post Processor Guide 6/8/21) p.4-67</summary>
+        /// <code>
+        /// var xFormat = createFormat({decimals:3, trim:false, forceSign:true});
+        /// xFormat.isSignificant(.00049); // returns false
+        /// </code>
+        [Test]
+        public void TestCreateFormat_isSignificant_return_false()
+        {
+            string testCode = @"var xFormat = createFormat({decimals:3, trim:false, forceSign:true});";
+            bool expected = false;
+            var obj = new Fu360PostProcessor(testCode, false);
+            Assert.AreEqual(expected, Fu360PostProcessor.engine.Evaluate<bool>("xFormat.isSignificant(.00049)"));
+        }
+
+        /// <summary> example from "Post Processor Training Guide"(CAM Post Processor Guide 6/8/21) p.4-70</summary>
+        /// <code>
+        /// var xyzFormat = createFormat({decimals:3, forceDecimal:true});
+        /// var xOutput = createVariable({prefix:"X"}, xyzFormat);
+        /// xOutput.format(4.5); // returns "X4.5"
+        /// </code>
+        [Test]
+        public void TestCreateFormat_createVariable_N1()
+        {
+            string testCode = @"var xyzFormat = createFormat({decimals:3, forceDecimal:true});
+var xOutput = createVariable({prefix:""X""}, xyzFormat);";
+            string expected = "X4.5";
+            var obj = new Fu360PostProcessor(testCode, false);
+            Assert.AreEqual(expected, Fu360PostProcessor.engine.Evaluate<string>("xOutput.format(4.5)"));
+        }
+
+
 
     }
 }

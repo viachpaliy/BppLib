@@ -73,13 +73,15 @@ namespace Fusion360PostProcessor
                 return sb;
                 },
 
-            areDifferent : function(a, b) {
-                return (Math.round(a, -this.decimals) != Math.round(b, -this.decimals));
-            },
+            areDifferent : function(a, b) {return (round(a, this.decimals) != round(b, this.decimals));},
 
             getMinimumValue : function() {return Math.pow(10, -this.decimals);},
 
-            getError : function(value) {return  (Math.round(value, -this.decimals) - value);}
+            getError : function(value) {return  (value - round(value, this.decimals));},
+
+            getResultingValue : function(value) {return  round(value, this.decimals);},
+
+            isSignificant : function(value) {return (round(value, this.decimals) > 0);}
             
             };
       

@@ -156,12 +156,13 @@ namespace Fusion360PostProcessor
             engine.SetGlobalFunction("setCodePage", new Action<string>((a) => this.CodePage = a));
             engine.SetGlobalFunction("spatial", new Func<double, double, double>((a, b) => a * b));
             engine.SetGlobalFunction("toRad", new Func<double, double>((a) => (Math.PI / 180) * a));
+            engine.SetGlobalFunction("round", new Func<double, int, double>((a,b) => (Math.Round(a, b, MidpointRounding.AwayFromZero))));
             engine.Evaluate(@"function getProperty(name) {
                 return properties[name].value;
             }");
                         
            SetCreateFormat();
-            
+           SetCreateVariable();
         }
 
         public void SetProperties()
