@@ -298,7 +298,69 @@ var xOutput = createVariable({prefix:""X""}, xyzFormat);";
             Assert.AreEqual(expected, Fu360PostProcessor.engine.Evaluate<string>("xOutput.format(4.5)"));
         }
 
+        /// <summary> example from "Post Processor Training Guide"(CAM Post Processor Guide 6/8/21) p.4-70</summary>
+        /// <code>
+        /// var xyzFormat = createFormat({decimals:3, forceDecimal:true});
+        /// var xOutput = createVariable({prefix:"X"}, xyzFormat);
+        /// xOutput.format(4.5); // returns "X4.5"
+        /// xOutput.format(4.5); // returns "" (4.5 is currently stored in the xOutput variable)
+        /// </code>
+        [Test]
+        public void TestCreateFormat_createVariable_N2()
+        {
+            string testCode = @"var xyzFormat = createFormat({decimals:3, forceDecimal:true});
+var xOutput = createVariable({prefix:""X""}, xyzFormat);
+xOutput.format(4.5);";
+            string expected = "";
+            var obj = new Fu360PostProcessor(testCode, false);
+            Assert.AreEqual(expected, Fu360PostProcessor.engine.Evaluate<string>("xOutput.format(4.5)"));
+        }
 
+         /// <summary> example from "Post Processor Training Guide"(CAM Post Processor Guide 6/8/21) p.4-70</summary>
+        /// <code>
+        /// var xyzFormat = createFormat({decimals:3, forceDecimal:true});
+        /// var xOutput = createVariable({prefix:"X"}, xyzFormat);
+        /// xOutput.format(4.5); // returns "X4.5"
+        /// xOutput.format(4.5); // returns "" (4.5 is currently stored in the xOutput variable)
+        /// xOutput.reset(); // force xOuput on next formatting
+        /// xOutput.format(4.5); // returns "X4.5"
+        /// </code>
+        [Test]
+        public void TestCreateFormat_createVariable_N3()
+        {
+            string testCode = @"var xyzFormat = createFormat({decimals:3, forceDecimal:true});
+var xOutput = createVariable({prefix:""X""}, xyzFormat);
+xOutput.format(4.5);
+xOutput.reset();";
+            string expected = "X4.5";
+            var obj = new Fu360PostProcessor(testCode, false);
+            Assert.AreEqual(expected, Fu360PostProcessor.engine.Evaluate<string>("xOutput.format(4.5)"));
+        }
+
+        /// <summary> example from "Post Processor Training Guide"(CAM Post Processor Guide 6/8/21) p.4-70</summary>
+        /// <code>
+        /// var xyzFormat = createFormat({decimals:3, forceDecimal:true});
+        /// var xOutput = createVariable({prefix:"X"}, xyzFormat);
+        /// xOutput.format(4.5); // returns "X4.5"
+        /// xOutput.format(4.5); // returns "" (4.5 is currently stored in the xOutput variable)
+        /// xOutput.reset(); // force xOuput on next formatting
+        /// xOutput.format(4.5); // returns "X4.5"
+        /// xOutput.disable(); // disable xOutput formatting
+        /// xOutput.format(1.2); // returns "" since it is disabled
+        /// </code>
+        [Test]
+        public void TestCreateFormat_createVariable_N4()
+        {
+            string testCode = @"var xyzFormat = createFormat({decimals:3, forceDecimal:true});
+var xOutput = createVariable({prefix:""X""}, xyzFormat);
+xOutput.format(4.5);
+xOutput.reset();
+xOutput.format(4.5);
+xOutput.disable();";
+            string expected = "";
+            var obj = new Fu360PostProcessor(testCode, false);
+            Assert.AreEqual(expected, Fu360PostProcessor.engine.Evaluate<string>("xOutput.format(1.2)"));
+        }
 
     }
 }
