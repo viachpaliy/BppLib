@@ -33,19 +33,15 @@ namespace Fusion360PostProcessor
         }
 
         public void SetWriteWords(){
-            engine.Evaluate(@"function writeWords(arguments){
-                var result = """";
-                var args = Array.prototype.slice.call(arguments, 1);
-                result += args.join("""");
-                writeln(result);}");
+            engine.Evaluate(@"function writeWords(a0, a1 = """", a2 = """", a3 = """", a4 = """", a5 = """", a6 = """", a7 = """", a8 = """", a9 = """", a10 = """", a11 = """"){
+                 var args = [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11];
+                 writeln(args.join(''));}");
         }
 
         public void SetWriteWords2(){
-            engine.Evaluate(@"function writeWords2(arguments){
-                var result = """";
-                var args = Array.prototype.slice.call(arguments, 1);
-                result += args.join("""");
-                writeln(result);}");
+             engine.Evaluate(@"function writeWords2(a0, a1 = """", a2 = """", a3 = """", a4 = """", a5 = """", a6 = """", a7 = """", a8 = """", a9 = """", a10 = """", a11 = """"){
+                 var args = [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11];
+                 writeln(args.join(''));}");
         }
 
 
