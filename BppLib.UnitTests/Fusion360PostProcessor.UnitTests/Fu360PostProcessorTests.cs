@@ -402,5 +402,27 @@ var iOutput = createReferenceVariable({prefix:""I"", force:true}, xyzFormat);";
             Assert.AreEqual("", Fu360PostProcessor.engine.Evaluate<string>("iOutput.format(.001)"));
         }
 
+        /// <summary> example from "Post Processor Training Guide"(CAM Post Processor Guide 6/8/21) p.4-70</summary>
+        /// <code>
+        /// var zOutput = createIncrementalVariable({prefix:"Z", first:.5}, xyzFormat);
+        /// zOutput.format(.5); // after creating the IncrementalVariable you must call the format function with the same value as 'first' to properly set the initial value
+        /// zOutput.format(1.2); // returns "Z0.7"
+        /// zOutput.format(1.5); // returns "Z0.3"
+        /// zOutput.format(1.5); // returns ""
+        /// zOutput.format(0); // returns "Z-1.5"
+        /// </code>
+        [Test]
+        public void TestCreateFormat_createIncrementalVariable()
+        {
+            string testCode = @"var xyzFormat = createFormat({decimals:3, forceDecimal:true});
+            var zOutput = createIncrementalVariable({prefix:""Z"", first:.5}, xyzFormat);";
+            var obj = new Fu360PostProcessor(testCode, false);
+            Assert.AreEqual("", Fu360PostProcessor.engine.Evaluate<string>("zOutput.format(.5);"));
+            Assert.AreEqual("Z0.7", Fu360PostProcessor.engine.Evaluate<string>("zOutput.format(1.2);"));
+            Assert.AreEqual("Z0.3", Fu360PostProcessor.engine.Evaluate<string>("zOutput.format(1.5);"));
+            Assert.AreEqual("", Fu360PostProcessor.engine.Evaluate<string>("zOutput.format(1.5);"));
+            Assert.AreEqual("Z-1.5", Fu360PostProcessor.engine.Evaluate<string>("zOutput.format(0);"));
+        }
+
     }
 }

@@ -165,6 +165,7 @@ namespace Fusion360PostProcessor
            SetCreateVariable();
            SetCreateModal();
            SetCreateReferenceVariable();
+           SetCreateIncrementalVariable();
         }
 
         public void SetProperties()
