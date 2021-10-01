@@ -424,5 +424,17 @@ var iOutput = createReferenceVariable({prefix:""I"", force:true}, xyzFormat);";
             Assert.AreEqual("Z-1.5", Fu360PostProcessor.engine.Evaluate<string>("zOutput.format(0);"));
         }
 
+
+        [Test]
+        public void Test_writeln_function()
+        {
+            var obj = new Fu360PostProcessor("", false);
+            string actual = "";
+            obj.OutPutMethod += delegate(string cncCode){actual = cncCode;};
+            string expected = "test writeln";
+            Fu360PostProcessor.engine.Evaluate(@"writeln(""test writeln"");");
+            Assert.AreEqual(expected, actual);
+        }
+
     }
 }
