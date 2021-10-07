@@ -148,7 +148,16 @@ namespace Fusion360PostProcessor
             engine.SetGlobalValue("allowedCircularPlanes", (int)AllowedCircularPlanes);
             engine.SetGlobalValue("allowHelicalMoves", AllowHelicalMoves);
             engine.SetGlobalValue("allowSpiralMoves", AllowSpiralMoves);
-            engine.SetGlobalValue("unit",Unit);
+            engine.SetGlobalValue("unit",Unit);			
+            engine.SetGlobalValue("COOLANT_FLOOD", 1);
+            engine.SetGlobalValue("COOLANT_MIST", 2);
+            engine.SetGlobalValue("COOLANT_THROUGH_TOOL", 3);
+            engine.SetGlobalValue("COOLANT_AIR", 4);
+            engine.SetGlobalValue("COOLANT_AIR_THROUGH_TOOL", 5);
+            engine.SetGlobalValue("COOLANT_SUCTION", 6);
+            engine.SetGlobalValue("COOLANT_FLOOD_MIST", 7);
+            engine.SetGlobalValue("COOLANT_FLOOD_THROUGH_TOOL", 8);			
+            engine.SetGlobalValue("COOLANT_OFF", 0);
         }
 
         public void SetJsFunction()
@@ -156,18 +165,21 @@ namespace Fusion360PostProcessor
             engine.SetGlobalFunction("setCodePage", new Action<string>((a) => this.CodePage = a));
             engine.SetGlobalFunction("spatial", new Func<double, double, double>((a, b) => a * b));
             engine.SetGlobalFunction("toRad", new Func<double, double>((a) => (Math.PI / 180) * a));
+            engine.SetGlobalFunction("toPreciseUnit", new Func<double, double, double>((a, b) => a * b));
             engine.SetGlobalFunction("round", new Func<double, int, double>((a,b) => (Math.Round(a, b, MidpointRounding.AwayFromZero))));
             engine.Evaluate(@"function getProperty(name) {
                 return properties[name].value;
             }");
-                        
+           SetVector();      
            SetCreateFormat();
            SetCreateVariable();
            SetCreateModal();
+           SetCreateModalGroup();
            SetCreateReferenceVariable();
            SetCreateIncrementalVariable();
            SetForceOutput();
            SetWriteFunction();
+           
         }
 
         public void SetProperties()

@@ -429,7 +429,7 @@ var iOutput = createReferenceVariable({prefix:""I"", force:true}, xyzFormat);";
         {
             var obj = new Fu360PostProcessor("", false);
             string actual = "";
-            obj.OutPutMethod += delegate(string cncCode){actual = cncCode;};
+            obj.OutPutMethod = delegate(string cncCode){actual = cncCode;};
             string expected = "test writeln";
             Fu360PostProcessor.engine.Evaluate(@"writeln(""test writeln"");");
             Assert.AreEqual(expected, actual);
@@ -440,7 +440,7 @@ var iOutput = createReferenceVariable({prefix:""I"", force:true}, xyzFormat);";
         {
             var obj = new Fu360PostProcessor("", false);
             string actual = "";
-            obj.OutPutMethod += delegate(string cncCode){actual = cncCode;};
+            obj.OutPutMethod = delegate(string cncCode){actual = cncCode;};
             string expected = "G01X100Y200Z10M3";
             Fu360PostProcessor.engine.Evaluate(@"writeWords(""G01"",""X100"",""Y200"",""Z10"",""M3"");");
             Assert.AreEqual(expected, actual);
@@ -451,10 +451,18 @@ var iOutput = createReferenceVariable({prefix:""I"", force:true}, xyzFormat);";
         {
             var obj = new Fu360PostProcessor("", false);
             string actual = "";
-            obj.OutPutMethod += delegate(string cncCode){actual = cncCode;};
+            obj.OutPutMethod = delegate(string cncCode){actual = cncCode;};
             string expected = "G01X100Y200Z10M3";
             Fu360PostProcessor.engine.Evaluate(@"writeWords2(""G01"",""X100"",""Y200"",""Z10"",""M3"");");
             Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        //[Ignore("Ignore a test")]
+        public void Test_Vector_create()
+        {
+            var obj = new Fu360PostProcessor("", false);
+            Assert.DoesNotThrow(() => Fu360PostProcessor.engine.Evaluate(@"var a = new Vector(0,0,0);"));
         }
 
     }

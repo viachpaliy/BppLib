@@ -9,11 +9,11 @@ namespace Fusion360PostProcessor
     public partial class Fu360PostProcessor
     {
         public delegate void WritelnHandler(string cncCode);
-        public event WritelnHandler OutPutMethod = delegate{};
+        public WritelnHandler OutPutMethod = delegate{};
        
         public void OutPut(string cncCode)
         {
-            OutPutMethod?.Invoke(cncCode);
+            OutPutMethod(cncCode);
         }
 
         public void SetWriteFunction()
