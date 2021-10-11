@@ -114,6 +114,8 @@ namespace Fusion360PostProcessor
 
             SetProperties();
 
+            SetDelegats();
+
             if (displayProperties) 
                 WritelnProperties();
 
@@ -131,12 +133,7 @@ namespace Fusion360PostProcessor
             engine.SetGlobalValue("longDescription", "");
 			engine.SetGlobalValue("extension", "");
             engine.SetGlobalValue("capabilities", "");
-			engine.SetGlobalValue("CAPABILITY_MILLING", (int)CapabilitiesEnum.CapabilityMilling);
-			engine.SetGlobalValue("CAPABILITY_TURNING", (int)CapabilitiesEnum.CapabilityTurning);
-			engine.SetGlobalValue("CAPABILITY_JET", (int)CapabilitiesEnum.CapabilityJet);
-			engine.SetGlobalValue("CAPABILITY_SETUP_SHEET", (int)CapabilitiesEnum.CapabilitySetupSheet);
-			engine.SetGlobalValue("CAPABILITY_INTERMEDIATE", (int)CapabilitiesEnum.CapabilityIntermediate);
-            engine.SetGlobalValue("MM", 1.0);
+			engine.SetGlobalValue("MM", 1.0);
             engine.SetGlobalValue("IN", 25.4);
             engine.SetGlobalValue("DEG",(180/Math.PI));
             engine.SetGlobalValue("tolerance", Tolerance);
@@ -148,16 +145,26 @@ namespace Fusion360PostProcessor
             engine.SetGlobalValue("allowedCircularPlanes", (int)AllowedCircularPlanes);
             engine.SetGlobalValue("allowHelicalMoves", AllowHelicalMoves);
             engine.SetGlobalValue("allowSpiralMoves", AllowSpiralMoves);
-            engine.SetGlobalValue("unit",Unit);			
-            engine.SetGlobalValue("COOLANT_FLOOD", 1);
-            engine.SetGlobalValue("COOLANT_MIST", 2);
-            engine.SetGlobalValue("COOLANT_THROUGH_TOOL", 3);
-            engine.SetGlobalValue("COOLANT_AIR", 4);
-            engine.SetGlobalValue("COOLANT_AIR_THROUGH_TOOL", 5);
-            engine.SetGlobalValue("COOLANT_SUCTION", 6);
-            engine.SetGlobalValue("COOLANT_FLOOD_MIST", 7);
-            engine.SetGlobalValue("COOLANT_FLOOD_THROUGH_TOOL", 8);			
-            engine.SetGlobalValue("COOLANT_OFF", 0);
+            engine.SetGlobalValue("unit",Unit);	
+            foreach(int i in Enum.GetValues(typeof(CapabilitiesEnum)))
+            {
+                engine.SetGlobalValue(Enum.GetName(typeof(CapabilitiesEnum), i), i);
+            }
+            foreach(int i in Enum.GetValues(typeof(CoolantEnum)))
+            {
+                engine.SetGlobalValue(Enum.GetName(typeof(CoolantEnum), i), i);
+            }
+
+            foreach(int i in Enum.GetValues(typeof(ManualCommand)))
+            {
+                engine.SetGlobalValue(Enum.GetName(typeof(ManualCommand), i), i);
+            }
+            
+            foreach(int i in Enum.GetValues(typeof(MovementType)))
+            {
+                engine.SetGlobalValue(Enum.GetName(typeof(MovementType), i), i);
+            }
+
         }
 
         public void SetJsFunction()

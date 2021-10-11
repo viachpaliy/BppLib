@@ -5,10 +5,10 @@ namespace Fusion360PostProcessor
 {
     public enum CapabilitiesEnum
     {
-		CapabilityMilling = 1,
-		CapabilityTurning = 2,
-		CapabilityJet = 4,
-		CapabilitySetupSheet = 8,
-		CapabilityIntermediate = 16
+		CAPABILITY_MILLING = 1,
+		CAPABILITY_TURNING = 2,
+		CAPABILITY_JET = 4,
+		CAPABILITY_SETUP_SHEET = 8,
+		CAPABILITY_INTERMEDIATE = 16
     }
 }
