@@ -96,6 +96,8 @@ namespace Fusion360PostProcessor
 
             SetProperties();
 
+            SetDelegats();
+
             #if DEBUG
                 WritelnProperties();
 			#endif

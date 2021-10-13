@@ -100,94 +100,269 @@ namespace Fusion360PostProcessor
 		public void SetDelegats()
 		{
 		 
+		try{
 		 if (engine.Evaluate<bool>("onCircular != undefined ? true : false ;"))
 			{Circular=delegate(bool clockwise, double cx, double cy, double cz, double x, double y, double z, int feed)
 				{engine.CallGlobalFunction("onCircular", clockwise, cx, cy, cz, x, y, z, feed);};
 			}
+		}
+		catch(Jurassic.JavaScriptException ex)
+		{
+			Console.WriteLine("Jurassic.JavaScriptException : {0}", ex.Message);
+		}
 		 
+		try{
 		 if (engine.Evaluate<bool>("onClose != undefined ? true : false ;"))
 			{Close=delegate(){engine.CallGlobalFunction("onClose");};}
+		}
+		catch(Jurassic.JavaScriptException ex)
+		{
+			Console.WriteLine("Jurassic.JavaScriptException : {0}", ex.Message);
+		}
 		 
+		try{
 		 if (engine.Evaluate<bool>("onCommand != undefined ? true : false ;"))
 			{Command=delegate(ManualCommand value){engine.CallGlobalFunction("onCommand", value);};}
+		}
+		catch(Jurassic.JavaScriptException ex)
+		{
+			Console.WriteLine("Jurassic.JavaScriptException : {0}", ex.Message);
+		}
 		 
+		try{
 		 if (engine.Evaluate<bool>("onComment != undefined ? true : false ;"))
 			{Comment=delegate(string message){engine.CallGlobalFunction("onComment", message);};}
+		}
+		catch(Jurassic.JavaScriptException ex)
+		{
+			Console.WriteLine("Jurassic.JavaScriptException : {0}", ex.Message);
+		}
 		 
+		try{
 		 if (engine.Evaluate<bool>("onCycle != undefined ? true : false ;"))
 			{Cycle=delegate(){engine.CallGlobalFunction("onCycle");};}
+		}
+		catch(Jurassic.JavaScriptException ex)
+		{
+			Console.WriteLine("Jurassic.JavaScriptException : {0}", ex.Message);
+		}
 		 
+		try{
 		 if (engine.Evaluate<bool>("onCycleEnd != undefined ? true : false ;"))
 			{CycleEnd=delegate(){engine.CallGlobalFunction("onCycleEnd");};}
+		}
+		catch(Jurassic.JavaScriptException ex)
+		{
+			Console.WriteLine("Jurassic.JavaScriptException : {0}", ex.Message);
+		}
 		 
+		try{
 		 if (engine.Evaluate<bool>("onCyclePoint != undefined ? true : false ;"))
 			{CyclePoint=delegate(double x, double y, double z){engine.CallGlobalFunction("onCyclePoint", x, y, z);};}
+		}
+		catch(Jurassic.JavaScriptException ex)
+		{
+			Console.WriteLine("Jurassic.JavaScriptException : {0}", ex.Message);
+		}
 		 
+		try{
 		 if (engine.Evaluate<bool>("onDwell != undefined ? true : false ;"))
 			{Dwell=delegate(double seconds){engine.CallGlobalFunction("onDwell", seconds);};}
+		}
+		catch(Jurassic.JavaScriptException ex)
+		{
+			Console.WriteLine("Jurassic.JavaScriptException : {0}", ex.Message);
+		}
 		 
+		try{
 		 if (engine.Evaluate<bool>("onLinear != undefined ? true : false ;"))
 			{Linear=delegate(double x, double y, double z, int feed){engine.CallGlobalFunction("onLinear", x, y, z, feed);};}
+		}
+		catch(Jurassic.JavaScriptException ex)
+		{
+			Console.WriteLine("Jurassic.JavaScriptException : {0}", ex.Message);
+		}
 		 
+		try{
 		 if (engine.Evaluate<bool>("onLinear5D != undefined ? true : false ;"))
 			{Linear5D=delegate(double x, double y, double z, double a, double b, double c, int feed){engine.CallGlobalFunction("onLinear5D", x, y, z, a, b, c, feed);};}
+		}
+		catch(Jurassic.JavaScriptException ex)
+		{
+			Console.WriteLine("Jurassic.JavaScriptException : {0}", ex.Message);
+		}
 		 
-		 if (engine.Evaluate<bool>("onMachine != undefined ? true : false ;"))
+		try{
+		 if (engine.Evaluate<bool>("onMachine != null ? true : false ;"))
 			{Machine=delegate(){engine.CallGlobalFunction("onMachine");};}
+		}
+		catch(Jurassic.JavaScriptException ex)
+		{
+			Console.WriteLine("Jurassic.JavaScriptException : {0}", ex.Message);
+		}
 		 
+		try{ 
 		 if (engine.Evaluate<bool>("onManualNC != undefined ? true : false ;"))
-			{ManualNC=delegate(){engine.CallGlobalFunction("onManualNC");};}
+		 {ManualNC=delegate(){engine.CallGlobalFunction("onManualNC");};}
+		}
+		catch(Jurassic.JavaScriptException ex)
+		{
+			Console.WriteLine("Jurassic.JavaScriptException : {0}", ex.Message);
+		}
 		 
+		try{
 		 if (engine.Evaluate<bool>("onMovement != undefined ? true : false ;"))
 			{Movement=delegate(MovementType movement){engine.CallGlobalFunction("onMovement", movement);};}
+		}
+		catch(Jurassic.JavaScriptException ex)
+		{
+			Console.WriteLine("Jurassic.JavaScriptException : {0}", ex.Message);
+		}
 		 
+		try{
 		 if (engine.Evaluate<bool>("onOpen != undefined ? true : false ;"))
 			{Open=delegate(){engine.CallGlobalFunction("onOpen");};}
+		}
+		catch(Jurassic.JavaScriptException ex)
+		{
+			Console.WriteLine("Jurassic.JavaScriptException : {0}", ex.Message);
+		}
 		 
+		try{
 		 if (engine.Evaluate<bool>("onOrientateSpindle != undefined ? true : false ;"))
 			{OrientateSpindle=delegate(double angle){engine.CallGlobalFunction("onOrientateSpindle", angle);};}
+		}
+		catch(Jurassic.JavaScriptException ex)
+		{
+			Console.WriteLine("Jurassic.JavaScriptException : {0}", ex.Message);
+		}
 		 
+		try{
 		 if (engine.Evaluate<bool>("onParameter != undefined ? true : false ;"))
 			{Parameter=delegate(string name,string value){engine.CallGlobalFunction("onParameter", name, value);};}
+		}
+		catch(Jurassic.JavaScriptException ex)
+		{
+			Console.WriteLine("Jurassic.JavaScriptException : {0}", ex.Message);
+		}
 		 
+		try{
 		 if (engine.Evaluate<bool>("onPassThrough != undefined ? true : false ;"))
 			{PassThrough=delegate(string text){engine.CallGlobalFunction("onPassThrough", text);};}
+		}
+		catch(Jurassic.JavaScriptException ex)
+		{
+			Console.WriteLine("Jurassic.JavaScriptException : {0}", ex.Message);
+		}
 		 
+		try{
 		 if (engine.Evaluate<bool>("onPower != undefined ? true : false ;"))
 			{Power=delegate(bool value){engine.CallGlobalFunction("onPower", value);};}
+		}
+		catch(Jurassic.JavaScriptException ex)
+		{
+			Console.WriteLine("Jurassic.JavaScriptException : {0}", ex.Message);
+		}
 		 
+		try{
 		 if (engine.Evaluate<bool>("onRadiusCompensation != undefined ? true : false ;"))
 			{RadiusCompensation=delegate(){engine.CallGlobalFunction("onRadiusCompensation");};}
+		}
+		catch(Jurassic.JavaScriptException ex)
+		{
+			Console.WriteLine("Jurassic.JavaScriptException : {0}", ex.Message);
+		}
 		 
+		try{
 		 if (engine.Evaluate<bool>("onRapid != undefined ? true : false ;"))
 			{Rapid=delegate(double x, double y, double z){engine.CallGlobalFunction("onRapid", x, y, z);};}
+		}
+		catch(Jurassic.JavaScriptException ex)
+		{
+			Console.WriteLine("Jurassic.JavaScriptException : {0}", ex.Message);
+		}
 		 
+		try{
 		 if (engine.Evaluate<bool>("onRapid5D != undefined ? true : false ;"))
 			{Rapid5D=delegate(double x, double y, double z, double a, double b, double c){engine.CallGlobalFunction("onRapid5D", x, y, z, a, b, c);};}
+		}
+		catch(Jurassic.JavaScriptException ex)
+		{
+			Console.WriteLine("Jurassic.JavaScriptException : {0}", ex.Message);
+		}
 		 
+		try{
 		 if (engine.Evaluate<bool>("onRewindMachine != undefined ? true : false ;"))
 			{RewindMachine=delegate(double a, double b, double c){engine.CallGlobalFunction("onRewindMachine");};}
+		}
+		catch(Jurassic.JavaScriptException ex)
+		{
+			Console.WriteLine("Jurassic.JavaScriptException : {0}", ex.Message);
+		}
 		 
+		try{
 		 if (engine.Evaluate<bool>("onSection != undefined ? true : false ;"))
 			{Section=delegate(){engine.CallGlobalFunction("onSection");};}
+		}
+		catch(Jurassic.JavaScriptException ex)
+		{
+			Console.WriteLine("Jurassic.JavaScriptException : {0}", ex.Message);
+		}
 		 
+		try{
 		 if (engine.Evaluate<bool>("onSectionEnd != undefined ? true : false ;"))
 			{SectionEnd=delegate(){engine.CallGlobalFunction("onSectionEnd");};}
+		}
+		catch(Jurassic.JavaScriptException ex)
+		{
+			Console.WriteLine("Jurassic.JavaScriptException : {0}", ex.Message);
+		}
 		 
+		try{
 		 if (engine.Evaluate<bool>("onSectionEndSpecialCycle != undefined ? true : false ;"))
 			{SectionEndSpecialCycle=delegate(){engine.CallGlobalFunction("onSectionEndSpecialCycle");};}
+		}
+		catch(Jurassic.JavaScriptException ex)
+		{
+			Console.WriteLine("Jurassic.JavaScriptException : {0}", ex.Message);
+		}
 		 
+		try{
 		 if (engine.Evaluate<bool>("onSectionSpecialCycle != undefined ? true : false ;"))
 			{SectionSpecialCycle=delegate(){engine.CallGlobalFunction("onSectionSpecialCycle");};}
+		}
+		catch(Jurassic.JavaScriptException ex)
+		{
+			Console.WriteLine("Jurassic.JavaScriptException : {0}", ex.Message);
+		}
          
+		try{
 		 if (engine.Evaluate<bool>("onSpindleSpeed != undefined ? true : false ;"))
 			{SpindleSpeed=delegate(int speed){engine.CallGlobalFunction("onSpindleSpeed", speed);};}
+		}
+		catch(Jurassic.JavaScriptException ex)
+		{
+			Console.WriteLine("Jurassic.JavaScriptException : {0}", ex.Message);
+		}
 		 
+		try{
 		 if (engine.Evaluate<bool>("onTerminate != undefined ? true : false ;"))
 			{Terminate=delegate(){engine.CallGlobalFunction("onTerminate");};}
+		}
+		catch(Jurassic.JavaScriptException ex)
+		{
+			Console.WriteLine("Jurassic.JavaScriptException : {0}", ex.Message);
+		}
          
+		try{
 		 if (engine.Evaluate<bool>("onToolCompensation != undefined ? true : false ;"))
 			{ToolCompensation=delegate(int value){engine.CallGlobalFunction("onToolCompensation", value);};}
+		}
+		catch(Jurassic.JavaScriptException ex)
+		{
+			Console.WriteLine("Jurassic.JavaScriptException : {0}", ex.Message);
+		}
+
 		}
 
 

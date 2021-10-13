@@ -9,8 +9,8 @@ namespace Fu360PostProcessorExample
         {
             var obj = new Fu360PostProcessor("haas.cps");
            obj.OutPutMethod = delegate(string cncCode){Console.WriteLine(cncCode);};
-           obj.Open();
-           obj.Section();
+           obj.Comment("this is my comment");
+          
         }
     }
 }
