@@ -1,16 +1,4 @@
-using System;
-using Jurassic;
-using System.Globalization;
-using System.Text;
-
-namespace Fusion360PostProcessor
-{
-    /// <summary> Class <c>Fu360PostProcessor</c> models post processor for the Fusion 360.</summary>
-    public partial class Fu360PostProcessor
-    {
-        public void SetForceOutput()
-        {
-            engine.Evaluate(@"/** Force output of X, Y, and Z on next output. */
+/** Force output of X, Y, and Z on next output. */
 function forceXYZ() {
  xOutput.reset();
  yOutput.reset();
@@ -32,7 +20,4 @@ function forceAny() {
  forceXYZ();
  forceABC();
  forceFeed();
-}");
-        }
-    }
 }

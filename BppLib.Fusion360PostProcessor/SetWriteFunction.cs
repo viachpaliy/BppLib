@@ -10,18 +10,21 @@ namespace Fusion360PostProcessor
     {
         public delegate void WritelnHandler(string cncCode);
         public WritelnHandler OutPutMethod = delegate{};
-       
-        public void OutPut(string cncCode)
-        {
-            OutPutMethod(cncCode);
-        }
+        public WritelnHandler JsErrorMethod = delegate{};
+        public delegate string JsLocalize(string text);
+        public JsLocalize JsLocalizeMethod = delegate(string text){return text;};
+             
 
         public void SetWriteFunction()
         {
-            engine.SetGlobalFunction("writeln", new Action<string>((a) => this.OutPut(a)));
+            engine.SetGlobalFunction("writeln", new Action<string>((a) => this.OutPutMethod(a)));
+            engine.SetGlobalFunction("error", new Action<string>((a) => this.JsErrorMethod(a)));
+            engine.SetGlobalFunction("localize", new Func<string,string>((a) => this.JsLocalizeMethod(a)));
             SetFormatWords();
             SetWriteWords();
             SetWriteWords2();
+            SetGetAsInt();
+            SetConditional();
         }
 
         public void SetFormatWords(){
@@ -44,6 +47,15 @@ namespace Fusion360PostProcessor
                  writeln(args.join(''));}");
         }
 
+        public void SetGetAsInt(){
+            engine.Evaluate(@"function getAsInt(value){return Number(value);}");
+        }
+
+        public void SetConditional(){
+            engine.Evaluate(@"function conditional(a0, a1 = """", a2 = """", a3 = """", a4 = """", a5 = """", a6 = """", a7 = """", a8 = """", a9 = """", a10 = """", a11 = """"){
+                 var args = [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11];
+                 return(args.join(''));}");
+        }
 
     }
 }

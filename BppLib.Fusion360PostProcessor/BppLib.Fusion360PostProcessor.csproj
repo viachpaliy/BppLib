@@ -9,4 +9,16 @@
     <PackageReference Include="Jurassic" Version="3.2.4" />
   </ItemGroup>
 
+  <ItemGroup>
+    <EmbeddedResource Include="js/Vector.js"/>
+    <EmbeddedResource Include="js/createFormat.js"/>
+    <EmbeddedResource Include="js/createVariable.js"/>
+    <EmbeddedResource Include="js/createModal.js"/>
+    <EmbeddedResource Include="js/createModalGroup.js"/>
+    <EmbeddedResource Include="js/createReferenceVariable.js"/>
+    <EmbeddedResource Include="js/createIncrementalVariable.js"/>
+    <EmbeddedResource Include="js/forceOutput.js"/>
+    <EmbeddedResource Include="js/MachineConfiguration.js"/>
+</ItemGroup>
+
 </Project>

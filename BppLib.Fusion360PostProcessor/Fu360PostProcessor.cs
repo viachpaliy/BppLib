@@ -1,6 +1,8 @@
 using System;
 using Jurassic;
 using System.Globalization;
+using System.IO;
+using System.Reflection;
 
 namespace Fusion360PostProcessor
 {
@@ -82,8 +84,7 @@ namespace Fusion360PostProcessor
 
         /// <value>Property <c>UserDefinedProperties</c> specifies the user defined properties.</value>
         public Jurassic.Library.ObjectInstance UserDefinedProperties {get; set;} = engine.Object.Construct();
-
-        
+                
         /// <summary> Initializes a new instance of the <c>Fu360PostProcessor</c> class.</summary>
         /// <param name="postFile">The path to the post processor file.</param>
         public Fu360PostProcessor(string postFile)
@@ -91,8 +92,13 @@ namespace Fusion360PostProcessor
             SetJsVariables();
 
             SetJsFunction();
-
-            engine.ExecuteFile(postFile);
+            try{
+                engine.ExecuteFile(postFile);
+            }
+            catch(Jurassic.JavaScriptException ex)
+		    {
+			    Console.WriteLine("Jurassic.JavaScriptException : {0}", ex.Message);
+		    }
 
             SetProperties();
 
@@ -112,7 +118,13 @@ namespace Fusion360PostProcessor
 
             SetJsFunction();
 
-            engine.Execute(postCode);
+            try{
+                engine.Execute(postCode);
+            }
+            catch(Jurassic.JavaScriptException ex)
+		    {
+			    Console.WriteLine("Jurassic.JavaScriptException : {0}", ex.Message);
+		    }
 
             SetProperties();
 
@@ -179,14 +191,11 @@ namespace Fusion360PostProcessor
             engine.Evaluate(@"function getProperty(name) {
                 return properties[name].value;
             }");
-           SetVector();      
-           SetCreateFormat();
-           SetCreateVariable();
-           SetCreateModal();
-           SetCreateModalGroup();
-           SetCreateReferenceVariable();
-           SetCreateIncrementalVariable();
-           SetForceOutput();
+           string[] JsSources = {"Vector.js","createFormat.js","createVariable.js","createModal.js","createModalGroup.js",
+                                "createReferenceVariable.js","createIncrementalVariable.js","forceOutput.js","MachineConfiguration.js"};
+           foreach(var item in JsSources)
+                {engine.Execute(GetEmbeddedResourceContent("BppLib.Fusion360PostProcessor.js."+ item));}
+           
            SetWriteFunction();
            
         }
@@ -242,6 +251,27 @@ namespace Fusion360PostProcessor
             Console.WriteLine("AllowHelicalMoves = " + AllowHelicalMoves.ToString());
             Console.WriteLine("AllowSpiralMoves = " + AllowSpiralMoves.ToString()); 
 
+        }
+
+        public void SetProgramName(string pName)
+        {
+            engine.SetGlobalValue("programName", pName);
+        }
+
+        public void SetProgramName(int pName)
+        {
+            engine.SetGlobalValue("programName", pName);
+        }
+
+        public string GetEmbeddedResourceContent(string resourceName)
+        {
+            Assembly asm = Assembly.GetExecutingAssembly();
+            Stream stream = asm.GetManifestResourceStream(resourceName);
+            StreamReader source = new StreamReader(stream);
+            string fileContent = source.ReadToEnd();
+            source.Dispose();
+            stream.Dispose();
+            return fileContent;
         }
     }
 }
