@@ -12,6 +12,8 @@ namespace Fu360PostProcessorExample
            obj.JsErrorMethod = delegate(string text){Console.WriteLine("Post processor error : {0}",text);};
            
            obj.SetProgramName(128);
+           obj.SetProgramComment("This is example of program");
+           obj.SetHighFeedrate(3000);
            //obj.Open();
            obj.Comment("this is my comment");
           

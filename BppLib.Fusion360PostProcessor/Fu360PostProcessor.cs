@@ -188,10 +188,8 @@ namespace Fusion360PostProcessor
             engine.SetGlobalFunction("toRad", new Func<double, double>((a) => (Math.PI / 180) * a));
             engine.SetGlobalFunction("toPreciseUnit", new Func<double, double, double>((a, b) => a * b));
             engine.SetGlobalFunction("round", new Func<double, int, double>((a,b) => (Math.Round(a, b, MidpointRounding.AwayFromZero))));
-            engine.Evaluate(@"function getProperty(name) {
-                return properties[name].value;
-            }");
-           string[] JsSources = {"Vector.js","createFormat.js","createVariable.js","createModal.js","createModalGroup.js",
+           
+           string[] JsSources = {"SmallFunctions.js","Vector.js","createFormat.js","createVariable.js","createModal.js","createModalGroup.js",
                                 "createReferenceVariable.js","createIncrementalVariable.js","forceOutput.js","MachineConfiguration.js"};
            foreach(var item in JsSources)
                 {engine.Execute(GetEmbeddedResourceContent("BppLib.Fusion360PostProcessor.js."+ item));}
@@ -261,6 +259,16 @@ namespace Fusion360PostProcessor
         public void SetProgramName(int pName)
         {
             engine.SetGlobalValue("programName", pName);
+        }
+
+        public void SetProgramComment(string comment)
+        {
+            engine.SetGlobalValue("programComment", comment);
+        }
+
+        public void SetHighFeedrate(int feed)
+        {
+             engine.SetGlobalValue("highFeedrate", feed);
         }
 
         public string GetEmbeddedResourceContent(string resourceName)

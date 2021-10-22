@@ -10,6 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="js/SmallFunctions.js"/>
     <EmbeddedResource Include="js/Vector.js"/>
     <EmbeddedResource Include="js/createFormat.js"/>
     <EmbeddedResource Include="js/createVariable.js"/>
