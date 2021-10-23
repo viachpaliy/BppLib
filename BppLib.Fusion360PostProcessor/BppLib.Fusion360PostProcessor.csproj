@@ -20,6 +20,8 @@
     <EmbeddedResource Include="js/createIncrementalVariable.js"/>
     <EmbeddedResource Include="js/forceOutput.js"/>
     <EmbeddedResource Include="js/MachineConfiguration.js"/>
+    <EmbeddedResource Include="js/ToolTable.js"/>
+    <EmbeddedResource Include="js/Sections.js"/>
 </ItemGroup>
 
 </Project>

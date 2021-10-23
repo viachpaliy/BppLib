@@ -27,9 +27,9 @@ function conditional(a0, a1 = "", a2 = "", a3 = "", a4 = "", a5 = "", a6 = "", a
 
     function subst(a0, a1 = "", a2 = "", a3 = "") {
         let str = a0;
-        if (a1 != "") {str.replace("%1", a1);}
-        if (a2 != "") {str.replace("%2", a2);}
-        if (a3 != "") {str.replace("%3", a3);}
+        str = str.replace("%1", a1);
+        if (a2 != "") {str = str.replace("%2", a2);}
+        if (a3 != "") {str = str.replace("%3", a3);}
         return str;
     }
 

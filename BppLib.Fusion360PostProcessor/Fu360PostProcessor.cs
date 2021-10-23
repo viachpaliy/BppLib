@@ -189,8 +189,9 @@ namespace Fusion360PostProcessor
             engine.SetGlobalFunction("toPreciseUnit", new Func<double, double, double>((a, b) => a * b));
             engine.SetGlobalFunction("round", new Func<double, int, double>((a,b) => (Math.Round(a, b, MidpointRounding.AwayFromZero))));
            
-           string[] JsSources = {"SmallFunctions.js","Vector.js","createFormat.js","createVariable.js","createModal.js","createModalGroup.js",
-                                "createReferenceVariable.js","createIncrementalVariable.js","forceOutput.js","MachineConfiguration.js"};
+           string[] JsSources = {"SmallFunctions.js", "Vector.js", "createFormat.js", "createVariable.js", "createModal.js", "createModalGroup.js",
+                                "createReferenceVariable.js", "createIncrementalVariable.js", "forceOutput.js", "MachineConfiguration.js", "ToolTable.js",
+                                "Sections.js"};
            foreach(var item in JsSources)
                 {engine.Execute(GetEmbeddedResourceContent("BppLib.Fusion360PostProcessor.js."+ item));}
            
@@ -269,6 +270,10 @@ namespace Fusion360PostProcessor
         public void SetHighFeedrate(int feed)
         {
              engine.SetGlobalValue("highFeedrate", feed);
+        }
+
+        public void AddTool(int number = 0, double diameter = 12, double cornerRadius = 0, double taperAngle = 0, string toolType = "End Mill", double bodyLength = 0, double holderLength = 0){
+            engine.CallGlobalFunction("addTool", number, diameter, cornerRadius, taperAngle, toolType,  bodyLength , holderLength );
         }
 
         public string GetEmbeddedResourceContent(string resourceName)

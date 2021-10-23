@@ -14,7 +14,8 @@ namespace Fu360PostProcessorExample
            obj.SetProgramName(128);
            obj.SetProgramComment("This is example of program");
            obj.SetHighFeedrate(3000);
-           //obj.Open();
+           obj.AddTool(1,16);
+           obj.Open();
            obj.Comment("this is my comment");
           
         }
