@@ -4,6 +4,8 @@ using System.IO;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Globalization;
+
 
 namespace BppLib.BppParser
 {
@@ -17,16 +19,16 @@ namespace BppLib.BppParser
 			string[] values = subs[1].Split(',');
 			Circle3P obj = new Circle3P();
 			obj.Id = id;
-			obj.X1 = Convert.ToDouble(values[0]);
-			obj.Y1 = Convert.ToDouble(values[1]);
-			obj.X2 = Convert.ToDouble(values[2]);
-			obj.Y2 = Convert.ToDouble(values[3]);
-			obj.X3 = Convert.ToDouble(values[4]);
-			obj.Y3 = Convert.ToDouble(values[5]);
-			obj.As = Convert.ToDouble(values[6]);
+			obj.X1 = Convert.ToDouble(values[0], CultureInfo.InvariantCulture);
+			obj.Y1 = Convert.ToDouble(values[1], CultureInfo.InvariantCulture);
+			obj.X2 = Convert.ToDouble(values[2], CultureInfo.InvariantCulture);
+			obj.Y2 = Convert.ToDouble(values[3], CultureInfo.InvariantCulture);
+			obj.X3 = Convert.ToDouble(values[4], CultureInfo.InvariantCulture);
+			obj.Y3 = Convert.ToDouble(values[5], CultureInfo.InvariantCulture);
+			obj.As = Convert.ToDouble(values[6], CultureInfo.InvariantCulture);
 			obj.Dir =(CircleDirection)Convert.ToInt32(values[7]);
-			obj.Zs = Convert.ToDouble(values[8]);
-			obj.Ze = Convert.ToDouble(values[9]);
+			obj.Zs = Convert.ToDouble(values[8], CultureInfo.InvariantCulture);
+			obj.Ze = Convert.ToDouble(values[9], CultureInfo.InvariantCulture);
 			obj.Sc =(SharpCorner)Convert.ToInt32(values[10]);
 			obj.Fd = Convert.ToInt32(values[11]);
 			obj.Sp = Convert.ToInt32(values[12]);
@@ -41,13 +43,13 @@ namespace BppLib.BppParser
 			string[] values = subs[1].Split(',');
 			CircleCR obj = new CircleCR();
 			obj.Id = id;
-			obj.Xc = Convert.ToDouble(values[0]);
-			obj.Yc = Convert.ToDouble(values[1]);
-			obj.R = Convert.ToDouble(values[2]);
-			obj.As = Convert.ToDouble(values[3]);
+			obj.Xc = Convert.ToDouble(values[0], CultureInfo.InvariantCulture);
+			obj.Yc = Convert.ToDouble(values[1], CultureInfo.InvariantCulture);
+			obj.R = Convert.ToDouble(values[2], CultureInfo.InvariantCulture);
+			obj.As = Convert.ToDouble(values[3], CultureInfo.InvariantCulture);
 			obj.Dir =(CircleDirection)Convert.ToInt32(values[4]);
-			obj.Zs = Convert.ToDouble(values[5]);
-			obj.Ze = Convert.ToDouble(values[6]);
+			obj.Zs = Convert.ToDouble(values[5], CultureInfo.InvariantCulture);
+			obj.Ze = Convert.ToDouble(values[6], CultureInfo.InvariantCulture);
 			obj.Sc =(SharpCorner)Convert.ToInt32(values[7]);
 			obj.Fd = Convert.ToInt32(values[8]);
 			obj.Sp = Convert.ToInt32(values[9]);
@@ -62,23 +64,23 @@ namespace BppLib.BppParser
 			string[] values = subs[1].Split(',');
 			Ellipse obj = new Ellipse();
 			obj.Id = id;
-			obj.Xc = Convert.ToDouble(values[0]);
-			obj.Yc = Convert.ToDouble(values[1]);
-			obj.A1 = Convert.ToDouble(values[2]);
-			obj.A2 = Convert.ToDouble(values[3]);
-			obj.A = Convert.ToDouble(values[4]);
-			obj.As = Convert.ToDouble(values[5]);
+			obj.Xc = Convert.ToDouble(values[0], CultureInfo.InvariantCulture);
+			obj.Yc = Convert.ToDouble(values[1], CultureInfo.InvariantCulture);
+			obj.A1 = Convert.ToDouble(values[2], CultureInfo.InvariantCulture);
+			obj.A2 = Convert.ToDouble(values[3], CultureInfo.InvariantCulture);
+			obj.A = Convert.ToDouble(values[4], CultureInfo.InvariantCulture);
+			obj.As = Convert.ToDouble(values[5], CultureInfo.InvariantCulture);
 			obj.Dir =(CircleDirection)Convert.ToInt32(values[6]);
 			obj.Une =(values[7] == "1");
 			obj.Elm = Convert.ToInt32(values[8]);
-			obj.Mle = Convert.ToDouble(values[9]);
+			obj.Mle = Convert.ToDouble(values[9], CultureInfo.InvariantCulture);
 			obj.Ua =(values[10] == "1");
-			obj.Zs = Convert.ToDouble(values[11]);
-			obj.Ze = Convert.ToDouble(values[12]);
+			obj.Zs = Convert.ToDouble(values[11], CultureInfo.InvariantCulture);
+			obj.Ze = Convert.ToDouble(values[12], CultureInfo.InvariantCulture);
 			obj.Sc =(SharpCorner)Convert.ToInt32(values[13]);
 			obj.Fd = Convert.ToInt32(values[14]);
 			obj.Sp = Convert.ToInt32(values[15]);
-			obj.Ae = Convert.ToDouble(values[16]);
+			obj.Ae = Convert.ToDouble(values[16], CultureInfo.InvariantCulture);
 			return obj;
 		}
 
@@ -90,17 +92,17 @@ namespace BppLib.BppParser
 			string[] values = subs[1].Split(',');
 			Oval obj = new Oval();
 			obj.Id = id;
-			obj.X1 = Convert.ToDouble(values[0]);
-			obj.Y1 = Convert.ToDouble(values[1]);
-			obj.R1 = Convert.ToDouble(values[2]);
-			obj.X2 = Convert.ToDouble(values[3]);
-			obj.Y2 = Convert.ToDouble(values[4]);
-			obj.R2 = Convert.ToDouble(values[5]);
-			obj.Lkr = Convert.ToDouble(values[6]);
-			obj.As = Convert.ToDouble(values[7]);
+			obj.X1 = Convert.ToDouble(values[0], CultureInfo.InvariantCulture);
+			obj.Y1 = Convert.ToDouble(values[1], CultureInfo.InvariantCulture);
+			obj.R1 = Convert.ToDouble(values[2], CultureInfo.InvariantCulture);
+			obj.X2 = Convert.ToDouble(values[3], CultureInfo.InvariantCulture);
+			obj.Y2 = Convert.ToDouble(values[4], CultureInfo.InvariantCulture);
+			obj.R2 = Convert.ToDouble(values[5], CultureInfo.InvariantCulture);
+			obj.Lkr = Convert.ToDouble(values[6], CultureInfo.InvariantCulture);
+			obj.As = Convert.ToDouble(values[7], CultureInfo.InvariantCulture);
 			obj.Dir =(CircleDirection)Convert.ToInt32(values[8]);
-			obj.Zs = Convert.ToDouble(values[9]);
-			obj.Ze = Convert.ToDouble(values[10]);
+			obj.Zs = Convert.ToDouble(values[9], CultureInfo.InvariantCulture);
+			obj.Ze = Convert.ToDouble(values[10], CultureInfo.InvariantCulture);
 			obj.Sc =(SharpCorner)Convert.ToInt32(values[11]);
 			obj.Fd = Convert.ToInt32(values[12]);
 			obj.Sp = Convert.ToInt32(values[13]);
@@ -115,13 +117,13 @@ namespace BppLib.BppParser
 			string[] values = subs[1].Split(',');
 			Polygon obj = new Polygon();
 			obj.Id = id;
-			obj.Xc = Convert.ToDouble(values[0]);
-			obj.Yc = Convert.ToDouble(values[1]);
-			obj.R = Convert.ToDouble(values[2]);
+			obj.Xc = Convert.ToDouble(values[0], CultureInfo.InvariantCulture);
+			obj.Yc = Convert.ToDouble(values[1], CultureInfo.InvariantCulture);
+			obj.R = Convert.ToDouble(values[2], CultureInfo.InvariantCulture);
 			obj.S = Convert.ToInt32(values[3]);
 			obj.Dir =(CircleDirection)Convert.ToInt32(values[4]);
 			obj.Ct =(ChamferType)Convert.ToInt32(values[5]);
-			obj.Cd = Convert.ToDouble(values[6]);
+			obj.Cd = Convert.ToDouble(values[6], CultureInfo.InvariantCulture);
 			obj.Ss = Convert.ToInt32(values[7]);
             if (values[8].Trim() == "HALF")
                 {
@@ -130,11 +132,11 @@ namespace BppLib.BppParser
             else
                 {
                     obj.StartFromHalfSide = false; 
-                    obj.Sd = Convert.ToDouble(values[8]);
+                    obj.Sd = Convert.ToDouble(values[8], CultureInfo.InvariantCulture);
                 }
-			obj.A = Convert.ToDouble(values[9]);
-			obj.Zs = Convert.ToDouble(values[10]);
-			obj.Ze = Convert.ToDouble(values[11]);
+			obj.A = Convert.ToDouble(values[9], CultureInfo.InvariantCulture);
+			obj.Zs = Convert.ToDouble(values[10], CultureInfo.InvariantCulture);
+			obj.Ze = Convert.ToDouble(values[11], CultureInfo.InvariantCulture);
 			obj.Sc =(SharpCorner)Convert.ToInt32(values[12]);
 			obj.Fd = Convert.ToInt32(values[13]);
 			obj.Sp = Convert.ToInt32(values[14]);
@@ -149,13 +151,13 @@ namespace BppLib.BppParser
 			string[] values = subs[1].Split(',');
 			Rectangle obj = new Rectangle();
 			obj.Id = id;
-			obj.Xc = Convert.ToDouble(values[0]);
-			obj.Yc = Convert.ToDouble(values[1]);
-			obj.L = Convert.ToDouble(values[2]);
-			obj.H = Convert.ToDouble(values[3]);
+			obj.Xc = Convert.ToDouble(values[0], CultureInfo.InvariantCulture);
+			obj.Yc = Convert.ToDouble(values[1], CultureInfo.InvariantCulture);
+			obj.L = Convert.ToDouble(values[2], CultureInfo.InvariantCulture);
+			obj.H = Convert.ToDouble(values[3], CultureInfo.InvariantCulture);
 			obj.Dir =(CircleDirection)Convert.ToInt32(values[4]);
 			obj.Ct =(ChamferType)Convert.ToInt32(values[5]);
-			obj.Cd = Convert.ToDouble(values[6]);
+			obj.Cd = Convert.ToDouble(values[6], CultureInfo.InvariantCulture);
 			obj.Ss = Convert.ToInt32(values[7]);
             if (values[8].Trim() == "HALF")
                 {
@@ -164,11 +166,11 @@ namespace BppLib.BppParser
             else
                 {
                     obj.StartFromHalfSide = false; 
-                    obj.Sd = Convert.ToDouble(values[8]);
+                    obj.Sd = Convert.ToDouble(values[8], CultureInfo.InvariantCulture);
                 }
-			obj.A = Convert.ToDouble(values[9]);
-			obj.Zs = Convert.ToDouble(values[10]);
-			obj.Ze = Convert.ToDouble(values[11]);
+			obj.A = Convert.ToDouble(values[9], CultureInfo.InvariantCulture);
+			obj.Zs = Convert.ToDouble(values[10], CultureInfo.InvariantCulture);
+			obj.Ze = Convert.ToDouble(values[11], CultureInfo.InvariantCulture);
 			obj.Sc =(SharpCorner)Convert.ToInt32(values[12]);
 			obj.Fd = Convert.ToInt32(values[13]);
 			obj.Sp = Convert.ToInt32(values[14]);
@@ -185,14 +187,14 @@ namespace BppLib.BppParser
 			string[] values = subs[1].Split(',');
 			Star obj = new Star();
 			obj.Id = id;
-			obj.Xc = Convert.ToDouble(values[0]);
-			obj.Yc = Convert.ToDouble(values[1]);
-			obj.Er = Convert.ToDouble(values[2]);
-			obj.Ir = Convert.ToDouble(values[3]);
+			obj.Xc = Convert.ToDouble(values[0], CultureInfo.InvariantCulture);
+			obj.Yc = Convert.ToDouble(values[1], CultureInfo.InvariantCulture);
+			obj.Er = Convert.ToDouble(values[2], CultureInfo.InvariantCulture);
+			obj.Ir = Convert.ToDouble(values[3], CultureInfo.InvariantCulture);
 			obj.Ps = Convert.ToInt32(values[4]);
 			obj.Dir =(CircleDirection)Convert.ToInt32(values[5]);
 			obj.Ct =(ChamferType)Convert.ToInt32(values[6]);
-			obj.Cd = Convert.ToDouble(values[7]);
+			obj.Cd = Convert.ToDouble(values[7], CultureInfo.InvariantCulture);
 			obj.Ss = Convert.ToInt32(values[8]);
             if (values[9].Trim() == "HALF")
                 {
@@ -201,11 +203,11 @@ namespace BppLib.BppParser
             else
                 {
                     obj.StartFromHalfSide = false; 
-                    obj.Sd = Convert.ToDouble(values[9]);
+                    obj.Sd = Convert.ToDouble(values[9], CultureInfo.InvariantCulture);
                 }
-			obj.A = Convert.ToDouble(values[10]);
-			obj.Zs = Convert.ToDouble(values[11]);
-			obj.Ze = Convert.ToDouble(values[12]);
+			obj.A = Convert.ToDouble(values[10], CultureInfo.InvariantCulture);
+			obj.Zs = Convert.ToDouble(values[11], CultureInfo.InvariantCulture);
+			obj.Ze = Convert.ToDouble(values[12], CultureInfo.InvariantCulture);
 			obj.Sc =(SharpCorner)Convert.ToInt32(values[13]);
 			obj.Fd = Convert.ToInt32(values[14]);
 			obj.Sp = Convert.ToInt32(values[15]);
