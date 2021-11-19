@@ -27,7 +27,7 @@ namespace BppLib.Core
 		/// <value>Property <c>Ir</c> represents the radius of the circle inside the star.</value>
 		public double Ir { get; set; } = 25 ;
 
-		/// <value>Property <c>Ps</c> represents the ; number of bits in the star.</value>
+		/// <value>Property <c>Ps</c> represents the number of bits in the star.</value>
 		public int Ps { get; set; } = 5 ;
 
 		/// <value>Property <c>Dir</c> represents direction of the geometry;

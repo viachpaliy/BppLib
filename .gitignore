@@ -1,5 +1,7 @@
 BppLib.Core/bin
 BppLib.Core/obj
+BppLib.BppParser/bin
+BppLib.BppParser/obj
 BppLib.UnitTests/BppLib.Core.Tests/bin
 BppLib.UnitTests/BppLib.Core.Tests/obj
 BppLib.Examples/BppLib.Core.Examples/bin
@@ -16,5 +18,7 @@ BppLib.Fusion360PostProcessor/bin
 BppLib.Fusion360PostProcessor/obj
 BppLib.UnitTests/Fusion360PostProcessor.UnitTests/bin
 BppLib.UnitTests/Fusion360PostProcessor.UnitTests/obj
+BppLib.UnitTests/BppParser.UnitTests/bin
+BppLib.UnitTests/BppParser.UnitTests/obj
 Other
 Auxiliaries
