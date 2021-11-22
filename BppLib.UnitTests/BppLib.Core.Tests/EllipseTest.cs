@@ -37,6 +37,18 @@ namespace BppLib.Core.Tests
         }
 
         [Test]
+        public void AsBppCodeMethodTest_withDoubleNumber()
+        {
+           var obj = new Ellipse();
+            int i = 159161796 ;
+            obj.Id = i ;
+            obj.Xc = 56.378;
+            obj.Yc = -98.365;
+            string expected = "@ ELLIPSE, \"\", \"\", 159161796, \"\", 0 : 56.378, -98.365, 0, 0, 0, 0, 1, 1, 20, 0, 1, 0, 0, 0, 0, 0, 0" ;
+            Assert.AreEqual(expected, obj.AsBppCode());
+        }
+
+        [Test]
         public void AsCixCodeMethodTest()
         {
            var obj = new Ellipse();

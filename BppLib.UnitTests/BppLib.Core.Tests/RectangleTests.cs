@@ -38,6 +38,18 @@ namespace BppLib.Core.Tests
         }
 
         [Test]
+        public void AsBppCodeMethodTest_withDoubleNumbers()
+        {
+           var obj = new Rectangle();
+            int i = 159162692 ;
+            obj.Id = i ;
+            obj.Xc = 99.987;
+            obj.Yc = -12.345;
+            string expected = "@ RECTANGLE, \"\", \"\", 159162692, \"\", 0 : 99.987, -12.345, 0, 0, 1, 0, 0, 1, HALF, 0, 0, 0, 0, 0, 0, 1, 1" ;
+            Assert.AreEqual(expected, obj.AsBppCode());
+        }
+
+        [Test]
         public void AsCixCodeMethodTest()
         {
            var obj = new Rectangle();

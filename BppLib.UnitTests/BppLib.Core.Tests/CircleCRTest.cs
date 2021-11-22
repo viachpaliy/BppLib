@@ -36,6 +36,18 @@ namespace BppLib.Core.Tests
             Assert.AreEqual(expected, obj.AsBppCode());
         }
 
+         [Test]
+        public void AsBppCodeMethodTest_withDoubleNumbers()
+        {
+           var obj = new CircleCR();
+            int i = 159269568 ;
+            obj.Id = i ;
+            obj.Xc = 6.598;
+            obj.Yc = -7.985;
+            string expected = "@ CIRCLE_CR, \"\", \"\", 159269568, \"\", 0 : 6.598, -7.985, 0, 0, 1, 0, 0, 0, 0, 0" ;
+            Assert.AreEqual(expected, obj.AsBppCode());
+        }
+
         [Test]
         public void AsCixCodeMethodTest()
         {

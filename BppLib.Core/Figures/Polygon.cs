@@ -1,5 +1,6 @@
 using System;
 using System.Text;
+using System.Globalization;
 
 namespace BppLib.Core
 {
@@ -95,11 +96,11 @@ namespace BppLib.Core
 			sb.Append("@ " + BppName + ", \"\", \"\", ");
 			sb.Append(Id.ToString());
 			sb.Append(", \"\", 0 :");
-			sb.Append(" " + Xc.ToString().Replace(',','.'));
+			sb.Append(" " + Xc.ToString(CultureInfo.InvariantCulture));
 			sb.Append(",");
-			sb.Append(" " + Yc.ToString().Replace(',','.'));
+			sb.Append(" " + Yc.ToString(CultureInfo.InvariantCulture));
 			sb.Append(",");
-			sb.Append(" " + R.ToString().Replace(',','.'));
+			sb.Append(" " + R.ToString(CultureInfo.InvariantCulture));
 			sb.Append(",");
 			sb.Append(" " + S.ToString());
 			sb.Append(",");
@@ -107,20 +108,20 @@ namespace BppLib.Core
 			sb.Append(",");
 			sb.Append(" " + ((int)Ct).ToString());
 			sb.Append(",");
-			sb.Append(" " + Cd.ToString().Replace(',','.'));
+			sb.Append(" " + Cd.ToString(CultureInfo.InvariantCulture));
 			sb.Append(",");
 			sb.Append(" " + Ss.ToString());
 			sb.Append(",");
             if (StartFromHalfSide)
                 {sb.Append(" HALF");}
             else
-			    {sb.Append(" " + Sd.ToString().Replace(',','.'));}
+			    {sb.Append(" " + Sd.ToString(CultureInfo.InvariantCulture));}
 			sb.Append(",");
-			sb.Append(" " + A.ToString().Replace(',','.'));
+			sb.Append(" " + A.ToString(CultureInfo.InvariantCulture));
 			sb.Append(",");
-			sb.Append(" " + Zs.ToString().Replace(',','.'));
+			sb.Append(" " + Zs.ToString(CultureInfo.InvariantCulture));
 			sb.Append(",");
-			sb.Append(" " + Ze.ToString().Replace(',','.'));
+			sb.Append(" " + Ze.ToString(CultureInfo.InvariantCulture));
 			sb.Append(",");
 			sb.Append(" " + ((int)Sc).ToString());
 			sb.Append(",");
@@ -138,21 +139,21 @@ namespace BppLib.Core
 			sb.AppendLine("BEGIN MACRO");
 			sb.AppendLine("	NAME=POLYGON");
 			sb.AppendLine("	PARAM,NAME=ID,VALUE=" + Id.ToString());
-			sb.AppendLine("	PARAM,NAME=XC,VALUE=" + Xc.ToString().Replace(',','.'));
-			sb.AppendLine("	PARAM,NAME=YC,VALUE=" + Yc.ToString().Replace(',','.'));
-			sb.AppendLine("	PARAM,NAME=R,VALUE=" + R.ToString().Replace(',','.'));
+			sb.AppendLine("	PARAM,NAME=XC,VALUE=" + Xc.ToString(CultureInfo.InvariantCulture));
+			sb.AppendLine("	PARAM,NAME=YC,VALUE=" + Yc.ToString(CultureInfo.InvariantCulture));
+			sb.AppendLine("	PARAM,NAME=R,VALUE=" + R.ToString(CultureInfo.InvariantCulture));
 			sb.AppendLine("	PARAM,NAME=S,VALUE=" + S.ToString());
 			sb.AppendLine("	PARAM,NAME=DIR,VALUE=" + Dir.ToString());
 			sb.AppendLine("	PARAM,NAME=CT,VALUE=" + Ct.ToString());
-			sb.AppendLine("	PARAM,NAME=CD,VALUE=" + Cd.ToString().Replace(',','.'));
+			sb.AppendLine("	PARAM,NAME=CD,VALUE=" + Cd.ToString(CultureInfo.InvariantCulture));
 			sb.AppendLine("	PARAM,NAME=SS,VALUE=" + Ss.ToString());
             if (StartFromHalfSide)
                 {sb.AppendLine("	PARAM,NAME=SD,VALUE=HALF");}
             else                
-			    {sb.AppendLine("	PARAM,NAME=SD,VALUE=" + Sd.ToString().Replace(',','.'));}
-			sb.AppendLine("	PARAM,NAME=A,VALUE=" + A.ToString().Replace(',','.'));
-			sb.AppendLine("	PARAM,NAME=ZS,VALUE=" + Zs.ToString().Replace(',','.'));
-			sb.AppendLine("	PARAM,NAME=ZE,VALUE=" + Ze.ToString().Replace(',','.'));
+			    {sb.AppendLine("	PARAM,NAME=SD,VALUE=" + Sd.ToString(CultureInfo.InvariantCulture));}
+			sb.AppendLine("	PARAM,NAME=A,VALUE=" + A.ToString(CultureInfo.InvariantCulture));
+			sb.AppendLine("	PARAM,NAME=ZS,VALUE=" + Zs.ToString(CultureInfo.InvariantCulture));
+			sb.AppendLine("	PARAM,NAME=ZE,VALUE=" + Ze.ToString(CultureInfo.InvariantCulture));
 			sb.AppendLine("	PARAM,NAME=SC,VALUE=" + Sc.ToString());
 			sb.AppendLine("	PARAM,NAME=FD,VALUE=" + Fd.ToString());
 			sb.AppendLine("	PARAM,NAME=SP,VALUE=" + Sp.ToString());

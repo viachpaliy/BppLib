@@ -37,6 +37,18 @@ namespace BppLib.Core.Tests
         }
 
         [Test]
+        public void AsBppCodeMethodTest_withDoubleNumbers()
+        {
+           var obj = new Oval();
+            int i = 159161604 ;
+            obj.Id = i ;
+            obj.X1 = 159.64;
+            obj.Y1 = -32.894;
+            string expected = "@ OVAL, \"\", \"\", 159161604, \"\", 0 : 159.64, -32.894, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0" ;
+            Assert.AreEqual(expected, obj.AsBppCode());
+        }
+
+        [Test]
         public void AsCixCodeMethodTest()
         {
            var obj = new Oval();

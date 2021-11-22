@@ -38,6 +38,18 @@ namespace BppLib.Core.Tests
         }
 
         [Test]
+        public void AsBppCodeMethodTest_withDoubleNumbers()
+        {
+           var obj = new Polygon();
+            int i = 159160004 ;
+            obj.Id = i ;
+            obj.Xc = 124.36;
+            obj.Yc = 136.98;
+            string expected = "@ POLYGON, \"\", \"\", 159160004, \"\", 0 : 124.36, 136.98, 0, 3, 1, 0, 0, 1, HALF, 0, 0, 0, 0, 0, 0" ;
+            Assert.AreEqual(expected, obj.AsBppCode());
+        }
+
+        [Test]
         public void AsCixCodeMethodTest()
         {
            var obj = new Polygon();
