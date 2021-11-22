@@ -1,5 +1,6 @@
 using System;
 using System.Text;
+using System.Globalization;
 
 namespace BppLib.Core
 {
@@ -230,61 +231,82 @@ namespace BppLib.Core
 			sb.Append(",");
 			sb.Append(" \"" + Crn +"\"");
 			sb.Append(",");
-			sb.Append(" " + X.ToString().Replace(",","."));
+			sb.Append(" " + X.ToString(CultureInfo.InvariantCulture));
 			sb.Append(",");
-			sb.Append(" " + Y.ToString().Replace(",","."));
+			sb.Append(" " + Y.ToString(CultureInfo.InvariantCulture));
 			sb.Append(",");
-			sb.Append(" " + Z.ToString().Replace(",","."));
+			sb.Append(" " + Z.ToString(CultureInfo.InvariantCulture));
 			sb.Append(",");
-			sb.Append(" " + Dp.ToString().Replace(",","."));
+			sb.Append(" " + Dp.ToString(CultureInfo.InvariantCulture));
 			sb.Append(",");
-			sb.Append(" " + Dia.ToString().Replace(",","."));
+			sb.Append(" " + Dia.ToString(CultureInfo.InvariantCulture));
 			sb.Append(",");
-			sb.Append(" " + ConvertBoolOnOff(Thr));
+			if (Thr)
+				{sb.Append(" 1");}
+			else
+				{sb.Append(" 0");}
 			sb.Append(",");
 			sb.Append(" " + ((int)Rty).ToString());
 			sb.Append(",");
-			sb.Append(" " + Dx.ToString().Replace(",","."));
+			sb.Append(" " + Dx.ToString(CultureInfo.InvariantCulture));
 			sb.Append(",");
-			sb.Append(" " + Dy.ToString().Replace(",","."));
+			sb.Append(" " + Dy.ToString(CultureInfo.InvariantCulture));
 			sb.Append(",");
-			sb.Append(" " + R.ToString().Replace(",","."));
+			sb.Append(" " + R.ToString(CultureInfo.InvariantCulture));
 			sb.Append(",");
-			sb.Append(" " + A.ToString().Replace(",","."));
+			sb.Append(" " + A.ToString(CultureInfo.InvariantCulture));
 			sb.Append(",");
-			sb.Append(" " + Da.ToString().Replace(",","."));
+			sb.Append(" " + Da.ToString(CultureInfo.InvariantCulture));
 			sb.Append(",");
 			sb.Append(" " + Nrp.ToString());
 			sb.Append(",");
 			sb.Append(" \"" + Iso +"\"");
 			sb.Append(",");
-			sb.Append(" " + ConvertBoolOnOff(Opt));
+			if (Opt)
+				{sb.Append(" 1");}
+			else
+				{sb.Append(" 0");}
 			sb.Append(",");
-			sb.Append(" " + Az.ToString().Replace(",","."));
+			sb.Append(" " + Az.ToString(CultureInfo.InvariantCulture));
 			sb.Append(",");
-			sb.Append(" " + Ar.ToString().Replace(",","."));
+			sb.Append(" " + Ar.ToString(CultureInfo.InvariantCulture));
 			sb.Append(",");
-			sb.Append(" " + ConvertBoolOnOff(Ap));
+			if (Ap)
+				{sb.Append(" 1");}
+			else
+				{sb.Append(" 0");}
 			sb.Append(",");
 			sb.Append(" " + ((int)Cka).ToString());
 			sb.Append(",");
-			sb.Append(" " + Xrc.ToString().Replace(",","."));
+			sb.Append(" " + Xrc.ToString(CultureInfo.InvariantCulture));
 			sb.Append(",");
-			sb.Append(" " + Yrc.ToString().Replace(",","."));
+			sb.Append(" " + Yrc.ToString(CultureInfo.InvariantCulture));
 			sb.Append(",");
-			sb.Append(" " + Arp.ToString().Replace(",","."));
+			sb.Append(" " + Arp.ToString(CultureInfo.InvariantCulture));
 			sb.Append(",");
-			sb.Append(" " + Lrp.ToString().Replace(",","."));
+			sb.Append(" " + Lrp.ToString(CultureInfo.InvariantCulture));
 			sb.Append(",");
-			sb.Append(" " + ConvertBoolOnOff(Er));
+			if (Er)
+				{sb.Append(" 1");}
+			else
+				{sb.Append(" 0");}
 			sb.Append(",");
-			sb.Append(" " + ConvertBoolOnOff(Md));
+			if (Md)
+				{sb.Append(" 1");}
+			else
+				{sb.Append(" 0");}
 			sb.Append(",");
-			sb.Append(" " + ConvertBoolOnOff(Cow));
+			if (Cow)
+				{sb.Append(" 1");}
+			else
+				{sb.Append(" 0");}
 			sb.Append(",");
 			sb.Append(" " + A21.ToString());
 			sb.Append(",");
-			sb.Append(" " + ConvertBoolOnOff(Tos));
+			if (Tos)
+				{sb.Append(" 1");}
+			else
+				{sb.Append(" 0");}
 			sb.Append(",");
 			sb.Append(" " + Vtr.ToString());
 			sb.Append(",");
@@ -292,7 +314,7 @@ namespace BppLib.Core
 			sb.Append(",");
 			sb.Append(" \"" + Id +"\"");
 			sb.Append(",");
-			sb.Append(" " + Azs.ToString().Replace(",","."));
+			sb.Append(" " + Azs.ToString(CultureInfo.InvariantCulture));
 			sb.Append(",");
 			sb.Append(" \"" + Mac +"\"");
 			sb.Append(",");
@@ -310,15 +332,21 @@ namespace BppLib.Core
 			sb.Append(",");
 			sb.Append(" \"" + Spi +"\"");
 			sb.Append(",");
-			sb.Append(" " + Dds.ToString().Replace(",","."));
+			sb.Append(" " + Dds.ToString(CultureInfo.InvariantCulture));
 			sb.Append(",");
 			sb.Append(" " + Dsp.ToString());
 			sb.Append(",");
-			sb.Append(" " + ConvertBoolOnOff(Bfc));
+			if (Bfc)
+				{sb.Append(" 1");}
+			else
+				{sb.Append(" 0");}
 			sb.Append(",");
 			sb.Append(" " + Shp.ToString());
 			sb.Append(",");
-			sb.Append(" " + ConvertBoolOnOff(Ea21));
+			if (Ea21)
+				{sb.Append(" 1");}
+			else
+				{sb.Append(" 0");}
 			sb.Append(",");
 			sb.Append(" \"" + Cen +"\"");
 			sb.Append(",");
@@ -326,19 +354,34 @@ namespace BppLib.Core
 			sb.Append(",");
 			sb.Append(" \"" + Lay +"\"");
 			sb.Append(",");
-			sb.Append(" " + ConvertBoolOnOff(Prs));
+			if (Prs)
+				{sb.Append(" 1");}
+			else
+				{sb.Append(" 0");}
 			sb.Append(",");
-			sb.Append(" " + ConvertBoolOnOff(Etb));
+			if (Etb)
+				{sb.Append(" 1");}
+			else
+				{sb.Append(" 0");}
 			sb.Append(",");
-			sb.Append(" " + ConvertBoolOnOff(Kdt));
+			if (Kdt)
+				{sb.Append(" 1");}
+			else
+				{sb.Append(" 0");}
 			sb.Append(",");
-			sb.Append(" " + ConvertBoolOnOff(Dtas));
+			if (Dtas)
+				{sb.Append(" 1");}
+			else
+				{sb.Append(" 0");}
 			sb.Append(",");
 			sb.Append(" " + ((int)Rmd).ToString());
 			sb.Append(",");
 			sb.Append(" " + Dqt.ToString());
 			sb.Append(",");
-			sb.Append(" " + ConvertBoolOnOff(Erdw));
+			if (Erdw)
+				{sb.Append(" 1");}
+			else
+				{sb.Append(" 0");}
 			sb.Append(",");
 			sb.Append(" " + Dfw.ToString());
 			return sb.ToString();
@@ -353,38 +396,59 @@ namespace BppLib.Core
 			sb.AppendLine("	NAME=BCL");
 			sb.AppendLine("	PARAM,NAME=SIDE,VALUE=" + Side.ToString());
 			sb.AppendLine("	PARAM,NAME=CRN,VALUE=\"" + Crn + "\"");
-			sb.AppendLine("	PARAM,NAME=X,VALUE=" + X.ToString().Replace(",","."));
-			sb.AppendLine("	PARAM,NAME=Y,VALUE=" + Y.ToString().Replace(",","."));
-			sb.AppendLine("	PARAM,NAME=Z,VALUE=" + Z.ToString().Replace(",","."));
-			sb.AppendLine("	PARAM,NAME=DP,VALUE=" + Dp.ToString().Replace(",","."));
-			sb.AppendLine("	PARAM,NAME=DIA,VALUE=" + Dia.ToString().Replace(",","."));
-			sb.AppendLine("	PARAM,NAME=THR,VALUE=" + ConvertOnOff(Thr));
+			sb.AppendLine("	PARAM,NAME=X,VALUE=" + X.ToString(CultureInfo.InvariantCulture));
+			sb.AppendLine("	PARAM,NAME=Y,VALUE=" + Y.ToString(CultureInfo.InvariantCulture));
+			sb.AppendLine("	PARAM,NAME=Z,VALUE=" + Z.ToString(CultureInfo.InvariantCulture));
+			sb.AppendLine("	PARAM,NAME=DP,VALUE=" + Dp.ToString(CultureInfo.InvariantCulture));
+			sb.AppendLine("	PARAM,NAME=DIA,VALUE=" + Dia.ToString(CultureInfo.InvariantCulture));
+			if (Thr)
+				{sb.AppendLine("	PARAM,NAME=THR,VALUE=YES");}
+			else
+				{sb.AppendLine("	PARAM,NAME=THR,VALUE=NO");}
 			sb.AppendLine("	PARAM,NAME=RTY,VALUE=" + Rty.ToString());
-			sb.AppendLine("	PARAM,NAME=DX,VALUE=" + Dx.ToString().Replace(",","."));
-			sb.AppendLine("	PARAM,NAME=DY,VALUE=" + Dy.ToString().Replace(",","."));
-			sb.AppendLine("	PARAM,NAME=R,VALUE=" + R.ToString().Replace(",","."));
-			sb.AppendLine("	PARAM,NAME=A,VALUE=" + A.ToString().Replace(",","."));
-			sb.AppendLine("	PARAM,NAME=DA,VALUE=" + Da.ToString().Replace(",","."));
+			sb.AppendLine("	PARAM,NAME=DX,VALUE=" + Dx.ToString(CultureInfo.InvariantCulture));
+			sb.AppendLine("	PARAM,NAME=DY,VALUE=" + Dy.ToString(CultureInfo.InvariantCulture));
+			sb.AppendLine("	PARAM,NAME=R,VALUE=" + R.ToString(CultureInfo.InvariantCulture));
+			sb.AppendLine("	PARAM,NAME=A,VALUE=" + A.ToString(CultureInfo.InvariantCulture));
+			sb.AppendLine("	PARAM,NAME=DA,VALUE=" + Da.ToString(CultureInfo.InvariantCulture));
 			sb.AppendLine("	PARAM,NAME=NRP,VALUE=" + Nrp.ToString());
 			sb.AppendLine("	PARAM,NAME=ISO,VALUE=\"" + Iso + "\"");
-			sb.AppendLine("	PARAM,NAME=OPT,VALUE=" + ConvertOnOff(Opt));
-			sb.AppendLine("	PARAM,NAME=AZ,VALUE=" + Az.ToString().Replace(",","."));
-			sb.AppendLine("	PARAM,NAME=AR,VALUE=" + Ar.ToString().Replace(",","."));
-			sb.AppendLine("	PARAM,NAME=AP,VALUE=" + ConvertOnOff(Ap));
+			if (Opt)
+				{sb.AppendLine("	PARAM,NAME=OPT,VALUE=YES");}
+			else
+				{sb.AppendLine("	PARAM,NAME=OPT,VALUE=NO");}
+			sb.AppendLine("	PARAM,NAME=AZ,VALUE=" + Az.ToString(CultureInfo.InvariantCulture));
+			sb.AppendLine("	PARAM,NAME=AR,VALUE=" + Ar.ToString(CultureInfo.InvariantCulture));
+			if (Ap)
+				{sb.AppendLine("	PARAM,NAME=AP,VALUE=YES");}
+			else
+				{sb.AppendLine("	PARAM,NAME=AP,VALUE=NO");}
 			sb.AppendLine("	PARAM,NAME=CKA,VALUE=" + Cka.ToString());
-			sb.AppendLine("	PARAM,NAME=XRC,VALUE=" + Xrc.ToString().Replace(",","."));
-			sb.AppendLine("	PARAM,NAME=YRC,VALUE=" + Yrc.ToString().Replace(",","."));
-			sb.AppendLine("	PARAM,NAME=ARP,VALUE=" + Arp.ToString().Replace(",","."));
-			sb.AppendLine("	PARAM,NAME=LRP,VALUE=" + Lrp.ToString().Replace(",","."));
-			sb.AppendLine("	PARAM,NAME=ER,VALUE=" + ConvertOnOff(Er));
-			sb.AppendLine("	PARAM,NAME=MD,VALUE=" + ConvertOnOff(Md));
-			sb.AppendLine("	PARAM,NAME=COW,VALUE=" + ConvertOnOff(Cow));
+			sb.AppendLine("	PARAM,NAME=XRC,VALUE=" + Xrc.ToString(CultureInfo.InvariantCulture));
+			sb.AppendLine("	PARAM,NAME=YRC,VALUE=" + Yrc.ToString(CultureInfo.InvariantCulture));
+			sb.AppendLine("	PARAM,NAME=ARP,VALUE=" + Arp.ToString(CultureInfo.InvariantCulture));
+			sb.AppendLine("	PARAM,NAME=LRP,VALUE=" + Lrp.ToString(CultureInfo.InvariantCulture));
+			if (Er)
+				{sb.AppendLine("	PARAM,NAME=ER,VALUE=YES");}
+			else
+				{sb.AppendLine("	PARAM,NAME=ER,VALUE=NO");}
+			if (Md)
+				{sb.AppendLine("	PARAM,NAME=MD,VALUE=YES");}
+			else
+				{sb.AppendLine("	PARAM,NAME=MD,VALUE=NO");}
+			if (Cow)
+				{sb.AppendLine("	PARAM,NAME=COW,VALUE=YES");}
+			else
+				{sb.AppendLine("	PARAM,NAME=COW,VALUE=NO");}
 			sb.AppendLine("	PARAM,NAME=A21,VALUE=" + A21.ToString());
-			sb.AppendLine("	PARAM,NAME=TOS,VALUE=" + ConvertOnOff(Tos));
+			if (Tos)
+				{sb.AppendLine("	PARAM,NAME=TOS,VALUE=YES");}
+			else
+				{sb.AppendLine("	PARAM,NAME=TOS,VALUE=NO");}
 			sb.AppendLine("	PARAM,NAME=VTR,VALUE=" + Vtr.ToString());
 			sb.AppendLine("	PARAM,NAME=S21,VALUE=" + S21.ToString());
 			sb.AppendLine("	PARAM,NAME=ID,VALUE=\"" + Id + "\"");
-			sb.AppendLine("	PARAM,NAME=AZS,VALUE=" + Azs.ToString().Replace(",","."));
+			sb.AppendLine("	PARAM,NAME=AZS,VALUE=" + Azs.ToString(CultureInfo.InvariantCulture));
 			sb.AppendLine("	PARAM,NAME=MAC,VALUE=\"" + Mac + "\"");
 			sb.AppendLine("	PARAM,NAME=TNM,VALUE=\"" + Tnm + "\"");
 			sb.AppendLine("	PARAM,NAME=TTP,VALUE=" + Ttp.ToString());
@@ -393,40 +457,46 @@ namespace BppLib.Core
 			sb.AppendLine("	PARAM,NAME=IOS,VALUE=" + Ios.ToString());
 			sb.AppendLine("	PARAM,NAME=WSP,VALUE=" + Wsp.ToString());
 			sb.AppendLine("	PARAM,NAME=SPI,VALUE=\"" + Spi + "\"");
-			sb.AppendLine("	PARAM,NAME=DDS,VALUE=" + Dds.ToString().Replace(",","."));
+			sb.AppendLine("	PARAM,NAME=DDS,VALUE=" + Dds.ToString(CultureInfo.InvariantCulture));
 			sb.AppendLine("	PARAM,NAME=DSP,VALUE=" + Dsp.ToString());
-			sb.AppendLine("	PARAM,NAME=BFC,VALUE=" + ConvertOnOff(Bfc));
+			if (Bfc)
+				{sb.AppendLine("	PARAM,NAME=BFC,VALUE=YES");}
+			else
+				{sb.AppendLine("	PARAM,NAME=BFC,VALUE=NO");}
 			sb.AppendLine("	PARAM,NAME=SHP,VALUE=" + Shp.ToString());
-			sb.AppendLine("	PARAM,NAME=EA21,VALUE=" + ConvertOnOff(Ea21));
+			if (Ea21)
+				{sb.AppendLine("	PARAM,NAME=EA21,VALUE=YES");}
+			else
+				{sb.AppendLine("	PARAM,NAME=EA21,VALUE=NO");}
 			sb.AppendLine("	PARAM,NAME=CEN,VALUE=\"" + Cen + "\"");
 			sb.AppendLine("	PARAM,NAME=AGG,VALUE=\"" + Agg + "\"");
 			sb.AppendLine("	PARAM,NAME=LAY,VALUE=\"" + Lay + "\"");
-			sb.AppendLine("	PARAM,NAME=PRS,VALUE=" + ConvertOnOff(Prs));
-			sb.AppendLine("	PARAM,NAME=ETB,VALUE=" + ConvertOnOff(Etb));
-			sb.AppendLine("	PARAM,NAME=KDT,VALUE=" + ConvertOnOff(Kdt));
-			sb.AppendLine("	PARAM,NAME=DTAS,VALUE=" + ConvertOnOff(Dtas));
+			if (Prs)
+				{sb.AppendLine("	PARAM,NAME=PRS,VALUE=YES");}
+			else
+				{sb.AppendLine("	PARAM,NAME=PRS,VALUE=NO");}
+			if (Etb)
+				{sb.AppendLine("	PARAM,NAME=ETB,VALUE=YES");}
+			else
+				{sb.AppendLine("	PARAM,NAME=ETB,VALUE=NO");}
+			if (Kdt)
+				{sb.AppendLine("	PARAM,NAME=KDT,VALUE=YES");}
+			else
+				{sb.AppendLine("	PARAM,NAME=KDT,VALUE=NO");}
+			if (Dtas)
+				{sb.AppendLine("	PARAM,NAME=DTAS,VALUE=YES");}
+			else
+				{sb.AppendLine("	PARAM,NAME=DTAS,VALUE=NO");}
 			sb.AppendLine("	PARAM,NAME=RMD,VALUE=" + Rmd.ToString());
 			sb.AppendLine("	PARAM,NAME=DQT,VALUE=" + Dqt.ToString());
-			sb.AppendLine("	PARAM,NAME=ERDW,VALUE=" + ConvertOnOff(Erdw));
+			if (Erdw)
+				{sb.AppendLine("	PARAM,NAME=ERDW,VALUE=YES");}
+			else
+				{sb.AppendLine("	PARAM,NAME=ERDW,VALUE=NO");}
 			sb.AppendLine("	PARAM,NAME=DFW,VALUE=" + Dfw.ToString());
 			sb.Append("END MACRO");
 			return sb.ToString();
 		}
 
-		string ConvertBoolOnOff(bool value)
-		{
-			if (value)
-				{return "1";}
-			return "0";
-		}
-
-		string ConvertOnOff(bool value)
-		{
-			if (value)
-				{return "YES";}
-			return "NO";
-		}
-
-		
 	}
 }
