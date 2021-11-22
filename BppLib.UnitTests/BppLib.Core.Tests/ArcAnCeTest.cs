@@ -38,6 +38,19 @@ namespace BppLib.Core.Tests
         }
 
         [Test]
+        public void AsBppCodeMethodTest2()
+        {
+           var obj = new ArcAnCe();
+            int i = 158605156 ;
+            obj.Id = i ;
+            obj.A = 180.123;
+            obj.Xc = 35.678;
+            obj.Yc = 24.52;
+            string expected = "@ ARC_ANCE, \"\", \"\", 158605156, \"\", 0 : 180.123, 35.678, 24.52, 1, 0, 0, 0, 0, 0, 0" ;
+            Assert.AreEqual(expected, obj.AsBppCode());
+        }
+
+        [Test]
         public void AsCixCodeMethodTest()
         {
            var obj = new ArcAnCe();

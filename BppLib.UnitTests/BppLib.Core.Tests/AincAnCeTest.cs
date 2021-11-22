@@ -37,6 +37,18 @@ namespace BppLib.Core.Tests
         }
 
         [Test]
+        public void AsBppCodeMethodTest2()
+        {
+           var obj = new AincAnCe();
+            int i = 159162244 ;
+            obj.Id = i ;
+            obj.Xi = 100.327;
+            obj.Yi = 50.46;
+            string expected = "@ AINC_ANCE, \"\", \"\", 159162244, \"\", 0 : 100.327, 50.46, 0, 1, 0, 0, 0, 0, 0, 0" ;
+            Assert.AreEqual(expected, obj.AsBppCode());
+        }
+
+        [Test]
         public void AsCixCodeMethodTest()
         {
            var obj = new AincAnCe();

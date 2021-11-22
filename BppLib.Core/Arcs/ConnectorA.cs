@@ -1,5 +1,7 @@
 using System;
 using System.Text;
+using System.Globalization;
+
 
 namespace BppLib.Core
 {
@@ -52,11 +54,11 @@ namespace BppLib.Core
 			sb.Append("@ " + BppName + ", \"\", \"\", ");
 			sb.Append(Id.ToString());
 			sb.Append(", \"\", 0 :");
-			sb.Append(" " + R.ToString().Replace(",","."));
+			sb.Append(" " + R.ToString(CultureInfo.InvariantCulture));
 			sb.Append(",");
-			sb.Append(" " + Zs.ToString().Replace(",","."));
+			sb.Append(" " + Zs.ToString(CultureInfo.InvariantCulture));
 			sb.Append(",");
-			sb.Append(" " + Ze.ToString().Replace(",","."));
+			sb.Append(" " + Ze.ToString(CultureInfo.InvariantCulture));
 			sb.Append(",");
 			sb.Append(" " + ((int)Sc).ToString());
 			sb.Append(",");
@@ -76,9 +78,9 @@ namespace BppLib.Core
 			sb.AppendLine("BEGIN MACRO");
 			sb.AppendLine("	NAME=CONNECTOR");
 			sb.AppendLine("	PARAM,NAME=ID,VALUE=" + Id.ToString());
-			sb.AppendLine("	PARAM,NAME=R,VALUE=" + R.ToString().Replace(",","."));
-			sb.AppendLine("	PARAM,NAME=ZS,VALUE=" + Zs.ToString().Replace(",","."));
-			sb.AppendLine("	PARAM,NAME=ZE,VALUE=" + Ze.ToString().Replace(",","."));
+			sb.AppendLine("	PARAM,NAME=R,VALUE=" + R.ToString(CultureInfo.InvariantCulture));
+			sb.AppendLine("	PARAM,NAME=ZS,VALUE=" + Zs.ToString(CultureInfo.InvariantCulture));
+			sb.AppendLine("	PARAM,NAME=ZE,VALUE=" + Ze.ToString(CultureInfo.InvariantCulture));
 			sb.AppendLine("	PARAM,NAME=SC,VALUE=" + Sc.ToString());
             sb.AppendLine("	PARAM,NAME=FD,VALUE=" + Fd.ToString());
 			sb.AppendLine("	PARAM,NAME=SP,VALUE=" + Sp.ToString());

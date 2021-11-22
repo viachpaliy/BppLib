@@ -38,6 +38,20 @@ namespace BppLib.Core.Tests
         }
 
         [Test]
+        public void AsBppCodeMethodTest2()
+        {
+           var obj = new ArcEpCe();
+            int i = 158595364 ;
+            obj.Id = i ;
+            obj.Xe = 165.456;
+            obj.Ye = 83.279;
+            obj.Xc = 93.25;
+            obj.Yc = 53.26;
+            string expected = "@ ARC_EPCE, \"\", \"\", 158595364, \"\", 0 : 165.456, 83.279, 93.25, 53.26, 1, 0, 0, 0, 0, 0, 0" ;
+            Assert.AreEqual(expected, obj.AsBppCode());
+        }
+
+        [Test]
         public void AsCixCodeMethodTest()
         {
            var obj = new ArcEpCe();

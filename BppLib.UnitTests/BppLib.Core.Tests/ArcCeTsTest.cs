@@ -33,6 +33,18 @@ namespace BppLib.Core.Tests
            var obj = new ArcCeTs();
             int i = 95686284 ;
             obj.Id = i ;
+            obj.Xc = 35.678;
+            obj.Yc = 24.52;
+            string expected = "@ ARC_CETS, \"\", \"\", 95686284, \"\", 0 : 35.678, 24.52, 1, 0, 0, 0, 0, 0, 0" ;
+            Assert.AreEqual(expected, obj.AsBppCode());
+        }
+
+        [Test]
+        public void AsBppCodeMethodTest2()
+        {
+           var obj = new ArcCeTs();
+            int i = 95686284 ;
+            obj.Id = i ;
             string expected = "@ ARC_CETS, \"\", \"\", 95686284, \"\", 0 : 0, 0, 1, 0, 0, 0, 0, 0, 0" ;
             Assert.AreEqual(expected, obj.AsBppCode());
         }

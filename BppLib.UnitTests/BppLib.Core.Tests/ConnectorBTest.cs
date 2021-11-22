@@ -36,6 +36,17 @@ namespace BppLib.Core.Tests
         }
 
         [Test]
+        public void AsBppCodeMethodTest2()
+        {
+           var obj = new ConnectorB();
+            int i = 158606052 ;
+            obj.Id = i ;
+            obj.R = 123.987;
+            string expected = "@ CONNECTOR2, \"\", \"\", 158606052, \"\", 0 : 123.987, 0, 0, 0, 0, 0, 0" ;
+            Assert.AreEqual(expected, obj.AsBppCode());
+        }
+
+        [Test]
         public void AsCixCodeMethodTest()
         {
            var obj = new ConnectorB();

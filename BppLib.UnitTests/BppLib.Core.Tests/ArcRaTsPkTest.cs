@@ -36,6 +36,17 @@ namespace BppLib.Core.Tests
         }
 
         [Test]
+        public void AsBppCodeMethodTest2()
+        {
+           var obj = new ArcRaTsPk();
+            int i = 158605284 ;
+            obj.Id = i ;
+            obj.R = 173.659 ;
+            string expected = "@ ARC_RATSPK, \"\", \"\", 158605284, \"\", 0 : 173.659, 1, 0, 0, 0, 0, 0, 0" ;
+            Assert.AreEqual(expected, obj.AsBppCode());
+        }
+
+        [Test]
         public void AsCixCodeMethodTest()
         {
            var obj = new ArcRaTsPk();
