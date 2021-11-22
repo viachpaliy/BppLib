@@ -423,7 +423,7 @@ namespace BppLib.Core
 				{sb.AppendLine("	PARAM,NAME=AP,VALUE=YES");}
 			else
 				{sb.AppendLine("	PARAM,NAME=AP,VALUE=NO");}
-			sb.AppendLine("	PARAM,NAME=CKA,VALUE=" + Cka.ToString(CultureInfo.InvariantCulture));
+			sb.AppendLine("	PARAM,NAME=CKA,VALUE=" + Cka.ToString());
 			sb.AppendLine("	PARAM,NAME=XRC,VALUE=" + Xrc.ToString(CultureInfo.InvariantCulture));
 			sb.AppendLine("	PARAM,NAME=YRC,VALUE=" + Yrc.ToString(CultureInfo.InvariantCulture));
 			sb.AppendLine("	PARAM,NAME=ARP,VALUE=" + Arp.ToString(CultureInfo.InvariantCulture));
@@ -487,7 +487,7 @@ namespace BppLib.Core
 				{sb.AppendLine("	PARAM,NAME=DTAS,VALUE=YES");}
 			else
 				{sb.AppendLine("	PARAM,NAME=DTAS,VALUE=NO");}
-			sb.AppendLine("	PARAM,NAME=RMD,VALUE=" + Rmd.ToString(CultureInfo.InvariantCulture));
+			sb.AppendLine("	PARAM,NAME=RMD,VALUE=" + Rmd.ToString());
 			sb.AppendLine("	PARAM,NAME=DQT,VALUE=" + Dqt.ToString(CultureInfo.InvariantCulture));
 			if (Erdw)
 				{sb.AppendLine("	PARAM,NAME=ERDW,VALUE=YES");}
