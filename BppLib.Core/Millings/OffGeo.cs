@@ -1,5 +1,6 @@
 using System;
 using System.Text;
+using System.Globalization;
 
 namespace BppLib.Core
 {
@@ -71,7 +72,7 @@ namespace BppLib.Core
 			sb.Append(",");
             sb.Append(" \"" + Lay + "\"");
 			sb.Append(",");
-            sb.Append(" " + Ofs.ToString().Replace(',','.'));
+            sb.Append(" " + Ofs.ToString(CultureInfo.InvariantCulture));
 			sb.Append(",");
             if (Shc)
                 {sb.Append(" 1");}
@@ -105,7 +106,7 @@ namespace BppLib.Core
             sb.AppendLine("	PARAM,NAME=GID,VALUE=\"" + Gid + "\"");
             sb.AppendLine("	PARAM,NAME=SIL,VALUE=\"" + Sil + "\"");
             sb.AppendLine("	PARAM,NAME=LAY,VALUE=\"" + Lay + "\"");
-            sb.AppendLine("	PARAM,NAME=OFS,VALUE=" + Ofs.ToString().Replace(',','.'));
+            sb.AppendLine("	PARAM,NAME=OFS,VALUE=" + Ofs.ToString(CultureInfo.InvariantCulture));
             if (Shc)
                 {sb.AppendLine("	PARAM,NAME=SHC,VALUE=YES");}
             else
