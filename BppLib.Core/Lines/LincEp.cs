@@ -1,5 +1,6 @@
 using System;
 using System.Text;
+using System.Globalization;
 
 namespace BppLib.Core
 {
@@ -55,13 +56,13 @@ namespace BppLib.Core
 			sb.Append("@ " + BppName + ", \"\", \"\", ");
 			sb.Append(Id.ToString());
 			sb.Append(", \"\", 0 :");
-			sb.Append(" " + Xi.ToString().Replace(",","."));
+			sb.Append(" " + Xi.ToString(CultureInfo.InvariantCulture));
 			sb.Append(",");
-			sb.Append(" " + Yi.ToString().Replace(",","."));
+			sb.Append(" " + Yi.ToString(CultureInfo.InvariantCulture));
 			sb.Append(",");
-			sb.Append(" " + Zs.ToString().Replace(",","."));
+			sb.Append(" " + Zs.ToString(CultureInfo.InvariantCulture));
 			sb.Append(",");
-			sb.Append(" " + Ze.ToString().Replace(",","."));
+			sb.Append(" " + Ze.ToString(CultureInfo.InvariantCulture));
 			sb.Append(",");
 			sb.Append(" " + ((int)Sc).ToString());
 			sb.Append(",");
@@ -81,10 +82,10 @@ namespace BppLib.Core
 			sb.AppendLine("BEGIN MACRO");
 			sb.AppendLine("	NAME=LINC_EP");
 			sb.AppendLine("	PARAM,NAME=ID,VALUE=" + Id.ToString());
-			sb.AppendLine("	PARAM,NAME=XI,VALUE=" + Xi.ToString().Replace(",","."));
-			sb.AppendLine("	PARAM,NAME=YI,VALUE=" + Yi.ToString().Replace(",","."));
-			sb.AppendLine("	PARAM,NAME=ZS,VALUE=" + Zs.ToString().Replace(",","."));
-			sb.AppendLine("	PARAM,NAME=ZE,VALUE=" + Ze.ToString().Replace(",","."));
+			sb.AppendLine("	PARAM,NAME=XI,VALUE=" + Xi.ToString(CultureInfo.InvariantCulture));
+			sb.AppendLine("	PARAM,NAME=YI,VALUE=" + Yi.ToString(CultureInfo.InvariantCulture));
+			sb.AppendLine("	PARAM,NAME=ZS,VALUE=" + Zs.ToString(CultureInfo.InvariantCulture));
+			sb.AppendLine("	PARAM,NAME=ZE,VALUE=" + Ze.ToString(CultureInfo.InvariantCulture));
 			sb.AppendLine("	PARAM,NAME=SC,VALUE=" + Sc.ToString());
 			sb.AppendLine("	PARAM,NAME=FD,VALUE=" + Fd.ToString());
 			sb.AppendLine("	PARAM,NAME=SP,VALUE=" + Sp.ToString());

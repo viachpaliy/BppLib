@@ -32,7 +32,11 @@ namespace BppLib.Core.Tests
            var obj = new LineLnAn();
             int i = 158590500 ;
             obj.Id = i ;
-            string expected = "@ LINE_LNAN, \"\", \"\", 158590500, \"\", 0 : 0, 0, 0, 0, 0, 0, 0, 0" ;
+            obj.L = 1.02;
+            obj.A = -42.36;
+            obj.Zs = 5.68;
+            obj.Ze = -8.97;
+            string expected = "@ LINE_LNAN, \"\", \"\", 158590500, \"\", 0 : 1.02, -42.36, 5.68, -8.97, 0, 0, 0, 0" ;
             Assert.AreEqual(expected, obj.AsBppCode());
         }
 

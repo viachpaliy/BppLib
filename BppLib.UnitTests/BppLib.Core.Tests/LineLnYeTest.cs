@@ -35,6 +35,20 @@ namespace BppLib.Core.Tests
             Assert.AreEqual(expected, obj.AsBppCode());
         }
 
+         [Test]
+        public void AsBppCodeMethodTest_withDoubleNumbers()
+        {
+           var obj = new LineLnYe();
+            int i = 158597092 ;
+            obj.Id = i ;
+            obj.L = 10.11;
+            obj.Ye = 37.256;
+            obj.Zs = 1.23;
+            obj.Ze = 5.67;
+            string expected = "@ LINE_LNYE, \"\", \"\", 158597092, \"\", 0 : 10.11, 37.256, 1.23, 5.67, 0, 0, 0, 0" ;
+            Assert.AreEqual(expected, obj.AsBppCode());
+        }
+
         [Test]
         public void AsCixCodeMethodTest()
         {

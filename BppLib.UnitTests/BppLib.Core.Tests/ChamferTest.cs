@@ -36,6 +36,19 @@ namespace BppLib.Core.Tests
         }
 
         [Test]
+        public void AsBppCodeMethodTest2()
+        {
+           var obj = new Chamfer();
+            int i = 158591396 ;
+            obj.Id = i ;
+            obj.D = 5.95;
+            obj.Zs = 3.56;
+            obj.Ze = -2.72;
+            string expected = "@ CHAMFER, \"\", \"\", 158591396, \"\", 0 : 5.95, 3.56, -2.72, 0, 0, 0, 0" ;
+            Assert.AreEqual(expected, obj.AsBppCode());
+        }
+
+        [Test]
         public void AsCixCodeMethodTest()
         {
            var obj = new Chamfer();

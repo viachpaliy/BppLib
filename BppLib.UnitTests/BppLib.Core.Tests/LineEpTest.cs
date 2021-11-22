@@ -37,6 +37,20 @@ namespace BppLib.Core.Tests
         }
 
         [Test]
+        public void AsBppCodeMethodTest_with_double_numbers()
+        {
+           var obj = new LineEp();
+            int i = 158595300 ;
+            obj.Id = i ;
+            obj.Xe = 987.654;
+            obj.Ye = 87.543;
+            obj.Zs = 5.68;
+            obj.Ze = -6.59;
+            string expected = "@ LINE_EP, \"\", \"\", 158595300, \"\", 0 : 987.654, 87.543, 5.68, -6.59, 0, 0, 0, 0, 0" ;
+            Assert.AreEqual(expected, obj.AsBppCode());
+        }
+
+        [Test]
         public void AsCixCodeMethodTest()
         {
            var obj = new LineEp();

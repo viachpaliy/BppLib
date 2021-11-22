@@ -26,15 +26,19 @@ namespace BppLib.Core.Tests
         }
 
         [Test]
-        public void AsBppCodeMethodTest()
+        public void AsBppCodeMethodTest_withDoubleNumbers()
         {
            var obj = new LineLnXe();
             int i = 158594404 ;
             obj.Id = i ;
-            string expected = "@ LINE_LNXE, \"\", \"\", 158594404, \"\", 0 : 0, 0, 0, 0, 0, 0, 0, 0" ;
+            obj.L = 12.345;
+            obj.Xe = 23.456;
+            obj.Zs = 4.56;
+            obj.Ze = 5.68;
+            string expected = "@ LINE_LNXE, \"\", \"\", 158594404, \"\", 0 : 12.345, 23.456, 4.56, 5.68, 0, 0, 0, 0" ;
             Assert.AreEqual(expected, obj.AsBppCode());
         }
-
+        
         [Test]
         public void AsCixCodeMethodTest()
         {

@@ -37,6 +37,20 @@ namespace BppLib.Core.Tests
         }
 
         [Test]
+        public void AsBppCodeMethodTest2()
+        {
+           var obj = new LincEp();
+            int i = 158600548 ;
+            obj.Id = i ;
+            obj.Xi = 1.234;
+            obj.Yi = 2.345;
+            obj.Zs = 3.456;
+            obj.Ze = -4.567;
+            string expected = "@ LINC_EP, \"\", \"\", 158600548, \"\", 0 : 1.234, 2.345, 3.456, -4.567, 0, 0, 0, 0" ;
+            Assert.AreEqual(expected, obj.AsBppCode());
+        }
+
+        [Test]
         public void AsCixCodeMethodTest()
         {
            var obj = new LincEp();
