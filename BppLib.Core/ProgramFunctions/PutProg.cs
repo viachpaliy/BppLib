@@ -1,5 +1,6 @@
 using System;
 using System.Text;
+using System.Globalization;
 
 namespace BppLib.Core
 {
@@ -107,18 +108,18 @@ namespace BppLib.Core
 			sb.Append(",");
 			sb.Append(" \"" + SpName + "\"");
 			sb.Append(",");
-			sb.Append(" " + SpLpx.ToString().Replace(',','.'));
+			sb.Append(" " + SpLpx.ToString(CultureInfo.InvariantCulture));
 			sb.Append(",");
-			sb.Append(" " + SpLpy.ToString().Replace(',','.'));
+			sb.Append(" " + SpLpy.ToString(CultureInfo.InvariantCulture));
 			sb.Append(",");
-			sb.Append(" " + SpLpz.ToString().Replace(',','.'));
+			sb.Append(" " + SpLpz.ToString(CultureInfo.InvariantCulture));
 			sb.Append(",");
             if (SymY)
 			    {sb.Append(" 1");}
             else
                 {sb.Append(" 0");}
 			sb.Append(",");
-			sb.Append(" " + Rot.ToString().Replace(',','.'));
+			sb.Append(" " + Rot.ToString(CultureInfo.InvariantCulture));
 			sb.Append(",");
 			sb.Append(" " + SpCrn.ToString());
 			sb.Append(",");
@@ -150,14 +151,14 @@ namespace BppLib.Core
 			sb.AppendLine("	NAME=PUTPROG");
 			sb.AppendLine("	PARAM,NAME=ID,VALUE=\"" + Id + "\"");
 			sb.AppendLine("	PARAM,NAME=SPNAME,VALUE=\"" + SpName + "\"");
-			sb.AppendLine("	PARAM,NAME=SPLPX,VALUE=" + SpLpx.ToString().Replace(',','.'));
-			sb.AppendLine("	PARAM,NAME=SPLPY,VALUE=" + SpLpy.ToString().Replace(',','.'));
-			sb.AppendLine("	PARAM,NAME=SPLPZ,VALUE=" + SpLpz.ToString().Replace(',','.'));
+			sb.AppendLine("	PARAM,NAME=SPLPX,VALUE=" + SpLpx.ToString(CultureInfo.InvariantCulture));
+			sb.AppendLine("	PARAM,NAME=SPLPY,VALUE=" + SpLpy.ToString(CultureInfo.InvariantCulture));
+			sb.AppendLine("	PARAM,NAME=SPLPZ,VALUE=" + SpLpz.ToString(CultureInfo.InvariantCulture));
             if (SymY)
                 {sb.AppendLine("	PARAM,NAME=SYMY,VALUE=YES");}
             else
                 {sb.AppendLine("	PARAM,NAME=SYMY,VALUE=NO");}
-			sb.AppendLine("	PARAM,NAME=ROT,VALUE=" + Rot.ToString().Replace(',','.'));
+			sb.AppendLine("	PARAM,NAME=ROT,VALUE=" + Rot.ToString(CultureInfo.InvariantCulture));
 			sb.AppendLine("	PARAM,NAME=SPCRN,VALUE=" + SpCrn.ToString());
 			sb.AppendLine("	PARAM,NAME=RFT,VALUE=" + Rft.ToString());
 			sb.AppendLine("	PARAM,NAME=REF,VALUE=" + Ref.ToString());

@@ -1014,19 +1014,5 @@ namespace BppLib.Core
 			return sb.ToString();
 		}
 
-		string ConvertBoolToNum(bool value)
-		{
-			if (value)
-				{return "1";}
-			return "0";
-		}
-
-		string ConvertBoolToYesNo(bool value)
-		{
-			if (value)
-				{return "YES";}
-			return "NO";
-		}
-
 	}
 }

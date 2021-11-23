@@ -1,5 +1,6 @@
 using System;
 using System.Text;
+using System.Globalization;
 
 namespace BppLib.Core
 {
@@ -37,11 +38,11 @@ namespace BppLib.Core
 			sb.Append("@ " + BppName + ", \"\", \"\", ");
 			sb.Append(Id.ToString());
 			sb.Append(", \"\", 0 :");
-			sb.Append(" " + X.ToString().Replace(',','.'));
+			sb.Append(" " + X.ToString(CultureInfo.InvariantCulture));
 			sb.Append(",");
-			sb.Append(" " + Y.ToString().Replace(',','.'));
+			sb.Append(" " + Y.ToString(CultureInfo.InvariantCulture));
 			sb.Append(",");
-			sb.Append(" " + Ar.ToString().Replace(',','.'));
+			sb.Append(" " + Ar.ToString(CultureInfo.InvariantCulture));
 			return sb.ToString();
 		}
 
@@ -52,9 +53,9 @@ namespace BppLib.Core
 			StringBuilder sb = new StringBuilder();
 			sb.AppendLine("BEGIN MACRO");
 			sb.AppendLine("	NAME=ROTATE");
-			sb.AppendLine("	PARAM,NAME=X,VALUE=" + X.ToString().Replace(',','.'));
-			sb.AppendLine("	PARAM,NAME=Y,VALUE=" + Y.ToString().Replace(',','.'));
-			sb.AppendLine("	PARAM,NAME=AR,VALUE=" + Ar.ToString().Replace(',','.'));
+			sb.AppendLine("	PARAM,NAME=X,VALUE=" + X.ToString(CultureInfo.InvariantCulture));
+			sb.AppendLine("	PARAM,NAME=Y,VALUE=" + Y.ToString(CultureInfo.InvariantCulture));
+			sb.AppendLine("	PARAM,NAME=AR,VALUE=" + Ar.ToString(CultureInfo.InvariantCulture));
 			sb.Append("END MACRO");
 			return sb.ToString();
 		}

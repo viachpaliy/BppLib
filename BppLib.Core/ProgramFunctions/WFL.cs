@@ -1,5 +1,6 @@
 using System;
 using System.Text;
+using System.Globalization;
 
 namespace BppLib.Core
 {
@@ -92,19 +93,19 @@ namespace BppLib.Core
 			sb.Append(", \"\", 0 :");
 			sb.Append(" " + SideId.ToString());
 			sb.Append(",");
-			sb.Append(" " + X.ToString().Replace(",","."));
+			sb.Append(" " + X.ToString(CultureInfo.InvariantCulture));
 			sb.Append(",");
-			sb.Append(" " + Y.ToString().Replace(",","."));
+			sb.Append(" " + Y.ToString(CultureInfo.InvariantCulture));
 			sb.Append(",");
-			sb.Append(" " + Z.ToString().Replace(",","."));
+			sb.Append(" " + Z.ToString(CultureInfo.InvariantCulture));
 			sb.Append(",");
-			sb.Append(" " + Az.ToString().Replace(",","."));
+			sb.Append(" " + Az.ToString(CultureInfo.InvariantCulture));
 			sb.Append(",");
-			sb.Append(" " + Ar.ToString().Replace(",","."));
+			sb.Append(" " + Ar.ToString(CultureInfo.InvariantCulture));
 			sb.Append(",");
-			sb.Append(" " + L.ToString().Replace(",","."));
+			sb.Append(" " + L.ToString(CultureInfo.InvariantCulture));
 			sb.Append(",");
-			sb.Append(" " + H.ToString().Replace(",","."));
+			sb.Append(" " + H.ToString(CultureInfo.InvariantCulture));
 			sb.Append(",");
             if (Vrt)
 			    {sb.Append(" 1");}
@@ -150,13 +151,13 @@ namespace BppLib.Core
 			sb.AppendLine("BEGIN MACRO");
 			sb.AppendLine("	NAME=WFL");
 			sb.AppendLine("	PARAM,NAME=ID,VALUE=" + SideId.ToString());
-			sb.AppendLine("	PARAM,NAME=X,VALUE=" + X.ToString().Replace(",","."));
-			sb.AppendLine("	PARAM,NAME=Y,VALUE=" + Y.ToString().Replace(",","."));
-			sb.AppendLine("	PARAM,NAME=Z,VALUE=" + Z.ToString().Replace(",","."));
-			sb.AppendLine("	PARAM,NAME=AZ,VALUE=" + Az.ToString().Replace(",","."));
-			sb.AppendLine("	PARAM,NAME=AR,VALUE=" + Ar.ToString().Replace(",","."));
-			sb.AppendLine("	PARAM,NAME=L,VALUE=" + L.ToString().Replace(",","."));
-			sb.AppendLine("	PARAM,NAME=H,VALUE=" + H.ToString().Replace(",","."));
+			sb.AppendLine("	PARAM,NAME=X,VALUE=" + X.ToString(CultureInfo.InvariantCulture));
+			sb.AppendLine("	PARAM,NAME=Y,VALUE=" + Y.ToString(CultureInfo.InvariantCulture));
+			sb.AppendLine("	PARAM,NAME=Z,VALUE=" + Z.ToString(CultureInfo.InvariantCulture));
+			sb.AppendLine("	PARAM,NAME=AZ,VALUE=" + Az.ToString(CultureInfo.InvariantCulture));
+			sb.AppendLine("	PARAM,NAME=AR,VALUE=" + Ar.ToString(CultureInfo.InvariantCulture));
+			sb.AppendLine("	PARAM,NAME=L,VALUE=" + L.ToString(CultureInfo.InvariantCulture));
+			sb.AppendLine("	PARAM,NAME=H,VALUE=" + H.ToString(CultureInfo.InvariantCulture));
             if (Vrt)
 			    {sb.AppendLine("	PARAM,NAME=VRT,VALUE=YES");}
             else

@@ -41,7 +41,7 @@ namespace BppLib.Core
 			StringBuilder sb = new StringBuilder();
 			sb.AppendLine("BEGIN MACRO");
 			sb.AppendLine("	NAME=ENDPATH");
-			sb.AppendLine("	PARAM,NAME=ID,VALUE=" + Id.ToString().Replace(",","."));
+			sb.AppendLine("	PARAM,NAME=ID,VALUE=" + Id.ToString());
 			sb.Append("END MACRO");
 			return sb.ToString();
 		}

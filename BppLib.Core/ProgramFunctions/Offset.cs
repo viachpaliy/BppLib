@@ -1,5 +1,6 @@
 using System;
 using System.Text;
+using System.Globalization;
 
 namespace BppLib.Core
 {
@@ -42,11 +43,11 @@ namespace BppLib.Core
 			sb.Append("@ " + BppName + ", \"\", \"\", ");
 			sb.Append(Id.ToString());
 			sb.Append(", \"\", 0 :");
-			sb.Append(" " + X.ToString().Replace(',','.'));
+			sb.Append(" " + X.ToString(CultureInfo.InvariantCulture));
 			sb.Append(",");
-			sb.Append(" " + Y.ToString().Replace(',','.'));
+			sb.Append(" " + Y.ToString(CultureInfo.InvariantCulture));
 			sb.Append(",");
-			sb.Append(" " + Z.ToString().Replace(',','.'));
+			sb.Append(" " + Z.ToString(CultureInfo.InvariantCulture));
 			sb.Append(",");
             if (Shw)
 			    {sb.Append(" 1");}
@@ -62,9 +63,9 @@ namespace BppLib.Core
 			StringBuilder sb = new StringBuilder();
 			sb.AppendLine("BEGIN MACRO");
 			sb.AppendLine("	NAME=OFFSET");
-			sb.AppendLine("	PARAM,NAME=X,VALUE=" + X.ToString().Replace(',','.'));
-			sb.AppendLine("	PARAM,NAME=Y,VALUE=" + Y.ToString().Replace(',','.'));
-			sb.AppendLine("	PARAM,NAME=Z,VALUE=" + Z.ToString().Replace(',','.'));
+			sb.AppendLine("	PARAM,NAME=X,VALUE=" + X.ToString(CultureInfo.InvariantCulture));
+			sb.AppendLine("	PARAM,NAME=Y,VALUE=" + Y.ToString(CultureInfo.InvariantCulture));
+			sb.AppendLine("	PARAM,NAME=Z,VALUE=" + Z.ToString(CultureInfo.InvariantCulture));
             if (Shw)
 			    {sb.AppendLine("	PARAM,NAME=SHW,VALUE=YES");}
             else
