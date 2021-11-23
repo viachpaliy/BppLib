@@ -6,7 +6,7 @@ namespace BppLib.Core
 {
     /// <summary>Class <c>WFL</c> models the “WFL” instruction.
     /// The “WFL” instruction is used to generate a non-standard side with a flat surface by making a
-    /// linear segment on side 0 of the piece. .</summary>
+    /// linear segment on side 0 of the piece.</summary>
 	public class WFL: IBppCode
 	{
         /// <value>Property <c>BppName</c> represents the name of BiesseWorks type.</value>
@@ -41,7 +41,7 @@ namespace BppLib.Core
         ///  <value>Property <c>L</c> represents the length of the side.</value>
 		public double L { get; set; } = 282.85 ;
 
-        ///  <value>Property <c>H</c> represents the height or thickness of the side.</value>
+        /// <value>Property <c>H</c> represents the height or thickness of the side.</value>
 		public double H { get; set; } = 18 ;
 
         ///  <value>Property <c>Vrt</c> declares that the side is perpendicular to the X,Y plane. To give an inclination to the side
@@ -65,7 +65,7 @@ namespace BppLib.Core
         /// corner in the <c>Frc</c> field.</value>  
 		public bool Ucs { get; set; } = true ;
 
-        ///  <value>Property <c>Rv</c> used to indicate that the part of the side to apply the machining operation to is not the
+        /// <value>Property <c>Rv</c> used to indicate that the part of the side to apply the machining operation to is not the
         /// one linked to the direction of the generated segment, i.e. the one obtained on the basis of the rule
         /// indicated in property <c>Ar</c> but the opposite one.</value> 
 		public bool Rv { get; set; } = false ;
