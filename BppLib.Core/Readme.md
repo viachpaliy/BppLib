@@ -4,6 +4,7 @@
 ### How do I get it?
 
 Install the [NuGet package](https://www.nuget.org/packages/BppLib.Core/).
+See source code on [github](https://github.com/viachpaliy/BppLib/tree/main/BppLib.Core).
 
 ### The `BiesseProgram` class models both ".bpp" and "cix" files :
  - the `AsBppCode` method returns the string as a "bpp" program.
@@ -85,6 +86,13 @@ Install the [NuGet package](https://www.nuget.org/packages/BppLib.Core/).
 
 Class `StartPoint` models the starting point.
 Class `EndPath` models the end of the machining operation.
+
+### In version 1.1 the following classes are added :
+- class `WFC` models ircular side. 
+- class `WFG` models sides from geometry.
+- class `WFGL` models side from geometry on side faces.
+- class `WFGPS` models side from geometry using section plan.
+- class `WFL` models straight side.
 
 Most classes only have a default constructor.
 
