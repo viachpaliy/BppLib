@@ -13,10 +13,10 @@ namespace BppLib.BppParser
     {
 		public static Circle3P ParseCircle3P(string code)
 		{
-			string[] subs = code.Split(':');
-			string[] p1 = subs[0].Split(',');
+			string[] subs = SplitColon(code);
+			string[] p1 = SplitComma(subs[0]);
 			int id = Convert.ToInt32(p1[3]);
-			string[] values = subs[1].Split(',');
+			string[] values  = SplitComma(subs[1]);
 			Circle3P obj = new Circle3P();
 			obj.Id = id;
 			obj.X1 = Convert.ToDouble(values[0], CultureInfo.InvariantCulture);
@@ -37,10 +37,10 @@ namespace BppLib.BppParser
 
 		public static CircleCR ParseCircleCR(string code)
 		{
-			string[] subs = code.Split(':');
-			string[] p1 = subs[0].Split(',');
+			string[] subs = SplitColon(code);
+			string[] p1 = SplitComma(subs[0]);
 			int id = Convert.ToInt32(p1[3]);
-			string[] values = subs[1].Split(',');
+			string[] values  = SplitComma(subs[1]);
 			CircleCR obj = new CircleCR();
 			obj.Id = id;
 			obj.Xc = Convert.ToDouble(values[0], CultureInfo.InvariantCulture);
@@ -58,10 +58,10 @@ namespace BppLib.BppParser
 
 		public static Ellipse ParseEllipse(string code)
 		{
-			string[] subs = code.Split(':');
-			string[] p1 = subs[0].Split(',');
+			string[] subs = SplitColon(code);
+			string[] p1 = SplitComma(subs[0]);
 			int id = Convert.ToInt32(p1[3]);
-			string[] values = subs[1].Split(',');
+			string[] values  = SplitComma(subs[1]);
 			Ellipse obj = new Ellipse();
 			obj.Id = id;
 			obj.Xc = Convert.ToDouble(values[0], CultureInfo.InvariantCulture);
@@ -86,10 +86,10 @@ namespace BppLib.BppParser
 
 		public static Oval ParseOval(string code)
 		{
-			string[] subs = code.Split(':');
-			string[] p1 = subs[0].Split(',');
+			string[] subs = SplitColon(code);
+			string[] p1 = SplitComma(subs[0]);
 			int id = Convert.ToInt32(p1[3]);
-			string[] values = subs[1].Split(',');
+			string[] values  = SplitComma(subs[1]);
 			Oval obj = new Oval();
 			obj.Id = id;
 			obj.X1 = Convert.ToDouble(values[0], CultureInfo.InvariantCulture);
@@ -111,10 +111,10 @@ namespace BppLib.BppParser
 
 		public static Polygon ParsePolygon(string code)
 		{
-			string[] subs = code.Split(':');
-			string[] p1 = subs[0].Split(',');
+			string[] subs = SplitColon(code);
+			string[] p1 = SplitComma(subs[0]);
 			int id = Convert.ToInt32(p1[3]);
-			string[] values = subs[1].Split(',');
+			string[] values  = SplitComma(subs[1]);
 			Polygon obj = new Polygon();
 			obj.Id = id;
 			obj.Xc = Convert.ToDouble(values[0], CultureInfo.InvariantCulture);
@@ -145,10 +145,10 @@ namespace BppLib.BppParser
 
 		public static Rectangle ParseRectangle(string code)
 		{
-			string[] subs = code.Split(':');
-			string[] p1 = subs[0].Split(',');
+			string[] subs = SplitColon(code);
+			string[] p1 = SplitComma(subs[0]);
 			int id = Convert.ToInt32(p1[3]);
-			string[] values = subs[1].Split(',');
+			string[] values  = SplitComma(subs[1]);
 			Rectangle obj = new Rectangle();
 			obj.Id = id;
 			obj.Xc = Convert.ToDouble(values[0], CultureInfo.InvariantCulture);
@@ -181,10 +181,10 @@ namespace BppLib.BppParser
 
 		public static Star ParseStar(string code)
 		{
-			string[] subs = code.Split(':');
-			string[] p1 = subs[0].Split(',');
+			string[] subs = SplitColon(code);
+			string[] p1 = SplitComma(subs[0]);
 			int id = Convert.ToInt32(p1[3]);
-			string[] values = subs[1].Split(',');
+			string[] values  = SplitComma(subs[1]);
 			Star obj = new Star();
 			obj.Id = id;
 			obj.Xc = Convert.ToDouble(values[0], CultureInfo.InvariantCulture);

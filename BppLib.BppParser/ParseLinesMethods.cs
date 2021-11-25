@@ -13,10 +13,10 @@ namespace BppLib.BppParser
     {
         public static Chamfer ParseChamfer(string code)
 		{
-			string[] subs = code.Split(':');
-			string[] p1 = subs[0].Split(',');
+			string[] subs = SplitColon(code);
+			string[] p1 = SplitComma(subs[0]);
 			int id = Convert.ToInt32(p1[3]);
-			string[] values = subs[1].Split(',');
+			string[] values  = SplitComma(subs[1]);
 			Chamfer obj = new Chamfer();
 			obj.Id = id;
 			obj.D = Convert.ToDouble(values[0], CultureInfo.InvariantCulture);
@@ -31,10 +31,10 @@ namespace BppLib.BppParser
 
 		public static LincEp ParseLincEp(string code)
 		{
-			string[] subs = code.Split(':');
-			string[] p1 = subs[0].Split(',');
+			string[] subs = SplitColon(code);
+			string[] p1 = SplitComma(subs[0]);
 			int id = Convert.ToInt32(p1[3]);
-			string[] values = subs[1].Split(',');
+			string[] values  = SplitComma(subs[1]);
 			LincEp obj = new LincEp();
 			obj.Id = id;
 			obj.Xi = Convert.ToDouble(values[0], CultureInfo.InvariantCulture);
@@ -50,10 +50,10 @@ namespace BppLib.BppParser
 
 		public static LineAnXe ParseLineAnXe(string code)
 		{
-			string[] subs = code.Split(':');
-			string[] p1 = subs[0].Split(',');
+			string[] subs = SplitColon(code);
+			string[] p1 = SplitComma(subs[0]);
 			int id = Convert.ToInt32(p1[3]);
-			string[] values = subs[1].Split(',');
+			string[] values  = SplitComma(subs[1]);
 			LineAnXe obj = new LineAnXe();
 			obj.Id = id;
 			obj.A = Convert.ToDouble(values[0], CultureInfo.InvariantCulture);
@@ -69,10 +69,10 @@ namespace BppLib.BppParser
 
 		public static LineAnYe ParseLineAnYe(string code)
 		{
-			string[] subs = code.Split(':');
-			string[] p1 = subs[0].Split(',');
+			string[] subs = SplitColon(code);
+			string[] p1 = SplitComma(subs[0]);
 			int id = Convert.ToInt32(p1[3]);
-			string[] values = subs[1].Split(',');
+			string[] values  = SplitComma(subs[1]);
 			LineAnYe obj = new LineAnYe();
 			obj.Id = id;
 			obj.A = Convert.ToDouble(values[0], CultureInfo.InvariantCulture);
@@ -88,10 +88,10 @@ namespace BppLib.BppParser
 
 		public static LineEp ParseLineEp(string code)
 		{
-			string[] subs = code.Split(':');
-			string[] p1 = subs[0].Split(',');
+			string[] subs = SplitColon(code);
+			string[] p1 = SplitComma(subs[0]);
 			int id = Convert.ToInt32(p1[3]);
-			string[] values = subs[1].Split(',');
+			string[] values  = SplitComma(subs[1]);
 			LineEp obj = new LineEp();
 			obj.Id = id;
 			obj.Xe = Convert.ToDouble(values[0], CultureInfo.InvariantCulture);
@@ -108,10 +108,10 @@ namespace BppLib.BppParser
 
 		public static LineEpAnTp ParseLineEpAnTp(string code)
 		{
-			string[] subs = code.Split(':');
-			string[] p1 = subs[0].Split(',');
+			string[] subs = SplitColon(code);
+			string[] p1 = SplitComma(subs[0]);
 			int id = Convert.ToInt32(p1[3]);
-			string[] values = subs[1].Split(',');
+			string[] values  = SplitComma(subs[1]);
 			LineEpAnTp obj = new LineEpAnTp();
 			obj.Id = id;
 			obj.Xe = Convert.ToDouble(values[0], CultureInfo.InvariantCulture);
@@ -128,10 +128,10 @@ namespace BppLib.BppParser
 
 		public static LineEpTp ParseLineEpTp(string code)
 		{
-			string[] subs = code.Split(':');
-			string[] p1 = subs[0].Split(',');
+			string[] subs = SplitColon(code);
+			string[] p1 = SplitComma(subs[0]);
 			int id = Convert.ToInt32(p1[3]);
-			string[] values = subs[1].Split(',');
+			string[] values  = SplitComma(subs[1]);
 			LineEpTp obj = new LineEpTp();
 			obj.Id = id;
 			obj.Xe = Convert.ToDouble(values[0], CultureInfo.InvariantCulture);
@@ -147,10 +147,10 @@ namespace BppLib.BppParser
 
 		public static LineLnAn ParseLineLnAn(string code)
 		{
-			string[] subs = code.Split(':');
-			string[] p1 = subs[0].Split(',');
+			string[] subs = SplitColon(code);
+			string[] p1 = SplitComma(subs[0]);
 			int id = Convert.ToInt32(p1[3]);
-			string[] values = subs[1].Split(',');
+			string[] values  = SplitComma(subs[1]);
 			LineLnAn obj = new LineLnAn();
 			obj.Id = id;
 			obj.L = Convert.ToDouble(values[0], CultureInfo.InvariantCulture);
@@ -166,10 +166,10 @@ namespace BppLib.BppParser
 
 		public static LineLnTp ParseLineLnTp(string code)
 		{
-			string[] subs = code.Split(':');
-			string[] p1 = subs[0].Split(',');
+			string[] subs = SplitColon(code);
+			string[] p1 = SplitComma(subs[0]);
 			int id = Convert.ToInt32(p1[3]);
-			string[] values = subs[1].Split(',');
+			string[] values  = SplitComma(subs[1]);
 			LineLnTp obj = new LineLnTp();
 			obj.Id = id;
 			obj.L = Convert.ToDouble(values[0], CultureInfo.InvariantCulture);
@@ -184,10 +184,10 @@ namespace BppLib.BppParser
 
 		public static LineLnXe ParseLineLnXe(string code)
 		{
-			string[] subs = code.Split(':');
-			string[] p1 = subs[0].Split(',');
+			string[] subs = SplitColon(code);
+			string[] p1 = SplitComma(subs[0]);
 			int id = Convert.ToInt32(p1[3]);
-			string[] values = subs[1].Split(',');
+			string[] values  = SplitComma(subs[1]);
 			LineLnXe obj = new LineLnXe();
 			obj.Id = id;
 			obj.L = Convert.ToDouble(values[0], CultureInfo.InvariantCulture);
@@ -203,10 +203,10 @@ namespace BppLib.BppParser
 
 		public static LineLnYe ParseLineLnYe(string code)
 		{
-			string[] subs = code.Split(':');
-			string[] p1 = subs[0].Split(',');
+			string[] subs = SplitColon(code);
+			string[] p1 = SplitComma(subs[0]);
 			int id = Convert.ToInt32(p1[3]);
-			string[] values = subs[1].Split(',');
+			string[] values  = SplitComma(subs[1]);
 			LineLnYe obj = new LineLnYe();
 			obj.Id = id;
 			obj.L = Convert.ToDouble(values[0], CultureInfo.InvariantCulture);

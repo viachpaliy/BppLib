@@ -12,10 +12,10 @@ namespace BppLib.BppParser
     {
 		public static Bca ParseBca(string code)
 		{
-			string[] subs = code.Split(':');
-			string[] p1 = subs[0].Split(',');
+			string[] subs = SplitColon(code);
+			string[] p1 = SplitComma(subs[0]);
 			int id = Convert.ToInt32(p1[3]);
-			string[] values = subs[1].Split(',');
+			string[] values  = SplitComma(subs[1]);
 			Bca obj = new Bca();
 			obj.IntId = id;
 			obj.Side = Convert.ToInt32(values[0]);
@@ -81,10 +81,10 @@ namespace BppLib.BppParser
 
 		public static Bcl ParseBcl(string code)
 		{
-			string[] subs = code.Split(':');
-			string[] p1 = subs[0].Split(',');
+			string[] subs = SplitColon(code);
+			string[] p1 = SplitComma(subs[0]);
 			int id = Convert.ToInt32(p1[3]);
-			string[] values = subs[1].Split(',');
+			string[] values  = SplitComma(subs[1]);
 			Bcl obj = new Bcl();
 			obj.IntId = id;
 			obj.Side = Convert.ToInt32(values[0]);
@@ -150,10 +150,10 @@ namespace BppLib.BppParser
 
 		public static Bg ParseBg(string code)
 		{
-			string[] subs = code.Split(':');
-			string[] p1 = subs[0].Split(',');
+			string[] subs = SplitColon(code);
+			string[] p1 = SplitComma(subs[0]);
 			int id = Convert.ToInt32(p1[3]);
-			string[] values = subs[1].Split(',');
+			string[] values  = SplitComma(subs[1]);
 			Bg obj = new Bg();
 			obj.IntId = id;
 			obj.Side = Convert.ToInt32(values[0]);
@@ -219,10 +219,10 @@ namespace BppLib.BppParser
 
 		public static BGeo ParseBGeo(string code)
 		{
-			string[] subs = code.Split(':');
-			string[] p1 = subs[0].Split(',');
+			string[] subs = SplitColon(code);
+			string[] p1 = SplitComma(subs[0]);
 			int id = Convert.ToInt32(p1[3]);
-			string[] values = subs[1].Split(',');
+			string[] values  = SplitComma(subs[1]);
 			BGeo obj = new BGeo();
 			obj.IntId = id;
 			obj.Gid = values[0].Trim().Trim('"');
@@ -271,10 +271,10 @@ namespace BppLib.BppParser
 
 		public static Bh ParseBh(string code)
 		{
-			string[] subs = code.Split(':');
-			string[] p1 = subs[0].Split(',');
+			string[] subs = SplitColon(code);
+			string[] p1 = SplitComma(subs[0]);
 			int id = Convert.ToInt32(p1[3]);
-			string[] values = subs[1].Split(',');
+			string[] values  = SplitComma(subs[1]);
 			Bh obj = new Bh();
 			obj.IntId = id;
 			obj.Side = Convert.ToInt32(values[0]);
@@ -340,10 +340,10 @@ namespace BppLib.BppParser
 
 		public static Bv ParseBv(string code)
 		{
-			string[] subs = code.Split(':');
-			string[] p1 = subs[0].Split(',');
+			string[] subs = SplitColon(code);
+			string[] p1 = SplitComma(subs[0]);
 			int id = Convert.ToInt32(p1[3]);
-			string[] values = subs[1].Split(',');
+			string[] values  = SplitComma(subs[1]);
 			Bv obj = new Bv();
 			obj.IntId = id;
 			obj.Side = Convert.ToInt32(values[0]);
@@ -409,10 +409,10 @@ namespace BppLib.BppParser
 
 		public static S32 ParseS32(string code)
 		{
-			string[] subs = code.Split(':');
-			string[] p1 = subs[0].Split(',');
+			string[] subs = SplitColon(code);
+			string[] p1 = SplitComma(subs[0]);
 			int id = Convert.ToInt32(p1[3]);
-			string[] values = subs[1].Split(',');
+			string[] values  = SplitComma(subs[1]);
 			S32 obj = new S32();
 			obj.IntId = id;
 			obj.Side = Convert.ToInt32(values[0]);

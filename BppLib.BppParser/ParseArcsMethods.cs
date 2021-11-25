@@ -13,10 +13,10 @@ namespace BppLib.BppParser
     {
 		public static AincAnCe ParseAincAnCe(string code)
 		{
-			string[] subs = code.Split(':');
-			string[] p1 = subs[0].Split(',');
+			string[] subs = SplitColon(code);
+			string[] p1 = SplitComma(subs[0]);
 			int id = Convert.ToInt32(p1[3]);
-			string[] values = subs[1].Split(',');
+			string[] values  = SplitComma(subs[1]);
 			AincAnCe obj = new AincAnCe();
 			obj.Id = id;
 			obj.Xi = Convert.ToDouble(values[0], CultureInfo.InvariantCulture);
@@ -34,10 +34,10 @@ namespace BppLib.BppParser
 
 		public static AincEpRa ParseAincEpRa(string code)
 		{
-			string[] subs = code.Split(':');
-			string[] p1 = subs[0].Split(',');
+			string[] subs = SplitColon(code);
+			string[] p1 = SplitComma(subs[0]);
 			int id = Convert.ToInt32(p1[3]);
-			string[] values = subs[1].Split(',');
+			string[] values  = SplitComma(subs[1]);
 			AincEpRa obj = new AincEpRa();
 			obj.Id = id;
 			obj.Xi = Convert.ToDouble(values[0], CultureInfo.InvariantCulture);
@@ -55,10 +55,10 @@ namespace BppLib.BppParser
 
 		public static ArcAnCe ParseArcAnCe(string code)
 		{
-			string[] subs = code.Split(':');
-			string[] p1 = subs[0].Split(',');
+			string[] subs = SplitColon(code);
+			string[] p1 = SplitComma(subs[0]);
 			int id = Convert.ToInt32(p1[3]);
-			string[] values = subs[1].Split(',');
+			string[] values  = SplitComma(subs[1]);
 			ArcAnCe obj = new ArcAnCe();
 			obj.Id = id;
 			obj.A = Convert.ToDouble(values[0], CultureInfo.InvariantCulture);
@@ -76,10 +76,10 @@ namespace BppLib.BppParser
 
 		public static ArcAnCeRaTp ParseArcAnCeRaTp(string code)
 		{
-			string[] subs = code.Split(':');
-			string[] p1 = subs[0].Split(',');
+			string[] subs = SplitColon(code);
+			string[] p1 = SplitComma(subs[0]);
 			int id = Convert.ToInt32(p1[3]);
-			string[] values = subs[1].Split(',');
+			string[] values  = SplitComma(subs[1]);
 			ArcAnCeRaTp obj = new ArcAnCeRaTp();
 			obj.Id = id;
 			obj.A = Convert.ToDouble(values[0], CultureInfo.InvariantCulture);
@@ -98,10 +98,10 @@ namespace BppLib.BppParser
 
 		public static ArcCeTs ParseArcCeTs(string code)
 		{
-			string[] subs = code.Split(':');
-			string[] p1 = subs[0].Split(',');
+			string[] subs = SplitColon(code);
+			string[] p1 = SplitComma(subs[0]);
 			int id = Convert.ToInt32(p1[3]);
-			string[] values = subs[1].Split(',');
+			string[] values  = SplitComma(subs[1]);
 			ArcCeTs obj = new ArcCeTs();
 			obj.Id = id;
 			obj.Xc = Convert.ToDouble(values[0], CultureInfo.InvariantCulture);
@@ -118,10 +118,10 @@ namespace BppLib.BppParser
 
 		public static ArcCeTsPk ParseArcCeTsPk(string code)
 		{
-			string[] subs = code.Split(':');
-			string[] p1 = subs[0].Split(',');
+			string[] subs = SplitColon(code);
+			string[] p1 = SplitComma(subs[0]);
 			int id = Convert.ToInt32(p1[3]);
-			string[] values = subs[1].Split(',');
+			string[] values  = SplitComma(subs[1]);
 			ArcCeTsPk obj = new ArcCeTsPk();
 			obj.Id = id;
 			obj.Xc = Convert.ToDouble(values[0], CultureInfo.InvariantCulture);
@@ -138,10 +138,10 @@ namespace BppLib.BppParser
 
 		public static ArcEpCe ParseArcEpCe(string code)
 		{
-			string[] subs = code.Split(':');
-			string[] p1 = subs[0].Split(',');
+			string[] subs = SplitColon(code);
+			string[] p1 = SplitComma(subs[0]);
 			int id = Convert.ToInt32(p1[3]);
-			string[] values = subs[1].Split(',');
+			string[] values  = SplitComma(subs[1]);
 			ArcEpCe obj = new ArcEpCe();
 			obj.Id = id;
 			obj.Xe = Convert.ToDouble(values[0], CultureInfo.InvariantCulture);
@@ -160,10 +160,10 @@ namespace BppLib.BppParser
 
 		public static ArcEpRa ParseArcEpRa(string code)
 		{
-			string[] subs = code.Split(':');
-			string[] p1 = subs[0].Split(',');
+			string[] subs = SplitColon(code);
+			string[] p1 = SplitComma(subs[0]);
 			int id = Convert.ToInt32(p1[3]);
-			string[] values = subs[1].Split(',');
+			string[] values  = SplitComma(subs[1]);
 			ArcEpRa obj = new ArcEpRa();
 			obj.Id = id;
 			obj.Xe = Convert.ToDouble(values[0], CultureInfo.InvariantCulture);
@@ -181,10 +181,10 @@ namespace BppLib.BppParser
 
 		public static ArcEpRaTp ParseArcEpRaTp(string code)
 		{
-			string[] subs = code.Split(':');
-			string[] p1 = subs[0].Split(',');
+			string[] subs = SplitColon(code);
+			string[] p1 = SplitComma(subs[0]);
 			int id = Convert.ToInt32(p1[3]);
-			string[] values = subs[1].Split(',');
+			string[] values  = SplitComma(subs[1]);
 			ArcEpRaTp obj = new ArcEpRaTp();
 			obj.Id = id;
 			obj.Xe = Convert.ToDouble(values[0], CultureInfo.InvariantCulture);
@@ -202,10 +202,10 @@ namespace BppLib.BppParser
 
 		public static ArcEpTp ParseArcEpTp(string code)
 		{
-			string[] subs = code.Split(':');
-			string[] p1 = subs[0].Split(',');
+			string[] subs = SplitColon(code);
+			string[] p1 = SplitComma(subs[0]);
 			int id = Convert.ToInt32(p1[3]);
-			string[] values = subs[1].Split(',');
+			string[] values  = SplitComma(subs[1]);
 			ArcEpTp obj = new ArcEpTp();
 			obj.Id = id;
 			obj.Xe = Convert.ToDouble(values[0], CultureInfo.InvariantCulture);
@@ -222,10 +222,10 @@ namespace BppLib.BppParser
 
 		public static ArcIpEp ParseArcIpEp(string code)
 		{
-			string[] subs = code.Split(':');
-			string[] p1 = subs[0].Split(',');
+			string[] subs = SplitColon(code);
+			string[] p1 = SplitComma(subs[0]);
 			int id = Convert.ToInt32(p1[3]);
-			string[] values = subs[1].Split(',');
+			string[] values  = SplitComma(subs[1]);
 			ArcIpEp obj = new ArcIpEp();
 			obj.Id = id;
 			obj.X2 = Convert.ToDouble(values[0], CultureInfo.InvariantCulture);
@@ -243,10 +243,10 @@ namespace BppLib.BppParser
 
 		public static ArcRaTs ParseArcRaTs(string code)
 		{
-			string[] subs = code.Split(':');
-			string[] p1 = subs[0].Split(',');
+			string[] subs = SplitColon(code);
+			string[] p1 = SplitComma(subs[0]);
 			int id = Convert.ToInt32(p1[3]);
-			string[] values = subs[1].Split(',');
+			string[] values  = SplitComma(subs[1]);
 			ArcRaTs obj = new ArcRaTs();
 			obj.Id = id;
 			obj.R = Convert.ToDouble(values[0], CultureInfo.InvariantCulture);
@@ -262,10 +262,10 @@ namespace BppLib.BppParser
 
 		public static ArcRaTsPk ParseArcRaTsPk(string code)
 		{
-			string[] subs = code.Split(':');
-			string[] p1 = subs[0].Split(',');
+			string[] subs = SplitColon(code);
+			string[] p1 = SplitComma(subs[0]);
 			int id = Convert.ToInt32(p1[3]);
-			string[] values = subs[1].Split(',');
+			string[] values  = SplitComma(subs[1]);
 			ArcRaTsPk obj = new ArcRaTsPk();
 			obj.Id = id;
 			obj.R = Convert.ToDouble(values[0], CultureInfo.InvariantCulture);
@@ -281,10 +281,10 @@ namespace BppLib.BppParser
 
 		public static ConnectorA ParseConnectorA(string code)
 		{
-			string[] subs = code.Split(':');
-			string[] p1 = subs[0].Split(',');
+			string[] subs = SplitColon(code);
+			string[] p1 = SplitComma(subs[0]);
 			int id = Convert.ToInt32(p1[3]);
-			string[] values = subs[1].Split(',');
+			string[] values  = SplitComma(subs[1]);
 			ConnectorA obj = new ConnectorA();
 			obj.Id = id;
 			obj.R = Convert.ToDouble(values[0], CultureInfo.InvariantCulture);
@@ -299,10 +299,10 @@ namespace BppLib.BppParser
 
 		public static ConnectorB ParseConnectorB(string code)
 		{
-			string[] subs = code.Split(':');
-			string[] p1 = subs[0].Split(',');
+			string[] subs = SplitColon(code);
+			string[] p1 = SplitComma(subs[0]);
 			int id = Convert.ToInt32(p1[3]);
-			string[] values = subs[1].Split(',');
+			string[] values  = SplitComma(subs[1]);
 			ConnectorB obj = new ConnectorB();
 			obj.Id = id;
 			obj.R = Convert.ToDouble(values[0], CultureInfo.InvariantCulture);
