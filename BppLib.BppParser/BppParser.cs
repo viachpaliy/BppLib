@@ -4,11 +4,70 @@ using System.IO;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Globalization;
 
 namespace BppLib.BppParser
 {
     public static partial class ParserBpp
     {
+
+		public static StartPoint ParseStartPoint(string code)
+		{
+			string[] subs = SplitColon(code);
+			string[] p1 = SplitComma(subs[0]);
+			int id = Convert.ToInt32(p1[3]);
+			string[] values  = SplitComma(subs[1]);
+			StartPoint obj = new StartPoint();
+			obj.Id = id;
+			obj.X = Convert.ToDouble(values[0], CultureInfo.InvariantCulture);
+			obj.Y = Convert.ToDouble(values[1], CultureInfo.InvariantCulture);
+			obj.Z = Convert.ToDouble(values[2], CultureInfo.InvariantCulture);
+			return obj;
+		}
+
+		public static EndPath ParseEndPath(string code)
+		{
+			string[] subs = SplitColon(code);
+			string[] p1 = SplitComma(subs[0]);
+			int id = Convert.ToInt32(p1[3]);
+			string[] values  = SplitComma(subs[1]);
+			EndPath obj = new EndPath();
+			obj.Id = id;
+			return obj;
+		}
+
+		public static Geo ParseGeo(string code)
+		{
+			string[] subs = SplitColon(code);
+			string[] p1 = SplitComma(subs[0]);
+			int id = Convert.ToInt32(p1[3]);
+			string[] values  = SplitComma(subs[1]);
+			Geo obj = new Geo();
+			obj.IntId = id;
+			obj.Id = values[0].Trim().Trim('"');
+			obj.Side = Convert.ToInt32(values[1]);
+			obj.Crn = values[2].Trim().Trim('"');
+			obj.Dp = Convert.ToDouble(values[3], CultureInfo.InvariantCulture);
+			obj.Rty =(Repetition)Convert.ToInt32(values[4]);
+			obj.Xrc = Convert.ToDouble(values[5], CultureInfo.InvariantCulture);
+			obj.Yrc = Convert.ToDouble(values[6], CultureInfo.InvariantCulture);
+			obj.Dx = Convert.ToDouble(values[7], CultureInfo.InvariantCulture);
+			obj.Dy = Convert.ToDouble(values[8], CultureInfo.InvariantCulture);
+			obj.R = Convert.ToDouble(values[9], CultureInfo.InvariantCulture);
+			obj.A = Convert.ToDouble(values[10], CultureInfo.InvariantCulture);
+			obj.Da = Convert.ToDouble(values[11], CultureInfo.InvariantCulture);
+			obj.Rdl =(values[12].Trim() == "1");
+			obj.Nrp = Convert.ToInt32(values[13]);
+			obj.Arp = Convert.ToInt32(values[14]);
+			obj.Lrp = Convert.ToInt32(values[15]);
+			obj.Er =(values[16].Trim() == "1");
+			obj.Rv =(values[17].Trim() == "1");
+			obj.Cow =(values[18].Trim() == "1");
+			obj.Lay = values[19].Trim().Trim('"');
+			obj.Crc =(ToolCorrection)Convert.ToInt32(values[20]);
+			return obj;
+		}
+
         public static string[] SplitColon(string code)
         {
             string[] arr = new string[2];
