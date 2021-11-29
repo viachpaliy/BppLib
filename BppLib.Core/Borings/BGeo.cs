@@ -36,11 +36,7 @@ namespace BppLib.Core
 
 		/// <value>Property <c>Ar</c> represents the angle of rotation of the spindle axis on plane X, Y.</value>
 		public double Ar { get; set; } = 0 ;
-
-		/// <value> If property <c>Ap</c> is <c>false</c> enable data settings taking the side created to be a two-dimensional plane X, Y.
-		/// If property <c>Ap</c> is <c>true</c> enable data settings taking the side created to be a three-dimensional plane X, Y, Z.</value>
-		public bool Ap { get; set; } = false ;
-
+		
 		/// <value>Property <c>Cka</c> represents the inclination/rotation type.</value>
 		public InclinationRotationType Cka { get; set; } = InclinationRotationType.azrNO ;
 
