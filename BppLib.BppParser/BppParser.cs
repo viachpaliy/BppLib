@@ -11,6 +11,39 @@ namespace BppLib.BppParser
     public static partial class ParserBpp
     {
 
+		public static HeaderSection ParseHeaderSection(string[] code)
+		{
+			string[] section = GetSectionByName(code, "HEADER");
+			HeaderSection h = new HeaderSection();
+			Regex typeRegex = new Regex(@"^\s*TYPE\s*=\s*(\w+)\s*$");
+			Regex versionRegex = new Regex(@"^\s*VER\s*=\s*(\d+)\s*$");
+			foreach(var s in section)
+			{
+				Match mType = typeRegex.Match(s);
+				if (mType.Success) h.Typ = mType.Groups[1].Value;
+				Match mVer = versionRegex.Match(s);
+				if (mVer.Success) h.Version = mVer.Groups[1].Value;
+			}
+			return h;
+		}
+
+		public static  DescriptionSection ParseDescriptionSection(string[] code)
+		{
+			string[] section = GetSectionByName(code, "DESCRIPTION");
+			DescriptionSection ds = new  DescriptionSection();
+			StringBuilder sb = new StringBuilder();
+			foreach(var s in section)
+			{
+				if (!String.IsNullOrEmpty(s))
+				{
+					if (s.Trim().StartsWith('|'))
+					sb.AppendLine(s.Trim().TrimStart('|'));
+				}
+			}
+			ds.DescText = sb.ToString();
+			return ds;
+		}
+
 		public static StartPoint ParseStartPoint(string code)
 		{
 			string[] subs = SplitColon(code);
@@ -109,6 +142,47 @@ namespace BppLib.BppParser
 
             return lst.ToArray();
         }
+
+		public static string GetBiesseEntityType(string code)
+		{
+			string pattern = @"^\s*@\s+(\w+)\s*,.*";
+			string biesseType = "";
+			Regex r = new Regex(pattern);
+			Match m = r.Match(code);
+			if (m.Success)
+			{
+				biesseType = m.Groups[1].Value;
+			}
+			return biesseType;
+		}
+
+		public static string[] GetSectionByName(string[] code, string name)
+		{
+			string patternStart = @"^\s*\[\s*" + name.ToUpper() + @"\s*\]\s*$";
+			string ret = "";
+			bool startSection = false;
+			bool endSection = false;
+			Regex rStart = new Regex(patternStart);
+			string patternEnd = @"^\s*\[\s*(\w+)\s*\]\s*$";
+			Regex rEnd = new Regex(patternEnd);
+			List<string> SectionCode = new List<string>();
+			foreach(var s in code)
+				{
+					Match mEnd = rEnd.Match(s);
+					if ((mEnd.Success) && (startSection))
+						{
+							endSection = true;
+						}
+					if (endSection) break;
+					if (startSection) SectionCode.Add(s);
+					Match mStart = rStart.Match(s);
+					if (mStart.Success)
+						{
+							startSection = true;
+						}
+				}
+			return SectionCode.ToArray();
+		}
 
     }
     
