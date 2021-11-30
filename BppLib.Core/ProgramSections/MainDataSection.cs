@@ -57,7 +57,7 @@ namespace BppLib.Core
         /// machining operation and tooling of the work table with the WorkTableTooling application.</value>
         public string Material { get; set; } = "wood" ;
 
-        /// <value>Property <c>PutLst</c> models the "TLCHK" variable of the "MAINDATA" section of the ".cix" program.
+        /// <value>Property <c>PutLst</c> models the "PUTLST" variable of the "MAINDATA" section of the ".cix" program.
 		/// The exact meaning of the variable is unknown. Default value is "".</value>
 	    public string PutLst { get; set; } = "";
         

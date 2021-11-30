@@ -159,7 +159,6 @@ namespace BppLib.BppParser
 		public static string[] GetSectionByName(string[] code, string name)
 		{
 			string patternStart = @"^\s*\[\s*" + name.ToUpper() + @"\s*\]\s*$";
-			string ret = "";
 			bool startSection = false;
 			bool endSection = false;
 			Regex rStart = new Regex(patternStart);
