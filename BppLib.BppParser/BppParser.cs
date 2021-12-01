@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Globalization;
+using Jurassic;
 
 namespace BppLib.BppParser
 {
@@ -15,6 +16,9 @@ namespace BppLib.BppParser
 		public static List<BiesseVariable> publicVariables = new List<BiesseVariable>();
 
 		public static List<BiesseVariable> privateVariables = new List<BiesseVariable>();
+
+		/// <summary> JavaScript engine. </summary>
+        public static Jurassic.ScriptEngine engine = new Jurassic.ScriptEngine();
 
 		public static HeaderSection ParseHeaderSection(string[] code)
 		{
@@ -186,6 +190,16 @@ namespace BppLib.BppParser
 						}
 				}
 			return SectionCode.ToArray();
+		}
+
+		public static double ConvertToDouble(string code)
+		{
+			return engine.Evaluate<double>(code);
+		}
+
+		public static int ConvertToInt(string code)
+		{
+			return engine.Evaluate<int>(code);
 		}
 
     }

@@ -30,9 +30,9 @@ namespace BppLib.BppParser
 			string[] values  = SplitComma(subs[1]);
 			Offset obj = new Offset();
 			obj.Id = id;
-			obj.X = Convert.ToDouble(values[0], CultureInfo.InvariantCulture);
-			obj.Y = Convert.ToDouble(values[1], CultureInfo.InvariantCulture);
-			obj.Z = Convert.ToDouble(values[2], CultureInfo.InvariantCulture);
+			obj.X = ConvertToDouble(values[0]);
+			obj.Y = ConvertToDouble(values[1]);
+			obj.Z = ConvertToDouble(values[2]);
 			obj.Shw =(values[3].Trim() == "1");
 			return obj;
 		}
@@ -47,17 +47,17 @@ namespace BppLib.BppParser
 			obj.IntId = id;
 			obj.Id = values[0].Trim().Trim('"');
 			obj.SpName = values[1].Trim().Trim('"');
-			obj.SpLpx = Convert.ToDouble(values[2], CultureInfo.InvariantCulture);
-			obj.SpLpy = Convert.ToDouble(values[3], CultureInfo.InvariantCulture);
-			obj.SpLpz = Convert.ToDouble(values[4], CultureInfo.InvariantCulture);
+			obj.SpLpx = ConvertToDouble(values[2]);
+			obj.SpLpy = ConvertToDouble(values[3]);
+			obj.SpLpz = ConvertToDouble(values[4]);
 			obj.SymY =(values[5].Trim() == "1");
-			obj.Rot = Convert.ToDouble(values[6], CultureInfo.InvariantCulture);
-			obj.SpCrn = Convert.ToInt32(values[7]);
-			obj.Rft = Convert.ToInt32(values[8]);
-			obj.Ref = Convert.ToInt32(values[9]);
-			obj.Bck = Convert.ToInt32(values[10]);
-			obj.X = Convert.ToDouble(values[11], CultureInfo.InvariantCulture);
-			obj.Y = Convert.ToDouble(values[12], CultureInfo.InvariantCulture);
+			obj.Rot = ConvertToDouble(values[6]);
+			obj.SpCrn = ConvertToInt(values[7]);
+			obj.Rft = ConvertToInt(values[8]);
+			obj.Ref = ConvertToInt(values[9]);
+			obj.Bck = ConvertToInt(values[10]);
+			obj.X = ConvertToDouble(values[11]);
+			obj.Y = ConvertToDouble(values[12]);
 			obj.Pav =(values[13].Trim() == "1");
 			obj.Vars = values[14].Trim().Trim('"');
 			return obj;
@@ -71,9 +71,9 @@ namespace BppLib.BppParser
 			string[] values  = SplitComma(subs[1]);
 			Rotate obj = new Rotate();
 			obj.Id = id;
-			obj.X = Convert.ToDouble(values[0], CultureInfo.InvariantCulture);
-			obj.Y = Convert.ToDouble(values[1], CultureInfo.InvariantCulture);
-			obj.Ar = Convert.ToDouble(values[2], CultureInfo.InvariantCulture);
+			obj.X = ConvertToDouble(values[0]);
+			obj.Y = ConvertToDouble(values[1]);
+			obj.Ar = ConvertToDouble(values[2]);
 			return obj;
 		}
 
@@ -85,10 +85,10 @@ namespace BppLib.BppParser
 			string[] values  = SplitComma(subs[1]);
 			Scale obj = new Scale();
 			obj.Id = id;
-			obj.X = Convert.ToDouble(values[0], CultureInfo.InvariantCulture);
-			obj.Y = Convert.ToDouble(values[1], CultureInfo.InvariantCulture);
-			obj.Fct = Convert.ToDouble(values[2], CultureInfo.InvariantCulture);
-			obj.Nu = Convert.ToInt32(values[3]);
+			obj.X = ConvertToDouble(values[0]);
+			obj.Y = ConvertToDouble(values[1]);
+			obj.Fct = ConvertToDouble(values[2]);
+			obj.Nu = ConvertToInt(values[3]);
 			return obj;
 		}
 
@@ -100,8 +100,8 @@ namespace BppLib.BppParser
 			string[] values  = SplitComma(subs[1]);
 			Shift obj = new Shift();
 			obj.Id = id;
-			obj.X = Convert.ToDouble(values[0], CultureInfo.InvariantCulture);
-			obj.Y = Convert.ToDouble(values[1], CultureInfo.InvariantCulture);
+			obj.X = ConvertToDouble(values[0]);
+			obj.Y = ConvertToDouble(values[1]);
 			return obj;
 		}
 
@@ -113,16 +113,16 @@ namespace BppLib.BppParser
 			string[] values  = SplitComma(subs[1]);
 			WFC obj = new WFC();
 			obj.Id = id;
-			obj.SideId = Convert.ToInt32(values[0]);
-			obj.X = Convert.ToDouble(values[1], CultureInfo.InvariantCulture);
-			obj.Y = Convert.ToDouble(values[2], CultureInfo.InvariantCulture);
-			obj.Z = Convert.ToDouble(values[3], CultureInfo.InvariantCulture);
-			obj.Az = Convert.ToDouble(values[4], CultureInfo.InvariantCulture);
-			obj.H = Convert.ToDouble(values[5], CultureInfo.InvariantCulture);
-			obj.A = Convert.ToDouble(values[6], CultureInfo.InvariantCulture);
-			obj.Da = Convert.ToDouble(values[7], CultureInfo.InvariantCulture);
-			obj.R = Convert.ToDouble(values[8], CultureInfo.InvariantCulture);
-			obj.Dir =(CircleDirection)Convert.ToInt32(values[9]);
+			obj.SideId = ConvertToInt(values[0]);
+			obj.X = ConvertToDouble(values[1]);
+			obj.Y = ConvertToDouble(values[2]);
+			obj.Z = ConvertToDouble(values[3]);
+			obj.Az = ConvertToDouble(values[4]);
+			obj.H = ConvertToDouble(values[5]);
+			obj.A = ConvertToDouble(values[6]);
+			obj.Da = ConvertToDouble(values[7]);
+			obj.R = ConvertToDouble(values[8]);
+			obj.Dir =(CircleDirection)ConvertToInt(values[9]);
 			obj.Vrt =(values[10].Trim() == "1");
 			obj.Vf =(values[11].Trim() == "1");
 			obj.Afh =(values[12].Trim() == "1");
@@ -140,16 +140,16 @@ namespace BppLib.BppParser
 			string[] values  = SplitComma(subs[1]);
 			WFG obj = new WFG();
 			obj.Id = id;
-			obj.SideId = Convert.ToInt32(values[0]);
+			obj.SideId = ConvertToInt(values[0]);
 			obj.Gid = values[1].Trim().Trim('"');
 			obj.Pdf =(values[2].Trim() == "1");
 			obj.Rv =(values[3].Trim() == "1");
 			obj.Vf =(values[4].Trim() == "1");
 			obj.Vrt =(values[5].Trim() == "1");
-			obj.Az = Convert.ToDouble(values[6], CultureInfo.InvariantCulture);
+			obj.Az = ConvertToDouble(values[6]);
 			obj.Lay = values[7].Trim().Trim('"');
-			obj.Z = Convert.ToDouble(values[8], CultureInfo.InvariantCulture);
-			obj.Hgt = Convert.ToDouble(values[9], CultureInfo.InvariantCulture);
+			obj.Z = ConvertToDouble(values[8]);
+			obj.Hgt = ConvertToDouble(values[9]);
 			return obj;
 		}
 
@@ -161,7 +161,7 @@ namespace BppLib.BppParser
 			string[] values  = SplitComma(subs[1]);
 			WFGL obj = new WFGL();
 			obj.Id = id;
-			obj.SideId = Convert.ToInt32(values[0]);
+			obj.SideId = ConvertToInt(values[0]);
 			obj.Giz = values[1].Trim().Trim('"');
 			obj.Rv =(values[2].Trim() == "1");
 			obj.Vf =(values[3].Trim() == "1");
@@ -177,7 +177,7 @@ namespace BppLib.BppParser
 			string[] values  = SplitComma(subs[1]);
 			WFGPS obj = new WFGPS();
 			obj.Id = id;
-			obj.SideId = Convert.ToInt32(values[0]);
+			obj.SideId = ConvertToInt(values[0]);
 			obj.Gid = values[1].Trim().Trim('"');
 			obj.Giz = values[2].Trim().Trim('"');
 			obj.Rv =(values[3].Trim() == "1");
@@ -195,21 +195,21 @@ namespace BppLib.BppParser
 			string[] values  = SplitComma(subs[1]);
 			WFL obj = new WFL();
 			obj.Id = id;
-			obj.SideId = Convert.ToInt32(values[0]);
-			obj.X = Convert.ToDouble(values[1], CultureInfo.InvariantCulture);
-			obj.Y = Convert.ToDouble(values[2], CultureInfo.InvariantCulture);
-			obj.Z = Convert.ToDouble(values[3], CultureInfo.InvariantCulture);
-			obj.Az = Convert.ToDouble(values[4], CultureInfo.InvariantCulture);
-			obj.Ar = Convert.ToDouble(values[5], CultureInfo.InvariantCulture);
-			obj.L = Convert.ToDouble(values[6], CultureInfo.InvariantCulture);
-			obj.H = Convert.ToDouble(values[7], CultureInfo.InvariantCulture);
+			obj.SideId = ConvertToInt(values[0]);
+			obj.X = ConvertToDouble(values[1]);
+			obj.Y = ConvertToDouble(values[2]);
+			obj.Z = ConvertToDouble(values[3]);
+			obj.Az = ConvertToDouble(values[4]);
+			obj.Ar = ConvertToDouble(values[5]);
+			obj.L = ConvertToDouble(values[6]);
+			obj.H = ConvertToDouble(values[7]);
 			obj.Vrt =(values[8].Trim() == "1");
 			obj.Vf =(values[9].Trim() == "1");
 			obj.Afl =(values[10].Trim() == "1");
 			obj.Afh =(values[11].Trim() == "1");
 			obj.Ucs =(values[12].Trim() == "1");
 			obj.Rv =(values[13].Trim() == "1");
-			obj.Frc = Convert.ToInt32(values[14]);
+			obj.Frc = ConvertToInt(values[14]);
 			obj.Lay = values[15].Trim().Trim('"');
 			return obj;
 		}

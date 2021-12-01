@@ -48,9 +48,9 @@ namespace BppLib.BppParser
 			Regex rFASTVERTBORINGSVALUE = new Regex(@"\s*PAN\s*=\s*FASTVERTBORINGSVALUE\s*\|(.*)\|\|\s*\d\s*\|\s*$");
             foreach(var s in section)
 			{
-                if (rLPX.IsMatch(s)) mds.Lpx = Convert.ToDouble(rLPX.Match(s).Groups[1].Value, CultureInfo.InvariantCulture);
-                if (rLPY.IsMatch(s)) mds.Lpy = Convert.ToDouble(rLPY.Match(s).Groups[1].Value, CultureInfo.InvariantCulture); 
-                if (rLPZ.IsMatch(s)) mds.Lpz = Convert.ToDouble(rLPZ.Match(s).Groups[1].Value, CultureInfo.InvariantCulture); 
+                if (rLPX.IsMatch(s)) mds.Lpx = ConvertToDouble(rLPX.Match(s).Groups[1].Value);
+                if (rLPY.IsMatch(s)) mds.Lpy = ConvertToDouble(rLPY.Match(s).Groups[1].Value); 
+                if (rLPZ.IsMatch(s)) mds.Lpz = ConvertToDouble(rLPZ.Match(s).Groups[1].Value); 
                 if (rORLST.IsMatch(s)) mds.OrLst = rORLST.Match(s).Groups[1].Value.Trim(' ','"');
                 if (rSIMMETRY.IsMatch(s)) mds.Simmetry = (rSIMMETRY.Match(s).Groups[1].Value.Trim(' ','"') == "1");
                 if (rTLCHK.IsMatch(s)) mds.TlChk = Convert.ToInt32(rTLCHK.Match(s).Groups[1].Value);
@@ -61,10 +61,10 @@ namespace BppLib.BppParser
                         Regex rCS = new Regex(@"\w+""(\w+)""");
                         if (rCS.IsMatch(str)) mds.CustStr = rCS.Match(str).Groups[1].Value;
                     }
-                if (rFCN.IsMatch(s)) mds.Fcn = Convert.ToDouble(rFCN.Match(s).Groups[1].Value, CultureInfo.InvariantCulture);
-                if (rXCUT.IsMatch(s)) mds.XCut = Convert.ToDouble(rXCUT.Match(s).Groups[1].Value, CultureInfo.InvariantCulture);
-                if (rYCUT.IsMatch(s)) mds.YCut = Convert.ToDouble(rYCUT.Match(s).Groups[1].Value, CultureInfo.InvariantCulture);
-                if (rJIGTH.IsMatch(s)) mds.JigTh = Convert.ToDouble(rJIGTH.Match(s).Groups[1].Value, CultureInfo.InvariantCulture);
+                if (rFCN.IsMatch(s)) mds.Fcn = ConvertToDouble(rFCN.Match(s).Groups[1].Value);
+                if (rXCUT.IsMatch(s)) mds.XCut = ConvertToDouble(rXCUT.Match(s).Groups[1].Value);
+                if (rYCUT.IsMatch(s)) mds.YCut = ConvertToDouble(rYCUT.Match(s).Groups[1].Value);
+                if (rJIGTH.IsMatch(s)) mds.JigTh = ConvertToDouble(rJIGTH.Match(s).Groups[1].Value);
                 if (rCKOP.IsMatch(s)) mds.Ckop = Convert.ToInt32(rCKOP.Match(s).Groups[1].Value);
                 if (rUNIQUE.IsMatch(s)) mds.Unique = (rUNIQUE.Match(s).Groups[1].Value.Trim(' ','"') == "1");
                 if (rMATERIAL.IsMatch(s)) mds.Material = rMATERIAL.Match(s).Groups[1].Value.Trim(' ','"');
