@@ -10,6 +10,11 @@ namespace BppLib.BppParser
 {
     public static partial class ParserBpp
     {
+		public static MainDataSection mainData = new MainDataSection();
+
+		public static List<BiesseVariable> publicVariables = new List<BiesseVariable>();
+
+		public static List<BiesseVariable> privateVariables = new List<BiesseVariable>();
 
 		public static HeaderSection ParseHeaderSection(string[] code)
 		{

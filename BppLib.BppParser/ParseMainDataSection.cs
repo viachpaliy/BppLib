@@ -89,6 +89,47 @@ namespace BppLib.BppParser
 			return mds;
 		} 
 
+        public static PrivateVarsSection ParsePrivateVarsSection(string[] code)
+        {
+            string[] section = GetSectionByName(code, "VARIABLES");
+            PrivateVarsSection pvs = new PrivateVarsSection();
+            Regex r = new Regex(@"\s*LOC\s*=\s*(\w+)\s*\|\s*""?([\w.+-]+)""?\s*\|\s*(.*)\s*\|\s*(\w+)\s*\|\s*$");
+            foreach(var s in section)
+			{
+                if (r.IsMatch(s))
+                {
+                    var v = new BiesseVariable();
+                    v.Name = r.Match(s).Groups[1].Value.Trim();
+                    v.Value = r.Match(s).Groups[2].Value.Trim();
+                    v.Description = r.Match(s).Groups[3].Value.Trim();
+                    v.Typ = (BiesseVariablesType)Convert.ToInt32(r.Match(s).Groups[4].Value);
+                    pvs.PrivateVariables.Add(v);
+                }
+          
+            }
+            return pvs;
+        }
+
+        public static PublicVarsSection ParsePublicVarsSection(string[] code)
+        {
+            string[] section = GetSectionByName(code, "VARIABLES");
+            PublicVarsSection pvs = new PublicVarsSection();
+            Regex r = new Regex(@"\s*GLB\s*=\s*(\w+)\s*\|\s*""?([\w.+-]+)""?\s*\|\s*(.*)\s*\|\s*(\w+)\s*\|\s*$");
+            foreach(var s in section)
+			{
+                if (r.IsMatch(s))
+                {
+                    var v = new BiesseVariable();
+                    v.Name = r.Match(s).Groups[1].Value.Trim();
+                    v.Value = r.Match(s).Groups[2].Value.Trim();
+                    v.Description = r.Match(s).Groups[3].Value.Trim();
+                    v.Typ = (BiesseVariablesType)Convert.ToInt32(r.Match(s).Groups[4].Value);
+                    pvs.PublicVariables.Add(v);
+                }
+          
+            }
+            return pvs;
+        }
        
     }
 }
