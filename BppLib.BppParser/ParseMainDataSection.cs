@@ -93,7 +93,8 @@ namespace BppLib.BppParser
         {
             string[] section = GetSectionByName(code, "VARIABLES");
             PrivateVarsSection pvs = new PrivateVarsSection();
-            Regex r = new Regex(@"\s*LOC\s*=\s*(\w+)\s*\|\s*""?([\w.+-]+)""?\s*\|\s*(.*)\s*\|\s*(\w+)\s*\|\s*$");
+            Regex r = new Regex(@"\s*LOC\s*=\s*(\w+)\s*\|\s*([\w.+-]+)\s*\|\s*(.*)\s*\|\s*(\w+)\s*\|\s*$");
+            Regex rs = new Regex(@"\s*LOC\s*=\s*(\w+)\s*\|\s*""([\w.+-]+)""\s*\|\s*(.*)\s*\|\s*(\w+)\s*\|\s*$");
             foreach(var s in section)
 			{
                 if (r.IsMatch(s))
@@ -105,6 +106,15 @@ namespace BppLib.BppParser
                     v.Typ = (BiesseVariablesType)Convert.ToInt32(r.Match(s).Groups[4].Value);
                     pvs.PrivateVariables.Add(v);
                 }
+                if (rs.IsMatch(s))
+                {
+                    var v = new BiesseVariable();
+                    v.Name = rs.Match(s).Groups[1].Value.Trim();
+                    v.Value = rs.Match(s).Groups[2].Value.Trim();
+                    v.Description = rs.Match(s).Groups[3].Value.Trim();
+                    v.Typ = BiesseVariablesType.String;
+                    pvs.PrivateVariables.Add(v);
+                }
           
             }
             return pvs;
@@ -114,7 +124,8 @@ namespace BppLib.BppParser
         {
             string[] section = GetSectionByName(code, "VARIABLES");
             PublicVarsSection pvs = new PublicVarsSection();
-            Regex r = new Regex(@"\s*GLB\s*=\s*(\w+)\s*\|\s*""?([\w.+-]+)""?\s*\|\s*(.*)\s*\|\s*(\w+)\s*\|\s*$");
+            Regex r = new Regex(@"\s*GLB\s*=\s*(\w+)\s*\|\s*([\w.+-]+)\s*\|\s*(.*)\s*\|\s*(\w+)\s*\|\s*$");
+            Regex rs = new Regex(@"\s*GLB\s*=\s*(\w+)\s*\|\s*""([\w.+-]+)""\s*\|\s*(.*)\s*\|\s*(\w+)\s*\|\s*$");
             foreach(var s in section)
 			{
                 if (r.IsMatch(s))
@@ -124,6 +135,15 @@ namespace BppLib.BppParser
                     v.Value = r.Match(s).Groups[2].Value.Trim();
                     v.Description = r.Match(s).Groups[3].Value.Trim();
                     v.Typ = (BiesseVariablesType)Convert.ToInt32(r.Match(s).Groups[4].Value);
+                    pvs.PublicVariables.Add(v);
+                }
+                if (rs.IsMatch(s))
+                {
+                    var v = new BiesseVariable();
+                    v.Name = rs.Match(s).Groups[1].Value.Trim();
+                    v.Value = rs.Match(s).Groups[2].Value.Trim();
+                    v.Description = rs.Match(s).Groups[3].Value.Trim();
+                    v.Typ = BiesseVariablesType.String;
                     pvs.PublicVariables.Add(v);
                 }
           

@@ -11,14 +11,17 @@ namespace BppLib.BppParser
 {
     public static partial class ParserBpp
     {
-		public static MainDataSection mainData = new MainDataSection();
-
-		public static List<BiesseVariable> publicVariables = new List<BiesseVariable>();
-
-		public static List<BiesseVariable> privateVariables = new List<BiesseVariable>();
-
 		/// <summary> JavaScript engine. </summary>
         public static Jurassic.ScriptEngine engine = new Jurassic.ScriptEngine();
+
+		public static BiesseProgram ParseBppFile(string filePath)
+		{
+			FileInfo fileInf = new FileInfo(filePath);
+			 if (fileInf.Exists)
+                {return ParseBiesseProgram(File.ReadAllLines(filePath));}
+			else
+				{return new BiesseProgram();}
+		}
 
 		public static HeaderSection ParseHeaderSection(string[] code)
 		{
@@ -61,9 +64,9 @@ namespace BppLib.BppParser
 			string[] values  = SplitComma(subs[1]);
 			StartPoint obj = new StartPoint();
 			obj.Id = id;
-			obj.X = Convert.ToDouble(values[0], CultureInfo.InvariantCulture);
-			obj.Y = Convert.ToDouble(values[1], CultureInfo.InvariantCulture);
-			obj.Z = Convert.ToDouble(values[2], CultureInfo.InvariantCulture);
+			obj.X = ConvertToDouble(values[0]);
+			obj.Y = ConvertToDouble(values[1]);
+			obj.Z = ConvertToDouble(values[2]);
 			return obj;
 		}
 
@@ -87,26 +90,26 @@ namespace BppLib.BppParser
 			Geo obj = new Geo();
 			obj.IntId = id;
 			obj.Id = values[0].Trim().Trim('"');
-			obj.Side = Convert.ToInt32(values[1]);
+			obj.Side = ConvertToInt(values[1]);
 			obj.Crn = values[2].Trim().Trim('"');
-			obj.Dp = Convert.ToDouble(values[3], CultureInfo.InvariantCulture);
-			obj.Rty =(Repetition)Convert.ToInt32(values[4]);
-			obj.Xrc = Convert.ToDouble(values[5], CultureInfo.InvariantCulture);
-			obj.Yrc = Convert.ToDouble(values[6], CultureInfo.InvariantCulture);
-			obj.Dx = Convert.ToDouble(values[7], CultureInfo.InvariantCulture);
-			obj.Dy = Convert.ToDouble(values[8], CultureInfo.InvariantCulture);
-			obj.R = Convert.ToDouble(values[9], CultureInfo.InvariantCulture);
-			obj.A = Convert.ToDouble(values[10], CultureInfo.InvariantCulture);
-			obj.Da = Convert.ToDouble(values[11], CultureInfo.InvariantCulture);
+			obj.Dp = ConvertToDouble(values[3]);
+			obj.Rty =(Repetition)ConvertToInt(values[4]);
+			obj.Xrc = ConvertToDouble(values[5]);
+			obj.Yrc = ConvertToDouble(values[6]);
+			obj.Dx = ConvertToDouble(values[7]);
+			obj.Dy = ConvertToDouble(values[8]);
+			obj.R = ConvertToDouble(values[9]);
+			obj.A = ConvertToDouble(values[10]);
+			obj.Da = ConvertToDouble(values[11]);
 			obj.Rdl =(values[12].Trim() == "1");
-			obj.Nrp = Convert.ToInt32(values[13]);
-			obj.Arp = Convert.ToInt32(values[14]);
-			obj.Lrp = Convert.ToInt32(values[15]);
+			obj.Nrp = ConvertToInt(values[13]);
+			obj.Arp = ConvertToInt(values[14]);
+			obj.Lrp = ConvertToInt(values[15]);
 			obj.Er =(values[16].Trim() == "1");
 			obj.Rv =(values[17].Trim() == "1");
 			obj.Cow =(values[18].Trim() == "1");
 			obj.Lay = values[19].Trim().Trim('"');
-			obj.Crc =(ToolCorrection)Convert.ToInt32(values[20]);
+			obj.Crc =(ToolCorrection)ConvertToInt(values[20]);
 			return obj;
 		}
 
