@@ -11,7 +11,10 @@ namespace BppLib.BppParser
 {
     public static partial class ParserBpp
     {
-		public static Circle3P ParseCircle3P(string code)
+		/// <summary> Parses the line of code and returns the <c>Circle3P</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>Circle3P</c> instance.</returns>
+		public static Circle3P  ParseCircle3P(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);
@@ -35,7 +38,10 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
-		public static CircleCR ParseCircleCR(string code)
+		/// <summary> Parses the line of code and returns the <c>CircleCR</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>CircleCR</c> instance.</returns>
+		public static CircleCR  ParseCircleCR(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);
@@ -56,7 +62,10 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
-		public static Ellipse ParseEllipse(string code)
+		/// <summary> Parses the line of code and returns the <c>Ellipse</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>Ellipse</c> instance.</returns>
+		public static Ellipse  ParseEllipse(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);
@@ -84,7 +93,10 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
-		public static Oval ParseOval(string code)
+		/// <summary> Parses the line of code and returns the <c>Oval</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>Oval</c> instance.</returns>
+		public static Oval  ParseOval(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);
@@ -109,7 +121,10 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
-		public static Polygon ParsePolygon(string code)
+		/// <summary> Parses the line of code and returns the <c>Polygon</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>Polygon</c> instance.</returns>
+		public static Polygon  ParsePolygon(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);
@@ -143,7 +158,10 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
-		public static Rectangle ParseRectangle(string code)
+		/// <summary> Parses the line of code and returns the <c>Rectangle</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>Rectangle</c> instance.</returns>
+		public static Rectangle  ParseRectangle(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);
@@ -179,7 +197,10 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
-		public static Star ParseStar(string code)
+		/// <summary> Parses the line of code and returns the <c>Star</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>Star</c> instance.</returns>
+		public static Star  ParseStar(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);

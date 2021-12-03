@@ -11,7 +11,10 @@ namespace BppLib.BppParser
 {
     public static partial class ParserBpp
     {
-		public static AincAnCe ParseAincAnCe(string code)
+		/// <summary> Parses the line of code and returns the <c>AincAnCe</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>AincAnCe</c> instance.</returns>
+		public static AincAnCe  ParseAincAnCe(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);
@@ -32,7 +35,10 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
-		public static AincEpRa ParseAincEpRa(string code)
+		/// <summary> Parses the line of code and returns the <c>AincEpRa</c> instance.</summary>
+		/// <param name="code"> he line of code.</param>
+		/// <returns> The <c>AincEpRa</c> instance.</returns>
+		public static AincEpRa  ParseAincEpRa(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);
@@ -53,7 +59,10 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
-		public static ArcAnCe ParseArcAnCe(string code)
+		/// <summary> Parses the line of code and returns the <c>ArcAnCe</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>ArcAnCe</c> instance.</returns>
+		public static ArcAnCe  ParseArcAnCe(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);
@@ -74,7 +83,10 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
-		public static ArcAnCeRaTp ParseArcAnCeRaTp(string code)
+		/// <summary> Parses the line of code and returns the <c>ArcAnCeRaTp</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>ArcAnCeRaTp</c> instance.</returns>
+		public static ArcAnCeRaTp  ParseArcAnCeRaTp(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);
@@ -96,7 +108,10 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
-		public static ArcCeTs ParseArcCeTs(string code)
+		/// <summary> Parses the line of code and returns the <c>ArcCeTs</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>ArcCeTs</c> instance.</returns>
+		public static ArcCeTs  ParseArcCeTs(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);
@@ -116,7 +131,10 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
-		public static ArcCeTsPk ParseArcCeTsPk(string code)
+		/// <summary> Parses the line of code and returns the <c>ArcCeTsPk</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>ArcCeTsPk</c> instance.</returns>
+		public static ArcCeTsPk  ParseArcCeTsPk(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);
@@ -136,7 +154,10 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
-		public static ArcEpCe ParseArcEpCe(string code)
+		/// <summary> Parses the line of code and returns the <c>ArcEpCe</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>ArcEpCe</c> instance.</returns>
+		public static ArcEpCe  ParseArcEpCe(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);
@@ -158,7 +179,10 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
-		public static ArcEpRa ParseArcEpRa(string code)
+		/// <summary> Parses the line of code and returns the <c>ArcEpRa</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>ArcEpRa</c> instance.</returns>
+		public static ArcEpRa  ParseArcEpRa(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);
@@ -179,7 +203,10 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
-		public static ArcEpRaTp ParseArcEpRaTp(string code)
+		/// <summary> Parses the line of code and returns the <c>ArcEpRaTp</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>ArcEpRaTp</c> instance.</returns>
+		public static ArcEpRaTp  ParseArcEpRaTp(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);
@@ -200,7 +227,10 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
-		public static ArcEpTp ParseArcEpTp(string code)
+		/// <summary> Parses the line of code and returns the <c>ArcEpTp</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>ArcEpTp</c> instance.</returns>
+		public static ArcEpTp  ParseArcEpTp(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);
@@ -220,7 +250,10 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
-		public static ArcIpEp ParseArcIpEp(string code)
+		/// <summary> Parses the line of code and returns the <c>ArcIpEp</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>ArcIpEp</c> instance.</returns>
+		public static ArcIpEp  ParseArcIpEp(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);
@@ -241,7 +274,10 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
-		public static ArcRaTs ParseArcRaTs(string code)
+		/// <summary> Parses the line of code and returns the <c>ArcRaTs</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>ArcRaTs</c> instance.</returns>
+		public static ArcRaTs  ParseArcRaTs(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);
@@ -260,7 +296,10 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
-		public static ArcRaTsPk ParseArcRaTsPk(string code)
+		/// <summary> Parses the line of code and returns the <c>ArcRaTsPk</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>ArcRaTsPk</c> instance.</returns>
+		public static ArcRaTsPk  ParseArcRaTsPk(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);
@@ -279,7 +318,10 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
-		public static ConnectorA ParseConnectorA(string code)
+		/// <summary> Parses the line of code and returns the <c>ConnectorA</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>ConnectorA</c> instance.</returns>
+		public static ConnectorA  ParseConnectorA(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);
@@ -297,7 +339,10 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
-		public static ConnectorB ParseConnectorB(string code)
+		/// <summary> Parses the line of code and returns the <c>ConnectorB</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>ConnectorB</c> instance.</returns>
+		public static ConnectorB  ParseConnectorB(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);

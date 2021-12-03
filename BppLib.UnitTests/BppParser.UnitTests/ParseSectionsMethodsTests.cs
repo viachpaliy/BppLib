@@ -314,7 +314,7 @@ LOC=C|""TEXT""|description C|3|
         }
 
         
-        [Test]
+    [Test]
 		public void ParseProgramSectionLineTest_AincAnCe()
         {
             string code = "  @ AINC_ANCE, \"\", \"\", 159162244, \"\", 0 : 12.30*2, LPX/2, 0, 1, 0, 0, 0, 0, 0, 0";
@@ -328,7 +328,7 @@ LOC=C|""TEXT""|description C|3|
             Assert.AreEqual(370, obj.Yi);
         }
 
-                [Test]
+    [Test]
 		public void ParseProgramSectionTest()
         {
             string stringCode = @"[HEADER]

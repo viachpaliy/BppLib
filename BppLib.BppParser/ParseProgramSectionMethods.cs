@@ -10,7 +10,9 @@ namespace BppLib.BppParser
 {
     public static partial class ParserBpp
     {
-
+		/// <summary> Parses the array of strings and returns the instance of the <c>BiesseProgram</c> class.</summary>
+		/// <param name="code"> Lines of code.</param>
+		/// <returns> The instance of the <c>BiesseProgram</c> class.</returns>
         public static BiesseProgram ParseBiesseProgram(string[] code)
         {
             BiesseProgram p = new BiesseProgram();
@@ -49,6 +51,9 @@ namespace BppLib.BppParser
             return p;
         }
 
+		/// <summary> Parses the array of strings and returns the instance of the <c>ProgramSection</c> class.</summary>
+		/// <param name="code"> Lines of code.</param>
+		/// <returns> The instance of the <c>ProgramSection</c> class.</returns>
         public static ProgramSection ParseProgramSection(string[] code)
         { 
             string[] section = GetSectionByName(code, "PROGRAM");
@@ -57,12 +62,24 @@ namespace BppLib.BppParser
 			{
                 if (s != "")
                 {
-                    ps.BiesseEntities.Add(ParseProgramSectionLine(s));
+					IBppCode biesseEntity;
+					try
+					{
+						biesseEntity = ParseProgramSectionLine(s);
+					}
+					catch (Exception ex)
+					{
+						biesseEntity = new VBLine(s);
+					}
+                    ps.BiesseEntities.Add(biesseEntity);
                 }
             }
             return ps;
         }
 
+		/// <summary> Parses the line of code and returns the <c>IBppCode</c> instance.</summary>
+		/// <param name="code"> the line of code.</param>
+		/// <returns> The <c>IBppCode</c> instance.</returns>
         public static IBppCode ParseProgramSectionLine(string code)
         {
             IBppCode obj = new VBLine();

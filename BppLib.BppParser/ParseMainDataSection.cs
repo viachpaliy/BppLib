@@ -10,6 +10,9 @@ namespace BppLib.BppParser
 {
     public static partial class ParserBpp
     {
+        /// <summary> Parses the array of strings and returns the instance of the <c>MainDataSection</c> class.</summary>
+		/// <param name="code"> The array of strings.</param>
+		/// <returns> The instance of the <c>MainDataSection</c> class.</returns>
 		public static MainDataSection ParseMainDataSection(string[] code)
 		{
 			string[] section = GetSectionByName(code, "VARIABLES");
@@ -89,6 +92,9 @@ namespace BppLib.BppParser
 			return mds;
 		} 
 
+        /// <summary> Parses the array of strings and returns the instance of the <c>PrivateVarsSection</c> class.</summary>
+		/// <param name="code"> The array of strings.</param>
+		/// <returns> The instance of the <c>PrivateVarsSection</c> class.</returns>
         public static PrivateVarsSection ParsePrivateVarsSection(string[] code)
         {
             string[] section = GetSectionByName(code, "VARIABLES");
@@ -120,6 +126,9 @@ namespace BppLib.BppParser
             return pvs;
         }
 
+        /// <summary> Parses the array of strings and returns the instance of the <c>PublicVarsSection</c> class.</summary>
+		/// <param name="code"> The array of strings.</param>
+		/// <returns> The instance of the <c>PublicVarsSection</c> class.</returns>
         public static PublicVarsSection ParsePublicVarsSection(string[] code)
         {
             string[] section = GetSectionByName(code, "VARIABLES");

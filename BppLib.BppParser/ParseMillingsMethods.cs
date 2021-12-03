@@ -10,7 +10,10 @@ namespace BppLib.BppParser
 {
     public static partial class ParserBpp
     {
-		public static GeoText ParseGeoText(string code)
+		/// <summary> Parses the line of code and returns the <c>GeoText</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>GeoText</c> instance.</returns>
+		public static GeoText  ParseGeoText(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);
@@ -57,7 +60,10 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
-		public static OffGeo ParseOffGeo(string code)
+		/// <summary> Parses the line of code and returns the <c>OffGeo</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>OffGeo</c> instance.</returns>
+		public static OffGeo  ParseOffGeo(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);
@@ -78,7 +84,10 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
-		public static Pock ParsePock(string code)
+		/// <summary> Parses the line of code and returns the <c>Pock</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>Pock</c> instance.</returns>
+		public static Pock  ParsePock(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);
@@ -140,7 +149,10 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
-		public static Rout ParseRout(string code)
+		/// <summary> Parses the line of code and returns the <c>Rout</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>Rout</c> instance.</returns>
+		public static Rout  ParseRout(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);
@@ -266,7 +278,10 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
-		public static RoutG ParseRoutG(string code)
+		/// <summary> Parses the line of code and returns the <c>RoutG</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>RoutG</c> instance.</returns>
+		public static RoutG  ParseRoutG(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);

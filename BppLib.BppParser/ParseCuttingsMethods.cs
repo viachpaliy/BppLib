@@ -10,7 +10,10 @@ namespace BppLib.BppParser
 {
     public static partial class ParserBpp
     {
-		public static CutF ParseCutF(string code)
+		/// <summary> Parses the line of code and returns the <c>CutF</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>CutF</c> instance.</returns>
+		public static CutF  ParseCutF(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);
@@ -58,7 +61,10 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
-		public static CutFR ParseCutFR(string code)
+		/// <summary> Parses the line of code and returns the <c>CutFR</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>CutFR</c> instance.</returns>
+		public static CutFR  ParseCutFR(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);
@@ -109,7 +115,10 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
-		public static CutG ParseCutG(string code)
+		/// <summary> Parses the line of code and returns the <c>CutG</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>CutG</c> instance.</returns>
+		public static CutG  ParseCutG(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);
@@ -183,7 +192,10 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
-		public static CutGeo ParseCutGeo(string code)
+		/// <summary> Parses the line of code and returns the <c>CutGeo</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>CutGeo</c> instance.</returns>
+		public static CutGeo  ParseCutGeo(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);
@@ -236,7 +248,10 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
-		public static CutX ParseCutX(string code)
+		/// <summary> Parses the line of code and returns the <c>CutX</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>CutX</c> instance.</returns>
+		public static CutX  ParseCutX(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);
@@ -290,7 +305,10 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
-		public static CutY ParseCutY(string code)
+		/// <summary> Parses the line of code and returns the <c>CutY</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>CutY</c> instance.</returns>
+		public static CutY  ParseCutY(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);

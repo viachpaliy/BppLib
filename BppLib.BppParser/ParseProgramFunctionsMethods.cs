@@ -10,7 +10,10 @@ namespace BppLib.BppParser
 {
     public static partial class ParserBpp
     {
-		public static Iso ParseIso(string code)
+		/// <summary> Parses the line of code and returns the <c>Iso</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>Iso</c> instance.</returns>
+		public static Iso  ParseIso(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);
@@ -22,7 +25,10 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
-		public static Offset ParseOffset(string code)
+		/// <summary> Parses the line of code and returns the <c>Offset</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>Offset</c> instance.</returns>
+		public static Offset  ParseOffset(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);
@@ -37,7 +43,10 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
-		public static PutProg ParsePutProg(string code)
+		/// <summary> Parses the line of code and returns the <c>PutProg</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>PutProg</c> instance.</returns>
+		public static PutProg  ParsePutProg(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);
@@ -63,7 +72,10 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
-		public static Rotate ParseRotate(string code)
+		/// <summary> Parses the line of code and returns the <c>Rotate</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>Rotate</c> instance.</returns>
+		public static Rotate  ParseRotate(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);
@@ -77,7 +89,10 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
-		public static Scale ParseScale(string code)
+		/// <summary> Parses the line of code and returns the <c>Scale</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>Scale</c> instance.</returns>
+		public static Scale  ParseScale(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);
@@ -92,7 +107,10 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
-		public static Shift ParseShift(string code)
+		/// <summary> Parses the line of code and returns the <c>Shift</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>Shift</c> instance.</returns>
+		public static Shift  ParseShift(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);
@@ -105,7 +123,10 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
-		public static WFC ParseWFC(string code)
+		/// <summary> Parses the line of code and returns the <c>WFC</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>WFC</c> instance.</returns>
+		public static WFC  ParseWFC(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);
@@ -132,7 +153,10 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
-		public static WFG ParseWFG(string code)
+		/// <summary> Parses the line of code and returns the <c>WFG</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>WFG</c> instance.</returns>
+		public static WFG  ParseWFG(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);
@@ -153,7 +177,10 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
-		public static WFGL ParseWFGL(string code)
+		/// <summary> Parses the line of code and returns the <c>WFGL</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>WFGL</c> instance.</returns>
+		public static WFGL  ParseWFGL(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);
@@ -169,7 +196,10 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
-		public static WFGPS ParseWFGPS(string code)
+		/// <summary> Parses the line of code and returns the <c>WFGPS</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>WFGPS</c> instance.</returns>
+		public static WFGPS  ParseWFGPS(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);
@@ -187,7 +217,10 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
-		public static WFL ParseWFL(string code)
+		/// <summary> Parses the line of code and returns the <c>WFL</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>WFL</c> instance.</returns>
+		public static WFL  ParseWFL(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);

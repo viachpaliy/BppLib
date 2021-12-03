@@ -9,11 +9,15 @@ using Jurassic;
 
 namespace BppLib.BppParser
 {
+	/// <summary> Class for parsing "bpp" files.</summary>
     public static partial class ParserBpp
     {
 		/// <summary> JavaScript engine. </summary>
         public static Jurassic.ScriptEngine engine = new Jurassic.ScriptEngine();
 
+		/// <summary> Parses the file and returns the <c>BiesseProgram</c> instance.</summary>
+		/// <param name="filePath"> Full path to the "bpp" file.</param>
+		/// <returns> The instance of the <c>BiesseProgram</c> class.</returns>
 		public static BiesseProgram ParseBppFile(string filePath)
 		{
 			FileInfo fileInf = new FileInfo(filePath);
@@ -23,6 +27,9 @@ namespace BppLib.BppParser
 				{return new BiesseProgram();}
 		}
 
+		/// <summary> Parses the array of strings and returns the instance of the <c>HeaderSection</c> class.</summary>
+		/// <param name="code"> Lines of code.</param>
+		/// <returns> The instance of the <c>HeaderSection</c> class.</returns>
 		public static HeaderSection ParseHeaderSection(string[] code)
 		{
 			string[] section = GetSectionByName(code, "HEADER");
@@ -39,6 +46,9 @@ namespace BppLib.BppParser
 			return h;
 		}
 
+		/// <summary> Parses the array of strings and returns the instance of the <c>DescriptionSection</c> class.</summary>
+		/// <param name="code"> Lines of code.</param>
+		/// <returns> The instance of the <c>DescriptionSection</c> class.</returns>
 		public static  DescriptionSection ParseDescriptionSection(string[] code)
 		{
 			string[] section = GetSectionByName(code, "DESCRIPTION");
@@ -56,6 +66,9 @@ namespace BppLib.BppParser
 			return ds;
 		}
 
+		/// <summary> Parses the string and returns the instance of the <c>StartPoint</c> class.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The instance of the <c>StartPoint</c> class.</returns>
 		public static StartPoint ParseStartPoint(string code)
 		{
 			string[] subs = SplitColon(code);
@@ -70,6 +83,9 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
+		/// <summary> Parses the string and returns the instance of the <c>EndPath</c> class.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The instance of the <c>EndPath</c> class.</returns>
 		public static EndPath ParseEndPath(string code)
 		{
 			string[] subs = SplitColon(code);
@@ -81,6 +97,9 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
+		/// <summary> Parses the string and returns the instance of the <c>Geo</c> class.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The instance of the <c>Geo</c> class.</returns>
 		public static Geo ParseGeo(string code)
 		{
 			string[] subs = SplitColon(code);
@@ -113,6 +132,9 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
+		/// <summary> Splits a line of code into a maximum number of substrings based on a "colon" character.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The string array.</returns>
         public static string[] SplitColon(string code)
         {
             string[] arr = new string[2];
@@ -131,6 +153,9 @@ namespace BppLib.BppParser
             return arr;
         }
 
+		/// <summary> Splits a line of code into a maximum number of substrings based on a "comma" character.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The string array.</returns>
         public static string[] SplitComma(string code)
         {
             List<string> lst = new List<string>();
@@ -155,6 +180,9 @@ namespace BppLib.BppParser
             return lst.ToArray();
         }
 
+		/// <summary> Returns a string representing the type of the BiesseWorks entity.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The string representing the type of the BiesseWorks entity.</returns>
 		public static string GetBiesseEntityType(string code)
 		{
 			string pattern = @"^\s*@\s+(\w+)\s*,.*";
@@ -168,6 +196,10 @@ namespace BppLib.BppParser
 			return biesseType;
 		}
 
+		/// <summary> Returns a string array representing the section of the "bpp" file.</summary>	
+		/// <param name="code"> Lines of code.</param>
+		/// <param name="name"> The name of the "bpp" file section.</param>
+		/// <returns> The section code lines.</returns>
 		public static string[] GetSectionByName(string[] code, string name)
 		{
 			string patternStart = @"^\s*\[\s*" + name.ToUpper() + @"\s*\]\s*$";
@@ -195,11 +227,17 @@ namespace BppLib.BppParser
 			return SectionCode.ToArray();
 		}
 
+		/// <summary> Converts the string to double using engine for evaluation.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The double.</returns>
 		public static double ConvertToDouble(string code)
 		{
 			return engine.Evaluate<double>(code);
 		}
 
+		/// <summary> Converts the string to int using engine for evaluation.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The int.</returns>
 		public static int ConvertToInt(string code)
 		{
 			return engine.Evaluate<int>(code);

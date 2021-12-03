@@ -10,7 +10,10 @@ namespace BppLib.BppParser
 {
     public static partial class ParserBpp
     {
-		public static Bca ParseBca(string code)
+		/// <summary> Parses the line of code and returns the <c>Bca</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>Bca</c> instance.</returns>
+		public static Bca  ParseBca(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);
@@ -79,7 +82,10 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
-		public static Bcl ParseBcl(string code)
+		/// <summary> Parses the line of code and returns the <c>Bcl</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>Bcl</c> instance.</returns>
+		public static Bcl  ParseBcl(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);
@@ -148,7 +154,10 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
-		public static Bg ParseBg(string code)
+		/// <summary> Parses the line of code and returns the <c>Bg</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>Bg</c> instance.</returns>
+		public static Bg  ParseBg(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);
@@ -217,7 +226,10 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
-		public static BGeo ParseBGeo(string code)
+		/// <summary> Parses the line of code and returns the <c>BGeo</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>BGeo</c> instance.</returns>
+		public static BGeo  ParseBGeo(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);
@@ -268,7 +280,10 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
-		public static Bh ParseBh(string code)
+		/// <summary> Parses the line of code and returns the <c>Bh</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>Bh</c> instance.</returns>
+		public static Bh  ParseBh(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);
@@ -337,7 +352,10 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
-		public static Bv ParseBv(string code)
+		/// <summary> Parses the line of code and returns the <c>Bv</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>Bv</c> instance.</returns>
+		public static Bv  ParseBv(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);
@@ -406,7 +424,10 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
-		public static S32 ParseS32(string code)
+		/// <summary> Parses the line of code and returns the <c>S32</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>S32</c> instance.</returns>
+		public static S32  ParseS32(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);

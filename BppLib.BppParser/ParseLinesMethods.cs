@@ -11,6 +11,9 @@ namespace BppLib.BppParser
 {
     public static partial class ParserBpp
     {
+		/// <summary> Parses the line of code and returns the <c>Chamfer</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>Chamfer</c> instance.</returns>
         public static Chamfer ParseChamfer(string code)
 		{
 			string[] subs = SplitColon(code);
@@ -29,7 +32,10 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
-		public static LincEp ParseLincEp(string code)
+		/// <summary> Parses the line of code and returns the <c>LincEp</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>LincEp</c> instance.</returns>
+		public static LincEp  ParseLincEp(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);
@@ -48,7 +54,10 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
-		public static LineAnXe ParseLineAnXe(string code)
+		/// <summary> Parses the line of code and returns the <c>LineAnXe</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>LineAnXe</c> instance.</returns>
+		public static LineAnXe  ParseLineAnXe(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);
@@ -67,7 +76,10 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
-		public static LineAnYe ParseLineAnYe(string code)
+		/// <summary> Parses the line of code and returns the <c>LineAnYe</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>LineAnYe</c> instance.</returns>
+		public static LineAnYe  ParseLineAnYe(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);
@@ -86,7 +98,10 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
-		public static LineEp ParseLineEp(string code)
+		/// <summary> Parses the line of code and returns the <c>LineEp</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>LineEp</c> instance.</returns>
+		public static LineEp  ParseLineEp(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);
@@ -106,7 +121,10 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
-		public static LineEpAnTp ParseLineEpAnTp(string code)
+		/// <summary> Parses the line of code and returns the <c>LineEpAnTp</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>LineEpAnTp</c> instance.</returns>
+		public static LineEpAnTp  ParseLineEpAnTp(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);
@@ -126,7 +144,10 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
-		public static LineEpTp ParseLineEpTp(string code)
+		/// <summary> Parses the line of code and returns the <c>LineEpTp</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>LineEpTp</c> instance.</returns>
+		public static LineEpTp  ParseLineEpTp(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);
@@ -145,7 +166,10 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
-		public static LineLnAn ParseLineLnAn(string code)
+		/// <summary> Parses the line of code and returns the <c>LineLnAn</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>LineLnAn</c> instance.</returns>
+		public static LineLnAn  ParseLineLnAn(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);
@@ -164,7 +188,10 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
-		public static LineLnTp ParseLineLnTp(string code)
+		/// <summary> Parses the line of code and returns the <c>LineLnTp</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>LineLnTp</c> instance.</returns>
+		public static LineLnTp  ParseLineLnTp(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);
@@ -182,7 +209,10 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
-		public static LineLnXe ParseLineLnXe(string code)
+		/// <summary> Parses the line of code and returns the <c>LineLnXe</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>LineLnXe</c> instance.</returns>
+		public static LineLnXe  ParseLineLnXe(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);
@@ -201,7 +231,10 @@ namespace BppLib.BppParser
 			return obj;
 		}
 
-		public static LineLnYe ParseLineLnYe(string code)
+		/// <summary> Parses the line of code and returns the <c>LineLnYe</c> instance.</summary>
+		/// <param name="code"> The line of code.</param>
+		/// <returns> The <c>LineLnYe</c> instance.</returns>
+		public static LineLnYe  ParseLineLnYe(string code)
 		{
 			string[] subs = SplitColon(code);
 			string[] p1 = SplitComma(subs[0]);
