@@ -20,5 +20,8 @@ BppLib.UnitTests/Fusion360PostProcessor.UnitTests/bin
 BppLib.UnitTests/Fusion360PostProcessor.UnitTests/obj
 BppLib.UnitTests/BppParser.UnitTests/bin
 BppLib.UnitTests/BppParser.UnitTests/obj
+BppLib.Examples/BppLib.BppParser.Examples/Rotate90Deg/bin
+BppLib.Examples/BppLib.BppParser.Examples/Rotate90Deg/obj
+BppLib.Examples/BppLib.BppParser.Examples/Rotate90Deg/*.bpp
 Other
 Auxiliaries

@@ -16,7 +16,7 @@ namespace BppLib.BppParser
         public static Jurassic.ScriptEngine engine = new Jurassic.ScriptEngine();
 
 		/// <summary> Parses the file and returns the <c>BiesseProgram</c> instance.</summary>
-		/// <param name="filePath"> Full path to the "bpp" file.</param>
+		/// <param name="filePath"> Path to the "bpp" file.</param>
 		/// <returns> The instance of the <c>BiesseProgram</c> class.</returns>
 		public static BiesseProgram ParseBppFile(string filePath)
 		{

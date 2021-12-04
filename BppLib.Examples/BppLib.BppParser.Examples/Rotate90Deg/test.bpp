@@ -1,0 +1,69 @@
+[HEADER]
+TYPE=BPP
+VER=150
+
+[DESCRIPTION]
+|№ стяжка
+|
+
+[VARIABLES]
+PAN=LPX|70.2||4|
+PAN=LPY|502||4|
+PAN=LPZ|18||4|
+PAN=ORLST|"5"||3|
+PAN=SIMMETRY|1||1|
+PAN=TLCHK|0||1|
+PAN=TOOLING|""||3|
+PAN=CUSTSTR|"0,0,1,0,0,1,0,0,1"||3|
+PAN=FCN|1.000000||2|
+PAN=XCUT|0||4|
+PAN=YCUT|0||4|
+PAN=JIGTH|0||4|
+PAN=CKOP|0||1|
+PAN=UNIQUE|0||1|
+PAN=MATERIAL|"ashwhite"||3|
+PAN=PUTLST|""||3|
+PAN=OPPWKRS|0||1|
+PAN=UNICLAMP|0||1|
+PAN=CHKCOLL|0||1|
+PAN=WTPIANI|0||1|
+PAN=COLLTOOL|0||1|
+PAN=CALCEDTH|0||1|
+PAN=ENABLELABEL|0||1|
+PAN=LOCKWASTE|0||1|
+PAN=LOADEDGEOPT|0||1|
+PAN=ITLTYPE|0||1|
+PAN=RUNPAV|0||1|
+PAN=FLIPEND|0||1|
+PAN=ENABLEMACHLINKS|0||1|
+PAN=ENABLEPURSUITS|0||1|
+PAN=ENABLEFASTVERTBORINGS|0||1|
+PAN=FASTVERTBORINGSVALUE|0||4|
+
+[PROGRAM]
+@ BG, "", "", 13, "", 0 : 4, "4", 35, 9, 0, 34, 4.5, 0, -1, 32, 32, 50, 0, 45, 0, "", 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, -1, "P00001", 0, "", "", 0, 0, 0, 0, 0, "", 0, 0, 0, 0, 0, "", "", "BG", 0, 0, 0, 0, -1, 0, 0, 0
+@ BG, "", "", 23, "", 0 : 2, "1", 35, 9, 0, 36, 4.5, 0, -1, 32, 32, 50, 0, 45, 0, "", 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, -1, "P00002", 0, "", "", 0, 0, 0, 0, 0, "", 0, 0, 0, 0, 0, "", "", "BG", 0, 0, 0, 0, -1, 0, 0, 0
+@ GEO, "", "EL", 0, "", 0 : "P00003", 0, "1", 0, 1, 0, 0, 0, 0.1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, "GEO", 0
+@ START_POINT, "", "", 0, "", 0 : -10, 0, 0
+@ LINE_EP, "", "", 0, "", 0 : -10, LPY, 0, 0, 0, 0, 0, 0, 0
+@ ENDPATH, "", "", 0, "", 0 :
+@ GEOTEXT, "", "EL", 0, "", 0 : "P00004", 0, "2", "(A) 0.6mm", -35, LPY/2, 0, 90, 0, 0, 0, 0, 0, 0, "Arial", 32, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, "GEOTEXT"
+@ GEO, "", "ER", 0, "", 0 : "P00005", 0, "1", 0, 1, 0, 0, 0, 0.1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, "GEO", 0
+@ START_POINT, "", "", 0, "", 0 : LPX+10, 0, 0
+@ LINE_EP, "", "", 0, "", 0 : LPX+10, LPY, 0, 0, 0, 0, 0, 0, 0
+@ ENDPATH, "", "", 0, "", 0 :
+@ GEOTEXT, "", "ER", 0, "", 0 : "P00006", 0, "2", "(A) 0.6mm", LPX+25, LPY/2, 0, 270, 0, 0, 0, 0, 0, 0, "Arial", 32, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, "GEOTEXT"
+
+
+[VBSCRIPT]
+
+[MACRODATA]
+
+[TDCODES]
+
+[PCF]
+
+[TOOLING]
+
+[SUBPROGS]
+
