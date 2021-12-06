@@ -69,7 +69,7 @@ namespace BppLib.BppParser
 					}
 					catch (Exception ex)
 					{
-						biesseEntity = new VBLine(s);
+						biesseEntity = new VBLine("'" + ex.Message + "-" + s);
 					}
                     ps.BiesseEntities.Add(biesseEntity);
                 }

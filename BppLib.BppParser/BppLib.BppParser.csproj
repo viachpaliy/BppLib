@@ -1,13 +1,23 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <PackageId>BppLib.BppParser</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Viacheslav Paliy</Authors>
     <TargetFramework>net6.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-
+  <PropertyGroup>
+    <PackageReadmeFile>Readme.md</PackageReadmeFile>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="BppLib.Core" Version="1.1.0" />
     <PackageReference Include="Jurassic" Version="3.2.4" />
   </ItemGroup>
-
+  <ItemGroup>
+    <None Include="Readme.md" Pack="true" PackagePath="\"/>
+  </ItemGroup>
 </Project>

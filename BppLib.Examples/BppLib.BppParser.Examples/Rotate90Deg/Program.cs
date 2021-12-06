@@ -101,6 +101,48 @@ namespace Rotate90Deg
                         l.Xe = l.Ye;
                         l.Ye = temp;
                     }
+                    if (typeof(ArcEpCe).IsInstanceOfType(entity))
+                    {
+                        ArcEpCe a = (ArcEpCe)entity;
+                        temp = a.Xe;
+                        a.Xe = a.Ye;
+                        a.Ye = temp;
+                        temp = a.Xc;
+                        a.Xc = a.Yc;
+                        a.Yc = temp;
+                    }
+                    if (typeof(GeoText).IsInstanceOfType(entity))
+                    {
+                        GeoText geo = (GeoText)entity;
+                        if (geo.Side == 0)
+                        {
+                            switch (geo.Crn)
+                            {
+                                case "1" :
+                                    geo.Crn = "2";
+                                    break;
+                                case "2" :
+                                    geo.Crn = "3";
+                                    break;
+                                case "3" :
+                                    geo.Crn = "4";
+                                    break;
+                                case "4" :
+                                    geo.Crn = "1";
+                                    break;
+                                default :
+                                    break;
+                            }
+                        }
+                        else
+                        {
+                            geo.Side = (geo.Side + 1) % 4;
+                        }
+                        temp = geo.X;
+                        geo.X = geo.Y;
+                        geo.Y = temp;
+                        geo.Ang = (geo.Ang + 90) % 360;
+                    }
                 }
                  
 
