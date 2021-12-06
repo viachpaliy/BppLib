@@ -2,7 +2,7 @@
 
 ## Parser for "bpp" files for Biesse CNC.
 
-The library will read "bpp" code and produce a `BppLib.Core`(https://www.nuget.org/packages/BppLib.Core) objects from it.
+The library will read "bpp" code and produce a [`BppLib.Core`](https://www.nuget.org/packages/BppLib.Core) objects from it.
 
 The library consists of one static class `ParserBpp` that contains many static methods for parsing.
 
