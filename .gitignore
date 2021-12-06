@@ -2,6 +2,8 @@ BppLib.Core/bin
 BppLib.Core/obj
 BppLib.BppParser/bin
 BppLib.BppParser/obj
+BppLib.CixParser/bin
+BppLib.CixParser/obj
 BppLib.UnitTests/BppLib.Core.Tests/bin
 BppLib.UnitTests/BppLib.Core.Tests/obj
 BppLib.Examples/BppLib.Core.Examples/bin
@@ -20,6 +22,8 @@ BppLib.UnitTests/Fusion360PostProcessor.UnitTests/bin
 BppLib.UnitTests/Fusion360PostProcessor.UnitTests/obj
 BppLib.UnitTests/BppParser.UnitTests/bin
 BppLib.UnitTests/BppParser.UnitTests/obj
+BppLib.UnitTests/CixParser.UnitTests/bin
+BppLib.UnitTests/CixParser.UnitTests/obj
 BppLib.Examples/BppLib.BppParser.Examples/Rotate90Deg/bin
 BppLib.Examples/BppLib.BppParser.Examples/Rotate90Deg/obj
 BppLib.Examples/BppLib.BppParser.Examples/Rotate90Deg/*.bpp

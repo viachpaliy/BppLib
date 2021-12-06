@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BppLib.Core" Version="1.1.0" />
+    <PackageReference Include="Jurassic" Version="3.2.4" />
+  </ItemGroup>
+
+</Project>
