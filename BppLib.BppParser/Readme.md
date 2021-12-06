@@ -1,5 +1,9 @@
 # BppLib.BppParser
 
+    A Nuget Package is available.
+[![Nuget](https://img.shields.io/nuget/v/BppLib.BppParser)](https://www.nuget.org/packages/BppLib.BppParser)
+![Nuget](https://img.shields.io/nuget/dt/BppLib.BppParser)
+
 ## Parser for "bpp" files for Biesse CNC.
 
 The library will read "bpp" code and produce a [`BppLib.Core`](https://www.nuget.org/packages/BppLib.Core) objects from it.
