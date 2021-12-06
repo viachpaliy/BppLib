@@ -1,9 +1,8 @@
 # BppLib.Core
-### The main purpose of this library is to create tools for generating "bpp" and "cix" files.
+### The main purpose of this library is to create tools for generating "bpp" and "cix" files for Biesse CNC.
 
-### How do I get it?
-
-Install the [NuGet package](https://www.nuget.org/packages/BppLib.Core/).
+[![Nuget](https://img.shields.io/nuget/v/BppLib.Core)](https://www.nuget.org/packages/BppLib.Core)
+![Nuget](https://img.shields.io/nuget/dt/BppLib.Core)
 See source code on [github](https://github.com/viachpaliy/BppLib/tree/main/BppLib.Core).
 
 ### The `BiesseProgram` class models both ".bpp" and "cix" files :
