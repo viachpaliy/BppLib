@@ -4,7 +4,7 @@ using BppLib.Core;
 
 namespace CixParser.UnitTests
 {
-   [TestFixture]
+    [TestFixture]
     public class ParseSectionsMethodsTests
     {
                 [Test]

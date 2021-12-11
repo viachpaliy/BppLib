@@ -143,9 +143,34 @@ namespace Rotate90Deg
                         geo.Y = temp;
                         geo.Ang = (geo.Ang + 90) % 360;
                     }
+                    if (typeof(Rout).IsInstanceOfType(entity))
+                    {
+                        Rout rout = (Rout)entity;
+                        if (rout.Side == 0)
+                        {
+                            switch (rout.Crn)
+                            {
+                                case "1" :
+                                    rout.Crn = "2";
+                                    break;
+                                case "2" :
+                                    rout.Crn = "3";
+                                    break;
+                                case "3" :
+                                    rout.Crn = "4";
+                                    break;
+                                case "4" :
+                                    rout.Crn = "1";
+                                    break;
+                                default :
+                                    break;
+                            }
+                        }
+                        else
+                        {
+                            rout.Side = (rout.Side + 1) % 4;
+                        }
                 }
-                 
-
                 
                 Console.WriteLine(prg.AsBppCode());
                 string newName = Path.GetDirectoryName(Path.GetFullPath(pathToFile)) + "\\" + Path.GetFileNameWithoutExtension(pathToFile) + "Rotate90Deg.bpp";
