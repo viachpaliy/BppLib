@@ -1,9 +1,9 @@
 ﻿using System;
-using BppLib.BppParser;
+using BppLib.CixParser;
 using BppLib.Core;
 using System.IO;
 
-namespace Rotate90Deg
+namespace Examples
 {
     class Program
     {
@@ -22,7 +22,7 @@ namespace Rotate90Deg
                     Console.WriteLine("{0} - file does not exist", pathToFile);
                     return;
                 }
-                var prg = ParserBpp.ParseBppFile(pathToFile);
+                var prg = ParserCix.ParseCixFile(pathToFile);
                 double temp = prg.Lpx;
                 prg.Lpx = prg.Lpy;
                 prg.Lpy = temp;
@@ -176,8 +176,8 @@ namespace Rotate90Deg
                 string newName = Path.GetDirectoryName(Path.GetFullPath(pathToFile)) + "\\" + Path.GetFileNameWithoutExtension(pathToFile) + "Rotate90Deg.bpp";
                 Console.WriteLine("New name for file - {0}", newName);
                 File.WriteAllText(newName, prg.AsBppCode());
-                }
             }
         }
     }
+}
 }

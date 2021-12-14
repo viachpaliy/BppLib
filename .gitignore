@@ -27,5 +27,8 @@ BppLib.UnitTests/CixParser.UnitTests/obj
 BppLib.Examples/BppLib.BppParser.Examples/Rotate90Deg/bin
 BppLib.Examples/BppLib.BppParser.Examples/Rotate90Deg/obj
 BppLib.Examples/BppLib.BppParser.Examples/Rotate90Deg/*.bpp
+BppLib.Examples/BppLib.CixParser.Examples/bin
+BppLib.Examples/BppLib.CixParser.Examples/obj
+BppLib.Examples/BppLib.CixParser.Examples/*.bpp
 Other
 Auxiliaries

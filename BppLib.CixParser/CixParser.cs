@@ -15,6 +15,18 @@ namespace BppLib.CixParser
 		/// <summary> JavaScript engine. </summary>
         public static Jurassic.ScriptEngine engine = new Jurassic.ScriptEngine();
 
+		/// <summary> Parses the file and returns the <c>BiesseProgram</c> instance.</summary>
+		/// <param name="filePath"> Path to the "cix" file.</param>
+		/// <returns> The instance of the <c>BiesseProgram</c> class.</returns>
+		public static BiesseProgram ParseCixFile(string filePath)
+		{
+			FileInfo fileInf = new FileInfo(filePath);
+			 if (fileInf.Exists)
+                {return ParseBiesseProgram(File.ReadAllLines(filePath));}
+			else
+				{return new BiesseProgram();}
+		}
+
 		/// <summary> Parses the array of strings and returns the instance of the <c>BiesseProgram</c> class.</summary>
 		/// <param name="code"> Lines of code.</param>
 		/// <returns> The instance of the <c>BiesseProgram</c> class.</returns>
@@ -96,7 +108,7 @@ namespace BppLib.CixParser
 						}
 						catch (Exception ex)
 						{
-						biesseEntity = new VBLine("'" + ex.Message + "-" +  String.Join('\n',code));
+						biesseEntity = new VBLine("'" + ex.Message + "-" +  String.Join("\n'",code));
 						}
                     	p.ProgramSec.BiesseEntities.Add(biesseEntity);
                 	}
@@ -524,7 +536,7 @@ namespace BppLib.CixParser
 						obj =(IBppCode)ParseWFL(code);
 						break;
                     default :
-                        obj =(IBppCode)(new VBLine("'" + String.Join('\n',code)));
+                        obj =(IBppCode)(new VBLine("'" + String.Join("\n'",code)));
                         break;
                 }
             

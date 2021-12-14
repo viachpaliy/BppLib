@@ -1,9 +1,38 @@
-﻿using System;
-using BppLib.BppParser;
+# BppLib.CixParser
+
+## Parser for "cix" files for Biesse CNC.
+
+The library will read "cix" code and produce a [`BppLib.Core`](https://www.nuget.org/packages/BppLib.Core) objects from it.
+
+The library consists of one static class `ParserCix` that contains many static methods for parsing.
+
+`ParserCix.ParseBppFile` method reads "cix" file and produces a `BppLib.Core.BiesseProgram` from it.
+
+`ParserCix.ParseBiesseProgram` method parses a array of strings and returns a `BppLib.Core.BiesseProgram` from it.
+
+`ParserCix.ParseHeaderSection` method parses a array of strings and returns a `BppLib.Core.HeaderSection` from it.
+
+`ParserCix.ParseMainDataSection` method parses a array of strings and returns a `BppLib.Core.MainDataSection` from it.
+
+`ParserCix.ParsePublicVarsSection` method parses a array of strings and returns a `BppLib.Core.PublicVarsSection` from it.
+
+`ParserCix.ParsePrivateVarsSection` method parses a array of strings and returns a `BppLib.Core.PrivateVarsSection` from it.
+
+`ParserCix.ParseMacro` method  parses any "cix" macro  and returns `BppLib.IBppCode`.
+
+For all the main classes of `BppLib.Core` , the library contains methods that parse a line of code and return an instance of that class (for example, `ParseStartPoint`, `ParseEndPath`, `ParseGeo`, etc.)
+
+### Simple example :
+
+This console program parses  "cix" file , rotates the workpiece 90 degrees and  saves the "rotated" program to a new "bpp" file.
+
+```csharp
+using System;
+using BppLib.CixParser;
 using BppLib.Core;
 using System.IO;
 
-namespace Rotate90Deg
+namespace Examples
 {
     class Program
     {
@@ -22,7 +51,7 @@ namespace Rotate90Deg
                     Console.WriteLine("{0} - file does not exist", pathToFile);
                     return;
                 }
-                var prg = ParserBpp.ParseBppFile(pathToFile);
+                var prg = ParserCix.ParseCixFile(pathToFile);
                 double temp = prg.Lpx;
                 prg.Lpx = prg.Lpy;
                 prg.Lpy = temp;
@@ -181,3 +210,4 @@ namespace Rotate90Deg
         }
     }
 }
+```
