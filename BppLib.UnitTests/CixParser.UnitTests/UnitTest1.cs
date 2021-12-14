@@ -73,6 +73,27 @@ namespace CixParser.UnitTests
             Assert.AreEqual(BiesseVariablesType.String, obj.PublicVariables[2].Typ);
         }
 
+		[Test]
+		public void ParsePrivateVarsSectionTest()
+        {
+			string[] code = stringCode.Replace("\r\n","\n").Split('\n');
+			var obj = ParserCix.ParsePrivateVarsSection(code);
+            Assert.AreEqual(3, obj.PrivateVariables.Count);
+            Assert.AreEqual("D", obj.PrivateVariables[0].Name);
+            Assert.AreEqual("1", obj.PrivateVariables[0].Value);
+            Assert.AreEqual("\"Desc D\"", obj.PrivateVariables[0].Description);
+            Assert.AreEqual(BiesseVariablesType.Distance, obj.PrivateVariables[0].Typ);
+            Assert.AreEqual("E", obj.PrivateVariables[1].Name);
+            Assert.AreEqual("5", obj.PrivateVariables[1].Value);
+            Assert.AreEqual("\"\"", obj.PrivateVariables[1].Description);
+            Assert.AreEqual(BiesseVariablesType.String, obj.PrivateVariables[1].Typ);
+            Assert.AreEqual("F", obj.PrivateVariables[2].Name);
+            Assert.AreEqual("1.253", obj.PrivateVariables[2].Value);
+            Assert.AreEqual("\"\"", obj.PrivateVariables[2].Description);
+            Assert.AreEqual(BiesseVariablesType.Real, obj.PrivateVariables[2].Typ);
+		}
+
+
         string stringCode = @"BEGIN ID CID3
 	REL= 3.5
 END ID
@@ -121,7 +142,7 @@ END PUBLICVARS
 BEGIN PRIVATEVARS
 	PARAM, NAME=D, VALUE=1, DESCRIPTION=""Desc D"", TYPE=4
 	PARAM, NAME=E, VALUE=""5"", DESCRIPTION="""", TYPE=0
-	PARAM, NAME=F, VALUE=1.253, DESCRIPTION="""", TYPE=0
+	PARAM, NAME=F, VALUE=1.253, DESCRIPTION="""", TYPE=2
 END PRIVATEVARS
 
 BEGIN MACRO

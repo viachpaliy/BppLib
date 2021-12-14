@@ -1,0 +1,45 @@
+using NUnit.Framework;
+using BppLib.CixParser;
+using BppLib.Core;
+
+namespace CixParser.UnitTests
+{
+	[TestFixture]
+	public partial class ParseMacroTests
+	{
+		[Test]
+		public void ArcAnCeTest()
+		{
+			string codeString = @"BEGIN MACRO
+	NAME=ARC_ANCE
+	PARAM,NAME=ID,VALUE=43942917
+	PARAM,NAME=A,VALUE=0
+	PARAM,NAME=XC,VALUE=0
+	PARAM,NAME=YC,VALUE=0
+	PARAM,NAME=DIR,VALUE=dirCW
+	PARAM,NAME=ZS,VALUE=0
+	PARAM,NAME=ZE,VALUE=0
+	PARAM,NAME=SC,VALUE=scOFF
+	PARAM,NAME=FD,VALUE=0
+	PARAM,NAME=SP,VALUE=0
+	PARAM,NAME=SOL,VALUE=0
+END MACRO";
+			string[] code = codeString.Replace("\r\n","\n").Split('\n');
+			var bj = ParserCix.ParseMacro(code);
+			Assert.IsInstanceOf<ArcAnCe>(bj);
+			ArcAnCe obj = (ArcAnCe)bj;
+			Assert.AreEqual("ARC_ANCE", obj.BppName);
+			Assert.AreEqual(43942917, obj.Id);
+			Assert.AreEqual(0, obj.A);
+			Assert.AreEqual(0, obj.Xc);
+			Assert.AreEqual(0, obj.Yc);
+			Assert.AreEqual(CircleDirection.dirCW, obj.Dir);
+			Assert.AreEqual(0, obj.Zs);
+			Assert.AreEqual(0, obj.Ze);
+			Assert.AreEqual(SharpCorner.scOFF, obj.Sc);
+			Assert.AreEqual(0, obj.Fd);
+			Assert.AreEqual(0, obj.Sp);
+			Assert.AreEqual(0, obj.Sol);
+		}
+	}
+}

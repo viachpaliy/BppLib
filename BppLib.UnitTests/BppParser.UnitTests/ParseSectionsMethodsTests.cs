@@ -139,7 +139,7 @@ PAN=FASTVERTBORINGSVALUE|13||4|
             Assert.AreEqual(13, obj.FastVertBoringsValue);
         }
 
-               [Test]
+    [Test]
 		public void ParsePrivateVarsSectionTest()
         {
                        string stringCode = @"[HEADER]
