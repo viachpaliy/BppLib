@@ -113,6 +113,19 @@ namespace BppLib.CixParser
                     	p.ProgramSec.BiesseEntities.Add(biesseEntity);
                 	}
 				}
+				Regex rWTToolingStart = new Regex(@"^\s*BEGIN\s+WORKTABLETOOLING\s*$");
+				Regex rWTToolingEnd = new Regex(@"^\s*END\s+WORKTABLETOOLING\s*$");
+				Match mWTToolingStart = rWTToolingStart.Match(code[i]);
+				if (mWTToolingStart.Success)
+				{
+					i++;
+					while(i < code.Length)
+					{
+						Match mWTToolingEnd = rWTToolingEnd.Match(code[i]);
+						if (mWTToolingEnd.Success) break;
+						i++;
+					}
+				}
 				i++;
 			}
             return p;

@@ -1,12 +1,16 @@
 # BppLib.CixParser
 
+    A Nuget Package is available.
+[![Nuget](https://img.shields.io/nuget/v/BppLib.CixParser)](https://www.nuget.org/packages/BppLib.CixParser)
+![Nuget](https://img.shields.io/nuget/dt/BppLib.CixParser)
+
 ## Parser for "cix" files for Biesse CNC.
 
 The library will read "cix" code and produce a [`BppLib.Core`](https://www.nuget.org/packages/BppLib.Core) objects from it.
 
 The library consists of one static class `ParserCix` that contains many static methods for parsing.
 
-`ParserCix.ParseBppFile` method reads "cix" file and produces a `BppLib.Core.BiesseProgram` from it.
+`ParserCix.ParseCixFile` method reads "cix" file and produces a `BppLib.Core.BiesseProgram` from it.
 
 `ParserCix.ParseBiesseProgram` method parses a array of strings and returns a `BppLib.Core.BiesseProgram` from it.
 
