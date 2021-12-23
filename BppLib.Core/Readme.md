@@ -3,7 +3,7 @@
 
 [![Nuget](https://img.shields.io/nuget/v/BppLib.Core)](https://www.nuget.org/packages/BppLib.Core)
 ![Nuget](https://img.shields.io/nuget/dt/BppLib.Core)
-See source code on [github](https://github.com/viachpaliy/BppLib/tree/main/BppLib.Core).
+
 
 ### The `BiesseProgram` class models both ".bpp" and "cix" files :
  - the `AsBppCode` method returns the string as a "bpp" program.
@@ -32,12 +32,12 @@ See source code on [github](https://github.com/viachpaliy/BppLib/tree/main/BppLi
 - class `S32` models the repeated boring operation.
 
 ### The following classes model cutting operations :
-- class `GutF` models the squaring operation centred on the top or bottom side of the piece.
-- class `GutFR` models the squaring operation that is not centred on the top or bottom side of the piece.
-- class `GutG` models the generic cutting operation.
-- class `GutGeo` models the cut from geometry.
-- class `GutX` models the cut along the X-axis.
-- class `GutY` models the cut along the Y-axis.
+- class `CutF` models the squaring operation centred on the top or bottom side of the piece.
+- class `CutFR` models the squaring operation that is not centred on the top or bottom side of the piece.
+- class `CutG` models the generic cutting operation.
+- class `CutGeo` models the cut from geometry.
+- class `CutX` models the cut along the X-axis.
+- class `CutY` models the cut along the Y-axis.
 
 ### The following classes model milling operations :
 - class `Rout` models the milling operation using an “integrated” geometric profile.
